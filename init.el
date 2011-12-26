@@ -13,12 +13,11 @@
 
 ;; color settings
 (custom-set-faces
- '(default ((t
-             (:background "black" 
-	      :foreground "white" 
-	      :font "-outline-Courier New-normal-normal-normal-mono-11-*-*-*-c-*-iso8859-1"
-	      :cursor-type "box")
-             ))))
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(default ((t (:background "black" :foreground "white" :font "-outline-Courier New-normal-normal-normal-mono-11-*-*-*-c-*-iso8859-1" :cursor-type "box")))))
 
 ;; locale
 (setenv "LC_TIME" "C")
@@ -196,3 +195,9 @@ collect `(define-abbrev ,table
 	("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
 	("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d")
 	("pr"    "printf (\"\")" "C-2 C-b"))))
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(inhibit-startup-screen t))

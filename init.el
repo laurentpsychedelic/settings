@@ -79,6 +79,22 @@
 (autoload 'powershell-mode "powershell-mode" "A editing mode for Microsoft PowerShell." t)
 (add-to-list 'auto-mode-alist '("\\.ps1\\'" . powershell-mode)) ; PowerShell script
 
+;; groovy mode
+(autoload 'groovy-mode "groovy-mode" "A editing mode for Groovy." t)
+(add-to-list 'auto-mode-alist '("\\.groovy\\'" . groovy-mode)) ; Groovy source code
+
+;; bat-mode
+(setq auto-mode-alist 
+       (append 
+        (list (cons "\\.[bB][aA][tT]$" 'bat-mode))
+        ;; For DOS init files
+        (list (cons "CONFIG\\."   'bat-mode))
+        (list (cons "AUTOEXEC\\." 'bat-mode))
+        auto-mode-alist))
+
+(autoload 'bat-mode "bat-mode"
+      "DOS and Windows BAT files" t)
+
 ;; truncation of lines in partial windows
 (setq truncate-lines t)
 (setq truncate-partial-width-window nil)
@@ -86,9 +102,15 @@
 ;; auto-scroll while compilation
 (setq compilation-scroll-output t)
 
-;; move between windows with M-↑→↓←
+;; move between windows with M-arrow
 (windmove-default-keybindings 'meta)
+(setq windmove-wrap-around t)
 
+;;; shortcuts to enlarge-shrink windows
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
 ;;;;;;;;;;;;;;;;;;
 ;; auto-install ;;
@@ -118,3 +140,53 @@
 	try-complete-lisp-symbol-partially
 	try-complete-lisp-symbol
 	))
+
+;;; new macro declare-abbrev
+(require 'cl)
+(defvar my-abbrev-tables nil)
+(defun my-abbrev-hook ()
+(let ((def (assoc (symbol-name last-abbrev) my-abbrev-tables)))
+(when def
+(execute-kbd-macro (cdr def)))
+t))
+(put 'my-abbrev-hook 'no-self-insert t)
+(defmacro declare-abbrevs (table abbrevs)
+(if (consp table)
+`(progn ,@(loop for tab in table
+collect `(declare-abbrevs ,tab ,abbrevs)))
+`(progn
+,@(loop for abbr in abbrevs
+do (when (third abbr)
+(push (cons (first abbr) (read-kbd-macro (third abbr)))
+my-abbrev-tables))
+collect `(define-abbrev ,table
+,(first abbr) ,(second abbr) ,(and (third abbr)
+''my-abbrev-hook))))))
+(put 'declare-abbrevs 'lisp-indent-function 2)
+
+;;; sample abbrev code definition
+;;; c/c++ mode
+(eval-after-load "cc-mode"
+  '(declare-abbrevs (c-mode-abbrev-table c++-mode-abbrev-table)
+       (("#s"    "#include <>" "C-b")
+	("#i"    "#include \"\"" "C-b")
+	("#ifn"  "#ifndef")
+	("#e"    "#endif /* */" "C-3 C-b")
+	("#ifd"  "#ifdef")
+	("imain" "int\nmain (int ac, char **av[])\n{\n\n}" "C-p TAB")
+	("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
+	("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
+	("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
+	("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d")
+	("pr"    "printf (\"\")" "C-2 C-b"))))
+;;; java mode
+(eval-after-load "cc-mode"
+  '(declare-abbrevs (java-mode-abbrev-table)
+       (("main(" "public static void main(String[] args) {\n\n}" "C-p TAB C-h")
+	("println"   "System.out.println()" "C-b")
+	("print"   "System.out.print()" "C-b")
+	("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
+	("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
+	("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
+	("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d")
+	("pr"    "printf (\"\")" "C-2 C-b"))))

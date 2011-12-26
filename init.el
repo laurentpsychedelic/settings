@@ -1,14 +1,24 @@
+;; tool bar/scroll bar off
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+;; start with maximized window on Windows
+;(w32-send-sys-command 61488)
+(defun w32-maximize-frame ()
+  "Maximize the current frame"
+  (interactive)
+  (w32-send-sys-command 61488))
+ 
+(add-hook 'window-setup-hook 'w32-maximize-frame t)
+
 ;; color settings
-(setq default-frame-alist
-    '((top  . 200) (left  . 400)
-      (width. 80 ) (height. 40 )
-      (cursor-color . "white")
-      (cursor-type . box)
-      (foreground-color . "yellow")
-      ;;(background-color . "black")
-      (font . "-*-Courier-normal-r-*-*-13-*-*-*-c-*-iso8859-1")))
-;; window position
-(setq initial-frame-alist '((top . 10) (left . 30) (width . 140) (height . 50)))
+(custom-set-faces
+ '(default ((t
+             (:background "black" 
+	      :foreground "white" 
+	      :font "-outline-Courier New-normal-normal-normal-mono-11-*-*-*-c-*-iso8859-1"
+	      :cursor-type "box")
+             ))))
 
 ;; locale
 (setenv "LC_TIME" "C")
@@ -67,10 +77,6 @@
 
 ;; replace yes/no reply by y/n reply
 (defalias 'yes-or-no-p 'y-or-n-p)
-
-;; tool bar/scroll bar off
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
 
 ;; Add dir to load path
 (add-to-list 'load-path "~/.emacs.d/")

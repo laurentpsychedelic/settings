@@ -1,20 +1,20 @@
-((("global-hl-line-mode" .
-   [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("setq" .
-   [1 0 0 0])
-  ("hippie-expand" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0])
-  ("try-completion" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0 0])
-  ("try-complete-file-name-partially" .
-   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("try-expand-all-abbrevs" .
-   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("try-expand-dabbrevs" .
-   [0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("try-complete-lisp-symbol-partially" .
-   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+((("d" .
+   [1])
   ("s" .
    [1])
-  ("d" .
-   [1])))
+  ("try-complete-lisp-symbol-partially" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("try-expand-dabbrevs" .
+   [0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("try-expand-all-abbrevs" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("try-complete-file-name-partially" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("try-completion" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("hippie-expand" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("setq" .
+   [1 0 0 0])
+  ("global-hl-line-mode" .
+   [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])))

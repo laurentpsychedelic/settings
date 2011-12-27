@@ -43,18 +43,18 @@ main (int ac, char **av[])
     ("#s" "#include <>" my-abbrev-hook 0)
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 2)
     ("for" "for (;;) {
 }
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 2)
     ("imain" "int
 main (int ac, char **av[])
 {
 
-}" my-abbrev-hook 0)
+}" my-abbrev-hook 1)
     ("pr" "printf (\"\")" my-abbrev-hook 0)
     ("while" "while () {
 }
@@ -156,10 +156,13 @@ main (int ac, char **av[])
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("if" "if () {
 }
 " my-abbrev-hook 0)
+    ("main" "public static void main(String[] args) {
+
+}" my-abbrev-hook 1)
     ("main(" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
@@ -179,6 +182,8 @@ main (int ac, char **av[])
 (define-abbrev-table 'objc-mode-abbrev-table
   '(
    ))
+
+(define-abbrev-table 'outline-mode-abbrev-table '())
 
 (define-abbrev-table 'pike-mode-abbrev-table
   '(

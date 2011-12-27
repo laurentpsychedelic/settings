@@ -146,6 +146,16 @@
 	try-complete-lisp-symbol
 	))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; which-function-mode ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(which-func-mode 1)
+;; aply which-func-mode for all major modes
+(setq which-func-modes t)
+;; display function name in a bar above screen
+(delete (assoc 'which-func-mode mode-line-format) mode-line-format)
+(setq-default header-line-format '(which-func-mode ("" which-func-format)))
+
 ;;; new macro declare-abbrev
 (require 'cl)
 (defvar my-abbrev-tables nil)

@@ -1,0 +1,198 @@
+
+
+
+GOZILLA(1)                                             GOZILLA(1)
+
+
+NNAAMMEE
+       gozilla  -  force  mozilla  to display specified part of a
+       source file.
+
+SSYYNNOOPPSSIISS
+       ggoozziillllaa [-b browser][-p][+no] file
+       ggoozziillllaa [-b browser][-p] -d name
+
+DDEESSCCRRIIPPTTIIOONN
+       GGoozziillllaa forces mmoozziillllaa to  display  specified  part  of  a
+       source file.  GGoozziillllaa can be used with other browsers like
+       firefox and epiphany.
+
+       In  advance  of  using  this  command,  you  must  execute
+       ggttaaggss(1)  and  hhttaaggss(1) at the root directory of a project
+       to make tag files.  Then you can execute this command any-
+       where in the project.
+
+       First form:
+       You  can  specify  a source file and optional line number.
+       This syntax is similar to vvii(1) and eemmaaccss(1).
+
+       Second form:
+       You can specify a definition name directly. The definition
+       name should exist in 'GTAGS'.
+
+       Some  browsers  require  you  to  load it before executing
+       ggoozziillllaa.
+
+OOPPTTIIOONNSS
+       The following options are available:
+
+       ++nnoo    Line number.
+
+       --bb _b_r_o_w_s_e_r
+              Browser to use. By default, it is assumed  mmoozziillllaa.
+
+       --dd _n_a_m_e
+              Print object definitions.
+
+       ----hheellpp Show help.
+
+       --pp     Print  just  a  generated URL instead of displaying
+              it.
+
+       _f_i_l_e   File name or alias name.
+
+       --qq, ----qquuiieett
+              Quiet mode.
+
+       --vv, ----vveerrbboossee
+              Verbose mode.
+
+
+
+
+
+GNU Project                 March 2010                          1
+
+
+
+
+
+GOZILLA(1)                                             GOZILLA(1)
+
+
+       ----vveerrssiioonn
+              Show version number.
+
+FFIILLEESS
+       'HTML/'
+              Hypertext of source code.
+
+       'GTAGS/'
+              Tag file for object definitions.
+
+       '$HOME/.gozillarc'
+              Alias file. Please read source code for the detail.
+
+EENNVVIIRROONNMMEENNTT
+       GGTTAAGGSSRROOOOTT
+              The root directory of the project.
+
+       GGTTAAGGSSDDBBPPAATTHH
+              The directory on which tag files exist.  This value
+              is ignored when GTAGSROOT is not defined.
+
+       BBRROOWWSSEERR
+              Browser to use. By default, it is assumed  mmoozziillllaa.
+
+EEXXAAMMPPLLEESS
+       $ gtags
+       $ htags
+       $ global -x main
+       main              82 ctags.c          main(argc, argv)
+       $ mozilla &
+       $ gozilla +82 ctags.c
+       $ gozilla -d main
+
+       $ firefox &
+       $ gozilla -b firefox +82 ctags.c
+
+DDIIAAGGNNOOSSTTIICCSS
+       GGoozziillllaa  exits  with a non 0 value if an error occurred, 0
+       otherwise.
+
+SSEEEE AALLSSOO
+       gglloobbaall(1), ggttaaggss(1),  hhttaaggss(1),  ffiirreeffooxx(1),  eeppiipphhaannyy(1),
+       mmoozziillllaa(1).
+
+       GNU GLOBAL source code tag system
+       (http://www.gnu.org/software/global/).
+
+BBUUGGSS
+       GGoozziillllaa  can  accept  not  only source files but also text
+       files, directories, HTML files and even URLs,  because  it
+       is omnivorous.
+
+AAUUTTHHOORRSS
+       Shigio YAMAGUCHI.
+
+
+
+GNU Project                 March 2010                          2
+
+
+
+
+
+GOZILLA(1)                                             GOZILLA(1)
+
+
+HHIISSTTOORRYY
+       The  ggoozziillllaa command appeared in FreeBSD 2.2.2 but was not
+       installed by default.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GNU Project                 March 2010                          3
+
+

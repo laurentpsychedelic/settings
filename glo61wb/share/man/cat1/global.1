@@ -1,0 +1,396 @@
+
+
+
+GLOBAL(1)                                               GLOBAL(1)
+
+
+NNAAMMEE
+       global - print locations of the specified object.
+
+SSYYNNOOPPSSIISS
+       gglloobbaall [-adGilnqrstTvx][-e] _p_a_t_t_e_r_n
+       gglloobbaall -c[diIoOPqrsv] _p_r_e_f_i_x
+       gglloobbaall -f[adnqrstvx][-L file-list] _f_i_l_e_s
+       gglloobbaall -g[aGilnoOqtvVx][-L file-list][-e] _p_a_t_t_e_r_n [_f_i_l_e_s]
+       gglloobbaall -I[ailnqtvx][-e] _p_a_t_t_e_r_n
+       gglloobbaall -P[aGilnoOqtvVx][-e] _p_a_t_t_e_r_n
+       gglloobbaall -p[qrv]
+       gglloobbaall -u[qv]
+
+DDEESSCCRRIIPPTTIIOONN
+       GGlloobbaall  finds locations of the specified object in C, C++,
+       Yacc, Java, PHP and Assembly source files, and  print  the
+       path  name,  line  number and line image of the locations.
+       GGlloobbaall can locate not only  object  definitions  but  also
+       object references and other symbols.
+
+       GGlloobbaall  can treat a source tree, that is, a directory that
+       has sub-directories and source files, as  a  project.   In
+       advance  of  using this command, you must execute ggttaaggss(1)
+       at the root directory of a  project  to  make  tag  files.
+       Then you can execute this command anywhere in the project.
+       You need not specify where  the  tag  file  is.   Instead,
+       gglloobbaall locates it by itself.
+
+       You  can  specify  a  regular  expression for the _p_a_t_t_e_r_n.
+       GGlloobbaall  understands  two  different  versions  of  regular
+       expression  syntax:  _b_a_s_i_c  and  _e_x_t_e_n_d_e_d.  The default is
+       _e_x_t_e_n_d_e_d.
+
+CCOOMMMMAANNDDSS
+       The following commands are available:
+
+       <no command> _p_a_t_t_e_r_n
+              Print objects  which  match  to  the  _p_a_t_t_e_r_n.   By
+              default, print object definitions.
+
+       --cc, ----ccoommpplleettiioonn [_p_r_e_f_i_x]
+              Print  object  names which start with the specified
+              _p_r_e_f_i_x.  If _p_r_e_f_i_x  is  not  specified,  print  all
+              object names.
+
+       --ff, ----ffiillee _f_i_l_e_s
+              Print  all  objects  in  the  _f_i_l_e_s.   This  option
+              implies the --xx option.
+
+       --gg, ----ggrreepp _p_a_t_t_e_r_n [_f_i_l_e_s]
+              Print all lines which match  to  the  _p_a_t_t_e_r_n.   If
+              _f_i_l_e_s  is  specified,  this command searches in the
+              files.
+
+
+
+
+GNU Project               September 2011                        1
+
+
+
+
+
+GLOBAL(1)                                               GLOBAL(1)
+
+
+       ----hheellpp Show help.
+
+       --II, ----iidduuttiillss _p_a_t_t_e_r_n
+              Print all lines which match to the  _p_a_t_t_e_r_n.   This
+              function use iidduuttiillss(1) as a search engine.  To use
+              this command, you need  to  install  iidduuttiillss(1)  in
+              your  system  and  execute  ggttaaggss(1)  with  the  --II
+              option.
+
+       --PP, ----ppaatthh [_p_a_t_t_e_r_n]
+              Print path names which match to the _p_a_t_t_e_r_n.  If no
+              pattern specified, print all path names in the pro-
+              ject.
+
+       --pp, ----pprriinntt--ddbbppaatthh
+              Print the location of 'GTAGS'.
+
+       --uu, ----uuppddaattee
+              Update  tag  files  incrementally.   This   command
+              internally  invokes ggttaaggss(1).  You can execute this
+              command anywhere  in  the  project  differing  from
+              ggttaaggss(1).
+
+       ----vveerrssiioonn
+              Show version number.
+
+OOPPTTIIOONNSS
+       The following options are available:
+
+       --aa, ----aabbssoolluuttee
+              Print  absolute  path name. By default, print rela-
+              tive path name.
+
+       --dd, ----ddeeffiinniittiioonn
+              Print locations of object definitions.
+
+       ----ffrroomm--hheerree _c_o_n_t_e_x_t
+              Decide tag type by the _c_o_n_t_e_x_t. The _c_o_n_t_e_x_t must be
+              'lineno:path'.   If  this  option is specified then
+              the --ss and --rr are ignored.  Regular  expression  is
+              not  allowed  for the _p_a_t_t_e_r_n.  This option assumes
+              use in conversational environments such as  editors
+              and IDEs.
+
+       --ee, ----rreeggeexxpp _p_a_t_t_e_r_n
+              Use  _p_a_t_t_e_r_n as the pattern; useful to protect pat-
+              terns beginning with '-'.
+
+       ----eennccooddee--ppaatthh _c_h_a_r_s
+              Convert path characters in _c_h_a_r_s into a '%' symbol,
+              followed  by  the two-digit hexadecimal representa-
+              tion of the character.  A blank will  be  converted
+              to '%20'.
+
+
+
+
+GNU Project               September 2011                        2
+
+
+
+
+
+GLOBAL(1)                                               GLOBAL(1)
+
+
+       --GG, ----bbaassiicc--rreeggeexxpp
+              Interpret  _p_a_t_t_e_r_n  as  a basic regular expression.
+              The default is extended regular expression.
+
+       --ii, ----iiggnnoorree--ccaassee
+              Ignore case distinctions in the pattern.
+
+       --ll, ----llooccaall
+              Print only objects which exist  under  the  current
+              directory.
+
+       --LL, ----ffiillee--lliisstt _f_i_l_e_-_l_i_s_t
+              Obtain  files  from  _f_i_l_e_-_l_i_s_t  in  addition to the
+              arguments.
+
+       ----lliitteerraall
+              Execute literal search instead of  regular  expres-
+              sion search.  This option is only valid when the --gg
+              command is specified.
+
+       ----mmaattcchh--ppaarrtt _p_a_r_t
+              Specify the matched part of path name.  This option
+              is  valid  only  with  the  --cc  command with the --PP
+              option, The default is _a_l_l.
+
+       --nn, ----nnooffiilltteerr
+              Suppress sort filter and path conversion filter.
+
+       --OO, ----oonnllyy--ootthheerr
+              Treat only text files other than source  code  like
+              'README'.  This option is valid only with the --gg or
+              --PP command.  This option overrides the --oo option.
+
+       --oo, ----ootthheerr
+              Treat not only source files  but  also  text  files
+              other  than source code like 'README'.  This option
+              is valid only with the --gg or --PP command.
+
+       ----pprriinntt00
+              Print each record  followed  by  a  null  character
+              instead of a newline.
+
+       --qq, ----qquuiieett
+              Quiet mode.
+
+       --rr, ----rreeffeerreennccee, ----rroooottddiirr
+              Print  locations of object references.  With the --pp
+              option, print the root directory of the project.
+
+       ----rreessuulltt _f_o_r_m_a_t
+              Print out using the specified _f_o_r_m_a_t.   _f_o_r_m_a_t  may
+              be  _p_a_t_h,  _c_t_a_g_s,  _c_t_a_g_s_-_x,  _g_r_e_p  or  _c_s_c_o_p_e.  The
+              default   is   _p_a_t_h.    The   ----rreessuulltt==ccttaaggss    and
+              ----rreessuulltt==ccttaaggss--xx  are  equivalent  to the --tt and --xx
+
+
+
+GNU Project               September 2011                        3
+
+
+
+
+
+GLOBAL(1)                                               GLOBAL(1)
+
+
+              respectively.  The ----rreessuulltt option  is  given  more
+              priority than the -t and -x options.
+
+       --ss, ----ssyymmbbooll
+              Print  locations of the specified symbol other than
+              definitions.
+
+       --TT, ----tthhrroouugghh
+              Go through all the tag files  listed  in  GGTTAAGGSSLLIIBB--
+              PPAATTHH.   By  default,  stop  searching  when  tag is
+              found.  This option is ignored when either  --ss,  --rr
+              or --ll option is specified.
+
+       --tt, ----ttaaggss
+              Use standard ctags format.
+
+       --vv, ----vveerrbboossee
+              Verbose mode.
+
+       --VV, ----iinnvveerrtt--mmaattcchh
+              Invert  the sense of matching, to select non-match-
+              ing lines.  This option is valid only with  the  --gg
+              or --PP command.
+
+       --xx, ----ccxxrreeff
+              Use standard ctags cxref (with the _-_x) format.
+
+EEXXAAMMPPLLEESS
+       $ ls -F
+       Makefile      src/    lib/
+       $ gtags
+       $ global main
+       src/main.c
+       $ global -x main
+       main              10 src/main.c  main (argc, argv) {
+       $ global -f src/main.c
+       main              10 src/main.c  main (argc, argv) {
+       func1            55 src/main.c  func1() {
+       func2            72 src/main.c  func2() {
+       func3           120 src/main.c  func3() {
+       $ global -x '^[sg]et'
+       set_num           20 lib/util.c  set_num(values) {
+       get_num           30 lib/util.c  get_num() {
+       $ global -rx '^[sg]et'
+       get_num          205 src/op.c            while (get_num() > 0) {
+       set_num          113 src/op.c            set_num(32);
+       set_num          225 src/opop.c               if (set_num(0) > 0) {
+       $ global strlen
+       $ (cd /usr/src/sys; gtags)
+       $ export GTAGSLIBPATH=/usr/src/sys
+       $ global strlen
+       $ (cd /usr/src/lib; gtags)
+       $ GTAGSLIBPATH=/usr/src/lib:/usr/src/sys
+       $ global strlen
+
+
+
+GNU Project               September 2011                        4
+
+
+
+
+
+GLOBAL(1)                                               GLOBAL(1)
+
+
+FFIILLEESS
+       'GTAGS'
+              Tag file for object definitions.
+
+       'GRTAGS'
+              Tag file for object references.
+
+       'GPATH'
+              Tag file for path of source files.
+
+       'GTAGSROOT'
+              If  environment  variable  GGTTAAGGSSRROOOOTT is not set and
+              file 'GTAGSROOT' exists in the same directory  with
+              'GTAGS'  then gglloobbaall sets GGTTAAGGSSRROOOOTT to the contents
+              of the file.
+
+       '$HOME/.globalrc', '/etc/gtags.conf',
+       '[sysconfdir]/gtags.conf'
+              Configuration files.
+
+EENNVVIIRROONNMMEENNTT
+       The  following  environment variables affect the execution
+       of gglloobbaall:
+
+       GGTTAAGGSSRROOOOTT
+              The root directory of the project.
+
+       GGTTAAGGSSDDBBPPAATTHH
+              The directory on which tag files exist.  This value
+              is ignored when GGTTAAGGSSRROOOOTT is not defined.
+
+       GGTTAAGGSSLLIIBBPPAATTHH
+              If  this variable is set, it is used as the path to
+              search for  library  functions.  If  the  specified
+              object  is  not  found  in the project, gglloobbaall also
+              search in these paths.  Since only 'GTAGS' is  tar-
+              geted  in  the  retrieval, this variable is ignored
+              when the --rr or --ss is specified.
+
+       GGTTAAGGSSCCOONNFF
+              Configuration file. The  default  is  '$HOME/.glob-
+              alrc'.
+
+       GGTTAAGGSSLLAABBEELL
+              Configuration label. The default is _d_e_f_a_u_l_t.
+
+       MMAAKKEEOOBBJJDDIIRRPPRREEFFIIXX
+              If  this  variable  is  set, '$MAKEOBJDIRPREFIX' is
+              used as the prefix of BSD-style objdir. The default
+              is '/usr/obj'.
+
+       GGTTAAGGSSTTHHRROOUUGGHH
+              If  this  variable  is set, the --TT option is speci-
+              fied.
+
+
+
+GNU Project               September 2011                        5
+
+
+
+
+
+GLOBAL(1)                                               GLOBAL(1)
+
+
+       GGTTAAGGSSBBLLAANNKKEENNCCOODDEE
+              If this variable  is  set,  the  --encode="  <TAB>"
+              option is specified.
+
+CCOONNFFIIGGUURRAATTIIOONN
+       The following configuration variables affect the execution
+       of gglloobbaall:
+
+       icase_path(boolean)
+              Ignore case distinctions in the _p_a_t_t_e_r_n.
+
+DDIIAAGGNNOOSSTTIICCSS
+       GGlloobbaall exits with a non 0 value if an  error  occurred,  0
+       otherwise.
+
+SSEEEE AALLSSOO
+       ggttaaggss(1), hhttaaggss(1), lleessss(1).
+
+       GNU GLOBAL source code tag system
+       (http://www.gnu.org/software/global/).
+
+AAUUTTHHOORR
+       Shigio YAMAGUCHI, Hideki IWAMOTO and others.
+
+HHIISSTTOORRYY
+       The gglloobbaall command appeared in FreeBSD 2.2.2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GNU Project               September 2011                        6
+
+

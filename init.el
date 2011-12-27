@@ -226,7 +226,15 @@
 (global-set-key (kbd "<S-M-f7>")  'fold-dwim-show-all)
 ;; (put 'org-mode 'fold-dwim-outline-style 'nested)
 
-
+;;;;;;;;;;;
+;; gtags ;;
+;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/glo61wb/share/gtags")
+(autoload 'gtags-mode "gtags" "" t)
+(require 'gtags)
+(add-hook 'c-mode-common-hook 'gtags-mode)
+(add-hook 'c++-mode-hook 'gtags-mode)
+(add-hook 'java-mode-hook 'gtags-mode)
 
 ;; abbrev_defs file
 (read-abbrev-file "~/.emacs.d/abbrev_defs")

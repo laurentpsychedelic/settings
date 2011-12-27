@@ -207,6 +207,27 @@
  '(lambda ()
     (define-key java-mode-map "\C-cd" 'flymake-display-err-minibuf)))
 
+;;;;;;;;;;;;
+;; hideif ;;
+;;;;;;;;;;;;
+(require 'hideif)
+(add-hook 'c-mode-common-hook 'hide-ifdef-mode)
+
+;;;;;;;;;;;;;;
+;; hideshow ;;
+;;;;;;;;;;;;;;
+(require 'hideshow)
+(require 'fold-dwim)
+
+(add-hook 'java-mode-hook 'hs-minor-mode)
+
+(global-set-key (kbd "<f7>")      'fold-dwim-toggle)
+(global-set-key (kbd "<M-f7>")    'fold-dwim-hide-all)
+(global-set-key (kbd "<S-M-f7>")  'fold-dwim-show-all)
+;; (put 'org-mode 'fold-dwim-outline-style 'nested)
+
+
+
 ;; abbrev_defs file
 (read-abbrev-file "~/.emacs.d/abbrev_defs")
 ;;; new macro declare-abbrev
@@ -250,7 +271,7 @@ collect `(define-abbrev ,table
 ;;; java mode
 (eval-after-load "cc-mode"
   '(declare-abbrevs (java-mode-abbrev-table)
-       (("main(" "public static void main(String[] args) {\n\n}" "C-p TAB C-h")
+       (("main" "public static void main(String[] args) {\n\n}" "C-p TAB C-h")
 	("println"   "System.out.println()" "C-b")
 	("print"   "System.out.print()" "C-b")
 	("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")

@@ -156,6 +156,57 @@
 (delete (assoc 'which-func-mode mode-line-format) mode-line-format)
 (setq-default header-line-format '(which-func-mode ("" which-func-format)))
 
+;;;;;;;;;;;;;;;;;;;
+;; flymake-mode ;;
+;;;;;;;;;;;;;;;;;;;
+(load "flymake")
+(add-hook 'c-mode-common-hook (lambda () (flymake-mode t)))
+;; redefine to remove "check-syntax" target
+(defun flymake-get-make-cmdline (source base-dir)
+  (list "make"
+	(list "-s"
+	      "-C"
+	      base-dir
+	      (concat "CHK_SOURCES=" source)
+	      "SYNTAX_CHECK_MODE=1")))
+;; specify that flymake use ant instead of make
+(setcdr (assoc "\\.java\\'" flymake-allowed-file-name-masks)
+	'(flymake-simple-ant-java-init flymake-simple-java-cleanup))
+;; redefine to remove "check-syntax" target
+(defun flymake-get-ant-cmdline (source base-dir)
+  (list "ant"
+	(list "-buildfile"
+	      (concat base-dir "/" "build.xml"))))
+
+(add-hook 'java-mode-hook
+	  '(lambda ()
+	     (flymake-mode)))
+(setq flymake-log-level -1)
+
+(defun flymake-display-err-minibuf ()
+  "Displays the error/warning for the current line in the minibuffer"
+  (interactive)
+  (let* ((line-no             (flymake-current-line-no))
+         (line-err-info-list  (nth 0 (flymake-find-err-info flymake-err-info line-no)))
+         (count               (length line-err-info-list))
+         (text))
+    (while (> count 0)
+      (when line-err-info-list
+        (let* ((file       (flymake-ler-file (nth (1- count) line-err-info-list)))
+               (full-file  (flymake-ler-full-file (nth (1- count) line-err-info-list)))
+               (cur-text (flymake-ler-text (nth (1- count) line-err-info-list)))
+               (line       (flymake-ler-line (nth (1- count) line-err-info-list))))
+          (setq text (concat text "\n" (format "[%s] %s" line cur-text)))
+          ))
+      (setq count (1- count)))
+    (message text)
+))
+
+(add-hook
+ 'java-mode-hook
+ '(lambda ()
+    (define-key java-mode-map "\C-cd" 'flymake-display-err-minibuf)))
+
 ;;; new macro declare-abbrev
 (require 'cl)
 (defvar my-abbrev-tables nil)

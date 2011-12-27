@@ -208,7 +208,7 @@
     (define-key java-mode-map "\C-cd" 'flymake-display-err-minibuf)))
 
 ;; abbrev_defs file
-(read-abbrev-file "~/.emacs.d/.abbrev_defs")
+(read-abbrev-file "~/.emacs.d/abbrev_defs")
 ;;; new macro declare-abbrev
 (require 'cl)
 (defvar my-abbrev-tables nil)

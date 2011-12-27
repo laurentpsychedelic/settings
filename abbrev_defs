@@ -1,17 +1,87 @@
 ;;-*-coding: emacs-mule;-*-
 (define-abbrev-table 'Buffer-menu-mode-abbrev-table '())
 
-(define-abbrev-table 'antlr-mode-abbrev-table '())
+(define-abbrev-table 'Custom-mode-abbrev-table '())
 
-(define-abbrev-table 'awk-mode-abbrev-table '())
+(define-abbrev-table 'awk-mode-abbrev-table
+  '(
+   ))
 
-(define-abbrev-table 'c++-mode-abbrev-table '())
+(define-abbrev-table 'c++-mode-abbrev-table
+  '(
+    ("#e" "#endif /* */" my-abbrev-hook 0)
+    ("#i" "#include \"\"" my-abbrev-hook 0)
+    ("#ifd" "#ifdef" nil 0)
+    ("#ifn" "#ifndef" nil 0)
+    ("#s" "#include <>" my-abbrev-hook 0)
+    ("else" "else {
+}
+" my-abbrev-hook 0)
+    ("for" "for (;;) {
+}
+" my-abbrev-hook 0)
+    ("if" "if () {
+}
+" my-abbrev-hook 0)
+    ("imain" "int
+main (int ac, char **av[])
+{
 
-(define-abbrev-table 'c-mode-abbrev-table '())
+}" my-abbrev-hook 0)
+    ("pr" "printf (\"\")" my-abbrev-hook 0)
+    ("while" "while () {
+}
+" my-abbrev-hook 0)
+   ))
+
+(define-abbrev-table 'c-mode-abbrev-table
+  '(
+    ("#e" "#endif /* */" my-abbrev-hook 0)
+    ("#i" "#include \"\"" my-abbrev-hook 0)
+    ("#ifd" "#ifdef" nil 0)
+    ("#ifn" "#ifndef" nil 0)
+    ("#s" "#include <>" my-abbrev-hook 0)
+    ("else" "else {
+}
+" my-abbrev-hook 0)
+    ("for" "for (;;) {
+}
+" my-abbrev-hook 0)
+    ("if" "if () {
+}
+" my-abbrev-hook 0)
+    ("imain" "int
+main (int ac, char **av[])
+{
+
+}" my-abbrev-hook 0)
+    ("pr" "printf (\"\")" my-abbrev-hook 0)
+    ("while" "while () {
+}
+" my-abbrev-hook 0)
+   ))
+
+(define-abbrev-table 'change-log-mode-abbrev-table '())
 
 (define-abbrev-table 'comint-mode-abbrev-table '())
 
 (define-abbrev-table 'completion-list-mode-abbrev-table '())
+
+(define-abbrev-table 'conf-colon-mode-abbrev-table '())
+
+(define-abbrev-table 'conf-javaprop-mode-abbrev-table '())
+
+(define-abbrev-table 'conf-ppd-mode-abbrev-table '())
+
+(define-abbrev-table 'conf-space-mode-abbrev-table '())
+
+(define-abbrev-table 'conf-unix-mode-abbrev-table '())
+
+(define-abbrev-table 'conf-windows-mode-abbrev-table '())
+
+(define-abbrev-table 'conf-xdefaults-mode-abbrev-table '())
+
+(define-abbrev-table 'diff-mode-abbrev-table '())
 
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
 
@@ -19,40 +89,104 @@
 
 (define-abbrev-table 'global-abbrev-table
   '(
+    ("apped" "append" nil 1)
     ("atuo" "auto" nil 1)
     ("auot" "auto" nil 1)
     ("beenn" "been" nil 1)
     ("bufer" "buffer" nil 1)
+    ("cakculation" "Calculation" nil 1)
     ("casncelled" "cancelled" nil 1)
+    ("chich" "which" nil 1)
+    ("chweck" "check" nil 1)
+    ("classpaht" "classpth" nil 1)
+    ("classpth" "classpath" nil 1)
     ("colroing" "coloring" nil 1)
     ("comlpete" "complete" nil 1)
     ("complte" "complete" nil 1)
+    ("correctr" "correct" nil 1)
+    ("defore" "before" nil 1)
+    ("dimensuion" "Dimension" nil 1)
     ("dound" "found" nil 4)
     ("enablle" "enable" nil 1)
+    ("flase" "false" nil 1)
     ("found" "dound" nil 2)
     ("histroy" "history" nil 1)
+    ("inffo" "info" nil 1)
+    ("instane" "instance" nil 1)
+    ("langauge" "LANGUAGE" nil 1)
+    ("linekd" "Linked" nil 1)
+    ("linkedlsit" "LinkedList" nil 3)
     ("memoru" "memory" nil 1)
     ("mesages" "messages" nil 1)
     ("mide" "mode" nil 1)
     ("nasme" "name" nil 1)
+    ("nbame" "name" nil 1)
     ("nll" "null" nil 1)
+    ("nrew" "new" nil 1)
     ("over6ride" "Override" nil 1)
     ("pasth" "path" nil 1)
+    ("pulic" "public" nil 2)
+    ("putr" "put" nil 1)
+    ("recangle" "Rectangle" nil 1)
+    ("redct" "rect" nil 1)
+    ("redfine" "redefine" nil 1)
+    ("retunr" "return" nil 1)
     ("sdtokes" "strokes" nil 1)
+    ("sfn" "svn" nil 1)
+    ("stats" "status" nil 1)
+    ("statua" "status" nil 1)
+    ("string" "String" nil 2)
+    ("stringbuolder" "StringBuilder" nil 1)
+    ("thjen" "then" nil 1)
+    ("thois" "this" nil 1)
+    ("unti" "unit" nil 2)
     ("wundow" "window" nil 1)
    ))
 
-(define-abbrev-table 'grep-mode-abbrev-table '())
+(define-abbrev-table 'html-mode-abbrev-table '())
 
 (define-abbrev-table 'idl-mode-abbrev-table '())
 
-(define-abbrev-table 'java-mode-abbrev-table '())
+(define-abbrev-table 'java-mode-abbrev-table
+  '(
+    ("else" "else {
+}
+" my-abbrev-hook 0)
+    ("for" "for (;;) {
+}
+" my-abbrev-hook 0)
+    ("if" "if () {
+}
+" my-abbrev-hook 0)
+    ("main(" "public static void main(String[] args) {
+
+}" my-abbrev-hook 0)
+    ("pr" "printf (\"\")" my-abbrev-hook 0)
+    ("print" "System.out.print()" my-abbrev-hook 0)
+    ("println" "System.out.println()" my-abbrev-hook 0)
+    ("psp" "System.out.println()" my-abbrev-hook 1)
+    ("while" "while () {
+}
+" my-abbrev-hook 0)
+   ))
 
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
-(define-abbrev-table 'objc-mode-abbrev-table '())
+(define-abbrev-table 'log-edit-mode-abbrev-table '())
 
-(define-abbrev-table 'pike-mode-abbrev-table '())
+(define-abbrev-table 'objc-mode-abbrev-table
+  '(
+   ))
+
+(define-abbrev-table 'pike-mode-abbrev-table
+  '(
+   ))
+
+(define-abbrev-table 'select-tags-table-mode-abbrev-table '())
+
+(define-abbrev-table 'sgml-mode-abbrev-table '())
+
+(define-abbrev-table 'sh-mode-abbrev-table '())
 
 (define-abbrev-table 'shell-mode-abbrev-table '())
 

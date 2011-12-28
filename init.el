@@ -285,6 +285,16 @@
 ;; (run-with-idle-timer 0.5 t 'auto-save-buffers "\\.c$" "^$") ; .c ‚¾‚¯‘ÎÛ
 ;; (run-with-idle-timer 0.5 t 'auto-save-buffers ""   "\\.h$") ; .h ‚¾‚¯œŠO
 
+;;;;;;;;;;;;;
+;; recentf ;;
+;;;;;;;;;;;;;
+;; set the number of recent files to be saved
+(setq recentf-max-saved-items 3000)
+
+;; set files to be excluded
+;; (setq recentf-exclude '("/TAGS$" "/var/tmp/"))
+(require 'recentf-ext)
+(global-set-key (kbd "C-x C-o") 'recentf-open-files)
 
 ;; abbrev_defs file
 (read-abbrev-file "~/.emacs.d/abbrev_defs")

@@ -249,6 +249,33 @@
 (add-hook 'c++-mode-hook 'gtags-mode)
 (add-hook 'java-mode-hook 'gtags-mode)
 
+;;;;;;;;;;;;;
+;; tempbuf ;;
+;;;;;;;;;;;;;
+(require 'tempbuf)
+;; enable tempbuf when opening file
+(add-hook 'find-file-hooks 'turn-on-tempbuf-mode)
+;; enable tempbuf when using dired
+(add-hook 'dired-mode-hook 'turn-on-tempbuf-mode)
+
+;; also turn tempbuf on for emacs, W3 (Emacs' Web Browser) buffers,
+;; UNIX 'man' documentation buffers, and any buffer with view-mode activated.
+(add-hook 'custom-mode-hook 'turn-on-tempbuf-mode)
+(add-hook 'w3-mode-hook 'turn-on-tempbuf-mode)
+(add-hook 'Man-mode-hook 'turn-on-tempbuf-mode)
+(add-hook 'view-mode-hook 'turn-on-tempbuf-mode)
+;; * Tricks
+;; tempbuf-mode to terminate idle
+;;     (defun my-term-on-tempbuf-expire ()
+;;       (when (get-buffer-process (current-buffer))
+;;         (term-send-eof)))
+;;     (defun my-term-mode-patch ()
+;;       (turn-on-tempbuf-mode)
+;;       (add-hook 'tempbuf-expire-hook 'my-term-on-tempbuf-expire
+;;                 nil t))
+;;     (add-hook 'term-mode-hook 'my-term-mode-patch)
+
+
 ;; abbrev_defs file
 (read-abbrev-file "~/.emacs.d/abbrev_defs")
 ;;; new macro declare-abbrev

@@ -117,6 +117,19 @@
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; emacs client related ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+(server-start)
+(defun iconify-emacs-when-server-is-done ()
+  (unless server-clients (iconify-frame)))
+;; iconify Emacs when editing over
+(add-hook 'server-done-hook 'iconify-emacs-when-server-is-done)
+;; keybinding : realocate C-x C-c to server-edit
+(global-set-key (kbd "C-x C-c") 'server-edit)
+;; shut-down Emacs (server) with M-x exit
+(defalias 'exit 'save-buffers-kill-emacs)
+
 ;;;;;;;;;;;;;;;;;;
 ;; auto-install ;;
 ;;;;;;;;;;;;;;;;;;

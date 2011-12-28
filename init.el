@@ -102,7 +102,7 @@
 
 ;; truncation of lines in partial windows
 (setq truncate-lines t)
-(setq truncate-partial-width-window nil)
+(setq truncate-partial-width-windows t)
 
 ;; auto-scroll while compilation
 (setq compilation-scroll-output t)

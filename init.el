@@ -275,6 +275,16 @@
 ;;                 nil t))
 ;;     (add-hook 'term-mode-hook 'my-term-mode-patch)
 
+;;;;;;;;;;;;;;;;;;;;;;;
+;; auto-save-buffers ;;
+;;;;;;;;;;;;;;;;;;;;;;;
+;; original: http://0xcc.net/misc/auto-save/auto-save-buffers.el
+(require 'auto-save-buffers)
+(run-with-idle-timer 2 t 'auto-save-buffers)    ; auto save after 2s. idle time
+;; commands to include or exclude only a certain type of files
+;; (run-with-idle-timer 0.5 t 'auto-save-buffers "\\.c$" "^$") ; .c ‚¾‚¯‘ÎÛ
+;; (run-with-idle-timer 0.5 t 'auto-save-buffers ""   "\\.h$") ; .h ‚¾‚¯œŠO
+
 
 ;; abbrev_defs file
 (read-abbrev-file "~/.emacs.d/abbrev_defs")

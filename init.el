@@ -117,6 +117,28 @@
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
+;; jump to corresponding parenthesis
+(defun goto-match-paren (arg)
+  "Go to the matching parenthesis if on parenthesis. Else go to the
+   opening parenthesis one level up."
+  (interactive "p")
+  (cond ((looking-at "\\s\(") (forward-list 1))
+	(t
+	 (backward-char 1)
+	 (cond ((looking-at "\\s\)")
+		(forward-char 1) (backward-list 1))
+	       (t
+		(while (not (looking-at "\\s("))
+		  (backward-char 1)
+		  (cond ((looking-at "\\s\)")
+			 (message "->> )")
+			 (forward-char 1)
+			 (backward-list 1)
+			 (backward-char 1)))
+		  ))))))
+(global-set-key (kbd "C-(") 'goto-match-paren)
+(global-set-key (kbd "C-)") 'goto-match-paren)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; emacs client related ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;

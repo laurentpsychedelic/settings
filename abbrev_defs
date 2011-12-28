@@ -89,6 +89,7 @@ main (int ac, char **av[])
 
 (define-abbrev-table 'global-abbrev-table
   '(
+    ("antr" "and" nil 1)
     ("apped" "append" nil 1)
     ("atuo" "auto" nil 1)
     ("auot" "auto" nil 1)
@@ -113,6 +114,7 @@ main (int ac, char **av[])
     ("found" "dound" nil 2)
     ("frmae" "frame" nil 1)
     ("histroy" "history" nil 1)
+    ("idel" "idle" nil 1)
     ("inffo" "info" nil 1)
     ("instane" "instance" nil 1)
     ("langauge" "LANGUAGE" nil 1)
@@ -127,6 +129,7 @@ main (int ac, char **av[])
     ("nrew" "new" nil 1)
     ("over6ride" "Override" nil 1)
     ("pasth" "path" nil 1)
+    ("poijnts" "POINTS" nil 1)
     ("pulic" "public" nil 2)
     ("putr" "put" nil 1)
     ("recangle" "Rectangle" nil 1)
@@ -139,8 +142,9 @@ main (int ac, char **av[])
     ("sfn" "svn" nil 1)
     ("stats" "status" nil 1)
     ("statua" "status" nil 1)
-    ("string" "String" nil 2)
+    ("string" "String" nil 3)
     ("stringbuolder" "StringBuilder" nil 1)
+    ("temmpbuf" "tempbuf" nil 1)
     ("thjen" "then" nil 1)
     ("thois" "this" nil 1)
     ("unti" "unit" nil 2)
@@ -155,13 +159,13 @@ main (int ac, char **av[])
   '(
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("for" "for (;;) {
 }
 " my-abbrev-hook 1)
     ("if" "if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("main" "public static void main(String[] args) {
 
 }" my-abbrev-hook 1)
@@ -170,7 +174,7 @@ main (int ac, char **av[])
 }" my-abbrev-hook 0)
     ("pr" "printf (\"\")" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 0)
+    ("println" "System.out.println()" my-abbrev-hook 2)
     ("psp" "System.out.println()" my-abbrev-hook 1)
     ("while" "while () {
 }
@@ -180,6 +184,8 @@ main (int ac, char **av[])
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
 (define-abbrev-table 'log-edit-mode-abbrev-table '())
+
+(define-abbrev-table 'nroff-mode-abbrev-table '())
 
 (define-abbrev-table 'objc-mode-abbrev-table
   '(

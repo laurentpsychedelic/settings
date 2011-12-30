@@ -284,6 +284,13 @@
 (global-set-key (kbd "<f2>")   'bm-next)
 (global-set-key (kbd "<S-f2>") 'bm-previous)
 
+;;;;;;;;;;;;;;
+;; goto-chg ;;
+;;;;;;;;;;;;;;
+(require 'goto-chg)
+(define-key global-map (kbd "<f8>") 'goto-last-change)
+(define-key global-map (kbd "S-<f8>") 'goto-last-change-reverse)
+
 ;;;;;;;;;;;;
 ;; hideif ;;
 ;;;;;;;;;;;;

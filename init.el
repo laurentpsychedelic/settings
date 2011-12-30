@@ -207,7 +207,7 @@
 ;; flymake-mode ;;
 ;;;;;;;;;;;;;;;;;;;
 (load "flymake")
-(add-hook 'c-mode-common-hook (lambda () (flymake-mode t)))
+(add-hook 'java-mode-hook (lambda () (flymake-mode t)))
 ;; redefine to remove "check-syntax" target
 (defun flymake-get-make-cmdline (source base-dir)
   (list "make"
@@ -221,14 +221,16 @@
 	'(flymake-simple-ant-java-init flymake-simple-java-cleanup))
 ;; redefine to remove "check-syntax" target
 (defun flymake-get-ant-cmdline (source base-dir)
-  (list "ant"
+  (list "ant-emacs.sh"
 	(list "-buildfile"
-	      (concat base-dir "/" "build.xml"))))
+;	      (concat base-dir "/" "build.xml")
+	      "../../build.xml"
+	      "compile")))
 
 (add-hook 'java-mode-hook
 	  '(lambda ()
 	     (flymake-mode)))
-(setq flymake-log-level -1)
+(setq flymake-log-level 3)
 
 (defun flymake-display-err-minibuf ()
   "Displays the error/warning for the current line in the minibuffer"
@@ -282,6 +284,29 @@
 (add-hook 'c-mode-common-hook 'gtags-mode)
 (add-hook 'c++-mode-hook 'gtags-mode)
 (add-hook 'java-mode-hook 'gtags-mode)
+(add-hook 'gtags-select-mode-hook
+   '(lambda ()
+     (setq hl-line-face 'underline)
+     (hl-line-mode 1)
+))
+(setq gtags-path-style 'relative)
+(setq view-read-only nil)
+(setq gtags-read-only nil)
+(define-key gtags-select-mode-map "\e*" 'gtags-pop-stack)
+(define-key gtags-select-mode-map "\^?" 'scroll-down)
+(define-key gtags-select-mode-map " " 'scroll-up)
+(define-key gtags-select-mode-map "\C-b" 'scroll-down)
+(define-key gtags-select-mode-map "\C-f" 'scroll-up)
+(define-key gtags-select-mode-map "k" 'previous-line)
+(define-key gtags-select-mode-map "j" 'next-line)
+(define-key gtags-select-mode-map "p" 'previous-line)
+(define-key gtags-select-mode-map "n" 'next-line)
+(define-key gtags-select-mode-map "q" 'gtags-pop-stack)
+(define-key gtags-select-mode-map "u" 'gtags-pop-stack)
+(define-key gtags-select-mode-map "\C-t" 'gtags-pop-stack)
+(define-key gtags-select-mode-map "\C-m" 'gtags-select-tag)
+(define-key gtags-select-mode-map "\C-o" 'gtags-select-tag-other-window)
+(define-key gtags-select-mode-map "\e." 'gtags-select-tag)
 
 ;;;;;;;;;;;;;
 ;; tempbuf ;;

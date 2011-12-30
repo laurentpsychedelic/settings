@@ -265,6 +265,25 @@
 ;;   OR
 (use-sticky-key 'muhenkan sticky-alist:ja)    ; for japanese keyboards
 
+;;;;;;;;
+;; bm ;;
+;;;;;;;;
+(setq-default bm-buffer-persistencenil)
+(setq bm-restore-repository-on-load t)
+(require 'bm)
+(add-hook 'find-file-hooks 'bm-buffer-restore)
+(add-hook 'kill-buffer-hook 'bm-buffer-save)
+(add-hook 'after-save-hook 'bm-buffer-save)
+(add-hook 'after-revert-hook 'bm-buffer-restore)
+(add-hook 'vc-before-checkin-hook 'bm-buffer-save)
+(global-set-key (kbd "M-SPC") 'bm-toggle)
+(global-set-key (kbd "M-[") 'bm-previous)
+(global-set-key (kbd "M-]") 'bm-next)
+;;   M$ Visual Studio key setup.
+(global-set-key (kbd "<C-f2>") 'bm-toggle)
+(global-set-key (kbd "<f2>")   'bm-next)
+(global-set-key (kbd "<S-f2>") 'bm-previous)
+
 ;;;;;;;;;;;;
 ;; hideif ;;
 ;;;;;;;;;;;;

@@ -257,6 +257,15 @@
     (define-key java-mode-map "\C-cd" 'flymake-display-err-minibuf)))
 
 ;;;;;;;;;;;;
+;; sticky ;;
+;;;;;;;;;;;;
+(require 'sticky)
+;; 
+;; (use-sticky-key ?\; sticky-alist:en)    ; for english keyboards
+;;   OR
+(use-sticky-key 'muhenkan sticky-alist:ja)    ; for japanese keyboards
+
+;;;;;;;;;;;;
 ;; hideif ;;
 ;;;;;;;;;;;;
 (require 'hideif)

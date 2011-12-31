@@ -151,6 +151,14 @@
 (global-set-key (kbd "C-(") 'goto-match-paren)
 (global-set-key (kbd "C-)") 'goto-match-paren)
 
+;;;;;;;;;;;;;;;;;;;;;;
+;; buffer switching ;;
+;;;;;;;;;;;;;;;;;;;;;;
+(iswitchb-mode 1)
+(setq read-buffer-function 'iswitchb-read-buffer)
+(setq iswitchb-regexp nil)
+(setq iswitchb-prompt-newbuffer nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; emacs client related ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -379,6 +379,14 @@
 ;;;;;;;;;;;;
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 
+;;;;;;;;;;;;;;
+;; summarye ;;
+;;;;;;;;;;;;;;
+(require 'summarye)
+;; (add-to-list 'se/mode-delimiter-alist
+;; 	     '(java-mode "\(\(public\)|\(private\)|\(protected\)\)?.* .*(.*).*")
+;; )
+
 ;;;;;;;;;;;;;
 ;; tempbuf ;;
 ;;;;;;;;;;;;;

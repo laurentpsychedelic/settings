@@ -159,6 +159,13 @@
 (setq iswitchb-regexp nil)
 (setq iswitchb-prompt-newbuffer nil)
 
+;;;;;;;;;;;;;;
+;; uniquify ;;
+;;;;;;;;;;;;;;
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+(setq uniquify-ignore-buffers-re "*[^*]+*")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; emacs client related ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;

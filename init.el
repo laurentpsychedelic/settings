@@ -374,6 +374,11 @@
 (define-key gtags-select-mode-map "\C-o" 'gtags-select-tag-other-window)
 (define-key gtags-select-mode-map "\e." 'gtags-select-tag)
 
+;;;;;;;;;;;;
+;; wdired ;;
+;;;;;;;;;;;;
+(define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
+
 ;;;;;;;;;;;;;
 ;; tempbuf ;;
 ;;;;;;;;;;;;;

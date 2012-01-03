@@ -16,8 +16,8 @@
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))) 
 
 (if (string-equal system-type "gnu/linux")
-    (add-hook 'window-setup-hook 'x11-maximize-frame) ; (print "Not supported on GNU/Linux")
-  (add-hook 'window-setup-hook 'w32-maximize-frame t))
+    (add-hook 'window-setup-hook 'x11-maximize-frame) ; GNU/Linux [Ubuntu]
+  (add-hook 'window-setup-hook 'w32-maximize-frame t)) ; Windows
 
 ; (add-hook 'window-setup-hook 'w32-maximize-frame t)
 

@@ -143,6 +143,7 @@ main (int ac, char **av[])
     ("sdtokes" "strokes" nil 1)
     ("servere" "server" nil 1)
     ("sfn" "svn" nil 1)
+    ("statis" "static" nil 1)
     ("stats" "status" nil 1)
     ("statua" "status" nil 1)
     ("string" "String" nil 3)
@@ -168,7 +169,7 @@ main (int ac, char **av[])
 " my-abbrev-hook 1)
     ("if" "if () {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 4)
     ("main" "public static void main(String[] args) {
 
 }" my-abbrev-hook 1)
@@ -187,6 +188,8 @@ main (int ac, char **av[])
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
 (define-abbrev-table 'log-edit-mode-abbrev-table '())
+
+(define-abbrev-table 'log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'nroff-mode-abbrev-table '())
 

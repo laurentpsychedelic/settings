@@ -234,8 +234,34 @@
 (delete (assoc 'which-func-mode mode-line-format) mode-line-format)
 (setq-default header-line-format '(which-func-mode ("" which-func-format)))
 
+;;;;;;;;;;;;;;;;;;;;
+;; highligh-regex ;;
+;;;;;;;;;;;;;;;;;;;;
+(global-set-key (kbd "<f6>") 'highlight-regexp)
+
+;;;;;;;;;;;;;
+;; compile ;;
+;;;;;;;;;;;;;
+(global-set-key (kbd "<f5>") 'compile)
+
+;;;;;;;;;;;;;;;;;
+;; eval region ;;
+;;;;;;;;;;;;;;;;;
+(defalias 'er 'eval-region)
+
 ;;;;;;;;;;;;;;;;;;;
-;; flymake-mode ;;
+;; col-highlight ;;
+;;;;;;;;;;;;;;;;;;;
+(require 'col-highlight)
+;; 1 or 2 (1: always on)
+(column-highlight-mode 1)
+;; 2: highlight when idle
+(toggle-highlight-column-when-idle 1)
+(col-highlight-set-interval 6) ; highlight time in seconds
+(set-face-background 'col-highlight "darkolivegreen")
+
+;;;;;;;;;;;;;;;;;;;
+;; flymake-mode ;;;
 ;;;;;;;;;;;;;;;;;;;
 (load "flymake")
 (add-hook 'java-mode-hook (lambda () (flymake-mode t)))
@@ -252,7 +278,7 @@
 	'(flymake-simple-ant-java-init flymake-simple-java-cleanup))
 ;; redefine to remove "check-syntax" target
 (defun flymake-get-ant-cmdline (source base-dir)
-  (list "ant-emacs.sh"
+  (list "ant"; "ant-emacs.sh"
 	(list "-buildfile"
 ;	      (concat base-dir "/" "build.xml")
 	      "../../build.xml"

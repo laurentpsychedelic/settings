@@ -278,7 +278,7 @@
 	'(flymake-simple-ant-java-init flymake-simple-java-cleanup))
 ;; redefine to remove "check-syntax" target
 (defun flymake-get-ant-cmdline (source base-dir)
-  (list "ant"; "ant-emacs.sh"
+  (list "ant"
 	(list "-buildfile"
 ;	      (concat base-dir "/" "build.xml")
 	      "../../build.xml"
@@ -288,6 +288,34 @@
 	  '(lambda ()
 	     (flymake-mode)))
 (setq flymake-log-level 3)
+
+(defun my-read-file (file)
+  "read file contents"
+  (when (file-readable-p file)
+    (with-temp-buffer
+      (insert-file-contents file)
+      (goto-char (point-min))
+      ;(while (not (eobp)) ;;used when scanning the whole file
+      (thing-at-point  'line))))
+      ;(forward-line)))))
+
+(defun flymake-vc-init ()
+  (let*  ((temp-file (flymake-init-create-temp-buffer-copy
+                     'flymake-create-temp-inplace))
+         (local-file (file-relative-name
+                      temp-file
+                      (file-name-directory buffer-file-name))))
+;	(list "cl" (list "/nologo" "/W4" "/Wp64" "/Zs" local-file))))
+	(list "cl" (list (my-read-file "cl_settings.cl") file))))
+(push '("\\.c\\'" flymake-vc-init) flymake-allowed-file-name-masks)
+(push '("\\.cpp\\'" flymake-vc-init) flymake-allowed-file-name-masks)
+
+(defadvice flymake-post-syntax-check (before flymake-force-check-was-interrupted)
+  (setq flymake-check-was-interrupted t))
+(ad-activate 'flymake-post-syntax-check)
+
+(add-hook 'c-mode-common-hook (lambda () (flymake-mode t)))
+
 
 (defun flymake-display-err-minibuf ()
   "Displays the error/warning for the current line in the minibuffer"

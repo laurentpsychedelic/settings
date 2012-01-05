@@ -260,6 +260,11 @@
 (col-highlight-set-interval 6) ; highlight time in seconds
 (set-face-background 'col-highlight "darkolivegreen")
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; highlight-indentation ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'highlight-indentation)
+
 ;;;;;;;;;;;;;;;;;;;
 ;; flymake-mode ;;;
 ;;;;;;;;;;;;;;;;;;;

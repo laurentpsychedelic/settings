@@ -306,7 +306,7 @@
                       temp-file
                       (file-name-directory buffer-file-name))))
 ;	(list "cl" (list "/nologo" "/W4" "/Wp64" "/Zs" local-file))))
-	(list "cl" (list (my-read-file "cl_settings.cl") file))))
+	(list "cl" (nconc (split-string (my-read-file "cl_settings.cl") "|") (list local-file)))))
 (push '("\\.c\\'" flymake-vc-init) flymake-allowed-file-name-masks)
 (push '("\\.cpp\\'" flymake-vc-init) flymake-allowed-file-name-masks)
 

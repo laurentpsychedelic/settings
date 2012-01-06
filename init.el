@@ -13,7 +13,7 @@
   "Maximize the current frame (to full screen)"
   (interactive)
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
-  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))) 
+  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
 
 (if (string-equal system-type "gnu/linux")
     (add-hook 'window-setup-hook 'x11-maximize-frame) ; GNU/Linux [Ubuntu]
@@ -57,7 +57,7 @@
 (column-number-mode 1)
 
 ;; coloring region
-(transient-mark-mode 1) 
+(transient-mark-mode 1)
 
 ;; low GC mode (faster)
 (setq gc-cons-threshold (* 10 gc-cons-threshold))
@@ -101,8 +101,8 @@
 (add-to-list 'auto-mode-alist '("\\.groovy\\'" . groovy-mode)) ; Groovy source code
 
 ;; bat-mode
-(setq auto-mode-alist 
-       (append 
+(setq auto-mode-alist
+       (append
         (list (cons "\\.[bB][aA][tT]$" 'bat-mode))
         ;; For DOS init files
         (list (cons "CONFIG\\."   'bat-mode))
@@ -135,19 +135,19 @@
    opening parenthesis one level up."
   (interactive "p")
   (cond ((looking-at "\\s\(") (forward-list 1))
-	(t
-	 (backward-char 1)
-	 (cond ((looking-at "\\s\)")
-		(forward-char 1) (backward-list 1))
-	       (t
-		(while (not (looking-at "\\s("))
-		  (backward-char 1)
-		  (cond ((looking-at "\\s\)")
-			 (message "->> )")
-			 (forward-char 1)
-			 (backward-list 1)
-			 (backward-char 1)))
-		  ))))))
+        (t
+         (backward-char 1)
+         (cond ((looking-at "\\s\)")
+                (forward-char 1) (backward-list 1))
+               (t
+                (while (not (looking-at "\\s("))
+                  (backward-char 1)
+                  (cond ((looking-at "\\s\)")
+                         (message "->> )")
+                         (forward-char 1)
+                         (backward-list 1)
+                         (backward-char 1)))
+                  ))))))
 (global-set-key (kbd "C-(") 'goto-match-paren)
 (global-set-key (kbd "C-)") 'goto-match-paren)
 
@@ -199,14 +199,14 @@
 ;;;;;;;;;;;;;;;;;;;
 (setq hippie-expand-try-functions-list
       '(try-complete-file-name-partially
-	try-complete-file-name
-	try-expand-all-abbrevs
-	try-expand-dabbrevs
-	try-expand-dabbrevs-all-buffers
-	try-expand-dabbrevs-from-kill
-	try-complete-lisp-symbol-partially
-	try-complete-lisp-symbol
-	))
+        try-complete-file-name
+        try-expand-all-abbrevs
+        try-expand-dabbrevs
+        try-expand-dabbrevs-all-buffers
+        try-expand-dabbrevs-from-kill
+        try-complete-lisp-symbol-partially
+        try-complete-lisp-symbol
+        ))
 
 ;;;;;;;;;;;;;;;;
 ;; point-undo ;;
@@ -269,7 +269,25 @@
 ;; indent settings ;;
 ;;;;;;;;;;;;;;;;;;;;;
 (setq-default c-basic-offset 4)
+(setq indent-tabs-mode nil)
+(defun c-java-mode-untabify ()
+  (save-excursion
+      (goto-char (point-min))
+      (while (re-search-forward "[ \t]+$" nil t)
+        (delete-region (match-beginning 0) (match-end 0)))
+      (goto-char (point-min))
+      (if (search-forward "\t" nil t)
+          (untabify (1- (point)) (point-max))))
+    nil)
 
+(add-hook 'java-mode-hook 
+	  '(lambda ()
+	     (make-local-variable 'write-contents-hooks)
+	     (add-hook 'write-contents-hooks 'c-java-mode-untabify)))
+(add-hook 'c-mode-common-hook 
+	  '(lambda ()
+	     (make-local-variable 'write-contents-hooks)
+	     (add-hook 'write-contents-hooks 'c-java-mode-untabify)))
 ;;;;;;;;;;;;;;;;;;;
 ;; flymake-mode ;;;
 ;;;;;;;;;;;;;;;;;;;
@@ -278,25 +296,25 @@
 ;; redefine to remove "check-syntax" target
 (defun flymake-get-make-cmdline (source base-dir)
   (list "make"
-	(list "-s"
-	      "-C"
-	      base-dir
-	      (concat "CHK_SOURCES=" source)
-	      "SYNTAX_CHECK_MODE=1")))
+        (list "-s"
+              "-C"
+              base-dir
+              (concat "CHK_SOURCES=" source)
+              "SYNTAX_CHECK_MODE=1")))
 ;; specify that flymake use ant instead of make
 (setcdr (assoc "\\.java\\'" flymake-allowed-file-name-masks)
-	'(flymake-simple-ant-java-init flymake-simple-java-cleanup))
+        '(flymake-simple-ant-java-init flymake-simple-java-cleanup))
 ;; redefine to remove "check-syntax" target
 (defun flymake-get-ant-cmdline (source base-dir)
   (list "ant"
-	(list "-buildfile"
-;	      (concat base-dir "/" "build.xml")
-	      "../../build.xml"
-	      "compile")))
+        (list "-buildfile"
+;             (concat base-dir "/" "build.xml")
+              "../../build.xml"
+              "compile")))
 
 (add-hook 'java-mode-hook
-	  '(lambda ()
-	     (flymake-mode)))
+          '(lambda ()
+             (flymake-mode)))
 (setq flymake-log-level 3)
 
 (defun my-read-file (file)
@@ -315,8 +333,8 @@
          (local-file (file-relative-name
                       temp-file
                       (file-name-directory buffer-file-name))))
-;	(list "cl" (list "/nologo" "/W4" "/Wp64" "/Zs" local-file))))
-	(list "cl" (nconc (split-string (my-read-file "cl_settings.cl") "|") (list local-file)))))
+;       (list "cl" (list "/nologo" "/W4" "/Wp64" "/Zs" local-file))))
+        (list "cl" (nconc (split-string (my-read-file "cl_settings.cl") "|") (list local-file)))))
 (push '("\\.c\\'" flymake-vc-init) flymake-allowed-file-name-masks)
 (push '("\\.cpp\\'" flymake-vc-init) flymake-allowed-file-name-masks)
 
@@ -355,7 +373,7 @@
 ;; sticky ;;
 ;;;;;;;;;;;;
 (require 'sticky)
-;; 
+;;
 ;; (use-sticky-key ?\; sticky-alist:en)    ; for english keyboards
 ;;   OR
 (use-sticky-key 'muhenkan sticky-alist:ja)    ; for japanese keyboards
@@ -448,7 +466,7 @@
 ;;;;;;;;;;;;;;
 (require 'summarye)
 ;; (add-to-list 'se/mode-delimiter-alist
-;; 	     '(java-mode "\(\(public\)|\(private\)|\(protected\)\)?.* .*(.*).*")
+;;           '(java-mode "\(\(public\)|\(private\)|\(protected\)\)?.* .*(.*).*")
 ;; )
 
 ;;;;;;;;;;;;;
@@ -528,27 +546,27 @@ collect `(define-abbrev ,table
 (eval-after-load "cc-mode"
   '(declare-abbrevs (c-mode-abbrev-table c++-mode-abbrev-table)
        (("#s"    "#include <>" "C-b")
-	("#i"    "#include \"\"" "C-b")
-	("#ifn"  "#ifndef")
-	("#e"    "#endif /* */" "C-3 C-b")
-	("#ifd"  "#ifdef")
-	("imain" "int\nmain (int ac, char **av[])\n{\n\n}" "C-p TAB")
-	("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
-	("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
-	("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
-	("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d")
-	("pr"    "printf (\"\")" "C-2 C-b"))))
+        ("#i"    "#include \"\"" "C-b")
+        ("#ifn"  "#ifndef")
+        ("#e"    "#endif /* */" "C-3 C-b")
+        ("#ifd"  "#ifdef")
+        ("imain" "int\nmain (int ac, char **av[])\n{\n\n}" "C-p TAB")
+        ("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
+        ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
+        ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
+        ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d")
+        ("pr"    "printf (\"\")" "C-2 C-b"))))
 ;;; java mode
 (eval-after-load "cc-mode"
   '(declare-abbrevs (java-mode-abbrev-table)
        (("main" "public static void main(String[] args) {\n\n}" "C-p TAB C-h")
-	("println"   "System.out.println()" "C-b")
-	("print"   "System.out.print()" "C-b")
-	("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
-	("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
-	("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
-	("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d")
-	("pr"    "printf (\"\")" "C-2 C-b"))))
+        ("println"   "System.out.println()" "C-b")
+        ("print"   "System.out.print()" "C-b")
+        ("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
+        ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
+        ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
+        ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d")
+        ("pr"    "printf (\"\")" "C-2 C-b"))))
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.

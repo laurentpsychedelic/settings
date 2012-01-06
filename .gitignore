@@ -4,3 +4,5 @@
 .saves-*
 #git ignore file
 log
+#Emacs server information
+server

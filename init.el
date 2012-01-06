@@ -265,6 +265,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'highlight-indentation)
 
+;;;;;;;;;;;;;;;;;;;;;
+;; indent settings ;;
+;;;;;;;;;;;;;;;;;;;;;
+(setq-default c-basic-offset 4)
+
 ;;;;;;;;;;;;;;;;;;;
 ;; flymake-mode ;;;
 ;;;;;;;;;;;;;;;;;;;

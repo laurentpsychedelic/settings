@@ -1,4 +1,8 @@
-((("my-read-file" .
+((("java-mode-untabify" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("c-java-mode-untabify" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("my-read-file" .
    [0 0 1 0 0 0 0 0 0 0 0 0])
   ("exit" .
    [1 0 0 0])
@@ -81,4 +85,14 @@
   ("goto-last-change-reverse" .
    [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
   ("function" .
-   [1 0 0 0 0 0 0 0])))
+   [1 0 0 0 0 0 0 0])
+  ("camera_panel" .
+   [0 0 0 0 0 0 0 0 1 0 0 0])
+  ("setMeasurementMode" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("setMeasurementAutoexpo" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("REFLECTION_TYPE" .
+   [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("c-mode-common-hook" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])))

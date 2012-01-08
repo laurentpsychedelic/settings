@@ -188,6 +188,12 @@
 (auto-install-compatibility-setup)
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
+;;;;;;;;;
+;; w3m ;;
+;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/emacs-w3m/")
+(require 'w3m-load)
+
 ;;;;;;;;;;;;;;;;;;;
 ;; auto-complete ;;
 ;;;;;;;;;;;;;;;;;;;

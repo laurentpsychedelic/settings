@@ -135,6 +135,7 @@ main (int ac, char **av[])
     ("over6ride" "Override" nil 1)
     ("pasth" "path" nil 1)
     ("poijnts" "POINTS" nil 1)
+    ("publuic" "public" nil 1)
     ("pulic" "public" nil 2)
     ("putr" "put" nil 1)
     ("recangle" "Rectangle" nil 1)
@@ -142,6 +143,8 @@ main (int ac, char **av[])
     ("redfine" "redefine" nil 1)
     ("retrun" "return" nil 1)
     ("retunr" "return" nil 1)
+    ("returnt" "return" nil 1)
+    ("reutrn" "returnt" nil 1)
     ("sdtokes" "strokes" nil 1)
     ("servere" "server" nil 1)
     ("sfn" "svn" nil 1)
@@ -174,7 +177,7 @@ main (int ac, char **av[])
 " my-abbrev-hook 4)
     ("main" "public static void main(String[] args) {
 
-}" my-abbrev-hook 1)
+}" my-abbrev-hook 2)
     ("main(" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
@@ -216,6 +219,8 @@ main (int ac, char **av[])
 (define-abbrev-table 'special-mode-abbrev-table '())
 
 (define-abbrev-table 'text-mode-abbrev-table '())
+
+(define-abbrev-table 'twittering-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
 

@@ -23,12 +23,10 @@
     ("if" "if () {
 }
 " my-abbrev-hook 0)
-    ("imain" "int
-main (int ac, char **av[])
-{
+    ("imain" "int main (int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
-    ("pr" "printf (\"\")" my-abbrev-hook 0)
+    ("printf" "printf (\"\")" my-abbrev-hook 0)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -43,19 +41,17 @@ main (int ac, char **av[])
     ("#s" "#include <>" my-abbrev-hook 0)
     ("else" "else {
 }
-" my-abbrev-hook 2)
+" my-abbrev-hook 0)
     ("for" "for (;;) {
 }
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 2)
-    ("imain" "int
-main (int ac, char **av[])
-{
+" my-abbrev-hook 0)
+    ("imain" "int main (int ac, char **av[]) {
 
-}" my-abbrev-hook 1)
-    ("pr" "printf (\"\")" my-abbrev-hook 0)
+}" my-abbrev-hook 0)
+    ("printf" "printf (\"\")" my-abbrev-hook 0)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -141,6 +137,7 @@ main (int ac, char **av[])
     ("recangle" "Rectangle" nil 1)
     ("redct" "rect" nil 1)
     ("redfine" "redefine" nil 1)
+    ("resolutoin" "resolution" nil 1)
     ("retrun" "return" nil 1)
     ("retunr" "return" nil 1)
     ("returnt" "return" nil 1)
@@ -168,23 +165,18 @@ main (int ac, char **av[])
   '(
     ("else" "else {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 4)
-    ("main" "public static void main(String[] args) {
+" my-abbrev-hook 0)
+    ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 2)
-    ("main(" "public static void main(String[] args) {
-
-}" my-abbrev-hook 0)
-    ("pr" "printf (\"\")" my-abbrev-hook 0)
+}" my-abbrev-hook 1)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 2)
-    ("psp" "System.out.println()" my-abbrev-hook 1)
+    ("println" "System.out.println()" my-abbrev-hook 0)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

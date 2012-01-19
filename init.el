@@ -569,23 +569,22 @@ collect `(define-abbrev ,table
         ("#ifn"  "#ifndef")
         ("#e"    "#endif /* */" "C-3 C-b")
         ("#ifd"  "#ifdef")
-        ("imain" "int\nmain (int ac, char **av[])\n{\n\n}" "C-p TAB")
+        ("imain" "int main (int ac, char **av[]) {\n\n}" "C-p TAB")
         ("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
         ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d")
-        ("pr"    "printf (\"\")" "C-2 C-b"))))
+        ("printf"    "printf (\"\")" "C-2 C-b"))))
 ;;; java mode
 (eval-after-load "cc-mode"
   '(declare-abbrevs (java-mode-abbrev-table)
-       (("main" "public static void main(String[] args) {\n\n}" "C-p TAB C-h")
+       (("imain" "public static void main(String[] args) {\n\n}" "C-p TAB C-h")
         ("println"   "System.out.println()" "C-b")
         ("print"   "System.out.print()" "C-b")
         ("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
         ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
-        ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d")
-        ("pr"    "printf (\"\")" "C-2 C-b"))))
+        ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d"))))
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.

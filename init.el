@@ -569,12 +569,12 @@ collect `(define-abbrev ,table
         ("#ifn"  "#ifndef")
         ("#e"    "#endif /* */" "C-3 C-b")
         ("#ifd"  "#ifdef")
-        ("imain" "int main (int ac, char **av[]) {\n\n}" "C-p TAB")
+        ("imain" "int main(int ac, char **av[]) {\n\n}" "C-p TAB")
         ("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
         ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d")
-        ("printf"    "printf (\"\")" "C-2 C-b"))))
+        ("printf"    "printf(\"\")" "C-2 C-b"))))
 ;;; java mode
 (eval-after-load "cc-mode"
   '(declare-abbrevs (java-mode-abbrev-table)

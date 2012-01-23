@@ -23,10 +23,10 @@
     ("if" "if () {
 }
 " my-abbrev-hook 0)
-    ("imain" "int main (int ac, char **av[]) {
+    ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
-    ("printf" "printf (\"\")" my-abbrev-hook 0)
+    ("printf" "printf(\"\")" my-abbrev-hook 0)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -48,10 +48,10 @@
     ("if" "if () {
 }
 " my-abbrev-hook 0)
-    ("imain" "int main (int ac, char **av[]) {
+    ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
-    ("printf" "printf (\"\")" my-abbrev-hook 0)
+    ("printf" "printf(\"\")" my-abbrev-hook 0)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -137,6 +137,8 @@
     ("recangle" "Rectangle" nil 1)
     ("redct" "rect" nil 1)
     ("redfine" "redefine" nil 1)
+    ("rednerbars" "RenderBars" nil 1)
+    ("rednerplot3d" "RenderPlot3D" nil 1)
     ("resolutoin" "resolution" nil 1)
     ("retrun" "return" nil 1)
     ("retunr" "return" nil 1)
@@ -168,7 +170,7 @@
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 2)
     ("if" "if () {
 }
 " my-abbrev-hook 0)

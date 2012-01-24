@@ -131,6 +131,7 @@
     ("over6ride" "Override" nil 1)
     ("pasth" "path" nil 1)
     ("poijnts" "POINTS" nil 1)
+    ("privaet" "private" nil 1)
     ("publuic" "public" nil 1)
     ("pulic" "public" nil 2)
     ("putr" "put" nil 1)

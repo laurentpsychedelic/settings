@@ -145,6 +145,7 @@
     ("retunr" "return" nil 1)
     ("returnt" "return" nil 1)
     ("reutrn" "returnt" nil 1)
+    ("rpeaint" "repaint" nil 1)
     ("sdtokes" "strokes" nil 1)
     ("servere" "server" nil 1)
     ("sfn" "svn" nil 1)
@@ -168,18 +169,18 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 2)
+" my-abbrev-hook 3)
     ("if" "if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 4)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 1)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 0)
+    ("println" "System.out.println()" my-abbrev-hook 2)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

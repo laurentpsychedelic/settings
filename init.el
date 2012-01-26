@@ -129,6 +129,14 @@
 (global-set-key (kbd "S-C-<down>") 'shrink-window)
 (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
+;;; key binding for imenu
+(global-set-key (kbd "M-s") 'imenu)
+
+;;; key binding for find-dired and dired-do-query-replace-regexp
+(global-set-key (kbd "C-c s") 'find-dired)
+(global-set-key (kbd "C-c r") 'dired-do-query-replace-regexp)
+
+
 ;; jump to corresponding parenthesis
 (defun goto-match-paren (arg)
   "Go to the matching parenthesis if on parenthesis. Else go to the

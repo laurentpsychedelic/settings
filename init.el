@@ -8,7 +8,7 @@
   "Maximize the current frame"
   (interactive)
   (w32-send-sys-command 61488))
-
+ 
 (defun x11-maximize-frame ()
   "Maximize the current frame (to full screen)"
   (interactive)
@@ -278,6 +278,9 @@
 ;; highlight-indentation ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'highlight-indentation)
+(add-hook 'c-mode-common-hook 
+          (lambda ()
+            (highlight-indentation)))
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; twittering mode ;;
@@ -296,24 +299,25 @@
 ;;;;;;;;;;;;;;;;;;;;;
 (setq-default c-basic-offset 4)
 (setq indent-tabs-mode nil)
-;;(defun c-java-mode-untabify ()
-;;   (save-excursion
-;;       (goto-char (point-min))
-;;       (while (re-search-forward "[ \t]+$" nil t)
-;;         (delete-region (match-beginning 0) (match-end 0)))
-;;       (goto-char (point-min))
-;;       (if (search-forward "\t" nil t)
-;;           (untabify (1- (point)) (point-max))))
-;;     nil)
+(setq-default indent-tabs-mode nil)
+(defun c-java-mode-untabify ()
+  (save-excursion
+      (goto-char (point-min))
+      (while (re-search-forward "[ \t]+$" nil t)
+        (delete-region (match-beginning 0) (match-end 0)))
+      (goto-char (point-min))
+      (if (search-forward "\t" nil t)
+          (untabify (1- (point)) (point-max))))
+    nil)
 
-;; (add-hook 'java-mode-hook 
-;; 	  '(lambda ()
-;; 	     (make-local-variable 'write-contents-hooks)
-;; 	     (add-hook 'write-contents-hooks 'c-java-mode-untabify)))
-;; (add-hook 'c-mode-common-hook 
-;; 	  '(lambda ()
-;; 	     (make-local-variable 'write-contents-hooks)
-;; 	     (add-hook 'write-contents-hooks 'c-java-mode-untabify)))
+(add-hook 'java-mode-hook 
+	  '(lambda ()
+	     (make-local-variable 'write-contents-hooks)
+	     (add-hook 'write-contents-hooks 'c-java-mode-untabify)))
+(add-hook 'c-mode-common-hook 
+	  '(lambda ()
+	     (make-local-variable 'write-contents-hooks)
+    	     (add-hook 'write-contents-hooks 'c-java-mode-untabify)))
 
 ;;;;;;;;;;;;;;;;;;;
 ;; flymake-mode ;;;
@@ -404,6 +408,7 @@
 ;; (use-sticky-key ?\; sticky-alist:en)    ; for english keyboards
 ;;   OR
 (use-sticky-key 'muhenkan sticky-alist:ja)    ; for japanese keyboards
+(use-sticky-key 'non-convert sticky-alist:ja)
 
 ;;;;;;;;
 ;; bm ;;

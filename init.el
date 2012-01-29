@@ -96,6 +96,9 @@
 (autoload 'powershell-mode "powershell-mode" "A editing mode for Microsoft PowerShell." t)
 (add-to-list 'auto-mode-alist '("\\.ps1\\'" . powershell-mode)) ; PowerShell script
 
+;; c++ mode (for upcase CPP file extension)
+(add-to-list 'auto-mode-alist '("\\.CPP\\'" . c++-mode)) ; C++
+
 ;; groovy mode
 (autoload 'groovy-mode "groovy-mode" "A editing mode for Groovy." t)
 (add-to-list 'auto-mode-alist '("\\.groovy\\'" . groovy-mode)) ; Groovy source code
@@ -368,6 +371,7 @@
         (list "cl" (nconc (split-string (my-read-file "cl_settings.cl") "|") (list local-file)))))
 (push '("\\.c\\'" flymake-vc-init) flymake-allowed-file-name-masks)
 (push '("\\.cpp\\'" flymake-vc-init) flymake-allowed-file-name-masks)
+(push '("\\.CPP\\'" flymake-vc-init) flymake-allowed-file-name-masks)
 
 (defadvice flymake-post-syntax-check (before flymake-force-check-was-interrupted)
   (setq flymake-check-was-interrupted t))

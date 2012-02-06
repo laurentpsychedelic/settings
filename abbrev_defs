@@ -108,6 +108,7 @@
     ("dound" "found" nil 4)
     ("enablle" "enable" nil 1)
     ("exti" "exit" nil 1)
+    ("falot" "float" nil 1)
     ("flase" "false" nil 1)
     ("flloat" "float" nil 1)
     ("found" "dound" nil 2)
@@ -149,6 +150,7 @@
     ("sdtokes" "strokes" nil 1)
     ("servere" "server" nil 1)
     ("sfn" "svn" nil 1)
+    ("sotred" "stored" nil 1)
     ("statis" "static" nil 1)
     ("stats" "status" nil 1)
     ("statua" "status" nil 1)
@@ -158,7 +160,29 @@
     ("thjen" "then" nil 1)
     ("thois" "this" nil 1)
     ("unti" "unit" nil 2)
+    ("vreak" "break" nil 1)
     ("wundow" "window" nil 1)
+   ))
+
+(define-abbrev-table 'groovy-mode-abbrev-table
+  '(
+    ("else" "else {
+}
+" my-abbrev-hook 0)
+    ("for" "for (;;) {
+}
+" my-abbrev-hook 0)
+    ("if" "if () {
+}
+" my-abbrev-hook 0)
+    ("imain" "public static void main(String[] args) {
+
+}" my-abbrev-hook 0)
+    ("print" "System.out.print()" my-abbrev-hook 0)
+    ("println" "System.out.println()" my-abbrev-hook 0)
+    ("while" "while () {
+}
+" my-abbrev-hook 0)
    ))
 
 (define-abbrev-table 'html-mode-abbrev-table '())
@@ -169,18 +193,18 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 3)
+" my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 4)
+" my-abbrev-hook 0)
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 1)
+}" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 2)
+    ("println" "System.out.println()" my-abbrev-hook 0)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

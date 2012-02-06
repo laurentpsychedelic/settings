@@ -609,6 +609,15 @@ collect `(define-abbrev ,table
         ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
         ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d"))))
+(eval-after-load "cc-mode"
+  '(declare-abbrevs (groovy-mode-abbrev-table)
+       (("imain" "public static void main(String[] args) {\n\n}" "C-p TAB C-h")
+        ("println"   "System.out.println()" "C-b")
+        ("print"   "System.out.print()" "C-b")
+        ("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
+        ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
+        ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
+        ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d"))))
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.

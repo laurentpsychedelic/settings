@@ -154,7 +154,7 @@ After the scan is complete, you probably want to call
             (car (read-from-string
                   (buffer-substring (point-min) (point-max))))))))
 
-(defvar java-class-doc-base-url "";;http://java.sun.com/j2se/1.4.2/docs/api"
+(defvar java-class-doc-base-url "http://java.sun.com/j2se/1.4.2/docs/api"
   "Base URL for looking up Java documentation.
 Can be a local file or a web page.  For a local file, use
 file:///c:\\java\\docs\\api.  Directly from sun.com, use

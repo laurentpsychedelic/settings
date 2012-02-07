@@ -117,6 +117,7 @@
     ("histroy" "history" nil 1)
     ("idel" "idle" nil 1)
     ("inffo" "info" nil 1)
+    ("inport" "import" nil 1)
     ("instane" "instance" nil 1)
     ("isswitch" "iswitch" nil 1)
     ("langauge" "LANGUAGE" nil 1)
@@ -143,7 +144,7 @@
     ("rednerplot3d" "RenderPlot3D" nil 1)
     ("resolutoin" "resolution" nil 1)
     ("retrun" "return" nil 1)
-    ("retunr" "return" nil 1)
+    ("retunr" "return" nil 2)
     ("returnt" "return" nil 1)
     ("reutrn" "returnt" nil 1)
     ("rpeaint" "repaint" nil 1)
@@ -151,6 +152,8 @@
     ("servere" "server" nil 1)
     ("sfn" "svn" nil 1)
     ("sotred" "stored" nil 1)
+    ("stagecontopl" "StageControl" nil 1)
+    ("stagecontrl" "StageControl" nil 1)
     ("statis" "static" nil 1)
     ("stats" "status" nil 1)
     ("statua" "status" nil 1)
@@ -174,12 +177,12 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 4)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 0)
+    ("println" "System.out.println()" my-abbrev-hook 5)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -204,7 +207,7 @@
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 0)
+    ("println" "System.out.println()" my-abbrev-hook 2)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

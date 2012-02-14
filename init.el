@@ -308,7 +308,10 @@
 (require 'highlight-indentation)
 (add-hook 'c-mode-common-hook 
           (lambda ()
-            (highlight-indentation)))
+            (highlight-indentation-current-column-mode)
+            (highlight-indentation-mode)))
+(set-face-background 'highlight-indentation-face "#222288")
+(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; twittering mode ;;

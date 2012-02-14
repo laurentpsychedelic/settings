@@ -1,3 +1,15 @@
+;;exception handling
+(defmacro safe-wrap (fn &rest clean-up)
+  `(unwind-protect
+       (let (retval)
+         (condition-case ex
+             (setq retval (progn ,fn))
+           ('error
+            (message (format "Caught exception: [%s]" ex))
+            (setq retval (cons 'exception (list ex)))))
+         retval)
+     ,@clean-up))
+
 ;; tool bar/scroll bar off
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -31,6 +43,8 @@
  '(default ((t (:stipple nil :background "dark blue" :foreground "white" :cursor-type "box")))))
 ;:font "-outline-Courier New-normal-normal-normal-mono-11-*-*-*-c-*-iso8859-1"
 (set-face-attribute 'default nil :height 100)
+;;set font to ubuntu (try)
+(safe-wrap (set-face-attribute 'default nil :font "Ubuntu Mono-10:spacing=m:antialias=natural") (message "Unable to set font!"))
 ;;(set-face-attribute 'default nil :stipple "c:/Documents and Settings/LFabre/My Documents/Downloads/1328746948_crkoinarwhal_442920.jpeg")
 
 ;; Set transparency of emacs

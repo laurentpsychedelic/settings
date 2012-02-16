@@ -245,7 +245,9 @@
 ;; scilab mode ;;
 ;;;;;;;;;;;;;;;;;
 (require 'scilab-mode)
-
+(autoload 'scilab-mode "scilab-mode" "A editing mode for Scilab scripts." t)
+(add-to-list 'auto-mode-alist '("\\.sce\\'" . scilab-mode)) ; Scilab script
+(add-to-list 'auto-mode-alist '("\\.sci\\'" . scilab-mode)) ; Scilab script
 ;;;;;;;;;
 ;; w3m ;;
 ;;;;;;;;;

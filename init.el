@@ -241,6 +241,11 @@
 (auto-install-compatibility-setup)
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
+;;;;;;;;;;;;;;;;;
+;; scilab mode ;;
+;;;;;;;;;;;;;;;;;
+(require 'scilab-mode)
+
 ;;;;;;;;;
 ;; w3m ;;
 ;;;;;;;;;

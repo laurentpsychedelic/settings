@@ -113,9 +113,11 @@
     ("flloat" "float" nil 1)
     ("found" "dound" nil 2)
     ("frmae" "frame" nil 1)
+    ("functiosn" "functions" nil 1)
     ("hava" "java" nil 1)
     ("histroy" "history" nil 1)
     ("idel" "idle" nil 1)
+    ("indetn" "indent" nil 1)
     ("inffo" "info" nil 1)
     ("inport" "import" nil 1)
     ("instane" "instance" nil 1)
@@ -230,6 +232,8 @@
 (define-abbrev-table 'pike-mode-abbrev-table
   '(
    ))
+
+(define-abbrev-table 'scilab-mode-abbrev-table '())
 
 (define-abbrev-table 'select-tags-table-mode-abbrev-table '())
 

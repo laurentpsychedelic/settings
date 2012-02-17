@@ -316,6 +316,11 @@
 (defalias 'er 'eval-region)
 
 ;;;;;;;;;;;;;;;;;;;
+;; indent-region ;;
+;;;;;;;;;;;;;;;;;;;
+(defalias 'ir 'indent-region)
+
+;;;;;;;;;;;;;;;;;;;
 ;; col-highlight ;;
 ;;;;;;;;;;;;;;;;;;;
 (require 'col-highlight)

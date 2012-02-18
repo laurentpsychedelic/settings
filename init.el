@@ -34,14 +34,19 @@
 ; (add-hook 'window-setup-hook 'w32-maximize-frame t)
 
 ;; color settings
-(custom-set-faces
+;;(custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
 ;; '(default ((t (:background "black" :foreground "white" :cursor-type "box")))))
- '(default ((t (:stipple nil :background "dark blue" :foreground "white" :cursor-type "box")))))
+;; '(default ((t (:stipple nil :background "dark blue" :foreground "white" :cursor-type "box")))))
 ;:font "-outline-Courier New-normal-normal-normal-mono-11-*-*-*-c-*-iso8859-1"
+(set-face-attribute 'default nil :stipple nil)
+(if (window-system)
+    (set-face-attribute 'default nil :background "dark blue" ))
+(set-face-attribute 'default nil :foreground "white")
+;;(set-face-attribute 'default nil :cursor-type "box")
 (set-face-attribute 'default nil :height 100)
 ;;set font to ubuntu (try)
 (safe-wrap (set-face-attribute 'default nil :font "Ubuntu Mono-10:spacing=m:antialias=natural") (message "Unable to set font!"))

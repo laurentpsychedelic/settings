@@ -131,6 +131,7 @@
     ("nasme" "name" nil 1)
     ("nbame" "name" nil 1)
     ("nll" "null" nil 1)
+    ("noremal" "normal" nil 1)
     ("nrew" "new" nil 1)
     ("over6ride" "Override" nil 1)
     ("pasth" "path" nil 1)
@@ -147,6 +148,7 @@
     ("resolutoin" "resolution" nil 1)
     ("retrun" "return" nil 1)
     ("retunr" "return" nil 2)
+    ("returbn" "return" nil 1)
     ("returnt" "return" nil 1)
     ("reutrn" "returnt" nil 1)
     ("rpeaint" "repaint" nil 1)
@@ -159,14 +161,17 @@
     ("statis" "static" nil 1)
     ("stats" "status" nil 1)
     ("statua" "status" nil 1)
-    ("string" "String" nil 3)
+    ("string" "String" nil 8)
     ("stringbuolder" "StringBuilder" nil 1)
     ("temmpbuf" "tempbuf" nil 1)
     ("thjen" "then" nil 1)
     ("thois" "this" nil 1)
+    ("trasnforms" "Transforms" nil 1)
     ("unti" "unit" nil 2)
+    ("vpid" "void" nil 1)
     ("vreak" "break" nil 1)
     ("wundow" "window" nil 1)
+    ("x30scannomral" "X30ScanNormal" nil 1)
    ))
 
 (define-abbrev-table 'groovy-mode-abbrev-table
@@ -198,13 +203,13 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 3)
     ("for" "for (;;) {
 }
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 6)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)

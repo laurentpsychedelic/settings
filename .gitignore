@@ -6,3 +6,5 @@
 log
 #Emacs server information
 server
+#comphist file
+ac-comphist.dat

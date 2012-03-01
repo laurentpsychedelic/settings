@@ -44,7 +44,7 @@
 ;:font "-outline-Courier New-normal-normal-normal-mono-11-*-*-*-c-*-iso8859-1"
 (set-face-attribute 'default nil :stipple nil)
 (if (window-system)
-    (set-face-attribute 'default nil :background "dark blue" ))
+    (set-face-attribute 'default nil :background "black" )) ;;(set-face-attribute 'default nil :background "dark blue")
 (set-face-attribute 'default nil :foreground "white")
 ;;(set-face-attribute 'default nil :cursor-type "box")
 (set-face-attribute 'default nil :height 100)
@@ -658,6 +658,7 @@ collect `(define-abbrev ,table
         ("imain" "int main(int ac, char **av[]) {\n\n}" "C-p TAB")
         ("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
+        ("elseif" "else if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d")
         ("printf"    "printf(\"\")" "C-2 C-b"))))
@@ -669,6 +670,7 @@ collect `(define-abbrev ,table
         ("print"   "System.out.print()" "C-b")
         ("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
+        ("elseif" "else if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d"))))
 (eval-after-load "cc-mode"
@@ -678,6 +680,7 @@ collect `(define-abbrev ,table
         ("print"   "System.out.print()" "C-b")
         ("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
+        ("elseif" "else if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d"))))
 (custom-set-variables

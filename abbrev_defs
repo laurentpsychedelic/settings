@@ -17,6 +17,9 @@
     ("else" "else {
 }
 " my-abbrev-hook 0)
+    ("elseif" "else if () {
+}
+" my-abbrev-hook 0)
     ("for" "for (;;) {
 }
 " my-abbrev-hook 0)
@@ -40,6 +43,9 @@
     ("#ifn" "#ifndef" nil 0)
     ("#s" "#include <>" my-abbrev-hook 0)
     ("else" "else {
+}
+" my-abbrev-hook 0)
+    ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
@@ -161,7 +167,7 @@
     ("statis" "static" nil 1)
     ("stats" "status" nil 1)
     ("statua" "status" nil 1)
-    ("string" "String" nil 8)
+    ("string" "String" nil 11)
     ("stringbuolder" "StringBuilder" nil 1)
     ("temmpbuf" "tempbuf" nil 1)
     ("thjen" "then" nil 1)
@@ -179,17 +185,20 @@
     ("else" "else {
 }
 " my-abbrev-hook 0)
+    ("elseif" "else if () {
+}
+" my-abbrev-hook 0)
     ("for" "for (;;) {
 }
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 4)
+" my-abbrev-hook 0)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 5)
+    ("println" "System.out.println()" my-abbrev-hook 0)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -203,18 +212,21 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 3)
+" my-abbrev-hook 0)
+    ("elseif" "else if () {
+}
+" my-abbrev-hook 4)
     ("for" "for (;;) {
 }
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 6)
+" my-abbrev-hook 3)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 2)
+    ("println" "System.out.println()" my-abbrev-hook 0)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

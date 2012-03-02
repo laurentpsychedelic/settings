@@ -43,9 +43,30 @@
 ;; '(default ((t (:stipple nil :background "dark blue" :foreground "white" :cursor-type "box")))))
 ;:font "-outline-Courier New-normal-normal-normal-mono-11-*-*-*-c-*-iso8859-1"
 (set-face-attribute 'default nil :stipple nil)
+
+(setq dark-theme-background "black")
+(setq light-theme-background "light grey")
+(setq dark-theme-foreground "white")
+(setq light-theme-foreground "black")
+
+(defun set-dark-theme ()
+  ;;set theme to dark
+  (set-face-attribute 'default nil :background dark-theme-background)
+  (set-face-attribute 'default nil :foreground dark-theme-foreground))
+(defun set-light-theme ()
+  ;;set theme to dark
+  (set-face-attribute 'default nil :background light-theme-background)
+  (set-face-attribute 'default nil :foreground light-theme-foreground))
+;;(set-light-theme)
+;;(set-dark-theme)
+(defalias 'dt 'set-dark-theme)
+(defalias 'lt 'set-light-theme)
+
 (if (window-system)
-    (set-face-attribute 'default nil :background "black" )) ;;(set-face-attribute 'default nil :background "dark blue")
-(set-face-attribute 'default nil :foreground "white")
+    (set-dark-theme)
+  (set-face-attribute 'default nil :foreground "white"))
+
+
 ;;(set-face-attribute 'default nil :cursor-type "box")
 (set-face-attribute 'default nil :height 100)
 ;;set font to ubuntu (try)

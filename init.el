@@ -44,7 +44,7 @@
 ;:font "-outline-Courier New-normal-normal-normal-mono-11-*-*-*-c-*-iso8859-1"
 (set-face-attribute 'default nil :stipple nil)
 (if (window-system)
-    (set-face-attribute 'default nil :background "dark blue" ))
+    (set-face-attribute 'default nil :background "black" ))
 (set-face-attribute 'default nil :foreground "white")
 ;;(set-face-attribute 'default nil :cursor-type "box")
 (set-face-attribute 'default nil :height 100)
@@ -406,7 +406,8 @@
         (list "-buildfile"
 ;             (concat base-dir "/" "build.xml")
               "../../build.xml"
-              "compile")))
+              "compile"
+              "|" "sed" "-e" "\"s/groovyc/javac/g\"")))
 
 (add-hook 'java-mode-hook
           '(lambda ()

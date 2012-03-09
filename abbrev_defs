@@ -111,13 +111,13 @@
     ("correctr" "correct" nil 1)
     ("defore" "before" nil 1)
     ("dimensuion" "Dimension" nil 1)
-    ("dound" "found" nil 4)
+    ("dound" "found" nil 1)
     ("enablle" "enable" nil 1)
     ("exti" "exit" nil 1)
     ("falot" "float" nil 1)
     ("flase" "false" nil 1)
     ("flloat" "float" nil 1)
-    ("found" "dound" nil 2)
+    ("found" "found" nil 2)
     ("frmae" "frame" nil 1)
     ("functiosn" "functions" nil 1)
     ("hava" "java" nil 1)
@@ -131,6 +131,7 @@
     ("langauge" "LANGUAGE" nil 1)
     ("linekd" "Linked" nil 1)
     ("linkedlsit" "LinkedList" nil 3)
+    ("measurement" "Measurement" nil 1)
     ("memoru" "memory" nil 1)
     ("mesages" "messages" nil 1)
     ("mide" "mode" nil 1)
@@ -218,10 +219,10 @@
 " my-abbrev-hook 4)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("if" "if () {
 }
-" my-abbrev-hook 3)
+" my-abbrev-hook 5)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)

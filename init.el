@@ -43,9 +43,29 @@
 ;; '(default ((t (:stipple nil :background "dark blue" :foreground "white" :cursor-type "box")))))
 ;:font "-outline-Courier New-normal-normal-normal-mono-11-*-*-*-c-*-iso8859-1"
 (set-face-attribute 'default nil :stipple nil)
+
+(setq dark-theme-background "black")
+(setq light-theme-background "light grey")
+(setq dark-theme-foreground "white")
+(setq light-theme-foreground "black")
+
+(defun set-dark-theme ()
+  ;;set theme to dark
+  (set-face-attribute 'default nil :background dark-theme-background)
+  (set-face-attribute 'default nil :foreground dark-theme-foreground))
+(defun set-light-theme ()
+  ;;set theme to dark
+  (set-face-attribute 'default nil :background light-theme-background)
+  (set-face-attribute 'default nil :foreground light-theme-foreground))
+;;(set-light-theme)
+;;(set-dark-theme)
+(defalias 'dt 'set-dark-theme)
+(defalias 'lt 'set-light-theme)
+
 (if (window-system)
-    (set-face-attribute 'default nil :background "black" ))
-(set-face-attribute 'default nil :foreground "white")
+    (set-dark-theme)
+  (set-face-attribute 'default nil :foreground "white"))
+
 ;;(set-face-attribute 'default nil :cursor-type "box")
 (set-face-attribute 'default nil :height 100)
 ;;set font to ubuntu (try)
@@ -135,6 +155,10 @@
 
 ;; replace yes/no reply by y/n reply
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; show a yank menu
+(global-set-key "\C-cy" '(lambda ()
+                           (interactive) (popup-menu 'yank-menu)))
 
 ;; Add dir to load path
 (add-to-list 'load-path "~/.emacs.d/")
@@ -283,8 +307,8 @@
 ;; point-undo ;;
 ;;;;;;;;;;;;;;;;
 (require 'point-undo)
-(define-key global-map (kbd "<f7>") 'point-undo)
-(define-key global-map (kbd "S-<f7>") 'point-redo)
+(define-key global-map (kbd "<f9>") 'point-undo)
+(define-key global-map (kbd "S-<f9>") 'point-redo)
 
 ;;;;;;;;;;;
 ;; redo+ ;;
@@ -659,6 +683,7 @@ collect `(define-abbrev ,table
         ("imain" "int main(int ac, char **av[]) {\n\n}" "C-p TAB")
         ("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
+        ("elseif" "else if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d")
         ("printf"    "printf(\"\")" "C-2 C-b"))))
@@ -670,6 +695,7 @@ collect `(define-abbrev ,table
         ("print"   "System.out.print()" "C-b")
         ("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
+        ("elseif" "else if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d"))))
 (eval-after-load "cc-mode"
@@ -679,6 +705,7 @@ collect `(define-abbrev ,table
         ("print"   "System.out.print()" "C-b")
         ("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
+        ("elseif" "else if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d"))))
 (custom-set-variables

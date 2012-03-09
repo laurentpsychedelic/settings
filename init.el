@@ -157,6 +157,10 @@
 ;; replace yes/no reply by y/n reply
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; show a yank menu
+(global-set-key "\C-cy" '(lambda ()
+                           (interactive) (popup-menu 'yank-menu)))
+
 ;; Add dir to load path
 (add-to-list 'load-path "~/.emacs.d/")
 

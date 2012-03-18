@@ -4,7 +4,6 @@
 
 ;; Copyright (C) 2007, 2009, 2010 Yuto Hayamizu.
 ;;               2008 Tsuyoshi CHO
-
 ;; Author: Y. Hayamizu <y.hayamizu@gmail.com>
 ;;         Tsuyoshi CHO <Tsuyoshi.CHO+develop@Gmail.com>
 ;;         Alberto Garcia  <agarcia@igalia.com>
@@ -309,7 +308,8 @@ Do not modify this variable directly. Use `twittering-activate-buffer',
   "*If non-nil, display remaining of rate limit on the mode-line.")
 (defvar twittering-display-connection-method t
   "*If non-nil, display the current connection method on the mode-line.")
-(defvar twittering-status-format "%i %s,  %@:\n%FILL[  ]{%T // from %f%L%r%R}\n "
+(defvar twittering-status-format "%i %s,  %@:\n%FILL[  ]{%T // from %f%r%R}\n "
+;(defvar twittering-status-format "%i %s,  %@:\n%FILL[  ]{%T // from %f%L%r%R}\n ";;format for displaying location in Tweets (the %L is for location)
   "Format string for rendering statuses.
 Ex. \"%i %s,  %@:\\n%FILL{  %T // from %f%L%r%R}\n \"
 

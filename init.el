@@ -190,6 +190,44 @@
 (setq truncate-lines t)
 (setq truncate-partial-width-windows t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; switch window splitting from vertical/horizontal ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; http://emacswiki.org/emacs/Rick_Bielawski
+;; Idea and starter code from Benjamin Rutt (rutt.4+news@osu.edu) on comp.emacs
+(defun rgb-window-horizontal-to-vertical ()
+  "Switches from a horizontal split to a vertical split."
+  (interactive)
+  (let ((one-buf (window-buffer (selected-window)))
+        (buf-point (point)))
+    (other-window 1)
+    (delete-other-windows)
+    (split-window-horizontally)
+    (switch-to-buffer one-buf)
+    (goto-char buf-point)))
+(global-set-key (kbd "C-c v") 'rgb-window-horizontal-to-vertical)
+;; complement of above created by rgb 11/2004
+(defun rgb-window-vertical-to-horizontal ()
+  "Switches from a vertical split to a horizontal split."
+  (interactive)
+  (let ((one-buf (window-buffer (selected-window)))
+        (buf-point (point)))
+    (other-window 1)
+    (delete-other-windows)
+    (split-window-vertically)
+    (switch-to-buffer one-buf)
+    (goto-char buf-point)))
+(global-set-key (kbd "C-c h") 'rgb-window-vertical-to-horizontal)
+
+;;;;;;;;;;;;;;;;;;;;
+;; ediff settings ;;
+;;;;;;;;;;;;;;;;;;;;
+(setq ediff-split-window-function (if (> (frame-width) 150)
+                                      'split-window-horizontally
+                                    'split-window-vertically))
+; keybinding for ediff revision "C-x version ediff"
+(global-set-key (kbd "C-x v e") 'ediff-revision)
+
 ;; auto-scroll while compilation
 (setq compilation-scroll-output t)
 

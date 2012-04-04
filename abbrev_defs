@@ -143,6 +143,7 @@
     ("over6ride" "Override" nil 1)
     ("pasth" "path" nil 1)
     ("poijnts" "POINTS" nil 1)
+    ("pram" "param" nil 1)
     ("privaet" "private" nil 1)
     ("publuic" "public" nil 1)
     ("pulic" "public" nil 2)
@@ -174,6 +175,7 @@
     ("thjen" "then" nil 1)
     ("thois" "this" nil 1)
     ("trasnforms" "Transforms" nil 1)
+    ("ture" "true" nil 1)
     ("unti" "unit" nil 2)
     ("vpid" "void" nil 1)
     ("vreak" "break" nil 1)
@@ -222,12 +224,12 @@
 " my-abbrev-hook 1)
     ("if" "if () {
 }
-" my-abbrev-hook 5)
+" my-abbrev-hook 6)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 0)
+    ("println" "System.out.println()" my-abbrev-hook 1)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -266,6 +268,8 @@
 (define-abbrev-table 'text-mode-abbrev-table '())
 
 (define-abbrev-table 'twittering-edit-mode-abbrev-table '())
+
+(define-abbrev-table 'vc-annotate-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
 

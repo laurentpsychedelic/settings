@@ -222,9 +222,10 @@
 ;;;;;;;;;;;;;;;;;;;;
 ;; ediff settings ;;
 ;;;;;;;;;;;;;;;;;;;;
-(setq ediff-split-window-function (if (> (frame-width) 150)
-                                      'split-window-horizontally
-                                    'split-window-vertically))
+(setq ediff-split-window-function 'split-window-horizontally)
+;(setq ediff-split-window-function (if (< (frame-width) 150)
+;                                      'split-window-horizontally
+;                                    'split-window-vertically))
 ; keybinding for ediff revision "C-x version ediff"
 (global-set-key (kbd "C-x v e") 'ediff-revision)
 

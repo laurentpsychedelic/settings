@@ -636,7 +636,9 @@
 ;;;;;;;;;;;;;
 (require 'tempbuf)
 ;; enable tempbuf when opening file
-(add-hook 'find-file-hooks 'turn-on-tempbuf-mode)
+;; tempbuf turned off for normal files (there are annoying
+;; side effects with flymake and files opened with emacsclient)
+;; (add-hook 'find-file-hooks 'turn-on-tempbuf-mode)
 ;; enable tempbuf when using dired
 (add-hook 'dired-mode-hook 'turn-on-tempbuf-mode)
 

@@ -128,6 +128,7 @@
     ("inport" "import" nil 1)
     ("instane" "instance" nil 1)
     ("isswitch" "iswitch" nil 1)
+    ("jfrmae" "JFrame" nil 1)
     ("langauge" "LANGUAGE" nil 1)
     ("linekd" "Linked" nil 1)
     ("linkedlsit" "LinkedList" nil 3)
@@ -145,6 +146,8 @@
     ("poijnts" "POINTS" nil 1)
     ("pram" "param" nil 1)
     ("privaet" "private" nil 1)
+    ("protexted" "protected" nil 1)
+    ("protexted " "protected" nil 0)
     ("publuic" "public" nil 1)
     ("pulic" "public" nil 2)
     ("putr" "put" nil 1)
@@ -215,7 +218,7 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 4)
@@ -224,12 +227,12 @@
 " my-abbrev-hook 1)
     ("if" "if () {
 }
-" my-abbrev-hook 6)
+" my-abbrev-hook 9)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
-    ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 1)
+    ("print" "System.out.print()" my-abbrev-hook 2)
+    ("println" "System.out.println()" my-abbrev-hook 3)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -270,6 +273,8 @@
 (define-abbrev-table 'twittering-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-annotate-mode-abbrev-table '())
+
+(define-abbrev-table 'vc-dir-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
 

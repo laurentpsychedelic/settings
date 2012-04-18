@@ -627,6 +627,8 @@
 ;; summarye ;;
 ;;;;;;;;;;;;;;
 (require 'summarye)
+(defalias 'sb 'se/make-summary-buffer)
+;(global-set-key (kbd "M-x sb") 'se/make-summary-buffer)
 ;; (add-to-list 'se/mode-delimiter-alist
 ;;           '(java-mode "\(\(public\)|\(private\)|\(protected\)\)?.* .*(.*).*")
 ;; )

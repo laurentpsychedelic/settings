@@ -112,6 +112,7 @@
     ("defore" "before" nil 1)
     ("dimensuion" "Dimension" nil 1)
     ("dound" "found" nil 1)
+    ("ecxists" "exists" nil 1)
     ("enablle" "enable" nil 1)
     ("exti" "exit" nil 1)
     ("falot" "float" nil 1)
@@ -119,6 +120,7 @@
     ("flloat" "float" nil 1)
     ("found" "found" nil 2)
     ("frmae" "frame" nil 1)
+    ("frsame" "Frame" nil 1)
     ("functiosn" "functions" nil 1)
     ("hava" "java" nil 1)
     ("histroy" "history" nil 1)
@@ -141,10 +143,12 @@
     ("nll" "null" nil 1)
     ("noremal" "normal" nil 1)
     ("nrew" "new" nil 1)
+    ("otions" "Options" nil 1)
     ("over6ride" "Override" nil 1)
     ("pasth" "path" nil 1)
     ("poijnts" "POINTS" nil 1)
     ("pram" "param" nil 1)
+    ("prama" "param" nil 1)
     ("privaet" "private" nil 1)
     ("protexted" "protected" nil 1)
     ("protexted " "protected" nil 0)
@@ -172,7 +176,7 @@
     ("statis" "static" nil 1)
     ("stats" "status" nil 1)
     ("statua" "status" nil 1)
-    ("string" "String" nil 11)
+    ("string" "String" nil 28)
     ("stringbuolder" "StringBuilder" nil 1)
     ("temmpbuf" "tempbuf" nil 1)
     ("thjen" "then" nil 1)
@@ -218,21 +222,21 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 2)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 4)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 2)
     ("if" "if () {
 }
-" my-abbrev-hook 9)
+" my-abbrev-hook 13)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
-    ("print" "System.out.print()" my-abbrev-hook 2)
-    ("println" "System.out.println()" my-abbrev-hook 3)
+    ("print" "System.out.print()" my-abbrev-hook 3)
+    ("println" "System.out.println()" my-abbrev-hook 7)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

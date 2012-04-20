@@ -31,6 +31,15 @@
     (add-hook 'window-setup-hook 'x11-maximize-frame) ; GNU/Linux [Ubuntu]
   (add-hook 'window-setup-hook 'w32-maximize-frame t)) ; Windows
 
+;;;;;;;;;;;;;;;;;;
+;; auto-install ;;
+;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/auto-install/")
+(require 'auto-install)
+(auto-install-update-emacswiki-package-name t)
+(auto-install-compatibility-setup)
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
 ; (add-hook 'window-setup-hook 'w32-maximize-frame t)
 
 ;; color settings
@@ -348,15 +357,6 @@
 (global-set-key (kbd "C-x C-c") 'server-edit)
 ;; shut-down Emacs (server) with M-x exit
 (defalias 'exit 'save-buffers-kill-emacs)
-
-;;;;;;;;;;;;;;;;;;
-;; auto-install ;;
-;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/auto-install/")
-(require 'auto-install)
-(auto-install-update-emacswiki-package-name t)
-(auto-install-compatibility-setup)
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;;;;;;;;;;;;;;;;;
 ;; scilab mode ;;

@@ -44,23 +44,77 @@
 ;:font "-outline-Courier New-normal-normal-normal-mono-11-*-*-*-c-*-iso8859-1"
 (set-face-attribute 'default nil :stipple nil)
 
+;; coloring current line
+(global-hl-line-mode 1)
+
+
+;;;;;;;;;;;;;;;;;;;
+;; col-highlight ;;
+;;;;;;;;;;;;;;;;;;;
+(require 'col-highlight)
+;; 1 or 2 (1: always on)
+(column-highlight-mode 1)
+;; 2: highlight when idle
+(toggle-highlight-column-when-idle 1)
+(col-highlight-set-interval 6) ; highlight time in seconds
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; highlight-indentation ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'highlight-indentation)
+(add-hook 'c-mode-common-hook 
+          (lambda ()
+            (highlight-indentation-current-column-mode)
+            (highlight-indentation-mode)))
+
+(setq radiance-dark-theme-background "#484850")
 (setq dark-theme-background "black")
 (setq light-theme-background "light grey")
+(setq radiance-dark-theme-foreground "#000000")
 (setq dark-theme-foreground "white")
 (setq light-theme-foreground "black")
+(setq radiance-dark-theme-hlline "#FFFFFF")
+(setq dark-theme-hlline "darkolivegreen")
+(setq light-theme-hlline "darkolivegreen")
+(setq radiance-dark-theme-indentface "#CCCCCC")
+(setq dark-theme-indentface "#FFFFFF")
+(setq light-theme-indentface "#000000")
+(setq radiance-dark-theme-currentindentface "#AAAAAA")
+(setq dark-theme-currentindentface "#DDDDDD")
+(setq light-theme-currentindentface "#222222")
+
+(defun set-radiance-dark-theme ()
+  ;;set theme to radiance dark
+  (set-face-attribute 'default nil :background radiance-dark-theme-background)
+  (set-face-attribute 'default nil :foreground radiance-dark-theme-foreground)
+  (set-face-background 'hl-line radiance-dark-theme-hlline)
+  (set-face-background 'col-highlight radiance-dark-theme-hlline)
+  (set-face-background 'highlight-indentation-face radiance-dark-theme-indentface)
+  (set-face-background 'highlight-indentation-current-column-face radiance-dark-theme-currentindentface))
 
 (defun set-dark-theme ()
   ;;set theme to dark
   (set-face-attribute 'default nil :background dark-theme-background)
-  (set-face-attribute 'default nil :foreground dark-theme-foreground))
+  (set-face-attribute 'default nil :foreground dark-theme-foreground)
+  (set-face-background 'hl-line dark-theme-hlline)
+  (set-face-background 'col-highlight dark-theme-hlline)
+  (set-face-background 'highlight-indentation-face dark-theme-indentface)
+  (set-face-background 'highlight-indentation-current-column-face dark-theme-currentindentface))
 (defun set-light-theme ()
   ;;set theme to dark
   (set-face-attribute 'default nil :background light-theme-background)
-  (set-face-attribute 'default nil :foreground light-theme-foreground))
+  (set-face-attribute 'default nil :foreground light-theme-foreground)
+  (set-face-background 'hl-line light-theme-hlline)
+  (set-face-background 'col-highlight light-theme-hlline)
+  (set-face-background 'highlight-indentation-face light-theme-indentface)
+  (set-face-background 'highlight-indentation-current-column-face light-theme-currentindentface))
+;;(set-radiance-dark-theme)
 ;;(set-light-theme)
 ;;(set-dark-theme)
 (defalias 'dt 'set-dark-theme)
 (defalias 'lt 'set-light-theme)
+(defalias 'rdt 'set-radiance-dark-theme)
 
 (if (window-system)
     (set-dark-theme)
@@ -100,11 +154,6 @@
 
 ;; locale
 (setenv "LC_TIME" "C")
-
-;; coloring current line
-(global-hl-line-mode 1)
-;; color
-(set-face-background 'hl-line "darkolivegreen")
 
 ;; save history between emacs sessions
 (savehist-mode 1)
@@ -387,28 +436,6 @@
 ;; indent-region ;;
 ;;;;;;;;;;;;;;;;;;;
 (defalias 'ir 'indent-region)
-
-;;;;;;;;;;;;;;;;;;;
-;; col-highlight ;;
-;;;;;;;;;;;;;;;;;;;
-(require 'col-highlight)
-;; 1 or 2 (1: always on)
-(column-highlight-mode 1)
-;; 2: highlight when idle
-(toggle-highlight-column-when-idle 1)
-(col-highlight-set-interval 6) ; highlight time in seconds
-(set-face-background 'col-highlight "darkolivegreen")
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; highlight-indentation ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'highlight-indentation)
-(add-hook 'c-mode-common-hook 
-          (lambda ()
-            (highlight-indentation-current-column-mode)
-            (highlight-indentation-mode)))
-(set-face-background 'highlight-indentation-face "#222288")
-(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; twittering mode ;;

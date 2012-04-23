@@ -34,11 +34,13 @@
 ;;;;;;;;;;;;;;;;;;
 ;; auto-install ;;
 ;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/auto-install/")
-(require 'auto-install)
-(auto-install-update-emacswiki-package-name t)
-(auto-install-compatibility-setup)
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(defun load-auto-install-library ()
+  (add-to-list 'load-path "~/.emacs.d/auto-install/")
+  (require 'auto-install)
+  (auto-install-update-emacswiki-package-name t)
+  (auto-install-compatibility-setup)
+  (setq ediff-window-setup-function 'ediff-setup-windows-plain))
+(safe-wrap (load-auto-install-library) (message "Unable to load auto-install!"))
 
 ; (add-hook 'window-setup-hook 'w32-maximize-frame t)
 

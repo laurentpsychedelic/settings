@@ -494,8 +494,9 @@
         '(flymake-simple-ant-java-init flymake-simple-java-cleanup))
 ;; redefine to remove "check-syntax" target
 (defun flymake-get-ant-cmdline (source base-dir)
-  (list "ant"
-        (list "-buildfile"
+  (list "bash"
+        (list "ant-emacs.sh"
+              "-buildfile"
 ;             (concat base-dir "/" "build.xml")
               "../../build.xml"
               "compile"

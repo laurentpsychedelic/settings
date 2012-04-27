@@ -134,7 +134,11 @@
 ;;(set-face-attribute 'default nil :cursor-type "box")
 (set-face-attribute 'default nil :height 100)
 ;;set font to ubuntu (try)
-(safe-wrap (set-face-attribute 'default nil :font "Ubuntu Mono-10:spacing=m:antialias=natural") (message "Unable to set font!"))
+(if (string-equal system-type "gnu/linux")
+    (safe-wrap (set-face-attribute 'default nil :font "Ubuntu") (message "Unable to set font!")) ; GNU/Linux [Ubuntu]
+  (safe-wrap (set-face-attribute 'default nil :font "Ubuntu Mono-10:spacing=m:antialias=natural") (message "Unable to set font!"))) ; Windows
+(if (string-equal system-type "gnu/linux")
+    (safe-wrap (set-face-attribute 'default nil :font "Ubuntu Mono") (message "Unable to set font!"))) ; GNU/Linux [Ubuntu]
 ;;(set-face-attribute 'default nil :stipple "c:/Documents and Settings/LFabre/My Documents/Downloads/1328746948_crkoinarwhal_442920.jpeg")
 
 ;; Set transparency of emacs

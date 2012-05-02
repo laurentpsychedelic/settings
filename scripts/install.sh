@@ -19,11 +19,25 @@ then
     junction -s $FILE_LNK $FILE_TAR
 else
     echo "Linux!"
-    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-    DIR=$(dirname $DIR)
+    SETTINGS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    SETTINGS_DIR=$(dirname $SETTINGS_DIR)
+    HOME_DIR=$HOME
 
-    #SOFT LINK TO 
-    mv -v $HOME/.emacs.d $HOME/.emacs.d_old
-    ln -s -v $DIR $HOME/.emacs.d
+    #SOFT LINK TO .BASHRC
+    FILE_LNK=$HOME_DIR/.bashrc
+    FILE_TAR=$SETTINGS_DIR/.bashrc
+    if [ -e "$FILE_LNK" ]; then
+	mv -vf $FILE_LNK ${FILE_LNK}_old
+    fi
+    ln -s $FILE_TAR $FILE_LNK
+
+    #SOFT LINK TO .EMACS.D
+    FILE_LNK=$HOME_DIR/.emacs.d
+    FILE_TAR=$SETTINGS_DIR/.emacs.d
+    if [ -e "$FILE_LNK" ]; then
+	mv -vf $FILE_LNK ${FILE_LNK}_old
+    fi
+    ln -s $FILE_TAR $FILE_LNK
 fi
 
+source ~/.bashrc

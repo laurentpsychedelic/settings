@@ -1,1 +1,4 @@
-EMACS SETTINGS FILE
+This repository handles settings I use for software development on Windows and Linux (Ubuntu) machines.
+It includes GNU Emacs settings and various shell configuration files.
+All files can be used from inside the directory, by installing symbolics links (hard links -junction- on
+Win32) by running installation scripts in the "scripts" folder.

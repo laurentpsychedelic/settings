@@ -167,6 +167,20 @@ export SVN_EDITOR=emacsclient
 export EDITOR=emacsclient
 export VISUAL=emacsclient
 
+#CD path: added software development folder dev
+export CDPATH=.:~:~/dev
+#Toggle last 2 current directories
+# cd -
+#Aliases for parent directoriesalias ..="cd .." 
+alias ...="cd ../.." 
+alias ....="cd ../../.." 
+alias .....="cd ../../../.." 
+alias ......="cd ../../../../.."
+#mkdir+cd command
+function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+#cd auto spell correction
+shopt -s cdspell
+
 #export LANG=ja_JP.UTF-8
 #export LC_MESSAGES=ja_JP.UTF-8
 #export OUTPUT_CHARSET=utf8
@@ -174,3 +188,4 @@ export VISUAL=emacsclient
 #export JLESSCHARSET=japanese-utf8
 
 alias rw='java -classpath dev/Miscellaneous-codes lpsy.other.diet.ReportWeight'
+

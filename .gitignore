@@ -8,3 +8,5 @@ log
 server
 #comphist file
 ac-comphist.dat
+#. files in script folder
+scripts/[.]*

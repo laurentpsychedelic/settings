@@ -622,8 +622,8 @@
 (add-hook 'java-mode-hook 'hs-minor-mode)
 
 (global-set-key (kbd "<f7>")      'fold-dwim-toggle)
-(global-set-key (kbd "<M-f7>")    'fold-dwim-hide-all)
-(global-set-key (kbd "<S-M-f7>")  'fold-dwim-show-all)
+(global-set-key (kbd "<C-f7>")    'fold-dwim-hide-all)
+(global-set-key (kbd "<C-S-f7>")  'fold-dwim-show-all)
 ;; (put 'org-mode 'fold-dwim-outline-style 'nested)
 
 ;;;;;;;;;;;

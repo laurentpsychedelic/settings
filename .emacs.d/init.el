@@ -42,6 +42,13 @@
   (setq ediff-window-setup-function 'ediff-setup-windows-plain))
 (safe-wrap (load-auto-install-library) (message "Unable to load auto-install!"))
 
+;;;;;;;;;;;;;;;
+;; yasnippet ;;
+;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet/")
+(require 'yasnippet-config)
+(yas/setup "~/.emacs.d/plugins/yasnippet")
+
 ; (add-hook 'window-setup-hook 'w32-maximize-frame t)
 
 ;; color settings

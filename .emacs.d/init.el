@@ -48,6 +48,18 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet/")
 (require 'yasnippet-config)
 (yas/setup "~/.emacs.d/plugins/yasnippet")
+(auto-insert-mode)
+(setq auto-insert-directory "~/.emacs.d/insert/")
+(defun fill-new-java-class-skeleton ()
+  (interactive)
+  (yas/expand-snippet
+   "package ${1:`(file-name-nondirectory (directory-file-name (file-name-directory (file-name-sans-extension (buffer-file-name)))))`};
+
+public class ${2:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} {
+    $0
+}"
+   (point) (point)))
+(define-auto-insert "\\.java$" 'fill-new-java-class-skeleton)
 
 ; (add-hook 'window-setup-hook 'w32-maximize-frame t)
 

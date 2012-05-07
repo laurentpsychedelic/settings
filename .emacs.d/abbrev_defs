@@ -91,11 +91,13 @@
 
 (define-abbrev-table 'global-abbrev-table
   '(
+    ("abstart" "abstract" nil 1)
     ("antr" "and" nil 1)
     ("apped" "append" nil 1)
     ("atuo" "auto" nil 1)
     ("auot" "auto" nil 1)
     ("beenn" "been" nil 1)
+    ("boolran" "boolean" nil 1)
     ("bufer" "buffer" nil 1)
     ("cakculation" "Calculation" nil 1)
     ("casncelled" "cancelled" nil 1)
@@ -152,7 +154,9 @@
     ("privaet" "private" nil 1)
     ("protexted" "protected" nil 1)
     ("protexted " "protected" nil 0)
+    ("publci" "public" nil 3)
     ("publuic" "public" nil 1)
+    ("pulbic" "public" nil 1)
     ("pulic" "public" nil 2)
     ("putr" "put" nil 1)
     ("recangle" "Rectangle" nil 1)
@@ -176,7 +180,7 @@
     ("statis" "static" nil 1)
     ("stats" "status" nil 1)
     ("statua" "status" nil 1)
-    ("string" "String" nil 28)
+    ("string" "String" nil 53)
     ("stringbuolder" "StringBuilder" nil 1)
     ("temmpbuf" "tempbuf" nil 1)
     ("thjen" "then" nil 1)
@@ -228,15 +232,15 @@
 " my-abbrev-hook 4)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 2)
+" my-abbrev-hook 3)
     ("if" "if () {
 }
-" my-abbrev-hook 13)
+" my-abbrev-hook 15)
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 0)
+}" my-abbrev-hook 2)
     ("print" "System.out.print()" my-abbrev-hook 3)
-    ("println" "System.out.println()" my-abbrev-hook 7)
+    ("println" "System.out.println()" my-abbrev-hook 15)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -269,6 +273,8 @@
 (define-abbrev-table 'sh-mode-abbrev-table '())
 
 (define-abbrev-table 'shell-mode-abbrev-table '())
+
+(define-abbrev-table 'snippet-mode-abbrev-table '())
 
 (define-abbrev-table 'special-mode-abbrev-table '())
 

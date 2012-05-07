@@ -50,16 +50,23 @@
 (yas/setup "~/.emacs.d/plugins/yasnippet")
 (auto-insert-mode)
 (setq auto-insert-directory "~/.emacs.d/insert/")
-(defun fill-new-java-class-skeleton ()
-  (interactive)
-  (yas/expand-snippet
-   "package ${1:`(file-name-nondirectory (directory-file-name (file-name-directory (file-name-sans-extension (buffer-file-name)))))`};
+;; below is the way to define a snippet by hand on init.el
+;; (defun fill-new-java-class-skeleton ()
+;;   (interactive)
+;;   (yas/expand-snippet
+;;    "package ${1:`(file-name-nondirectory (directory-file-name (file-name-directory (file-name-sans-extension (buffer-file-name)))))`};
 
-public class ${2:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} {
-    $0
-}"
-   (point) (point)))
-(define-auto-insert "\\.java$" 'fill-new-java-class-skeleton)
+;; public class ${2:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} {
+;;     $0
+;; }"
+;;    (point) (point)))
+;; add auto-insert snippet from a direct definition above
+; (define-auto-insert "\\.java$" 'fill-new-java-class-skeleton)
+
+;; below code uses already registered snippet for auto-insert 
+;; add auto-insert snippet when it is already registered
+(define-auto-insert "\\.java$" (lambda () (insert "newclass")(yas/expand)))
+
 
 ; (add-hook 'window-setup-hook 'w32-maximize-frame t)
 

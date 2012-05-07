@@ -10,3 +10,5 @@ server
 ac-comphist.dat
 #. files in script folder
 scripts/[.]*
+#emacs history
+.emacs.d/history

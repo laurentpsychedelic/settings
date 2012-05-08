@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: newtestclass-java
+# --
+package ${1:`(file-name-nondirectory (directory-file-name (file-name-directory (file-name-sans-extension (buffer-file-name)))))`};
+
+import groovy.util.GroovyTestSuite;
+import junit.framework.TestSuite;
+
+public class ${2:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} {
+    private static final String TEST_ROOT = "test/${3:`(file-name-nondirectory (directory-file-name (file-name-directory (file-name-sans-extension (buffer-file-name)))))`}/";
+    public static TestSuite suite() throws Exception {
+         TestSuite suite = new TestSuite();
+         GroovyTestSuite gsuite = new GroovyTestSuite();
+         Class cl = gsuite.compile(TEST_ROOT + "$2.groovy");
+         suite.addTestSuite(cl);
+         return suite;
+    }
+}

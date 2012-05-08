@@ -66,7 +66,8 @@
 ;; below code uses already registered snippet for auto-insert 
 ;; add auto-insert snippet when it is already registered
 (define-auto-insert "\\.java$" (lambda () (insert "newclass")(yas/expand)))
-
+(define-auto-insert "\\Test.java" (lambda () (insert "newtestclass-java")(yas/expand)))
+(define-auto-insert "\\Test.groovy" (lambda () (insert "newtestclass-groovy")(yas/expand)))
 
 ; (add-hook 'window-setup-hook 'w32-maximize-frame t)
 

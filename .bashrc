@@ -103,58 +103,41 @@ alias la='ls -a'                              # all but . and ..
 alias lal='ls -al'
 alias l='ls -CF'                              #
 
-alias 'ME-View'='~/ME-View'
-#viewers
-alias 'ME-View-Viewer-jar'='java -jar c:/Program\ Files/ME-View/bin/ME_VIEW_VIEWER.jar'
-alias 'ME-View-Viewer'='/cygdrive/c/Program\ Files/ME-View/ME_VIEW_VIEWER.exe'
-alias 'WPA-View-Viewer-jar'='java -jar c:/Program\ Files/WPA-View/bin/WPA_VIEW_VIEWER.jar'
-alias 'WPA-View-Viewer'='/cygdrive/c/Program\ Files/WPA-View/WPA_VIEW_VIEWER.exe'
-alias 'PA-View-Viewer-jar'='java -Xmx1024m -jar c:/Program\ Files/PA-View/bin/PA_VIEW_VIEWER.jar'
-alias 'PA-View-Viewer'='/cygdrive/c/Program\ Files/PA-View/PA_VIEW_VIEWER.exe'
-#inline
-alias 'ME-View-jar'='java -jar c:/Program\ Files/ME/bin/ME_VIEW.jar'
-alias 'ME-View'='/cygdrive/c/Program\ Files/ME/ME_VIEW.exe'
-alias 'WPA-View-jar'='java -jar c:/Program\ Files/WPA/bin/WPA_VIEW.jar'
-alias 'WPA-View'='/cygdrive/c/Program\ Files/WPA/WPA_VIEW.exe'
-alias 'PA-View-jar'='java -Xmx1024m -jar c:/Program\ Files/PA/bin/PA_VIEW.jar'
-alias 'PA-View'='/cygdrive/c/Program\ Files/PA/PA_VIEW.exe'
-
-alias 'findbugs'='java -Dfile.encoding=UTF-8 -jar d:/PA-WPA-View/UTILITIES/findbugs-1.3.9/lib/findbugs.jar'
-alias 'netbeans'='/cygdrive/c/Program\ Files/NetBeans\ 7.1.1/bin/netbeans.exe'
-alias 'ollydbg'='/cygdrive/c/odbg110/OLLYDBG.EXE'
-alias 'VC2008'='/cygdrive/c/Program\ Files/Microsoft\ Visual\ Studio\ 9.0/Common7/IDE/devenv.exe'
-
-# Functions
-# #########
-
-# Some example functions
-# function settitle() { echo -ne "\e]2;$@\a\e]1;$@\a"; }
-
-alias excel='~/shortcuts/MS_office/excel'
-alias powerpoint='~/shortcuts/MS_office/powerpoint'
-alias word='~/shortcuts/MS_office/word'
-alias acroread='~/shortcuts/acroread'
-
-alias 'dev'='~/dev'
-
-alias 'msbuild'='msbuild.exe /t:Rebuild /p:Configuration=Release'
-
-alias 'terminal'='cygstart /cygdrive/c/cygwin/Cygwin.bat'
-
 # Emacs
 alias 'emacsc'='emacs --no-window-system'
-# GNU global
-alias 'ctags'='/cygdrive/c/Program\ Files/emacs-23.3/bin/ctags.exe'
-alias 'etags'='/cygdrive/c/Program\ Files/emacs-23.3/bin/etags.exe'
 
-alias 'svndiff'='svn diff . --diff-cmd diff -x "-w" | cat -s | grep -3 -e ">" -e "<"'
-alias scilab='"/cygdrive/c/Program Files/scilab-5.2.1/bin/WScilex.exe"'
+SYSTEM=`uname -o`
+# echo $SYSTEM
+if [[ $SYSTEM =~ "Cygwin" ]]
+then
+    #viewers
+    alias 'ME-View-Viewer-jar'='java -jar c:/Program\ Files/ME-View/bin/ME_VIEW_VIEWER.jar'
+    alias 'ME-View-Viewer'='/cygdrive/c/Program\ Files/ME-View/ME_VIEW_VIEWER.exe'
+    alias 'WPA-View-Viewer-jar'='java -jar c:/Program\ Files/WPA-View/bin/WPA_VIEW_VIEWER.jar'
+    alias 'WPA-View-Viewer'='/cygdrive/c/Program\ Files/WPA-View/WPA_VIEW_VIEWER.exe'
+    alias 'PA-View-Viewer-jar'='java -Xmx1024m -jar c:/Program\ Files/PA-View/bin/PA_VIEW_VIEWER.jar'
+    alias 'PA-View-Viewer'='/cygdrive/c/Program\ Files/PA-View/PA_VIEW_VIEWER.exe'
+    #inline
+    alias 'ME-View-jar'='java -jar c:/Program\ Files/ME/bin/ME_VIEW.jar'
+    alias 'ME-View'='/cygdrive/c/Program\ Files/ME/ME_VIEW.exe'
+    alias 'WPA-View-jar'='java -jar c:/Program\ Files/WPA/bin/WPA_VIEW.jar'
+    alias 'WPA-View'='/cygdrive/c/Program\ Files/WPA/WPA_VIEW.exe'
+    alias 'PA-View-jar'='java -Xmx1024m -jar c:/Program\ Files/PA/bin/PA_VIEW.jar'
+    alias 'PA-View'='/cygdrive/c/Program\ Files/PA/PA_VIEW.exe'
 
-alias gem='gem.bat'
-alias rails='rails.bat'
-alias rake='rake.bat'
-
-alias svn='"/cygdrive/c/Program Files/CollabNet/Subversion Client/svn.exe"'
+    alias 'findbugs'='java -Dfile.encoding=UTF-8 -jar d:/PA-WPA-View/UTILITIES/findbugs-1.3.9/lib/findbugs.jar'
+    alias 'netbeans'='/cygdrive/c/Program\ Files/NetBeans\ 7.1.1/bin/netbeans.exe'
+    alias 'ollydbg'='/cygdrive/c/odbg110/OLLYDBG.EXE'
+    alias 'VC2008'='/cygdrive/c/Program\ Files/Microsoft\ Visual\ Studio\ 9.0/Common7/IDE/devenv.exe'
+    #alias 'msbuild'='msbuild.exe /t:Rebuild /p:Configuration=Release'
+    alias 'terminal'='cygstart /cygdrive/c/cygwin/Cygwin.bat'
+    alias 'svndiff'='svn diff . --diff-cmd diff -x "-w" | cat -s | grep -3 -e ">" -e "<"'
+    alias scilab='"/cygdrive/c/Program Files/scilab-5.2.1/bin/WScilex.exe"'
+    alias gem='gem.bat'
+    alias rails='rails.bat'
+    alias rake='rake.bat'
+    alias svn='"/cygdrive/c/Program Files/CollabNet/Subversion Client/svn.exe"'
+fi
 
 alias g="git"
 

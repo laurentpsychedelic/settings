@@ -591,6 +591,8 @@
  '(lambda ()
     (define-key java-mode-map "\C-cd" 'flymake-display-err-minibuf)))
 
+(require 'flymake-groovy)
+
 ;;;;;;;;;;;;
 ;; sticky ;;
 ;;;;;;;;;;;;

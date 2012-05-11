@@ -1,8 +1,13 @@
 ;;;;  flymake for groovy
 (require 'flymake)
 
+(if (string-equal system-type "gnu/linux")
+    (setq path-groovy-exe "~/.emacs.d/groovyserv/linux/bin") ; GNU/Linux [Ubuntu]
+  (setq path-groovy-exe "~/.emacs.d/groovyserv/win32/bin")) ; Windows
+;;(message path-groovy-exe)
+
 (setq exec-path
-      (cons "~/.emacs.d/groovyserv/win32/bin" exec-path))
+      (cons path-groovy-exe exec-path))
 
 ;; Invoke groovyclient for compile with syntax checking
 (defun flymake-groovy-init ()

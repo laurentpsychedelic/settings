@@ -129,11 +129,13 @@
     ("histroy" "history" nil 1)
     ("hoem" "HOME" nil 1)
     ("idel" "idle" nil 1)
+    ("impiort" "import" nil 1)
     ("indetn" "indent" nil 1)
     ("inffo" "info" nil 1)
     ("inport" "import" nil 1)
     ("instane" "instance" nil 1)
     ("isswitch" "iswitch" nil 1)
+    ("iumport" "import" nil 1)
     ("jfrmae" "JFrame" nil 1)
     ("langauge" "LANGUAGE" nil 1)
     ("linekd" "Linked" nil 1)
@@ -158,7 +160,7 @@
     ("privaet" "private" nil 1)
     ("protexted" "protected" nil 1)
     ("protexted " "protected" nil 0)
-    ("publci" "public" nil 6)
+    ("publci" "public" nil 7)
     ("publuic" "public" nil 1)
     ("pulbic" "public" nil 1)
     ("pulic" "public" nil 2)
@@ -169,12 +171,12 @@
     ("rednerbars" "RenderBars" nil 1)
     ("rednerplot3d" "RenderPlot3D" nil 1)
     ("resolutoin" "resolution" nil 1)
-    ("retrun" "return" nil 1)
+    ("retrun" "return" nil 2)
     ("retunr" "return" nil 2)
     ("returbn" "return" nil 1)
     ("returnt" "return" nil 1)
     ("reutn" "return" nil 1)
-    ("reutrn" "returnt" nil 1)
+    ("reutrn" "returnt" nil 2)
     ("rpeaint" "repaint" nil 1)
     ("sdtokes" "strokes" nil 1)
     ("servere" "server" nil 1)
@@ -185,13 +187,14 @@
     ("statis" "static" nil 1)
     ("stats" "status" nil 1)
     ("statua" "status" nil 1)
-    ("string" "String" nil 70)
+    ("string" "String" nil 85)
     ("stringbuolder" "StringBuilder" nil 1)
     ("temmpbuf" "tempbuf" nil 1)
     ("thjen" "then" nil 1)
     ("thois" "this" nil 1)
-    ("thorw" "throw" nil 1)
+    ("thorw" "throw" nil 2)
     ("trasnforms" "Transforms" nil 1)
+    ("treu" "true" nil 1)
     ("ture" "true" nil 1)
     ("unti" "unit" nil 2)
     ("vpid" "void" nil 1)
@@ -238,15 +241,15 @@
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 3)
     ("if" "if () {
 }
 " my-abbrev-hook 0)
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 0)
+}" my-abbrev-hook 1)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 1)
+    ("println" "System.out.println()" my-abbrev-hook 5)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -289,6 +292,8 @@
 (define-abbrev-table 'twittering-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-annotate-mode-abbrev-table '())
+
+(define-abbrev-table 'vc-bzr-log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-dir-mode-abbrev-table '())
 

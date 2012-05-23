@@ -126,7 +126,7 @@ then
     alias 'PA-View'='/cygdrive/c/Program\ Files/PA/PA_VIEW.exe'
 
     alias 'findbugs'='java -Dfile.encoding=UTF-8 -jar d:/PA-WPA-View/UTILITIES/findbugs-1.3.9/lib/findbugs.jar'
-    alias 'netbeans'='/cygdrive/c/Program\ Files/NetBeans\ 7.1.1/bin/netbeans.exe'
+    alias 'netbeans'='/cygdrive/c/Program\ Files/NetBeans\ 7.1.2/bin/netbeans.exe'
     alias 'ollydbg'='/cygdrive/c/odbg110/OLLYDBG.EXE'
     alias 'VC2008'='/cygdrive/c/Program\ Files/Microsoft\ Visual\ Studio\ 9.0/Common7/IDE/devenv.exe'
     #alias 'msbuild'='msbuild.exe /t:Rebuild /p:Configuration=Release'

@@ -22,7 +22,7 @@ echo $bldpur"+++++++++++++++++++++++"$txtrst
 
 REMOTE_REPOSITORY_BASEMENT=~/powervault/repositories
 LOCAL_REPOSITORY_BASEMENT=~/dev/local_svn_repositories
-repositories=$(ls -A $LOCAL_REPOSITORY_BASEMENT)
+repositories=$(ls -A $REMOTE_REPOSITORY_BASEMENT)
 
 for repository in ${repositories[@]}
 do

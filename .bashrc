@@ -164,6 +164,8 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 #mkdir+cd command
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+#delsvnunknown
+function delsvnunknown () { ~/settings/scripts/delete_unregistered_svn_files.sh $1; }
 #cd auto spell correction
 shopt -s cdspell
 

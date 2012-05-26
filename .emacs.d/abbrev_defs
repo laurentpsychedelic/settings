@@ -182,6 +182,7 @@
     ("reutn" "return" nil 1)
     ("reutrn" "return" nil 1)
     ("rpeaint" "repaint" nil 1)
+    ("sattic" "static" nil 1)
     ("sdtokes" "strokes" nil 1)
     ("servere" "server" nil 1)
     ("sfn" "svn" nil 1)

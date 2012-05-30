@@ -166,6 +166,14 @@ alias ......="cd ../../../../.."
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 #delsvnunknown
 function delsvnunknown () { ~/settings/scripts/delete_unregistered_svn_files.sh $1; }
+#change log message
+function changesvnlog () { 
+    #$1 revision number
+    #$2 URL
+    #$3 new commit message
+    #echo "svn propset -r$1 --revprop svn:log \"$3\" $2"
+    svn propset -r$1 --revprop svn:log "$3" $2 
+}
 #cd auto spell correction
 shopt -s cdspell
 

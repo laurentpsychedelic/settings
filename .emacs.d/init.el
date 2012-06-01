@@ -106,7 +106,7 @@
             (highlight-indentation-current-column-mode)
             (highlight-indentation-mode)))
 
-(setq radiance-dark-theme-background "#484850")
+(setq radiance-dark-theme-background "#686870")
 (setq dark-theme-background "black")
 (setq light-theme-background "light grey")
 (setq radiance-dark-theme-foreground "#000000")

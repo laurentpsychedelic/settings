@@ -21,6 +21,17 @@ then
     FILE_LNK=$(cygpath -w $HOME_DIR/.emacs.d)
     FILE_TAR=$(cygpath -w $SETTINGS_DIR/.emacs.d)
     junction -s "$FILE_LNK" "$FILE_TAR"
+
+    #SET SHELL ENV TO BASH.EXE
+    profile=$(cat /etc/profile)
+    if [[ "$profile" =~ "SHELL='c:/cygwin/bin/bash.exe'" ]]
+    then
+        echo "SHELL already set..."
+    else
+        echo "Set SHELL to bash.exe :: export SHELL='c:/cygwin/bin/bash.exe'" #>> /etc/profile
+        echo "" >> /etc/profile
+        echo "export SHELL='c:/cygwin/bin/bash.exe'" >> /etc/profile
+    fi
 else
     echo "Linux!"
     SETTINGS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"

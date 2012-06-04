@@ -139,7 +139,12 @@ then
     alias svn='"/cygdrive/c/Program Files/CollabNet/Subversion Client/svn.exe"'
 fi
 
+#git settings
 alias g="git"
+g config --global alias.ci commit
+g config --global alias.co checkout
+g config --global alias.br branch
+g config --global alias.rs reset
 
 export REP=https://192.168.20.36/svn
 export REP_WPA=${REP}/PA_WPA-View_100

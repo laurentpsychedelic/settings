@@ -32,6 +32,16 @@ then
         echo "" >> /etc/profile
         echo "export SHELL='c:/cygwin/bin/bash.exe'" >> /etc/profile
     fi
+    #PREADD COLLABNET SVN Client TO THE PATH
+    if [[ "$profile" =~ "CollabNet/Subversion Client" ]]
+    then
+        echo "SVN client path already set..."
+    else
+        echo "Set SVN client path to CollabNet client :: export PATH='/cygdrive/c/Program Files/CollabNet/Subversion Client':$PATH"
+        echo "" >> /etc/profile
+        echo "export PATH='/cygdrive/c/Program Files/CollabNet/Subversion Client':\$PATH" >> /etc/profile
+    fi
+
 else
     echo "Linux!"
     SETTINGS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -56,3 +66,4 @@ else
 fi
 
 source ~/.bashrc
+source /etc/profile

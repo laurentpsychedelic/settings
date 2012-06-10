@@ -137,6 +137,9 @@ then
     alias rails='rails.bat'
     alias rake='rake.bat'
     alias svn='"/cygdrive/c/Program Files/CollabNet/Subversion Client/svn.exe"'
+
+    #git settings (Windows only)
+    git config --global core.pager "nkf -s | more"
 fi
 
 #git settings

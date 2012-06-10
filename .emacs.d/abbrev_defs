@@ -229,6 +229,7 @@
     ("vpid" "void" nil 1)
     ("vreak" "break" nil 1)
     ("wat" "awt" nil 1)
+    ("winodwsi" "Windows" nil 1)
     ("wundow" "window" nil 1)
     ("x30scannomral" "X30ScanNormal" nil 1)
    ))

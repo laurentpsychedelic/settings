@@ -63,6 +63,14 @@ else
 	mv -vf $FILE_LNK ${FILE_LNK}_old
     fi
     ln -s $FILE_TAR $FILE_LNK
+
+    #SOFT LINK TO UPDATE
+    FILE_LNK=$HOME_DIR/.update
+    FILE_TAR=$SETTINGS_DIR/scripts/update
+    if [ -e "$FILE_LNK" ]; then
+	mv -vf $FILE_LNK ${FILE_LNK}_old
+    fi
+    ln -s $FILE_TAR $FILE_LNK
 fi
 
 source ~/.bashrc

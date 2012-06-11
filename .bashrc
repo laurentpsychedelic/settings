@@ -189,7 +189,7 @@ function changesvnlog () {
 #keeping showing the rest of the output
 function highlight () {
     pattern=$1; shift; file=$1
-    grep -E --color "$pattern|$" $file
+    grep -E --color=always "$pattern|$" $file
 }
 #custom prompt with time
 #left param: 0:normal 1:bright/bold 2:dark 4:underlines

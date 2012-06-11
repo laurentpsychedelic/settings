@@ -185,6 +185,12 @@ function changesvnlog () {
     #echo "svn propset -r$1 --revprop svn:log \"$3\" $2"
     svn propset -r$1 --revprop svn:log "$3" $2 
 }
+#highlight patterns in output (like grep but
+#keeping showing the rest of the output
+function highlight () {
+    pattern=$1; shift; file=$1
+    grep -E --color "$pattern|$" $file
+}
 #custom prompt with time
 #left param: 0:normal 1:bright/bold 2:dark 4:underlines
 #right param: 32:green 33:brown 34:red etc...

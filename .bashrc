@@ -95,9 +95,9 @@
 alias grep='grep --color'                     # show differences in colour
 
 # Some shortcuts for different directory listings
-alias ls='ls -hF --color=auto'                 # classify files in colour
-alias dir='ls --color=auto --format=vertical'
-alias vdir='ls --color=auto --format=long'
+alias ls='ls -h --color=always'                 # classify files in colour
+alias dir='ls --color=always --format=vertical'
+alias vdir='ls --color=always --format=long'
 alias ll='ls -l'                              # long list
 alias la='ls -a'                              # all but . and ..
 alias lal='ls -al'

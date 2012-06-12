@@ -191,6 +191,11 @@ function highlight () {
     pattern=$1; shift; file=$1
     grep -E --color=always "$pattern|$" $file
 }
+#function to get the list of files in a given state (SVN)
+function get_svn_special_state_files() {
+    expr=$(echo -n '/^'"$2"'/{print $2}')
+    svn stat $1 | awk "$expr" | tr "\\" "/" 2> /dev/null
+}
 #custom prompt with time
 #left param: 0:normal 1:bright/bold 2:dark 4:underlines
 #right param: 32:green 33:brown 34:red etc...

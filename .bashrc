@@ -199,7 +199,7 @@ function get_svn_special_state_files() {
 #custom prompt with time
 #left param: 0:normal 1:bright/bold 2:dark 4:underlines
 #right param: 32:green 33:brown 34:red etc...
-export PS1="\e[1;33m[\t]\e[m \e[4;33m\u@\h\e[m \e[1;32m\w\e[m> "
+export PS1="\[\e[1;33m\][\t]\[\e[m\] \[\e[4;33m\]\u@\h\[\e[m\] \[\e[1;32m\]\w\[\e[m\]> "
 
 #cd auto spell correction
 shopt -s cdspell

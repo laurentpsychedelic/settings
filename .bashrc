@@ -196,6 +196,10 @@ function get_svn_special_state_files() {
     expr=$(echo -n '/^'"$2"'/{print $2}')
     svn stat $1 | awk "$expr" | tr "\\" "/" 2> /dev/null
 }
+#function to cleanup .svn folders of a SVN working copy
+function clean_svn_folder() {
+    find $1 -name \.svn | xargs rm -rvf
+}
 #custom prompt with time
 #left param: 0:normal 1:bright/bold 2:dark 4:underlines
 #right param: 32:green 33:brown 34:red etc...

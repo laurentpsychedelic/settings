@@ -109,6 +109,7 @@
     ("classpaht" "classpth" nil 1)
     ("classpth" "classpath" nil 1)
     ("colroing" "coloring" nil 1)
+    ("comapring" "Comparing" nil 1)
     ("comlpete" "complete" nil 1)
     ("complte" "complete" nil 1)
     ("correctr" "correct" nil 1)
@@ -124,6 +125,7 @@
     ("exsception" "Exception" nil 1)
     ("exti" "exit" nil 1)
     ("falot" "float" nil 1)
+    ("fiels" "files" nil 1)
     ("filepth" "filepath" nil 1)
     ("filer" "filter" nil 1)
     ("fileter" "filter" nil 1)
@@ -238,21 +240,21 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 3)
     ("if" "if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 3)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 0)
+    ("println" "System.out.println()" my-abbrev-hook 7)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

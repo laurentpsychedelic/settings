@@ -177,13 +177,21 @@ alias ......="cd ../../../../.."
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 #delsvnunknown
 function delsvnunknown () { ~/settings/scripts/delete_unregistered_svn_files.sh $1; }
-#change log message
-function changesvnlog () { 
+#change SVN commit log message
+function change_svn_commit_log_message () { 
     #$1 revision number
     #$2 URL
     #$3 new commit message
     #echo "svn propset -r$1 --revprop svn:log \"$3\" $2"
     svn propset -r$1 --revprop svn:log "$3" $2 
+}
+#change SVN commit author
+function change_svn_commit_author () { 
+    #$1 revision number
+    #$2 URL
+    #$3 new commit message
+    #echo "svn propset -r$1 --revprop svn:log \"$3\" $2"
+    svn propset -r$1 --revprop svn:author "$3" $2 
 }
 #highlight patterns in output (like grep but
 #keeping showing the rest of the output

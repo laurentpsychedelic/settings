@@ -110,6 +110,10 @@ SYSTEM=`uname -o`
 # echo $SYSTEM
 if [[ $SYSTEM =~ "Cygwin" ]]
 then
+    #kill process on Windows using Powershell
+    function kill_win32() {
+        powershell "kill -processname $1"
+    }
     #viewers
     alias 'ME-View-Viewer-jar'='java -jar c:/Program\ Files/ME-View/bin/ME_VIEW_VIEWER.jar'
     alias 'ME-View-Viewer'='/cygdrive/c/Program\ Files/ME-View/ME_VIEW_VIEWER.exe'

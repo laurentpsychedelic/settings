@@ -114,6 +114,7 @@
     ("comlpete" "complete" nil 1)
     ("complte" "complete" nil 1)
     ("correctr" "correct" nil 1)
+    ("dara" "DATA" nil 1)
     ("defore" "before" nil 1)
     ("dimensuion" "Dimension" nil 1)
     ("dound" "found" nil 1)
@@ -134,6 +135,7 @@
     ("flase" "false" nil 1)
     ("flepath" "filepath" nil 1)
     ("flloat" "float" nil 1)
+    ("flost" "float" nil 1)
     ("folat" "Float" nil 1)
     ("found" "found" nil 2)
     ("fpirntf" "fprintf" nil 1)
@@ -192,6 +194,7 @@
     ("pulic" "public" nil 2)
     ("putr" "put" nil 1)
     ("recangle" "Rectangle" nil 1)
+    ("recipy" "recopy" nil 1)
     ("redct" "rect" nil 1)
     ("redfine" "redefine" nil 1)
     ("rednerbars" "RenderBars" nil 1)
@@ -276,7 +279,7 @@
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 6)
     ("if" "if () {
 }
 " my-abbrev-hook 1)
@@ -284,7 +287,7 @@
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 0)
+    ("println" "System.out.println()" my-abbrev-hook 13)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

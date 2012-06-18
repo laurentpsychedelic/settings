@@ -117,6 +117,7 @@
     ("dara" "DATA" nil 1)
     ("defore" "before" nil 1)
     ("dimensuion" "Dimension" nil 1)
+    ("dipskay" "display" nil 1)
     ("dound" "found" nil 1)
     ("ecxists" "exists" nil 1)
     ("enablle" "enable" nil 1)
@@ -282,7 +283,7 @@
 " my-abbrev-hook 6)
     ("if" "if () {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 2)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)

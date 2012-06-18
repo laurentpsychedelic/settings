@@ -136,18 +136,26 @@ then
     alias 'VC2008'='/cygdrive/c/Program\ Files/Microsoft\ Visual\ Studio\ 9.0/Common7/IDE/devenv.exe'
     #alias 'msbuild'='msbuild.exe /t:Rebuild /p:Configuration=Release'
     alias 'terminal'='cygstart /cygdrive/c/cygwin/Cygwin.bat'
-    alias 'svndiff'='svn diff . --diff-cmd diff -x "-w" | cat -s | grep -3 -e ">" -e "<"'
     alias scilab='"/cygdrive/c/Program Files/scilab-5.2.1/bin/WScilex.exe"'
     alias gem='gem.bat'
     alias rails='rails.bat'
     alias rake='rake.bat'
     alias svn='"/cygdrive/c/Program Files/CollabNet/Subversion Client/svn.exe"'
+    #a colorized version of SVN diff (requires colordiff command)
+    function svndiff () {
+        svn diff "${@}" | colordiff | nkf -s | more
+    }
 
     #git settings (Windows)
     git config --global core.pager "nkf -s | more"
 else
     #git settings (Linux)
     git config --global core.pager "nkf -u | less"
+    #a colorized version of SVN diff (requires colordiff command)
+    function svndiff () {
+        svn diff "${@}" | colordiff | less -R
+    }
+
 fi
 
 #git settings

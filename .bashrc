@@ -110,6 +110,7 @@ SYSTEM=`uname -o`
 # echo $SYSTEM
 if [[ $SYSTEM =~ "Cygwin" ]]
 then
+    export CYGWIN=nodosfilewarning
     #kill process on Windows using Powershell
     function kill_win32() {
         powershell "kill -processname $1"

@@ -98,6 +98,7 @@
     ("atuo" "auto" nil 1)
     ("auot" "auto" nil 1)
     ("beenn" "been" nil 1)
+    ("befire" "before" nil 1)
     ("boolran" "boolean" nil 1)
     ("bufer" "buffer" nil 1)
     ("cakculation" "Calculation" nil 1)
@@ -221,8 +222,8 @@
     ("statis" "static" nil 1)
     ("stats" "status" nil 1)
     ("statua" "status" nil 1)
-    ("strign" "String" nil 1)
-    ("string" "String" nil 134)
+    ("strign" "String" nil 2)
+    ("string" "String" nil 144)
     ("stringbuolder" "StringBuilder" nil 1)
     ("strint" "String" nil 1)
     ("temmpbuf" "tempbuf" nil 1)
@@ -277,16 +278,16 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 6)
+" my-abbrev-hook 9)
     ("if" "if () {
 }
-" my-abbrev-hook 2)
+" my-abbrev-hook 4)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)

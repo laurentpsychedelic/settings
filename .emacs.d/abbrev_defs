@@ -127,6 +127,7 @@
     ("excpetion" "Exception" nil 1)
     ("exsception" "Exception" nil 1)
     ("exti" "exit" nil 1)
+    ("exvcept" "except" nil 1)
     ("falot" "float" nil 1)
     ("fiels" "files" nil 1)
     ("filepth" "filepath" nil 1)
@@ -270,6 +271,8 @@
 
 (define-abbrev-table 'idl-mode-abbrev-table '())
 
+(define-abbrev-table 'inferior-python-mode-abbrev-table '())
+
 (define-abbrev-table 'java-mode-abbrev-table
   '(
     ("else" "else {
@@ -294,6 +297,8 @@
 " my-abbrev-hook 0)
    ))
 
+(define-abbrev-table 'jython-mode-abbrev-table '())
+
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
 (define-abbrev-table 'log-edit-mode-abbrev-table '())
@@ -311,6 +316,8 @@
 (define-abbrev-table 'pike-mode-abbrev-table
   '(
    ))
+
+(define-abbrev-table 'python-mode-abbrev-table '())
 
 (define-abbrev-table 'scilab-mode-abbrev-table '())
 

@@ -162,6 +162,7 @@
     ("iumport" "import" nil 1)
     ("jfrmae" "JFrame" nil 1)
     ("langauge" "LANGUAGE" nil 1)
+    ("ledt" "LEFT" nil 1)
     ("linekd" "Linked" nil 1)
     ("linkedlsit" "LinkedList" nil 3)
     ("measurement" "Measurement" nil 3)
@@ -215,6 +216,7 @@
     ("sattic" "static" nil 1)
     ("sdtokes" "strokes" nil 1)
     ("servere" "server" nil 1)
+    ("sewt" "set" nil 1)
     ("sfn" "svn" nil 1)
     ("sotred" "stored" nil 1)
     ("stagecontopl" "StageControl" nil 1)
@@ -222,8 +224,9 @@
     ("statis" "static" nil 1)
     ("stats" "status" nil 1)
     ("statua" "status" nil 1)
+    ("steing" "String" nil 1)
     ("strign" "String" nil 2)
-    ("string" "String" nil 144)
+    ("string" "String" nil 151)
     ("stringbuolder" "StringBuilder" nil 1)
     ("strint" "String" nil 1)
     ("temmpbuf" "tempbuf" nil 1)
@@ -233,12 +236,13 @@
     ("tiutle" "title" nil 1)
     ("trasnforms" "Transforms" nil 1)
     ("treu" "true" nil 1)
+    ("truye" "true" nil 1)
     ("ture" "true" nil 1)
     ("unalbe" "unable" nil 1)
     ("unti" "unit" nil 2)
     ("vpid" "void" nil 1)
     ("vreak" "break" nil 1)
-    ("wat" "awt" nil 1)
+    ("wat" "awt" nil 3)
     ("winodwsi" "Windows" nil 1)
     ("wundow" "window" nil 1)
     ("x30scannomral" "X30ScanNormal" nil 1)
@@ -248,13 +252,13 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 0)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 3)
+" my-abbrev-hook 0)
     ("if" "if () {
 }
 " my-abbrev-hook 3)
@@ -262,7 +266,7 @@
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 7)
+    ("println" "System.out.println()" my-abbrev-hook 6)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -278,21 +282,21 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 0)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 9)
+" my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 4)
+" my-abbrev-hook 2)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 13)
+    ("println" "System.out.println()" my-abbrev-hook 5)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -305,6 +309,8 @@
 (define-abbrev-table 'log-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'log-view-mode-abbrev-table '())
+
+(define-abbrev-table 'message-mode-abbrev-table '())
 
 (define-abbrev-table 'nroff-mode-abbrev-table '())
 

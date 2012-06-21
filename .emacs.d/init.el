@@ -443,12 +443,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; which-function-mode ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(which-func-mode 1)
+;;(which-func-mode 1)
 ;; aply which-func-mode for all major modes
-(setq which-func-modes t)
+;(setq which-func-modes t)
+;(eval-after-load "which-func"
+;      '(add-to-list 'which-func-modes 'java-mode))
 ;; display function name in a bar above screen
-(delete (assoc 'which-func-mode mode-line-format) mode-line-format)
-(setq-default header-line-format '(which-func-mode ("" which-func-format)))
+;;(delete (assoc 'which-func-mode mode-line-format) mode-line-format)
+;;(setq-default header-line-format '(which-func-mode ("" which-func-format)))
 
 ;;;;;;;;;;;;;;;;;;;;
 ;; highligh-regex ;;

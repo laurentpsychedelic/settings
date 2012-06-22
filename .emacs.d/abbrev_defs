@@ -207,6 +207,7 @@
     ("remopve" "remove" nil 1)
     ("replaement" "replacement" nil 1)
     ("resolutoin" "resolution" nil 1)
+    ("resukt" "result" nil 1)
     ("retrun" "return" nil 3)
     ("retunr" "return" nil 2)
     ("returbn" "return" nil 1)

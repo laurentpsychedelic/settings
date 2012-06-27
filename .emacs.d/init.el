@@ -10,6 +10,8 @@
          retval)
      ,@clean-up))
 
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
 ;; tool bar/scroll bar off
 (tool-bar-mode -1)
 (scroll-bar-mode -1)

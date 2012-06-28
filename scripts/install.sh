@@ -42,6 +42,9 @@ then
         echo "export PATH='/cygdrive/c/Program Files/CollabNet/Subversion Client':\$PATH" >> /etc/profile
     fi
 
+    #CREATE SYMBOLIC LINK TO %PROGRAMFILES%
+    junction -s "$(cygpath -w ~/pf)" "$PROGRAMFILES"
+
 else
     echo "Linux!"
     SETTINGS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"

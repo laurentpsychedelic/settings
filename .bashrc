@@ -140,7 +140,7 @@ then
     alias gem='gem.bat'
     alias rails='rails.bat'
     alias rake='rake.bat'
-    alias svn='"/cygdrive/c/Program Files/CollabNet/Subversion Client/svn.exe"'
+    #alias svn='"/cygdrive/c/Program Files/CollabNet/Subversion Client/svn.exe"'
     #a colorized version of SVN diff (requires colordiff command)
     function svndiff () {
         svn diff "${@}" | colordiff | nkf -s | more

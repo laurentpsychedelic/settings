@@ -135,7 +135,7 @@ then
     #alias 'ollydbg'='/cygdrive/c/odbg110/OLLYDBG.EXE'
     #alias 'VC2008'='~/pf/Microsoft\ Visual\ Studio\ 9.0/Common7/IDE/devenv.exe'
     #alias 'msbuild'='msbuild.exe /t:Rebuild /p:Configuration=Release'
-    alias 'terminal'='/cygdrive/c/cygwin/bin/mintty.exe -i /Cygwin-Terminal.ico -' #'cygstart /cygdrive/c/cygwin/Cygwin.bat'
+    alias 'terminal'='/cygdrive/c/cygwin/bin/mintty.exe -i /Cygwin-Terminal.ico - &' #'cygstart /cygdrive/c/cygwin/Cygwin.bat'
     #alias scilab='"/cygdrive/c/Program Files/scilab-5.2.1/bin/WScilex.exe"'
     alias gem='gem.bat'
     alias rails='rails.bat'

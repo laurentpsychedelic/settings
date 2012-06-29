@@ -1,4 +1,4 @@
-;;-*-coding: emacs-mule;-*-
+;;-*-coding: utf-8;-*-
 (define-abbrev-table 'Buffer-menu-mode-abbrev-table '())
 
 (define-abbrev-table 'Custom-mode-abbrev-table '())
@@ -99,6 +99,7 @@
     ("auot" "auto" nil 1)
     ("beenn" "been" nil 1)
     ("befire" "before" nil 1)
+    ("bollean" "boolean" nil 1)
     ("boolran" "boolean" nil 1)
     ("bufer" "buffer" nil 1)
     ("cakculation" "Calculation" nil 1)
@@ -299,7 +300,7 @@
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 12)
+    ("println" "System.out.println()" my-abbrev-hook 14)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -321,11 +322,19 @@
   '(
    ))
 
+(define-abbrev-table 'occur-edit-mode-abbrev-table '())
+
+(define-abbrev-table 'occur-mode-abbrev-table '())
+
 (define-abbrev-table 'outline-mode-abbrev-table '())
 
 (define-abbrev-table 'pike-mode-abbrev-table
   '(
    ))
+
+(define-abbrev-table 'process-menu-mode-abbrev-table '())
+
+(define-abbrev-table 'prog-mode-abbrev-table '())
 
 (define-abbrev-table 'python-mode-abbrev-table '())
 

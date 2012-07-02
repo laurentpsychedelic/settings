@@ -202,6 +202,7 @@
     ("putr" "put" nil 1)
     ("recangle" "Rectangle" nil 1)
     ("recipy" "recopy" nil 1)
+    ("recvipe" "recipe" nil 1)
     ("redct" "rect" nil 1)
     ("redfine" "redefine" nil 1)
     ("rednerbars" "RenderBars" nil 1)
@@ -303,7 +304,7 @@
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 14)
+    ("println" "System.out.println()" my-abbrev-hook 15)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

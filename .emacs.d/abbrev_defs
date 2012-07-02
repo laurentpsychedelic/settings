@@ -125,6 +125,7 @@
     ("ecxists" "exists" nil 1)
     ("enablle" "enable" nil 1)
     ("enw" "new" nil 1)
+    ("esle" "else" nil 1)
     ("excepiton" "Exception" nil 1)
     ("exceptionhander" "ExceptionHandler" nil 1)
     ("excpetion" "Exception" nil 1)
@@ -276,6 +277,8 @@
 " my-abbrev-hook 0)
    ))
 
+(define-abbrev-table 'help-mode-abbrev-table '())
+
 (define-abbrev-table 'html-mode-abbrev-table '())
 
 (define-abbrev-table 'idl-mode-abbrev-table '())
@@ -286,7 +289,7 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
@@ -295,7 +298,7 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 5)
+" my-abbrev-hook 6)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)

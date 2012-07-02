@@ -155,7 +155,10 @@ else
     function svndiff () {
         svn diff "${@}" | colordiff | less -R
     }
-
+    #function to startup chromium-browser
+    chrome () {
+        chromium-browser "${@}" 2> /dev/null &
+    }
 fi
 
 #git settings

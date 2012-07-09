@@ -520,6 +520,13 @@
 	     (make-local-variable 'write-contents-hooks)
     	     (add-hook 'write-contents-hooks 'c-java-mode-untabify)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; set time zone to GMT-0009 ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(set-time-zone-rule "GMT-0009")
+;(current-time-string)
+;(current-time-zone)
+
 ;;;;;;;;;;;;;;;;;;;
 ;; flymake-mode ;;;
 ;;;;;;;;;;;;;;;;;;;

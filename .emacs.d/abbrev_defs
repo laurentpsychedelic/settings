@@ -159,6 +159,7 @@
     ("impoirt" "import" nil 1)
     ("improt" "import" nil 1)
     ("indetn" "indent" nil 1)
+    ("indlide" "include" nil 1)
     ("inffo" "info" nil 1)
     ("inport" "import" nil 1)
     ("instane" "instance" nil 1)
@@ -318,6 +319,18 @@
 (define-abbrev-table 'log-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'log-view-mode-abbrev-table '())
+
+(define-abbrev-table 'makefile-automake-mode-abbrev-table '())
+
+(define-abbrev-table 'makefile-bsdmake-mode-abbrev-table '())
+
+(define-abbrev-table 'makefile-gmake-mode-abbrev-table '())
+
+(define-abbrev-table 'makefile-imake-mode-abbrev-table '())
+
+(define-abbrev-table 'makefile-makepp-mode-abbrev-table '())
+
+(define-abbrev-table 'makefile-mode-abbrev-table '())
 
 (define-abbrev-table 'message-mode-abbrev-table '())
 

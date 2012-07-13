@@ -328,7 +328,9 @@
 ;                                    'split-window-vertically))
 ; keybinding for ediff revision "C-x version ediff"
 (global-set-key (kbd "C-x v e") 'ediff-revision)
-(setq ediff-diff-options "--text")
+(if (not (string-equal system-type "gnu/linux"))
+    (setq ediff-diff-program "C:/cygwin/bin/diff.exe"))
+;;(setq ediff-diff-options "--text")
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;; auto-scroll while compilation

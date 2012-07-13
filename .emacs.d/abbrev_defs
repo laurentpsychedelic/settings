@@ -160,6 +160,7 @@
     ("impoirt" "import" nil 1)
     ("improt" "import" nil 1)
     ("indetn" "indent" nil 1)
+    ("indlide" "include" nil 1)
     ("inffo" "info" nil 1)
     ("inport" "import" nil 1)
     ("instane" "instance" nil 1)

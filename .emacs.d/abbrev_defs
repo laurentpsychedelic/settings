@@ -16,13 +16,13 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 2)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("if" "if () {
 }
 " my-abbrev-hook 1)
@@ -32,7 +32,7 @@
     ("printf" "printf(\"\")" my-abbrev-hook 0)
     ("while" "while () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
    ))
 
 (define-abbrev-table 'c-mode-abbrev-table
@@ -116,6 +116,8 @@
     ("comapring" "Comparing" nil 1)
     ("comlpete" "complete" nil 1)
     ("complte" "complete" nil 1)
+    ("comst" "const" nil 1)
+    ("condt" "const" nil 1)
     ("correctr" "correct" nil 1)
     ("ctach" "catch" nil 1)
     ("dara" "DATA" nil 1)
@@ -162,6 +164,7 @@
     ("indetn" "indent" nil 1)
     ("indlide" "include" nil 1)
     ("inffo" "info" nil 1)
+    ("inlcude" "include" nil 1)
     ("inport" "import" nil 1)
     ("instane" "instance" nil 1)
     ("isswitch" "iswitch" nil 1)
@@ -219,7 +222,7 @@
     ("returbn" "return" nil 1)
     ("returnt" "return" nil 1)
     ("reutn" "return" nil 1)
-    ("reutrn" "return" nil 1)
+    ("reutrn" "return" nil 2)
     ("rpeaint" "repaint" nil 1)
     ("rwo" "row" nil 1)
     ("sattic" "static" nil 1)

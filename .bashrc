@@ -224,7 +224,23 @@ function get_svn_special_state_files() {
 }
 #function to cleanup .svn folders of a SVN working copy
 function clean_svn_folder() {
-    find $1 -name \.svn | xargs rm -rvf
+    clean_files_regexp $1 \.svn
+}
+#clean ~ backup files
+function clean_backup_files() {
+    clean_files_regexp $1 \*~
+}
+#clean flymake temporary files
+function clean_flymake_files() {
+    clean_files_regexp $1 \*flymake\*
+}
+#clean class files
+function clean_class_files() {
+    clean_files_regexp $1 \*class
+}
+#clean files matching given regular expression
+function clean_files_regexp() {
+    find $1 -name $2 | xargs rm -vf
 }
 #custom prompt with time
 #left param: 0:normal 1:bright/bold 2:dark 4:underlines

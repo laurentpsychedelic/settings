@@ -115,6 +115,10 @@ then
     function kill_win32() {
         powershell "kill -processname $1"
     }
+    if [[ ! -e ~/pf ]]
+    then
+        ln -s "$PROGRAMFILES" ~/pf 
+    fi
     #viewers
     alias 'ME-View-Viewer-jar'='java -jar "$(cygpath -m ~/pf/ME-View/bin/ME_VIEW_VIEWER.jar)"'
     alias 'ME-View-Viewer'='~/pf/ME-View/ME_VIEW_VIEWER.exe'

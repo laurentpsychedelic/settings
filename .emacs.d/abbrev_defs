@@ -25,11 +25,11 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 2)
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
-    ("printf" "printf(\"\")" my-abbrev-hook 0)
+    ("printf" "printf(\"\")" my-abbrev-hook 5)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -223,11 +223,13 @@
     ("redfine" "redefine" nil 1)
     ("rednerbars" "RenderBars" nil 1)
     ("rednerplot3d" "RenderPlot3D" nil 1)
+    ("reguion" "Region" nil 1)
     ("remopve" "remove" nil 1)
     ("replaement" "replacement" nil 1)
     ("resolutoin" "resolution" nil 1)
     ("resukt" "result" nil 1)
     ("retrun" "return" nil 5)
+    ("retsult" "result" nil 1)
     ("retunr" "return" nil 2)
     ("returbn" "return" nil 1)
     ("returnt" "return" nil 1)
@@ -309,21 +311,21 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 3)
+" my-abbrev-hook 0)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 3)
+" my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 4)
+" my-abbrev-hook 0)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 9)
+    ("println" "System.out.println()" my-abbrev-hook 0)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

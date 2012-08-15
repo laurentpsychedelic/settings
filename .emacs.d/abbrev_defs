@@ -16,16 +16,16 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 2)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("if" "if () {
 }
-" my-abbrev-hook 2)
+" my-abbrev-hook 3)
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
@@ -140,6 +140,7 @@
     ("exsception" "Exception" nil 1)
     ("exti" "exit" nil 1)
     ("exvcept" "except" nil 1)
+    ("faieldg" "Failed" nil 1)
     ("falot" "float" nil 1)
     ("fiels" "files" nil 1)
     ("fikes" "files" nil 1)
@@ -182,6 +183,7 @@
     ("ledt" "LEFT" nil 1)
     ("linekd" "Linked" nil 1)
     ("linkedlsit" "LinkedList" nil 3)
+    ("locastion" "location" nil 3)
     ("measurement" "Measurement" nil 4)
     ("memoru" "memory" nil 1)
     ("mesages" "messages" nil 1)
@@ -265,7 +267,7 @@
     ("treu" "true" nil 1)
     ("truye" "true" nil 1)
     ("ture" "true" nil 1)
-    ("unalbe" "unable" nil 1)
+    ("unalbe" "unable" nil 2)
     ("unti" "unit" nil 2)
     ("vpid" "void" nil 1)
     ("vreak" "break" nil 1)

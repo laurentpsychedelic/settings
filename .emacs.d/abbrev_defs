@@ -25,14 +25,14 @@
 " my-abbrev-hook 1)
     ("if" "if () {
 }
-" my-abbrev-hook 3)
+" my-abbrev-hook 4)
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
     ("printf" "printf(\"\")" my-abbrev-hook 5)
     ("while" "while () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
    ))
 
 (define-abbrev-table 'c-mode-abbrev-table
@@ -184,7 +184,7 @@
     ("linekd" "Linked" nil 1)
     ("linkedlsit" "LinkedList" nil 3)
     ("locastion" "location" nil 3)
-    ("measurement" "Measurement" nil 4)
+    ("measurement" "Measurement" nil 9)
     ("memoru" "memory" nil 1)
     ("mesages" "messages" nil 1)
     ("mide" "mode" nil 1)
@@ -228,6 +228,7 @@
     ("reguion" "Region" nil 1)
     ("remopve" "remove" nil 1)
     ("replaement" "replacement" nil 1)
+    ("rerturn" "RETURN" nil 1)
     ("resolutoin" "resolution" nil 1)
     ("resukt" "result" nil 1)
     ("retrun" "return" nil 5)

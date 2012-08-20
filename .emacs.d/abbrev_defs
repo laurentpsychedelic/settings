@@ -25,7 +25,7 @@
 " my-abbrev-hook 1)
     ("if" "if () {
 }
-" my-abbrev-hook 4)
+" my-abbrev-hook 13)
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
@@ -85,6 +85,8 @@
 
 (define-abbrev-table 'diff-mode-abbrev-table '())
 
+(define-abbrev-table 'doctex-mode-abbrev-table '())
+
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
 
 (define-abbrev-table 'fundamental-mode-abbrev-table '())
@@ -92,6 +94,7 @@
 (define-abbrev-table 'global-abbrev-table
   '(
     ("abstart" "abstract" nil 1)
+    ("algirithm" "algorithm" nil 1)
     ("antr" "and" nil 1)
     ("apped" "append" nil 1)
     ("aprameters" "parameters" nil 1)
@@ -118,9 +121,11 @@
     ("comaprator" "Comparator" nil 1)
     ("comapring" "Comparing" nil 1)
     ("comlpete" "complete" nil 1)
+    ("commnet" "comment" nil 1)
     ("complte" "complete" nil 1)
     ("comst" "const" nil 1)
     ("condt" "const" nil 1)
+    ("contant" "constant" nil 1)
     ("correctr" "correct" nil 1)
     ("ctach" "catch" nil 1)
     ("dara" "DATA" nil 1)
@@ -179,12 +184,13 @@
     ("isswitch" "iswitch" nil 1)
     ("iumport" "import" nil 1)
     ("jfrmae" "JFrame" nil 1)
-    ("langauge" "LANGUAGE" nil 1)
+    ("langauge" "language" nil 1)
     ("ledt" "LEFT" nil 1)
     ("linekd" "Linked" nil 1)
     ("linkedlsit" "LinkedList" nil 3)
     ("locastion" "location" nil 3)
-    ("measurement" "Measurement" nil 9)
+    ("measruement" "measurement" nil 1)
+    ("measurement" "Measurement" nil 10)
     ("memoru" "memory" nil 1)
     ("mesages" "messages" nil 1)
     ("mide" "mode" nil 1)
@@ -201,12 +207,14 @@
     ("oveerdie" "Override" nil 1)
     ("over6ride" "Override" nil 1)
     ("pasth" "path" nil 1)
+    ("pesilon" "epsilon" nil 1)
     ("pirntln" "println" nil 1)
     ("pl8ugins" "plugins" nil 1)
     ("plubi" "public" nil 1)
     ("plublic" "public" nil 1)
     ("pluguin" "plugin" nil 1)
     ("poijnts" "POINTS" nil 1)
+    ("polariation" "Polarization" nil 1)
     ("pram" "param" nil 1)
     ("prama" "param" nil 1)
     ("privaet" "private" nil 1)
@@ -218,6 +226,7 @@
     ("pulbic" "public" nil 1)
     ("pulic" "public" nil 2)
     ("putr" "put" nil 1)
+    ("rafractove" "refractive" nil 1)
     ("recangle" "Rectangle" nil 1)
     ("recipy" "recopy" nil 1)
     ("recvipe" "recipe" nil 1)
@@ -236,6 +245,7 @@
     ("retunr" "return" nil 2)
     ("returbn" "return" nil 1)
     ("returnt" "return" nil 1)
+    ("reuslt" "result" nil 1)
     ("reutn" "return" nil 1)
     ("reutrn" "return" nil 2)
     ("rpeaint" "repaint" nil 1)
@@ -336,6 +346,8 @@
 
 (define-abbrev-table 'jython-mode-abbrev-table '())
 
+(define-abbrev-table 'latex-mode-abbrev-table '())
+
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
 (define-abbrev-table 'log-edit-mode-abbrev-table '())
@@ -374,9 +386,15 @@
   '(
    ))
 
+(define-abbrev-table 'plain-tex-mode-abbrev-table '())
+
 (define-abbrev-table 'process-menu-mode-abbrev-table '())
 
 (define-abbrev-table 'prog-mode-abbrev-table '())
+
+(define-abbrev-table 'ps-mode-abbrev-table '())
+
+(define-abbrev-table 'ps-run-mode-abbrev-table '())
 
 (define-abbrev-table 'python-mode-abbrev-table '())
 
@@ -390,9 +408,15 @@
 
 (define-abbrev-table 'shell-mode-abbrev-table '())
 
+(define-abbrev-table 'slitex-mode-abbrev-table '())
+
 (define-abbrev-table 'snippet-mode-abbrev-table '())
 
 (define-abbrev-table 'special-mode-abbrev-table '())
+
+(define-abbrev-table 'tex-mode-abbrev-table '())
+
+(define-abbrev-table 'tex-shell-abbrev-table '())
 
 (define-abbrev-table 'text-mode-abbrev-table '())
 

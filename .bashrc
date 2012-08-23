@@ -135,6 +135,7 @@ then
     alias 'PA-View'='~/pf/PA/PA_VIEW.exe'
 
     #alias 'findbugs'='java -Dfile.encoding=UTF-8 -jar d:/PA-WPA-View/UTILITIES/findbugs-1.3.9/lib/findbugs.jar'
+    alias netbeans='netbeans.exe'
     #alias 'netbeans'='~/pf/NetBeans\ 7.1.2/bin/netbeans.exe'
     #alias 'ollydbg'='/cygdrive/c/odbg110/OLLYDBG.EXE'
     #alias 'VC2008'='~/pf/Microsoft\ Visual\ Studio\ 9.0/Common7/IDE/devenv.exe'

@@ -252,7 +252,7 @@ function clean_files_regexp() {
     find $1 -name $2 | xargs rm -vf
 }
 #function to get changes from SVN in Git repositories (through git-svn)
-function git_update() {
+function git_svn_update() {
     git svn rebase && git svn fetch --all
 }
 #custom prompt with time

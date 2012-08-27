@@ -147,6 +147,7 @@
     ("exvcept" "except" nil 1)
     ("faieldg" "Failed" nil 1)
     ("falot" "float" nil 1)
+    ("fgunction" "function" nil 1)
     ("fiels" "files" nil 1)
     ("fikes" "files" nil 1)
     ("filepth" "filepath" nil 1)
@@ -194,6 +195,7 @@
     ("memoru" "memory" nil 1)
     ("mesages" "messages" nil 1)
     ("mide" "mode" nil 1)
+    ("mnew" "new" nil 1)
     ("nasme" "name" nil 1)
     ("native" "Native" nil 1)
     ("nbame" "name" nil 1)
@@ -215,7 +217,7 @@
     ("pluguin" "plugin" nil 1)
     ("poijnts" "POINTS" nil 1)
     ("polariation" "Polarization" nil 1)
-    ("pram" "param" nil 1)
+    ("pram" "param" nil 2)
     ("prama" "param" nil 1)
     ("privaet" "private" nil 1)
     ("privsate" "private" nil 1)
@@ -324,7 +326,7 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
@@ -333,7 +335,7 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 2)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)

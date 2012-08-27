@@ -251,6 +251,10 @@ function clean_class_files() {
 function clean_files_regexp() {
     find $1 -name $2 | xargs rm -vf
 }
+#function to get changes from SVN in Git repositories (through git-svn)
+function git_update() {
+    git svn rebase && git svn fetch --all
+}
 #custom prompt with time
 #left param: 0:normal 1:bright/bold 2:dark 4:underlines
 #right param: 32:green 33:brown 34:red etc...

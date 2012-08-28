@@ -125,6 +125,7 @@
     ("complte" "complete" nil 1)
     ("comst" "const" nil 1)
     ("condt" "const" nil 1)
+    ("constasnt" "constant" nil 1)
     ("contant" "constant" nil 1)
     ("correctr" "correct" nil 1)
     ("ctach" "catch" nil 1)

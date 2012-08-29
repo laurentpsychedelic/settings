@@ -619,6 +619,8 @@
 
 (require 'flymake-groovy)
 
+(require 'flymake-cursor)
+
 ;;;;;;;;;;;;
 ;; sticky ;;
 ;;;;;;;;;;;;

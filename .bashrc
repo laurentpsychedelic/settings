@@ -175,6 +175,7 @@ git config --global alias.rs reset
 git config --global alias.stat status
 git config --global alias.st status
 git config --global alias.cf config
+git config --global alias.lg log
 git config --global core.editor emacsclient
 git config --global color.ui true
 

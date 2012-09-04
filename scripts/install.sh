@@ -45,6 +45,8 @@ then
     #CREATE SYMBOLIC LINK TO %PROGRAMFILES%
     junction -s "$(cygpath -w ~/pf)" "$PROGRAMFILES"
 
+    #INSTALL AUTOJUMP
+    ~/settings/bin/autojump_v19/install.sh
 else
     echo "Linux!"
     SETTINGS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -74,6 +76,9 @@ else
 	mv -vf $FILE_LNK ${FILE_LNK}_old
     fi
     ln -s $FILE_TAR $FILE_LNK
+
+    #INSTALL AUTOJUMP
+    sudo apt-get install autojump
 fi
 
 source ~/.bashrc

@@ -621,6 +621,24 @@
 
 (require 'flymake-cursor)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; autojump             ;;
+;; fukuyama.co/autojump ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'recentf)
+(recentf-mode t)
+
+(defun open-dired-from-recentf (keyword)
+  (interactive "sEnter folder name (part): ")
+  (with-temp-buffer
+    (mapcar (lambda (x) (insert (format "%s\n" x)))
+            recentf-list)
+    (goto-char (point-min))
+    (search-forward keyword)
+    (dired (file-name-directory (thing-at-point 'line)))
+    ))
+(global-set-key (kbd "C-x C-d") 'open-dired-from-recentf)
+
 ;;;;;;;;;;;;
 ;; sticky ;;
 ;;;;;;;;;;;;

@@ -47,7 +47,7 @@ then
 
     #INSTALL AUTOJUMP
     cd ~/settings/bin/autojump_v19
-    ./install.sh
+    ./install.sh --bash
 else
     echo "Linux!"
     SETTINGS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"

@@ -25,7 +25,7 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 0)
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
@@ -149,12 +149,15 @@
     ("faieldg" "Failed" nil 1)
     ("falot" "float" nil 1)
     ("fgunction" "function" nil 1)
+    ("fielpath" "filepath" nil 1)
     ("fiels" "files" nil 1)
     ("fikes" "files" nil 1)
     ("filepth" "filepath" nil 1)
     ("filer" "filter" nil 1)
     ("fileter" "filter" nil 1)
+    ("finakl" "final" nil 1)
     ("fitlker" "filters" nil 1)
+    ("flaot" "float" nil 1)
     ("flase" "false" nil 1)
     ("flepath" "filepath" nil 1)
     ("flloat" "float" nil 1)
@@ -169,10 +172,14 @@
     ("fromat" "format" nil 1)
     ("frsame" "Frame" nil 1)
     ("functiosn" "functions" nil 1)
+    ("getheigth" "" nil 1)
+    ("gethighet" "getHeight" nil 1)
     ("getmeassge" "getMessage" nil 1)
     ("hava" "java" nil 1)
+    ("heoght" "HEIGHT" nil 1)
     ("histroy" "history" nil 1)
     ("hoem" "HOME" nil 1)
+    ("iamge" "image" nil 1)
     ("idel" "idle" nil 1)
     ("impiort" "import" nil 1)
     ("impoirt" "import" nil 1)
@@ -183,6 +190,7 @@
     ("inlcude" "include" nil 1)
     ("inport" "import" nil 1)
     ("instane" "instance" nil 1)
+    ("intensoty" "intensity" nil 7)
     ("isswitch" "iswitch" nil 1)
     ("iumport" "import" nil 1)
     ("jfrmae" "JFrame" nil 1)
@@ -267,7 +275,7 @@
     ("statua" "status" nil 1)
     ("steing" "String" nil 1)
     ("strign" "String" nil 2)
-    ("string" "String" nil 183)
+    ("string" "String" nil 184)
     ("stringbuolder" "StringBuilder" nil 1)
     ("strint" "String" nil 1)
     ("taregt" "target" nil 1)
@@ -301,10 +309,10 @@
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("if" "if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 5)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
@@ -327,7 +335,7 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 0)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
@@ -336,7 +344,7 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 2)
+" my-abbrev-hook 0)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)

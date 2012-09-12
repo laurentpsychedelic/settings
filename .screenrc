@@ -1,0 +1,7 @@
+startup_message off
+defscrollback 1024
+termcapinfo cygwin KJ=SJIS
+defencoding SJIS
+encoding SJIS SJIS
+termcap  facit|vt100|xterm LP:G0
+terminfo facit|vt100|xterm LP:G0

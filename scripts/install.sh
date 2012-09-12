@@ -21,6 +21,10 @@ then
     FILE_LNK=$(cygpath -w $HOME_DIR/.emacs.d)
     FILE_TAR=$(cygpath -w $SETTINGS_DIR/.emacs.d)
     junction -s "$FILE_LNK" "$FILE_TAR"
+    #HARD LINK TO .SCREENRC
+    FILE_LNK=$(cygpath -w $HOME_DIR/.screenrc)
+    FILE_TAR=$(cygpath -w $SETTINGS_DIR/.screenrc)
+    junction -s "$FILE_LNK" "$FILE_TAR"
 
     #SET SHELL ENV TO BASH.EXE
     profile=$(cat /etc/profile)

@@ -49,8 +49,14 @@ then
     #CREATE SYMBOLIC LINK TO %PROGRAMFILES%
     junction -s "$(cygpath -w ~/pf)" "$PROGRAMFILES"
 
+    #CREATE SYMBOLIC LINKS TO CYGWIN HOME FOLDER
+    FILE_LNK="C:/home"
+    FILE_TAR="C:/cygwin/home"
+    junction -s "$FILE_LNK" "$FILE_TAR"
+
     #INSTALL AUTOJUMP
-    ~/settings/bin/autojump_v19/install.sh
+    cd ~/settings/bin/autojump_v19
+    ./install.sh --bash
 else
     echo "Linux!"
     SETTINGS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -82,7 +88,8 @@ else
     ln -s $FILE_TAR $FILE_LNK
 
     #INSTALL AUTOJUMP
-    sudo apt-get install autojump
+    cd ~/settings/bin/autojump_v19
+    ./install.sh
 fi
 
 source ~/.bashrc

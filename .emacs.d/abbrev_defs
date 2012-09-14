@@ -206,6 +206,7 @@
     ("nbame" "name" nil 1)
     ("nll" "null" nil 1)
     ("noremal" "normal" nil 1)
+    ("npot" "not" nil 1)
     ("nrew" "new" nil 1)
     ("nullpointerexcpetion" "NullPointerException" nil 1)
     ("opaue" "opaque" nil 1)

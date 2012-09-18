@@ -97,7 +97,7 @@ specific Java class is documented.")
 
 If you do not have the Java documentation locally, save the web
 page
-http://java.sun.com/j2se/6/docs/api/allclasses-noframe.html
+http://docs.oracle.com/javase/6/docs/api/allclasses-noframe.html
 to a local file and use that file when answering the
 prompt.
 
@@ -153,11 +153,11 @@ After the scan is complete, you probably want to call
             (car (read-from-string
                   (buffer-substring (point-min) (point-max))))))))
 
-(defvar java-class-doc-base-url "http://java.sun.com/j2se/6/docs/api"
+(defvar java-class-doc-base-url "http://docs.oracle.com/javase/6/docs/api"
   "Base URL for looking up Java documentation.
 Can be a local file or a web page.  For a local file, use
-file:///c:\\java\\docs\\api.  Directly from sun.com, use
-http://java.sun.com/j2se/6/docs/api.  The path should not end
+file:///c:\\java\\docs\\api.  Directly from oracle.com, use
+http://docs.oracle.com/javase/6/docs/api.  The path should not end
 in a slash.")
 
 (defun java-class-doc ()

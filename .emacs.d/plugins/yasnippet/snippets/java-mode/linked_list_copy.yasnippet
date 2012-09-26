@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: linked_list_copy
+# --
+${2:dest}.clear();
+for (${3:type} ${4:element} : ${1:src}) {
+    $2.add(new $3($4));
+}
+$0

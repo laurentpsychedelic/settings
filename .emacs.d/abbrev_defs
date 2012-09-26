@@ -137,6 +137,7 @@
     ("dipskay" "display" nil 1)
     ("docus" "focus" nil 1)
     ("dound" "found" nil 1)
+    ("eamcs" "emacs" nil 1)
     ("ecxists" "exists" nil 1)
     ("enablle" "enable" nil 1)
     ("enam" "enum" nil 1)
@@ -195,6 +196,7 @@
     ("ledt" "LEFT" nil 1)
     ("linekd" "Linked" nil 1)
     ("linkedlsit" "LinkedList" nil 3)
+    ("llc" "linked_list_copy" nil 3)
     ("locastion" "location" nil 3)
     ("meacs" "emacs" nil 1)
     ("measruement" "measurement" nil 1)
@@ -276,7 +278,7 @@
     ("statua" "status" nil 1)
     ("steing" "String" nil 1)
     ("strign" "String" nil 2)
-    ("string" "String" nil 193)
+    ("string" "String" nil 196)
     ("stringbuolder" "StringBuilder" nil 1)
     ("strint" "String" nil 1)
     ("taregt" "target" nil 1)
@@ -348,7 +350,7 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 2)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)

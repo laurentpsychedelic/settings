@@ -301,6 +301,7 @@
     ("winodwsi" "Windows" nil 1)
     ("wundow" "window" nil 1)
     ("x30scannomral" "X30ScanNormal" nil 1)
+    ("xdebug" "Xdebug -Xrunjdwp:transport=dt_shmem,address=javadebug,server=y,suspend=n" nil 1)
    ))
 
 (define-abbrev-table 'groovy-mode-abbrev-table

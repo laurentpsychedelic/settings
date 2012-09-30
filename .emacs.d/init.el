@@ -758,7 +758,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ~/.emacs.d/java-doc/allclasses-noframe.html
 (add-to-list 'load-path "~/.emacs.d/java-doc/")
-(autoload 'java-class-doc "java-class-doc" "Open documentation for class in Java API docs" t)
+(require 'java-class-doc)
+;(autoload 'java-class-doc "java-class-doc" "Open documentation for class in Java API docs" t)
 
 ;; also turn tempbuf on for emacs, W3 (Emacs' Web Browser) buffers,
 ;; UNIX 'man' documentation buffers, and any buffer with view-mode activated.

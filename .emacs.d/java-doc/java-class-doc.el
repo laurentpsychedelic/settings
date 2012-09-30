@@ -160,6 +160,23 @@ file:///c:\\java\\docs\\api.  Directly from oracle.com, use
 http://docs.oracle.com/javase/6/docs/api.  The path should not end
 in a slash.")
 
+(defvar java-class-doc-offline nil)
+(setq java-class-doc-offline nil)
+; (setq java-class-doc-offline t)
+;; set to true for offline operation 
+;;(only package path information is displayed in mini-buffer)
+
+(defun java-class-doc-offline-mode ()
+  "Set java-class-doc mode to offline (or online if already in offline), only package path information is displayed in mini-buffer"
+  (interactive)
+  (if (not java-class-doc-offline)
+      (progn
+        (setq java-class-doc-offline t)
+        (message "Set offline!"))
+    (progn
+      (setq java-class-doc-offline nil)
+      (message "Set online!"))))
+
 (defun java-class-doc ()
   "Open Java documentation for a specific class."
   (interactive)
@@ -173,7 +190,9 @@ in a slash.")
           path)
       (setq path (cdr (assoc class java-class-doc-cache)))
       (message "Class: %s, Path: %s" class path)
-      (browse-url (format "%s/%s" java-class-doc-base-url path)))))
+      (if (not java-class-doc-offline)
+          (browse-url (format "%s/%s" java-class-doc-base-url path)
+          (message (format "%s%s" java-class-doc-base-url path)))))))
 
 (provide 'java-class-doc)
 

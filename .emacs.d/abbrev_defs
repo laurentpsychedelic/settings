@@ -243,6 +243,7 @@
     ("pulbic" "public" nil 1)
     ("pulic" "public" nil 2)
     ("putr" "put" nil 1)
+    ("qucik" "QUICK" nil 1)
     ("rafractove" "refractive" nil 1)
     ("recangle" "Rectangle" nil 1)
     ("recipy" "recopy" nil 1)
@@ -346,7 +347,7 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)

@@ -867,3 +867,11 @@ collect `(define-abbrev ,table
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t))
+
+;; eval-and-replace
+(defun eval-and-replace (value)
+  "Evaluate the sexp at point and replace it with its value"
+  (interactive (list (eval-last-sexp nil)))
+  (kill-sexp -1)
+  (insert (format "%S" value)))
+(global-set-key (kbd "C-x C-r") 'eval-and-replace)

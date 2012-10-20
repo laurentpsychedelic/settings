@@ -204,6 +204,13 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 #mkdir+cd command
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+#set svn ignores 
+function addsvnignore() {
+    #$1 path
+    #$2 ignores
+    svn propset svn:ignore "`svn propget svn:ignore $1`
+$2" $1
+}
 #delsvnunknown
 function delsvnunknown () { ~/settings/scripts/delete_unregistered_svn_files.sh $1; }
 #change SVN commit log message

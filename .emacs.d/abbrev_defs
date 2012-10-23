@@ -25,11 +25,11 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
-    ("printf" "printf(\"\")" my-abbrev-hook 0)
+    ("printf" "printf(\"\")" my-abbrev-hook 1)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -202,6 +202,7 @@
     ("linkedlsit" "LinkedList" nil 3)
     ("llc" "linked_list_copy" nil 3)
     ("locastion" "location" nil 3)
+    ("masrgin" "margin" nil 1)
     ("meacs" "emacs" nil 1)
     ("measruement" "measurement" nil 1)
     ("measurement" "Measurement" nil 12)
@@ -347,16 +348,16 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 2)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 2)
     ("if" "if () {
 }
-" my-abbrev-hook 4)
+" my-abbrev-hook 5)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)

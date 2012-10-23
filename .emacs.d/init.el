@@ -688,6 +688,7 @@
 (require 'fold-dwim)
 
 (add-hook 'java-mode-hook 'hs-minor-mode)
+(add-hook 'c-mode-common-hook 'hs-minor-mode)
 
 (global-set-key (kbd "<f7>")      'fold-dwim-toggle)
 (global-set-key (kbd "<C-f7>")    'fold-dwim-hide-all)

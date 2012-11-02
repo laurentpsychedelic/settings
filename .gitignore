@@ -12,3 +12,4 @@ ac-comphist.dat
 scripts/[.]*
 #emacs history
 .emacs.d/history
+report.txt

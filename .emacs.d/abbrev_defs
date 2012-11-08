@@ -16,20 +16,20 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("if" "if () {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 5)
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
-    ("printf" "printf(\"\")" my-abbrev-hook 1)
+    ("printf" "printf(\"\")" my-abbrev-hook 4)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -204,6 +204,7 @@
     ("linkedlsit" "LinkedList" nil 3)
     ("llc" "linked_list_copy" nil 3)
     ("locastion" "location" nil 3)
+    ("main" "Main" nil 8)
     ("masrgin" "margin" nil 1)
     ("meacs" "emacs" nil 1)
     ("measruement" "measurement" nil 1)
@@ -226,6 +227,7 @@
     ("otions" "Options" nil 1)
     ("oveerdie" "Override" nil 1)
     ("over6ride" "Override" nil 1)
+    ("papram" "param" nil 1)
     ("pasth" "path" nil 1)
     ("pesilon" "epsilon" nil 1)
     ("pirntln" "println" nil 1)
@@ -350,21 +352,21 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 2)
+" my-abbrev-hook 6)
     ("elseif" "else if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 3)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 2)
+" my-abbrev-hook 4)
     ("if" "if () {
 }
-" my-abbrev-hook 5)
+" my-abbrev-hook 20)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 2)
+    ("println" "System.out.println()" my-abbrev-hook 3)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

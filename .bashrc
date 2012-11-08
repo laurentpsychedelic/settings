@@ -153,6 +153,7 @@ then
 
     #git settings (Windows)
     git config --global core.pager "nkf -s | more"
+    git config --global i18n.commitencoding "SHIFT_JIS"
 else
     #git settings (Linux)
     git config --global core.pager "nkf -u | less"
@@ -179,6 +180,8 @@ git config --global alias.lg log
 git config --global core.editor emacsclient
 git config --global color.ui true
 git config --global alias.track '!f() { ([ $# -eq 2 ] && ( echo "Setting tracking for branch " $1 " -> " $2;git branch --set-upstream $1 $2; ) || ( git for-each-ref --format="local: %(refname:short) <--sync--> remote: %(upstream:short)" refs/heads && echo --Remotes && git remote -v)); }; f'
+git config --global user.name "Laurent FABRE"
+git config --global date.timezone "Japan/Tokyo"
 
 export REP=https://192.168.20.36/svn
 export REP_WPA=${REP}/PA_WPA-View_100

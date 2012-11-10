@@ -181,7 +181,7 @@ git config --global core.editor emacsclient
 git config --global color.ui true
 git config --global alias.track '!f() { ([ $# -eq 2 ] && ( echo "Setting tracking for branch " $1 " -> " $2;git branch --set-upstream $1 $2; ) || ( git for-each-ref --format="local: %(refname:short) <--sync--> remote: %(upstream:short)" refs/heads && echo --Remotes && git remote -v)); }; f'
 git config --global user.name "Laurent FABRE"
-git config --global date.timezone "Japan/Tokyo"
+git config --global log.date local
 
 export REP=https://192.168.20.36/svn
 export REP_WPA=${REP}/PA_WPA-View_100

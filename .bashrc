@@ -154,6 +154,10 @@ then
     #git settings (Windows)
     git config --global core.pager "nkf -s | more"
     git config --global i18n.commitencoding "SHIFT_JIS"
+
+    #XWin Tk setting
+    export DISPLAY=:0.0
+    startxwin &
 else
     #git settings (Linux)
     git config --global core.pager "nkf -u | less"

@@ -223,20 +223,30 @@ $2" $1
 #delsvnunknown
 function delsvnunknown () { ~/settings/scripts/delete_unregistered_svn_files.sh $1; }
 #change SVN commit log message
-function change_svn_commit_log_message () { 
-    #$1 revision number
-    #$2 URL
-    #$3 new commit message
-    #echo "svn propset -r$1 --revprop svn:log \"$3\" $2"
-    svn propset -r$1 --revprop svn:log "$3" $2 
+function change_svn_commit_log_message () {
+    if [ $# -ne 3 ]
+    then
+        echo "Arguments:"
+        echo "\$1 revision number"
+        echo "\$2 URL"
+        echo "\$3 new commit message"
+    else
+        #echo "svn propset -r$1 --revprop svn:log \"$3\" $2"
+        svn propset -r$1 --revprop svn:log "$3" $2 
+    fi
 }
 #change SVN commit author
 function change_svn_commit_author () { 
-    #$1 revision number
-    #$2 URL
-    #$3 new commit message
-    #echo "svn propset -r$1 --revprop svn:log \"$3\" $2"
-    svn propset -r$1 --revprop svn:author "$3" $2 
+    if [ $# -ne 3 ]
+    then
+        echo "Arguments:"
+        echo "\$1 revision number"
+        echo "\$2 URL"
+        echo "\$3 new commit message"
+    else
+        #echo "svn propset -r$1 --revprop svn:log \"$3\" $2"
+        svn propset -r$1 --revprop svn:author "$3" $2 
+    fi
 }
 #highlight patterns in output (like grep but
 #keeping showing the rest of the output

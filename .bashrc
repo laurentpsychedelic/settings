@@ -157,7 +157,7 @@ then
 
     #XWin Tk setting
     export DISPLAY=:0.0
-    startxwin &
+    startxwin > /dev/null 2>&1 &
 else
     #git settings (Linux)
     git config --global core.pager "nkf -u | less"

@@ -300,4 +300,4 @@ shopt -s cdspell
 alias rw='java -classpath dev/Miscellaneous-codes lpsy.other.diet.ReportWeight'
 
 # Added by autojump install.sh
-source /etc/profile.d/autojump.bash
+# source /etc/profile.d/autojump.bash

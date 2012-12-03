@@ -183,11 +183,13 @@
     ("functiosn" "functions" nil 1)
     ("gertenv" "getenv" nil 1)
     ("getmeassge" "getMessage" nil 1)
+    ("getmetry" "Geometry" nil 1)
     ("hava" "java" nil 1)
     ("histroy" "history" nil 1)
     ("hoem" "HOME" nil 1)
     ("hsell" "shell" nil 1)
     ("idel" "idle" nil 1)
+    ("imiport" "import" nil 1)
     ("impiort" "import" nil 1)
     ("impoirt" "import" nil 1)
     ("improt" "import" nil 2)
@@ -246,6 +248,7 @@
     ("prama" "param" nil 1)
     ("privaet" "private" nil 1)
     ("privsate" "private" nil 1)
+    ("privtae" "private" nil 1)
     ("protexted" "protected" nil 1)
     ("protexted " "protected" nil 0)
     ("publci" "public" nil 10)
@@ -253,6 +256,7 @@
     ("pulbic" "public" nil 1)
     ("pulic" "public" nil 2)
     ("putr" "put" nil 1)
+    ("puyblic" "public" nil 1)
     ("qucik" "QUICK" nil 1)
     ("rafractove" "refractive" nil 1)
     ("recangle" "Rectangle" nil 1)
@@ -303,7 +307,7 @@
     ("temmpbuf" "tempbuf" nil 1)
     ("thjen" "then" nil 1)
     ("thois" "this" nil 1)
-    ("thorw" "throw" nil 2)
+    ("thorw" "throw" nil 3)
     ("tiral" "trial" nil 1)
     ("titel" "title" nil 1)
     ("tiutle" "title" nil 1)
@@ -371,7 +375,7 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 2)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)

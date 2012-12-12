@@ -299,6 +299,7 @@
     ("rtegistry" "registry" nil 1)
     ("rwo" "row" nil 1)
     ("sattic" "static" nil 1)
+    ("scipting" "Scripting" nil 1)
     ("sdtokes" "strokes" nil 1)
     ("servere" "server" nil 1)
     ("sewt" "set" nil 1)

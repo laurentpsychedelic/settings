@@ -798,6 +798,21 @@
     (print (concat "file://" filename))
     (browse-url (concat "file://" filename))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; open file with default program in dired ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun uenox-dired-winstart () 
+  "Type '[uenox-dired-winstart]': win-start the current line's file." 
+  (interactive) 
+  (if (eq major-mode 'dired-mode) 
+      (let ((fname (dired-get-filename))) 
+        (w32-shell-execute "open" fname) 
+        (message "win-started %s" fname))))
+;; dired key-bindings
+(add-hook 'dired-mode-hook 
+          (lambda () 
+            (define-key dired-mode-map "z" 'uenox-dired-winstart)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; auto-save-buffers ;;
 ;;;;;;;;;;;;;;;;;;;;;;;
@@ -805,8 +820,8 @@
 (require 'auto-save-buffers)
 (run-with-idle-timer 5 t 'auto-save-buffers)    ; auto save after 2s. idle time
 ;; commands to include or exclude only a certain type of files
-;; (run-with-idle-timer 0.5 t 'auto-save-buffers "\\.c$" "^$") ; .c ‚¾‚¯‘ÎÛ
-;; (run-with-idle-timer 0.5 t 'auto-save-buffers ""   "\\.h$") ; .h ‚¾‚¯œŠO
+;; (run-with-idle-timer 0.5 t 'auto-save-buffers "\\.c$" "^$") ; .c files IN
+;; (run-with-idle-timer 0.5 t 'auto-save-buffers ""   "\\.h$") ; .h files OUT
 
 (defun bf-pretty-print-xml-region (begin end)
   "Pretty format XML markup in region. You need to have nxml-mode

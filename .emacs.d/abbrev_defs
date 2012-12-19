@@ -242,6 +242,7 @@
     ("nre" "new" nil 1)
     ("nrew" "new" nil 1)
     ("nullpointerexcpetion" "NullPointerException" nil 1)
+    ("ofr" "for" nil 1)
     ("opaue" "opaque" nil 1)
     ("operstor" "OPERATOR" nil 1)
     ("otions" "Options" nil 1)
@@ -256,11 +257,12 @@
     ("plublic" "public" nil 1)
     ("plugions" "PLUGINS" nil 1)
     ("pluguin" "plugin" nil 1)
+    ("pluigin" "plugin" nil 1)
     ("poijnts" "POINTS" nil 1)
     ("polariation" "Polarization" nil 1)
     ("pram" "param" nil 2)
     ("prama" "param" nil 1)
-    ("privaet" "private" nil 1)
+    ("privaet" "private" nil 2)
     ("privsate" "private" nil 1)
     ("privtae" "private" nil 1)
     ("protexted" "protected" nil 1)
@@ -315,6 +317,7 @@
     ("statua" "status" nil 1)
     ("steing" "String" nil 1)
     ("stirng" "String" nil 2)
+    ("stirngs" "strings" nil 1)
     ("strign" "String" nil 2)
     ("string" "String" nil 240)
     ("stringbuolder" "StringBuilder" nil 1)
@@ -391,7 +394,7 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 13)
+" my-abbrev-hook 15)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)

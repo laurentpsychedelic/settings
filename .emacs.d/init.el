@@ -1,3 +1,5 @@
+;; -*- coding: utf-8 -*-
+
 ;;exception handling
 (defmacro safe-wrap (fn &rest clean-up)
   `(unwind-protect
@@ -818,6 +820,18 @@
 ;;;;;;;;;;;;
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
+
+;;;;;;;;;;;
+;; direx ;;
+;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/direx-el/")
+(require 'direx)
+(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
+(push '(direx:direx-mode :position left :width 35 :dedicated t)
+      popwin:special-display-config)
+(setq direx:leaf-icon "  "
+      direx:open-icon "↓ "
+      direx:closed-icon "→ ")
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; auto-save-buffers ;;

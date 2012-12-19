@@ -789,6 +789,15 @@
     (shell-command-on-region b e
      "python -mjson.tool" (current-buffer) t)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; open current buffer with default program ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun open-in-browser()
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (print (concat "file://" filename))
+    (browse-url (concat "file://" filename))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; auto-save-buffers ;;
 ;;;;;;;;;;;;;;;;;;;;;;;

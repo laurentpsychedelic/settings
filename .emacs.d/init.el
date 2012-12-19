@@ -813,6 +813,12 @@
           (lambda () 
             (define-key dired-mode-map "z" 'uenox-dired-winstart)))
 
+;;;;;;;;;;;;
+;; popwin ;;
+;;;;;;;;;;;;
+(require 'popwin)
+(setq display-buffer-function 'popwin:display-buffer)
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; auto-save-buffers ;;
 ;;;;;;;;;;;;;;;;;;;;;;;

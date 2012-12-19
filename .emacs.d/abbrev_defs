@@ -245,6 +245,7 @@
     ("ofr" "for" nil 1)
     ("opaue" "opaque" nil 1)
     ("operstor" "OPERATOR" nil 1)
+    ("optionael" "Optional" nil 1)
     ("otions" "Options" nil 1)
     ("oveerdie" "Override" nil 1)
     ("over6ride" "Override" nil 1)

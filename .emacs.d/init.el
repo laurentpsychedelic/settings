@@ -833,6 +833,13 @@
       direx:open-icon "↓ "
       direx:closed-icon "→ ")
 
+;;;;;;;;;;;
+;; magit ;;
+;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/magit-1.2.0/")
+(require 'magit)
+(require 'magit-svn)
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; auto-save-buffers ;;
 ;;;;;;;;;;;;;;;;;;;;;;;

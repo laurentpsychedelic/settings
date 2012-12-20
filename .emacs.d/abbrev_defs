@@ -219,6 +219,7 @@
     ("iumport" "import" nil 1)
     ("javaw" "javax" nil 1)
     ("jfrmae" "JFrame" nil 1)
+    ("jpnale" "jPanel" nil 1)
     ("langauge" "language" nil 1)
     ("ledt" "LEFT" nil 1)
     ("lese" "else" nil 1)
@@ -390,7 +391,7 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 2)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
@@ -399,7 +400,7 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 15)
+" my-abbrev-hook 16)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)

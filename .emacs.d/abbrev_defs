@@ -123,6 +123,7 @@
     ("chich" "which" nil 1)
     ("chweck" "check" nil 1)
     ("ciontents" "contents" nil 1)
+    ("circvle" "Circle" nil 1)
     ("classpaht" "classpth" nil 1)
     ("classpth" "classpath" nil 1)
     ("cleints" "clients" nil 1)

@@ -839,6 +839,7 @@
 (add-to-list 'load-path "~/.emacs.d/magit-1.2.0/")
 (require 'magit)
 (require 'magit-svn)
+(global-set-key (kbd "C-x v q") 'magit-status)
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; auto-save-buffers ;;

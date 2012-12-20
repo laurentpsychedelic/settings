@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: typedenum
+# --
+public enum ${1:name} {
+    ${2:ele1}(${3:val1}), ${4:ele2}(${5:val2}) , ${6:ele3}(${7:val3});
+    private $8 __${8:$(downcase text)}Type;
+    public $8 ${8:$(downcase text)}Type() {
+        return __${8:$(downcase text)};
+    }
+    $1(${8:type} _${8:$(downcase text)}Type) {
+        __${8:$(downcase text)}Type = _${8:$(downcase text)}Type;
+    }
+}

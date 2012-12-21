@@ -2,7 +2,7 @@
 
 base_dir="//$1/Repositories"
 svn_base="https://$1/svn"
-for dir in `ls $base_dir`
+for dir in $(ls $base_dir)
 do
     if [ -d $base_dir/$dir/hooks ]
     then

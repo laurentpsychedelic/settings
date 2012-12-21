@@ -841,6 +841,10 @@
 (require 'magit-svn)
 (global-set-key (kbd "C-x v q") 'magit-status)
 
+;; automatically make script files executable
+(add-hook 'after-save-hook
+   'executable-make-buffer-file-executable-if-script-p)
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; auto-save-buffers ;;
 ;;;;;;;;;;;;;;;;;;;;;;;

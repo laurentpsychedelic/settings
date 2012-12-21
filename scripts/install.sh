@@ -92,5 +92,22 @@ else
     ./install.sh
 fi
 
+#ADD COMPLEMENTARY HISTORY SEARCHING CAPABILITIES FOR BASH IN .INPUTRC 
+inputrc=$(cat ~/.inputrc)
+if [[ "$inputrc" =~ "\e[A" ]]
+then
+    echo "History searching capabilities already set in .inputrc..."
+else
+    echo "Add history searching capabilities for bash in .inputrc"
+    echo "
+" >> ~/.inputrc
+    echo '"\e[A": history-search-backward
+"\e[B": history-search-forward
+set show-all-if-ambiguous on
+set completion-ignore-case on
+' >> ~/.inputrc
+fi
+
+
 source ~/.bashrc
 source /etc/profile

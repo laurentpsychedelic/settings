@@ -107,6 +107,7 @@
     ("atatic" "static" nil 1)
     ("atuo" "AUTO" nil 1)
     ("auot" "auto" nil 1)
+    ("autio" "AUTO" nil 1)
     ("backgound" "background" nil 1)
     ("beenn" "been" nil 1)
     ("befire" "before" nil 1)
@@ -139,7 +140,7 @@
     ("constasnt" "constant" nil 1)
     ("contant" "constant" nil 1)
     ("correctr" "correct" nil 1)
-    ("ctach" "catch" nil 5)
+    ("ctach" "catch" nil 6)
     ("cysstrt" "cygstart" nil 1)
     ("dara" "DATA" nil 1)
     ("defore" "before" nil 1)
@@ -157,6 +158,7 @@
     ("eppend" "append" nil 4)
     ("esle" "else" nil 1)
     ("excepiton" "Exception" nil 1)
+    ("exceptino" "Exception" nil 1)
     ("exceptionhander" "ExceptionHandler" nil 1)
     ("excpetion" "Exception" nil 3)
     ("excpetions" "Exception" nil 1)
@@ -175,6 +177,7 @@
     ("filepth" "filepath" nil 1)
     ("filer" "filter" nil 1)
     ("fileter" "filter" nil 1)
+    ("fillfiedls" "fillFields" nil 1)
     ("fitlker" "filters" nil 1)
     ("flase" "false" nil 1)
     ("flepath" "filepath" nil 1)
@@ -219,6 +222,7 @@
     ("isswitch" "iswitch" nil 1)
     ("iumport" "import" nil 1)
     ("javaw" "javax" nil 1)
+    ("jcheckbow" "jCheckBox" nil 1)
     ("jfrmae" "JFrame" nil 1)
     ("jpnale" "jPanel" nil 1)
     ("langauge" "language" nil 1)
@@ -228,7 +232,7 @@
     ("linkedlsit" "LinkedList" nil 3)
     ("llc" "linked_list_copy" nil 3)
     ("locastion" "location" nil 3)
-    ("main" "Main" nil 30)
+    ("main" "Main" nil 44)
     ("manger" "manager" nil 1)
     ("masrgin" "margin" nil 1)
     ("meacs" "emacs" nil 1)
@@ -328,7 +332,7 @@
     ("stirng" "String" nil 2)
     ("stirngs" "strings" nil 1)
     ("strign" "String" nil 2)
-    ("string" "String" nil 240)
+    ("string" "String" nil 255)
     ("stringbuolder" "StringBuilder" nil 1)
     ("strint" "String" nil 1)
     ("taregt" "target" nil 1)
@@ -403,12 +407,12 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 18)
+" my-abbrev-hook 25)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 3)
+    ("println" "System.out.println()" my-abbrev-hook 4)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

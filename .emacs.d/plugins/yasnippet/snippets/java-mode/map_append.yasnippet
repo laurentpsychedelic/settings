@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: map_append
+# --
+for (${3:type} ${4:element} : ${1:src}.keySet()) {
+    ${2:dest}.put($4, $1.get($4));
+}
+$0

@@ -1,4 +1,4 @@
-;;-*-coding: utf-8;-*-
+;;-*-coding: emacs-mule;-*-
 (define-abbrev-table 'Buffer-menu-mode-abbrev-table '())
 
 (define-abbrev-table 'Custom-mode-abbrev-table '())
@@ -56,7 +56,7 @@
 " my-abbrev-hook 0)
     ("imain" "int main(int ac, char **av[]) {
 
-}" my-abbrev-hook 0)
+}" my-abbrev-hook 1)
     ("printf" "printf(\"\")" my-abbrev-hook 0)
     ("while" "while () {
 }
@@ -208,6 +208,7 @@
     ("impiort" "import" nil 1)
     ("impoirt" "import" nil 1)
     ("improt" "import" nil 2)
+    ("incldue" "include" nil 1)
     ("indetn" "indent" nil 1)
     ("indlide" "include" nil 1)
     ("inffo" "info" nil 1)
@@ -317,6 +318,7 @@
     ("signame" "sigma" nil 1)
     ("sotred" "stored" nil 1)
     ("soze" "size" nil 1)
+    ("sozeof" "sizeof" nil 1)
     ("stagecontopl" "StageControl" nil 1)
     ("stagecontrl" "StageControl" nil 1)
     ("statci" "static" nil 1)
@@ -328,7 +330,7 @@
     ("stirng" "String" nil 2)
     ("stirngs" "strings" nil 1)
     ("strign" "String" nil 2)
-    ("string" "String" nil 240)
+    ("string" "String" nil 241)
     ("stringbuolder" "StringBuilder" nil 1)
     ("strint" "String" nil 1)
     ("taregt" "target" nil 1)
@@ -485,6 +487,8 @@
 (define-abbrev-table 'ps-run-mode-abbrev-table '())
 
 (define-abbrev-table 'python-mode-abbrev-table '())
+
+(define-abbrev-table 'ruby-mode-abbrev-table '())
 
 (define-abbrev-table 'scilab-mode-abbrev-table '())
 

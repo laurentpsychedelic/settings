@@ -3,24 +3,16 @@
 # key: enum
 # type: command
 # --
-(defun get-number-of-enum-elements (value)
-  "Get the number of enum elements from the user"
-  (interactive "nNumber of enum elements:")
-  (setq numberofelements value))
-(call-interactively 'get-number-of-enum-elements)
-(let ((yas-good-grace nil))
-  (setq elements "")
-  (setq i 0)
-  (while (< i numberofelements)
-    (setq i (1+ i))
-    (setq elements 
-          (concat elements
-                  "${" (format "%d" (+ i 1)) ":ele" (format "%d" i) "}"
-                  (if (< i numberofelements)
-                      ", "
-                    ";"))))
-  (setq snippet
-        (concat "public enum ${1:name} {\n"
-                "\t" elements "\n"
-                "}\n"))
-  (yas/expand-snippet snippet))
+(let ((yas-good-grace nil)
+      (count (read-number "Number of elements: ")))
+  (yas-expand-snippet
+   (concat "public enum ${1:name} {\n"
+           "\t"
+           (mapconcat
+            #'identity
+            (mapcar (lambda (num)
+                      (format "${%d:ele%d}" (1+ num) num))
+                    (number-sequence 1 count nil))
+            ", ")
+           "\n"
+           "}\n")))

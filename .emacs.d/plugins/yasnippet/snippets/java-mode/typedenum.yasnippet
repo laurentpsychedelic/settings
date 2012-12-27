@@ -3,35 +3,24 @@
 # key: typedenum
 # type: command
 # --
-(defun get-number-of-enum-elements (value)
-  "Get the number of enum elements from the user"
-  (interactive "nNumber of enum elements:")
-  (setq numberofelements value))
-(call-interactively 'get-number-of-enum-elements)
-(let ((yas-good-grace nil))
-  (setq elements "")
-  (setq i 0)
-  (while (< i numberofelements)
-    (setq i (1+ i))
-    (setq elements 
-          (concat elements
-                  "${" (format "%d" (* i 2)) ":ele" (format "%d" i) "}(${" (format "%d" (1+ (* i 2))) ":val" (format "%d" i) "})"
-                  (if (< i numberofelements)
-                      ", "
-                    ";"))))
-  (setq typephstr (format "%d" (* (1+ numberofelements) 2)))
-  (setq footer (concat 
-                "\tprivate $" typephstr " __${" typephstr ":$(downcase text)}Type;\n"
-                "\tpublic $" typephstr " ${" typephstr ":$(downcase text)}Type() {\n"
-                "\t\treturn __${" typephstr ":$(downcase text)}Type;\n"
-                "\t}\n"
-                "\t$1(${" typephstr ":type} _${" typephstr ":$(downcase text)}Type) {\n"
-                "\t\t __${" typephstr ":$(downcase text)}Type = _${" typephstr ":$(downcase text)}Type;\n"
-                "\t}\n"
-                ))
-  (setq snippet
-        (concat "public enum ${1:name} {\n"
-                "\t" elements "\n"
-                footer
-                "}\n"))
-  (yas/expand-snippet snippet))
+(let ((yas-good-grace nil)
+      (count (read-number "Number of elements: ")))
+  (setq count2 (* 2 (1+ count)))
+  (yas-expand-snippet
+   (concat "public enum ${1:name} {\n"
+           "\t"
+           (mapconcat
+            #'identity
+            (mapcar (lambda (num)
+                      (format "${%d:ele%d}(${%d:val%d})" (* 2 num) num (1+ (* 2 num)) num))
+                    (number-sequence 1 count nil))
+            ", ")
+           "\n"
+           (format "\tprivate $%d __${%d:$(downcase text)}Type;\n" count2 count2)
+           (format "\tpublic $%d ${%d:$(downcase text)}Type() {\n" count2 count2)
+           (format "\t\treturn __${%d:$(downcase text)}Type;\n" count2)
+           "\t}\n"
+           (format "\t$1(${%d:type} _${%d:$(downcase text)}Type) {\n" count2 count2)
+           (format "\t\t __${%d:$(downcase text)}Type = _${%d:$(downcase text)}Type;\n" count2 count2)
+           "\t}\n"
+           "}\n")))

@@ -1,13 +1,37 @@
 # -*- mode: snippet -*-
 # name: typedenum
+# key: typedenum
+# type: command
 # --
-public enum ${1:name} {
-    ${2:ele1}(${3:val1}), ${4:ele2}(${5:val2}) , ${6:ele3}(${7:val3});
-    private $8 __${8:$(downcase text)}Type;
-    public $8 ${8:$(downcase text)}Type() {
-        return __${8:$(downcase text)};
-    }
-    $1(${8:type} _${8:$(downcase text)}Type) {
-        __${8:$(downcase text)}Type = _${8:$(downcase text)}Type;
-    }
-}
+(defun get-number-of-enum-elements (value)
+  "Get the number of enum elements from the user"
+  (interactive "nNumber of enum elements:")
+  (setq numberofelements value))
+(call-interactively 'get-number-of-enum-elements)
+(let ((yas-good-grace nil))
+  (setq elements "")
+  (setq i 0)
+  (while (< i numberofelements)
+    (setq i (1+ i))
+    (setq elements 
+          (concat elements
+                  "${" (format "%d" (* i 2)) ":ele" (format "%d" i) "}(${" (format "%d" (1+ (* i 2))) ":val" (format "%d" i) "})"
+                  (if (< i numberofelements)
+                      ", "
+                    ";"))))
+  (setq typephstr (format "%d" (* (1+ numberofelements) 2)))
+  (setq footer (concat 
+                "\tprivate $" typephstr " __${" typephstr ":$(downcase text)}Type;\n"
+                "\tpublic $" typephstr " ${" typephstr ":$(downcase text)}Type() {\n"
+                "\t\treturn __${" typephstr ":$(downcase text)}Type;\n"
+                "\t}\n"
+                "\t$1(${" typephstr ":type} _${" typephstr ":$(downcase text)}Type) {\n"
+                "\t\t __${" typephstr ":$(downcase text)}Type = _${" typephstr ":$(downcase text)}Type;\n"
+                "\t}\n"
+                ))
+  (setq snippet
+        (concat "public enum ${1:name} {\n"
+                "\t" elements "\n"
+                footer
+                "}\n"))
+  (yas/expand-snippet snippet))

@@ -49,9 +49,12 @@
 ;;;;;;;;;;;;;;;
 ;; yasnippet ;;
 ;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet/")
-(require 'yasnippet-config)
-(yas/setup "~/.emacs.d/plugins/yasnippet")
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+;;(yas/setup "~/.emacs.d/plugins/yasnippet_new")
+(setq yas/root-directory "~/.emacs/plugins/yasnippet/snippets")
+(yas/load-directory yas/root-directory)
+
 (auto-insert-mode)
 (setq auto-insert-directory "~/.emacs.d/insert/")
 ;; below is the way to define a snippet by hand on init.el

@@ -329,7 +329,7 @@
     ("statis" "static" nil 1)
     ("statix" "static" nil 2)
     ("stats" "status" nil 3)
-    ("statua" "status" nil 1)
+    statua" "status" nil 1)
     ("steing" "String" nil 1)
     ("stirng" "String" nil 2)
     ("stirngs" "strings" nil 1)

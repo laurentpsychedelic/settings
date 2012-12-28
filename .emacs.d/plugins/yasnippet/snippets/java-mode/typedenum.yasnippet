@@ -10,10 +10,9 @@
    (concat "public enum ${1:name} {\n"
            "\t"
            (mapconcat
-            #'identity
-            (mapcar (lambda (num)
-                      (format "${%d:ele%d}(${%d:val%d})" (* 2 num) num (1+ (* 2 num)) num))
-                    (number-sequence 1 count nil))
+            (lambda (num)
+              (format "${%d:ele%d}(${%d:val%d})" (* 2 num) num (1+ (* 2 num)) num))
+            (number-sequence 1 count nil)
             ", ")
            "\n"
            (format "\tprivate $%d __${%d:$(downcase text)}Type;\n" count2 count2)

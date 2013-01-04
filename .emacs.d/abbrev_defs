@@ -263,6 +263,8 @@
     ("otions" "Options" nil 1)
     ("oveerdie" "Override" nil 1)
     ("over6ride" "Override" nil 1)
+    ("pacakage" "package" nil 1)
+    ("pacakge" "package" nil 1)
     ("papram" "param" nil 1)
     ("pasth" "path" nil 1)
     ("pesilon" "epsilon" nil 1)

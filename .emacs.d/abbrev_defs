@@ -104,6 +104,7 @@
     ("apped" "append" nil 1)
     ("aprameters" "parameters" nil 1)
     ("araial" "Arial" nil 1)
+    ("aseert" "assert" nil 1)
     ("atatic" "static" nil 1)
     ("atuo" "AUTO" nil 1)
     ("auot" "auto" nil 1)
@@ -234,6 +235,7 @@
     ("linkedlsit" "LinkedList" nil 3)
     ("llc" "linked_list_copy" nil 3)
     ("locastion" "location" nil 3)
+    ("maht" "Math" nil 1)
     ("main" "Main" nil 54)
     ("manger" "manager" nil 1)
     ("masrgin" "margin" nil 1)
@@ -304,7 +306,7 @@
     ("resukt" "result" nil 1)
     ("retrun" "return" nil 5)
     ("retsult" "result" nil 1)
-    ("retun" "return" nil 1)
+    ("retun" "return" nil 2)
     ("retunr" "return" nil 2)
     ("returbn" "return" nil 1)
     ("returh" "return" nil 1)
@@ -339,7 +341,7 @@
     ("stirng" "string" nil 1)
     ("stirngs" "strings" nil 1)
     ("strign" "String" nil 2)
-    ("string" "String" nil 307)
+    ("string" "String" nil 308)
     ("stringbuolder" "StringBuilder" nil 1)
     ("strint" "String" nil 1)
     ("sttic" "static" nil 1)
@@ -407,21 +409,21 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 4)
+" my-abbrev-hook 0)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 6)
+" my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 36)
+" my-abbrev-hook 0)
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 1)
+}" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 5)
+    ("println" "System.out.println()" my-abbrev-hook 0)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

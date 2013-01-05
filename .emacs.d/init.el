@@ -35,6 +35,13 @@
     (add-hook 'window-setup-hook 'x11-maximize-frame) ; GNU/Linux [Ubuntu]
   (add-hook 'window-setup-hook 'w32-maximize-frame t)) ; Windows
 
+
+;;;;;;;;;;;;;;;;;;
+;; myantcompile ;;
+;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/")
+(require 'myantcompile)
+
 ;;;;;;;;;;;;;;;;;;
 ;; auto-install ;;
 ;;;;;;;;;;;;;;;;;;

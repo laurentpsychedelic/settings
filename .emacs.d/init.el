@@ -58,9 +58,7 @@
 ;;;;;;;;;;;;;;;
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
-;;(yas/setup "~/.emacs.d/plugins/yasnippet_new")
-(setq yas/root-directory "~/.emacs/plugins/yasnippet/snippets")
-(yas/load-directory yas/root-directory)
+(yas-global-mode 1)
 
 (auto-insert-mode)
 (setq auto-insert-directory "~/.emacs.d/insert/")

@@ -14,7 +14,7 @@
               (format "${%d:ele%d}(${%d:val%d})" (* 2 num) num (1+ (* 2 num)) num))
             (number-sequence 1 count nil)
             ", ")
-           "\n"
+           ";\n"
            (format "\tprivate $%d __${%d:$(downcase text)}Type;\n" count2 count2)
            (format "\tpublic $%d ${%d:$(downcase text)}Type() {\n" count2 count2)
            (format "\t\treturn __${%d:$(downcase text)}Type;\n" count2)

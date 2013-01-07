@@ -19,8 +19,8 @@
            (format "\tpublic $%d ${%d:$(downcase text)}Type() {\n" count2 count2)
            (format "\t\treturn __${%d:$(downcase text)}Type;\n" count2)
            "\t}\n"
-           (format "\tpublic $1 parse${%d:$(capitalize text)}($%d _${%d:$(downcase text)}Type) {\n\t\t" count2 count2 count2)
-           (format "if ( _${%d:$(downcase text)}${%d: == }$%d${%d: }) {\n\t\treturn $%d;\n\t} else " count2 (+ 1 count2) (1+ (* 2 1)) (+ 2 count2) (* 2 1))
+           (format "\tpublic static $1 parse${%d:$(capitalize text)}($%d _${%d:$(downcase text)}Type) {\n\t\t" count2 count2 count2)
+           (format "if ( _${%d:$(downcase text)}Type${%d: == }$%d${%d: }) {\n\t\treturn $%d;\n\t} else " count2 (+ 1 count2) (1+ (* 2 1)) (+ 2 count2) (* 2 1))
            (mapconcat
             (lambda (num)
               (format "if ( _${%d:$(downcase text)}$%d$%d$%d) {\n\t\treturn $%d;\n\t}" count2 (+ 1 count2) (1+ (* 2 num)) (+ 2 count2) (* 2 num)))

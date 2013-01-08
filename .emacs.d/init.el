@@ -890,6 +890,36 @@ by using nxml's indentation rules."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-hook 'java-mode-hook 'subword-mode)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; parse method arguments in Java ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun get-java-method-arguments (text)
+  "This function return a list of the arguments in the function defined in the text"
+  (let (result eles params)
+    (setq case-fold-search nil)
+    (when (string-match "(\\([^()]*\\))" text)
+      (setq result (match-string 1 text))
+      (setq eles (split-string result "[[:space:]\r\n\t]*,[[:space:]\r\n\t]*"))
+      (setq params (map 'list (lambda (ele)
+                                (car (last (split-string ele "[[:space:]]+"))))
+                        eles))
+      (when (< (length params) 2)
+        (if (equal "" (nth 0 params))
+            (setq params '()))))
+    params))
+
+(defun get-java-method-throws (text)
+  "This function return a list of the exceptions thrown by the function defined in the text"
+  (let (result throws)
+    (setq case-fold-search nil)
+    (when (string-match "([^()]*)[[:space:]]*throws[[:space:]]*\\([^{]*[^[:space:]]\\)[[:space:]]*{" text)
+      (setq result (match-string 1 text))
+      (setq throws (split-string result "[[:space:]\r\n\t]*,[[:space:]\r\n\t]*")))
+    throws))
+
+;; (setq test-string "public static int showMessageDialog(JFrame parent,\n        Object message, String title, int dialog_type) throws MyException, FileNotFoundException {");
+;; (get-java-method-arguments test-string)
+;; (get-java-method-throws test-string)
 ;;;;;;;;;;;;;;;;
 ;; camel case ;;
 ;;;;;;;;;;;;;;;;

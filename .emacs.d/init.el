@@ -897,7 +897,7 @@ by using nxml's indentation rules."
   "This function return a list of the arguments in the function defined in the text"
   (let (result eles params)
     (setq case-fold-search nil)
-    (when (string-match ".*([^)]*).*[{]?" (nth 0 (split-string text "[\r\n]"))) ;; verify if it is function
+    (when (string-match "[^(]*([^()].*" (nth 0 (split-string text "[\r\n]"))) ;; verify if it is function
       (when (string-match "(\\([^()]*\\))" text) ;; get the list of parameters between "(" and ")"
         (setq result (match-string 1 text))
         (setq eles (split-string result "[[:space:]\r\n\t]*,[[:space:]\r\n\t]*")) ;; split with ","
@@ -913,15 +913,22 @@ by using nxml's indentation rules."
   "This function return a list of the exceptions thrown by the function defined in the text"
   (let (result throws)
     (setq case-fold-search nil)
-    (when (string-match ".*([^)]*).*[{]?" (nth 0 (split-string text "[\r\n]"))) ;; verify if it is function
+    (when (string-match "[^(]*([^()].*" (nth 0 (split-string text "[\r\n]"))) ;; verify if it is function
       (when (string-match "([^()]*)[[:space:]]*throws[[:space:]]*\\([^{]*[^[:space:]]\\)[[:space:]]*{" text) ;; get the list of throw cluases after keyword "throws"
         (setq result (match-string 1 text))
         (setq throws (split-string result "[[:space:]\r\n\t]*,[[:space:]\r\n\t]*")))) ;; split with ","
     throws))
 
-;; (setq test-string "public static int showMessageDialog(JFrame parent,\n        Object message, String title, int dialog_type) throws MyException, FileNotFoundException {");
-;; (get-java-method-arguments test-string)
-;; (get-java-method-throws test-string)
+(defun get-if-javadoc-has-return-clause (text)
+  "This function if the Javadoc string of a Java method has a return clause (return type is non-void)"
+  (let ((result nil))
+    (setq case-fold-search nil)
+    (when (string-match "[^(]*([^()].*" (nth 0 (split-string text "[\r\n]"))) ;; verify if it is function)
+      (if (string-match ".*void.*" (nth 0 (split-string text "[\r\n]")))
+          (setq result nil)
+        (setq result t)))
+    result))
+
 ;;;;;;;;;;;;;;;;
 ;; camel case ;;
 ;;;;;;;;;;;;;;;;

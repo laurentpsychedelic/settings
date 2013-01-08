@@ -878,6 +878,13 @@ by using nxml's indentation rules."
       (indent-region begin end))
     (message "Ah, much better!"))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; xeu_elisp_util (http://code.google.com/p/ergoemacs/source/browse/packages/xeu_elisp_util.el) ;;
+;;   >> block at point, etc...                                                                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'xfrp_find_replace_pairs)
+(require 'xeu_elisp_util)
+
 ;;;;;;;;;;;;;
 ;; recentf ;;
 ;;;;;;;;;;;;;

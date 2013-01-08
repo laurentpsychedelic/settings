@@ -885,6 +885,19 @@ by using nxml's indentation rules."
 (require 'xfrp_find_replace_pairs)
 (require 'xeu_elisp_util)
 
+;;;;;;;;;;;;;;;;
+;; camel case ;;
+;;;;;;;;;;;;;;;;
+(defun camel-case-get-initials (text)
+  "This function return the initials of each word in a camel cased expression"
+  (let ((result "") (index 0))
+    ; (message (format "text: %S" text))
+    (setq case-fold-search nil)
+    (while (setq index (string-match "\\([A-Z]\\)" text index))
+      (setq index (1+ index))
+      (setq result (concat result (match-string 1 text))))
+    result))
+
 ;;;;;;;;;;;;;
 ;; recentf ;;
 ;;;;;;;;;;;;;

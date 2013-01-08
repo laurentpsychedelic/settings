@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: try
+# key: try
+# type: command
+# --
+(let ((region nil) (yas-good-grace nil))
+     (setq region (get-selection-or-unit 'block))
+     (setq text (elt region 0))
+     (delete-region (elt region 1) (elt region 2))
+     (yas-expand-snippet
+       (concat "try {\n"
+               text
+               "\n} catch (${1:Exception} ${1:$(downcase (camel-case-get-initials text))}) { ${2:/* CODE */} }\n"
+               "$0"))
+     (setq region (get-selection-or-unit 'block))
+     (indent-region (elt region 1) (elt region 2)))

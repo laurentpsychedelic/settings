@@ -897,24 +897,26 @@ by using nxml's indentation rules."
   "This function return a list of the arguments in the function defined in the text"
   (let (result eles params)
     (setq case-fold-search nil)
-    (when (string-match "(\\([^()]*\\))" text)
-      (setq result (match-string 1 text))
-      (setq eles (split-string result "[[:space:]\r\n\t]*,[[:space:]\r\n\t]*"))
-      (setq params (map 'list (lambda (ele)
-                                (car (last (split-string ele "[[:space:]]+"))))
-                        eles))
-      (when (< (length params) 2)
-        (if (equal "" (nth 0 params))
-            (setq params '()))))
-    params))
+    (when (string-match ".*([^)]*).*[{]?" (nth 0 (split-string text "[\r\n]"))) ;; verify if it is function
+      (when (string-match "(\\([^()]*\\))" text) ;; get the list of parameters between "(" and ")"
+        (setq result (match-string 1 text))
+        (setq eles (split-string result "[[:space:]\r\n\t]*,[[:space:]\r\n\t]*")) ;; split with ","
+        (setq params (map 'list (lambda (ele)
+                                  (car (last (split-string ele "[[:space:]]+")))) ;; retrieve the parameter name part, without the type
+                          eles))
+        (when (< (length params) 2) ;; avoid list with a single empty string
+          (if (equal "" (nth 0 params))
+              (setq params '())))))
+      params))
 
 (defun get-java-method-throws (text)
   "This function return a list of the exceptions thrown by the function defined in the text"
   (let (result throws)
     (setq case-fold-search nil)
-    (when (string-match "([^()]*)[[:space:]]*throws[[:space:]]*\\([^{]*[^[:space:]]\\)[[:space:]]*{" text)
-      (setq result (match-string 1 text))
-      (setq throws (split-string result "[[:space:]\r\n\t]*,[[:space:]\r\n\t]*")))
+    (when (string-match ".*([^)]*).*[{]?" (nth 0 (split-string text "[\r\n]"))) ;; verify if it is function
+      (when (string-match "([^()]*)[[:space:]]*throws[[:space:]]*\\([^{]*[^[:space:]]\\)[[:space:]]*{" text) ;; get the list of throw cluases after keyword "throws"
+        (setq result (match-string 1 text))
+        (setq throws (split-string result "[[:space:]\r\n\t]*,[[:space:]\r\n\t]*")))) ;; split with ","
     throws))
 
 ;; (setq test-string "public static int showMessageDialog(JFrame parent,\n        Object message, String title, int dialog_type) throws MyException, FileNotFoundException {");

@@ -5,7 +5,7 @@
 # --
 (let ((yas-good-grace nil) (args nil) (text nil) (region nil) (throws nil))
   (setq region (get-selection-or-unit 'block))
-  (setq text (elt region 0))
+  (setq text (buffer-substring (point) (elt region 2)))
   (setq args (get-java-method-arguments text))
   (setq throws (get-java-method-throws text))
   (yas-expand-snippet (concat "/**\n"

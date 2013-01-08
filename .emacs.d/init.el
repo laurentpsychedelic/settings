@@ -885,6 +885,11 @@ by using nxml's indentation rules."
 (require 'xfrp_find_replace_pairs)
 (require 'xeu_elisp_util)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; subword-mode ON in Java mode (camel case) ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-hook 'java-mode-hook 'subword-mode)
+
 ;;;;;;;;;;;;;;;;
 ;; camel case ;;
 ;;;;;;;;;;;;;;;;

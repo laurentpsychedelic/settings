@@ -164,6 +164,17 @@
     (setq command (concat "pwd && cd " build-file-relative-location " && "
                           "ant -emacs run"))))
 
+(defun get-jdb-command (text filename-sans-extension)
+  "Get command for ant jar target"
+  (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command)
+    (setq basic-command-elements (get-ant-basic-command-element text))
+    (setq package-fqn (nth 0 basic-command-elements))
+    (setq package-path (nth 1 basic-command-elements))
+    (setq class-fqn (nth 2 basic-command-elements))
+    (setq class-name (nth 3 basic-command-elements))
+    (setq build-file-relative-location (nth 4 basic-command-elements))
+    (setq command (concat "jdb -sourcepathsrc -classpathbuild/classes;lib/*;lib/other_libs/* " class-fqn))))
+
 (defun ant-test-single ()
   "Set ant test-single compilation target command into compilation buffer"
   (interactive)
@@ -199,6 +210,17 @@
   (interactive)
   (setq compile-command (get-ant-run-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
   (call-interactively 'compile compile-command))
+
+(defun jdb-run ()
+  "Set jdb compilation target command into compilation buffer"
+  (interactive)
+  (let (directory filename command buff)
+    (setq filename (buffer-file-name))
+    (setq command (get-jdb-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
+    (setq directory (concat (file-name-directory filename) "../.."))
+    (setq buff (find-file-other-window directory))
+    (with-current-buffer buff
+        (jdb command))))
 
 (provide 'myantcompile)
 ;;; myantcompile.el ends here

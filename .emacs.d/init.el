@@ -674,6 +674,21 @@
 ;; enable tempbuf when using dired
 (add-hook 'dired-mode-hook 'turn-on-tempbuf-mode)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; marmalade package manager ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'package)
+(add-to-list 'package-archives 
+    '("marmalade" .
+      "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; MELPA package manager ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; java documentation ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;

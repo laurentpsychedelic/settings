@@ -283,6 +283,24 @@ function clean_files_regexp() {
 function git_svn_update() {
     git svn rebase && git svn fetch --all
 }
+#function to hard reset Git repository to HEAD
+function git_hard_reset() {
+    git reset --hard HEAD
+}
+#function for git diff -w --cached (difference between HEAD and index
+function git_diff_w_cached() {
+    git diff -w --cached $@
+}
+#funnction to get all changed files list (Git)
+function git_ls_files_m() {
+    git ls-files -m $@
+}
+#funnction to get all changed files and add them to index (Git)
+function git_ls_files_m_add() {
+    git ls-files -m $@ | xargs git add
+}
+
+
 #custom prompt with time
 #left param: 0:normal 1:bright/bold 2:dark 4:underlines
 #right param: 32:green 33:brown 34:red etc...

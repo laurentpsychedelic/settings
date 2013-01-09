@@ -30,7 +30,7 @@
     (let (package package-path)
       (insert text)
       (goto-char 1)
-      (re-search-forward "package[[:space:]]+\\([a-zA-Z]+\\([.][a-zA-Z]+\\)*\\);" nil t)
+      (re-search-forward "package[[:space:]]+\\([a-zA-Z]+\\([.][a-zA-Z]+\\)*\\)" nil t)
       (setq package (match-string 1))
       (setq package-path
             (mapconcat

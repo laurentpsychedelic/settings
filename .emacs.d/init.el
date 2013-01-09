@@ -689,6 +689,13 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
+;;;;;;;;;;;;;;;;;;;;;
+;; solarized-emacs ;;
+;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs/solarized-emacs/")
+(require 'solarized)
+; (add-to-list 'custom-theme-load-path "~/.emacs.d/solarized-emacs/")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; java documentation ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;

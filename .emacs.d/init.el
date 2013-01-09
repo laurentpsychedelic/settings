@@ -669,9 +669,7 @@
 ;; tempbuf ;;
 ;;;;;;;;;;;;;
 (require 'tempbuf)
-;; enable tempbuf when opening file
-;; tempbuf turned off for normal files (there are annoying
-;; side effects with flymake and files opened with emacsclient)
+;; enable tempbuf when opening file: not needed
 ;; (add-hook 'find-file-hooks 'turn-on-tempbuf-mode)
 ;; enable tempbuf when using dired
 (add-hook 'dired-mode-hook 'turn-on-tempbuf-mode)
@@ -690,16 +688,6 @@
 (add-hook 'w3-mode-hook 'turn-on-tempbuf-mode)
 (add-hook 'Man-mode-hook 'turn-on-tempbuf-mode)
 (add-hook 'view-mode-hook 'turn-on-tempbuf-mode)
-;; * Tricks
-;; tempbuf-mode to terminate idle
-;;     (defun my-term-on-tempbuf-expire ()
-;;       (when (get-buffer-process (current-buffer))
-;;         (term-send-eof)))
-;;     (defun my-term-mode-patch ()
-;;       (turn-on-tempbuf-mode)
-;;       (add-hook 'tempbuf-expire-hook 'my-term-on-tempbuf-expire
-;;                 nil t))
-;;     (add-hook 'term-mode-hook 'my-term-mode-patch)
 
 ;;;;;;;;;;;;;;;;;;;;
 ;; beautiful-json ;;

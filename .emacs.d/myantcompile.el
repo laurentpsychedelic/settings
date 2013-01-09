@@ -99,7 +99,7 @@
     (setq build-file-relative-location (nth 4 basic-command-elements))
     (setq command (concat "pwd && cd " build-file-relative-location " && "
                           "ant -emacs test-single "
-                          "-Djavac.includes=*.java "
+                          "-Djavac.includes=" (replace-regexp-in-string "[.][.]" "*" build-file-relative-location) ".java "
                           "-Dtest.includes=" package-path "/" filename-sans-extension ".java"))))
 
 (defun get-ant-run-single-command (text filename-sans-extension)
@@ -113,7 +113,7 @@
     (setq build-file-relative-location (nth 4 basic-command-elements))
     (setq command (concat "pwd && cd " build-file-relative-location " && "
                           "ant -emacs run-single "
-                          "-Djavac.includes=*.java "
+                          "-Djavac.includes=" (replace-regexp-in-string "[.][.]" "*" build-file-relative-location) ".java "
                           "-Drun.class=" class-fqn))))
 
 (defun get-ant-compile-command (text filename-sans-extension)

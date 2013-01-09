@@ -679,13 +679,13 @@
 (add-to-list 'package-archives 
     '("marmalade" .
       "http://marmalade-repo.org/packages/"))
-(package-initialize)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; MELPA package manager ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; solarized-emacs ;;

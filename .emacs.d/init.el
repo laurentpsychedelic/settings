@@ -94,97 +94,25 @@
 ;:font "-outline-Courier New-normal-normal-normal-mono-11-*-*-*-c-*-iso8859-1"
 (set-face-attribute 'default nil :stipple nil)
 
-;; coloring current line
-(global-hl-line-mode 1)
-
-
-;;;;;;;;;;;;;;;;;;;
-;; col-highlight ;;
-;;;;;;;;;;;;;;;;;;;
-(require 'col-highlight)
-;; 1 or 2 (1: always on)
-(column-highlight-mode 1)
-;; 2: highlight when idle
-(toggle-highlight-column-when-idle 1)
-(col-highlight-set-interval 6) ; highlight time in seconds
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; highlight-indentation ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'highlight-indentation)
-(add-hook 'c-mode-common-hook 
-          (lambda ()
-            (highlight-indentation-current-column-mode)
-            (highlight-indentation-mode)))
-
-(setq radiance-dark-theme-background "#686870")
-(setq dark-theme-background "black")
-(setq light-theme-background "light grey")
-(setq radiance-dark-theme-foreground "#000000")
-(setq dark-theme-foreground "white")
-(setq light-theme-foreground "black")
-(setq radiance-dark-theme-hlline "#FFFFFF")
-(setq dark-theme-hlline "darkolivegreen")
-(setq light-theme-hlline "darkolivegreen")
-(setq radiance-dark-theme-indentface "#CCCCCC")
-(setq dark-theme-indentface "#FFFFFF")
-(setq light-theme-indentface "#000000")
-(setq radiance-dark-theme-currentindentface "#AAAAAA")
-(setq dark-theme-currentindentface "#DDDDDD")
-(setq light-theme-currentindentface "#222222")
-
-(defun set-radiance-dark-theme ()
-  ;;set theme to radiance dark
-  (set-face-attribute 'default nil :background radiance-dark-theme-background)
-  (set-face-attribute 'default nil :foreground radiance-dark-theme-foreground)
-  (set-face-background 'hl-line radiance-dark-theme-hlline)
-  (set-face-background 'col-highlight radiance-dark-theme-hlline)
-  (set-face-background 'highlight-indentation-face radiance-dark-theme-indentface)
-  (set-face-background 'highlight-indentation-current-column-face radiance-dark-theme-currentindentface))
-
-(defun set-dark-theme ()
-  ;;set theme to dark
-  (set-face-attribute 'default nil :background dark-theme-background)
-  (set-face-attribute 'default nil :foreground dark-theme-foreground)
-  (set-face-background 'hl-line dark-theme-hlline)
-  (set-face-background 'col-highlight dark-theme-hlline)
-  (set-face-background 'highlight-indentation-face dark-theme-indentface)
-  (set-face-background 'highlight-indentation-current-column-face dark-theme-currentindentface))
-(defun set-light-theme ()
-  ;;set theme to dark
-  (set-face-attribute 'default nil :background light-theme-background)
-  (set-face-attribute 'default nil :foreground light-theme-foreground)
-  (set-face-background 'hl-line light-theme-hlline)
-  (set-face-background 'col-highlight light-theme-hlline)
-  (set-face-background 'highlight-indentation-face light-theme-indentface)
-  (set-face-background 'highlight-indentation-current-column-face light-theme-currentindentface))
-;;(set-radiance-dark-theme)
-;;(set-light-theme)
-;;(set-dark-theme)
-(defalias 'dt 'set-dark-theme)
-(defalias 'lt 'set-light-theme)
-(defalias 'rdt 'set-radiance-dark-theme)
-
-(if (window-system)
-    (set-dark-theme)
-  (set-face-attribute 'default nil :foreground "white"))
-
+;;;;;;;;;;;;;;;
+;; set fonts ;;
+;;;;;;;;;;;;;;;
 ;;(set-face-attribute 'default nil :cursor-type "box")
 (set-face-attribute 'default nil :height 100)
-;;set font to ubuntu (try)
+;; set font to "Ubunto Mono"
 (if (string-equal system-type "gnu/linux")
     (safe-wrap (set-face-attribute 'default nil :font "Ubuntu Mono") (message "Unable to set font!")) ; GNU/Linux [Ubuntu]
   (safe-wrap (set-face-attribute 'default nil :font "Ubuntu Mono-10:spacing=m:antialias=natural") (message "Unable to set font!"))) ; Windows
-;;(set-face-attribute 'default nil :stipple "c:/Documents and Settings/LFabre/My Documents/Downloads/1328746948_crkoinarwhal_442920.jpeg")
 
-;; Set transparency of emacs
+;;;;;;;;;;;;;;;;;;;;;;
+;; set transparency ;;
+;;;;;;;;;;;;;;;;;;;;;;
 (defun transparency (value)
   "Sets the transparency of the frame window. 0=transparent/100=opaque"
   (interactive "nTransparency Value 0 - 100 opaque:")
   (set-frame-parameter (selected-frame) 'alpha value))
 
-(transparency '80)
+(transparency '100)
 (global-set-key (kbd "C-c t") 'transparency)
 
 (defun djcb-opacity-modify (&optional dec)
@@ -693,6 +621,50 @@
 (add-to-list 'load-path "~/.emacs/solarized-emacs/")
 (require 'solarized)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/solarized-emacs/")
+; (load-theme 'solarized-dark)
+(load-theme 'misterioso)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; highlight-indentation ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'highlight-indentation)
+(add-hook 'c-mode-common-hook 
+          (lambda ()
+            (highlight-indentation-current-column-mode)
+            (highlight-indentation-mode)))
+
+;;(message (format "%S" (frame-parameters)))
+(defun get-lighter-color (color &optional amount)
+  "This function get a color name COLOR and return a color slightly lighter (or darker), by the amount AMOUNT (normalized RGB, default: +0.1)"
+  (if (not amount) (set amount 0.1))
+  (setq color (apply 'color-rgb-to-hex (mapcar (lambda (num) (setq num (+ amount num)) (if (> num 1.0) (setq num 1.0)) num)
+                      (color-name-to-rgb (cdr (assoc 'background-color (frame-parameters))))))))
+
+(set-face-background 'highlight-indentation-current-column-face (get-lighter-color (cdr (assoc 'background-color (frame-parameters))) -0.03))
+(set-face-background 'highlight-indentation-face (get-lighter-color (cdr (assoc 'background-color (frame-parameters))) 0.03))
+
+;;;;;;;;;;;;;;;;;;;
+;; col-highlight ;;
+;;;;;;;;;;;;;;;;;;;
+(defface vline-fface '((t ()))
+  "*Face for current-column highlighting"
+  :group 'column-highlight :group 'faces)
+(set-face-background 'vline-fface (get-lighter-color (cdr (assoc 'background-color (frame-parameters))) -0.03))
+(setq vline-face 'vline-fface)
+(require 'col-highlight)
+;; 1 or 2 (1: always on)
+(column-highlight-mode 2)
+;; 2: highlight when idle
+(toggle-highlight-column-when-idle 1)
+(col-highlight-set-interval 6) ; highlight time in seconds
+(setq col-highlight-vline-face-flag nil)
+
+;;;;;;;;;;;;
+;; hl-line;;
+;;;;;;;;;;;;
+(global-hl-line-mode 1)
+;;(setq hl-line-face 'underline)
+(set-face-background 'hl-line (get-lighter-color (cdr (assoc 'background-color (frame-parameters))) -0.03))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; java documentation ;;

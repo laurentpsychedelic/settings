@@ -29,7 +29,7 @@
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
-    ("printf" "printf(\"\")" my-abbrev-hook 0)
+    ("printf" "printf(\"\")" my-abbrev-hook 3)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -238,7 +238,7 @@
     ("llc" "linked_list_copy" nil 3)
     ("locastion" "location" nil 3)
     ("maht" "Math" nil 1)
-    ("main" "Main" nil 67)
+    ("main" "Main" nil 79)
     ("manger" "manager" nil 1)
     ("masrgin" "margin" nil 1)
     ("meacs" "emacs" nil 1)
@@ -333,6 +333,7 @@
     ("sotred" "stored" nil 1)
     ("soze" "size" nil 1)
     ("sozeof" "sizeof" nil 1)
+    ("spash" "splash" nil 1)
     ("stagecontopl" "StageControl" nil 1)
     ("stagecontrl" "StageControl" nil 1)
     ("staitc" "static" nil 2)
@@ -372,7 +373,7 @@
     ("vreak" "break" nil 1)
     ("wat" "awt" nil 3)
     ("winodwsi" "Windows" nil 1)
-    ("wpamain" "WPAMain" nil 2)
+    ("wpamain" "WPAMain" nil 5)
     ("wundow" "window" nil 1)
     ("x30scannomral" "X30ScanNormal" nil 1)
     ("xdebug" "Xdebug -Xrunjdwp:transport=dt_shmem,address=javadebug,server=y,suspend=n" nil 1)
@@ -491,6 +492,8 @@
 (define-abbrev-table 'occur-mode-abbrev-table '())
 
 (define-abbrev-table 'outline-mode-abbrev-table '())
+
+(define-abbrev-table 'package-menu-mode-abbrev-table '())
 
 (define-abbrev-table 'pike-mode-abbrev-table
   '(

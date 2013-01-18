@@ -42,6 +42,11 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (require 'myantcompile)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; gradle build script linked to groovy-mode ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode)) ; gradle build script
+
 ;;;;;;;;;;;;;;;;;;
 ;; auto-install ;;
 ;;;;;;;;;;;;;;;;;;

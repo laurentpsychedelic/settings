@@ -152,6 +152,7 @@
 
 ;; reassign C-h to back delete char
 (global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key "\C-xh" 'help-command) ;; reassign help command to C-x h
 
 ;; display line and column number
 (line-number-mode 1)

@@ -137,6 +137,7 @@
     ("comlpete" "complete" nil 1)
     ("commnet" "comment" nil 1)
     ("complte" "complete" nil 1)
+    ("compoennt" "component" nil 1)
     ("comst" "const" nil 1)
     ("condt" "const" nil 1)
     ("constasnt" "constant" nil 1)
@@ -238,7 +239,7 @@
     ("llc" "linked_list_copy" nil 3)
     ("locastion" "location" nil 3)
     ("maht" "Math" nil 1)
-    ("main" "Main" nil 82)
+    ("main" "Main" nil 80)
     ("manger" "manager" nil 1)
     ("masrgin" "margin" nil 1)
     ("meacs" "emacs" nil 1)
@@ -320,6 +321,7 @@
     ("reutrn" "return" nil 11)
     ("rpeaint" "repaint" nil 1)
     ("rtegistry" "registry" nil 1)
+    ("rturn" "return" nil 1)
     ("rwo" "row" nil 1)
     ("sattic" "static" nil 1)
     ("scipting" "Scripting" nil 1)
@@ -413,7 +415,7 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 4)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
@@ -422,7 +424,7 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 3)
+" my-abbrev-hook 4)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 1)

@@ -49,7 +49,7 @@ then
     #CREATE SYMBOLIC LINK TO %PROGRAMFILES%
     junction -s "$(cygpath -w ~/pf)" "$PROGRAMFILES"
 
-    #CREATE SYMBOLIC LINKS TO CYGWIN HOME FOLDER
+    #CREATE SYMBOLIC LINK TO CYGWIN HOME FOLDER
     FILE_LNK="C:/home"
     FILE_TAR="C:/cygwin/home"
     junction -s "$FILE_LNK" "$FILE_TAR"

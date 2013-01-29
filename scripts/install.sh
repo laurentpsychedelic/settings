@@ -62,9 +62,6 @@ then
         junction -s "$FILE_LNK" "$FILE_TAR"
     fi
 
-    #INSTALL AUTOJUMP
-    cd ~/settings/bin/autojump_v19
-    ./install.sh --bash
 else
     echo "Linux!"
     SETTINGS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -95,9 +92,6 @@ else
     fi
     ln -s $FILE_TAR $FILE_LNK
 
-    #INSTALL AUTOJUMP
-    cd ~/settings/bin/autojump_v19
-    ./install.sh
 fi
 
 #ADD COMPLEMENTARY HISTORY SEARCHING CAPABILITIES FOR BASH IN .INPUTRC 

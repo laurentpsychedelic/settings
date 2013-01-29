@@ -58,6 +58,21 @@
   (setq ediff-window-setup-function 'ediff-setup-windows-plain))
 (safe-wrap (load-auto-install-library) (message "Unable to load auto-install!"))
 
+;;;;;;;;;;;;;;
+;; org-mode ;;
+;;;;;;;;;;;;;;
+(require 'org)
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+(setq org-todo-keywords
+  '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
+(setq org-directory "~/Dropbox/dev/org/")
+(setq org-agenda-files (list org-directory))
+(add-hook 'org-agenda-mode-hook '(lambda () (hl-line-mode 1)))
+
 ;;;;;;;;;;;;;;;
 ;; yasnippet ;;
 ;;;;;;;;;;;;;;;

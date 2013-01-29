@@ -300,6 +300,10 @@ function git_ls_files_m_add() {
     git ls-files -m $@ | xargs git add
 }
 
+#function to update all git repositories in a given directory
+function git_update_all() {
+    ~/settings/scripts/update_all.sh $@
+}
 
 #custom prompt with time
 #left param: 0:normal 1:bright/bold 2:dark 4:underlines

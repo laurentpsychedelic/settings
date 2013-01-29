@@ -54,6 +54,14 @@ then
     FILE_TAR="C:/cygwin/home"
     junction -s "$FILE_LNK" "$FILE_TAR"
 
+    #CREATE SYMBOLIC LINK TO DROPBOX FOLDER
+    if [ -e "$USERPROFILE/Dropbox" ]
+    then
+        FILE_LNK=$(cygpath -m ~/Dropbox)
+        FILE_TAR=$(cygpath -m $USERPROFILE/Dropbox)
+        junction -s "$FILE_LNK" "$FILE_TAR"
+    fi
+
     #INSTALL AUTOJUMP
     cd ~/settings/bin/autojump_v19
     ./install.sh --bash

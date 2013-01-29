@@ -42,6 +42,11 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (require 'myantcompile)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; gradle build script linked to groovy-mode ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode)) ; gradle build script
+
 ;;;;;;;;;;;;;;;;;;
 ;; auto-install ;;
 ;;;;;;;;;;;;;;;;;;
@@ -147,6 +152,7 @@
 
 ;; reassign C-h to back delete char
 (global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key "\C-xh" 'help-command) ;; reassign help command to C-x h
 
 ;; display line and column number
 (line-number-mode 1)
@@ -900,13 +906,10 @@ collect `(define-abbrev ,table
 (eval-after-load "cc-mode"
   '(declare-abbrevs (groovy-mode-abbrev-table)
        (("imain" "public static void main(String[] args) {\n\n}" "C-p TAB C-h")
-        ("println"   "System.out.println()" "C-b")
-        ("print"   "System.out.print()" "C-b")
         ("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
         ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
         ("elseif" "else if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
-        ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d")
-        ("for"   "for (;;) {\n}\n" "C-M-b C-M-q C-M-b C-M-d"))))
+        ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d"))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

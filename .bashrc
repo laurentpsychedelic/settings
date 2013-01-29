@@ -291,11 +291,11 @@ function git_hard_reset() {
 function git_diff_w_cached() {
     git diff -w --cached $@
 }
-#funnction to get all changed files list (Git)
+#function to get all changed files list (Git)
 function git_ls_files_m() {
     git ls-files -m $@
 }
-#funnction to get all changed files and add them to index (Git)
+#function to get all changed files and add them to index (Git)
 function git_ls_files_m_add() {
     git ls-files -m $@ | xargs git add
 }

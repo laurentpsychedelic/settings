@@ -300,6 +300,10 @@
 ;; move between windows with M-arrow
 (windmove-default-keybindings 'meta)
 (setq windmove-wrap-around t)
+(global-set-key (kbd "C-c M-<up>") 'windmove-up)
+(global-set-key (kbd "C-c M-<left>") 'windmove-left)
+(global-set-key (kbd "C-c M-<right>") 'windmove-right)
+(global-set-key (kbd "C-c M-<down>") 'windmove-down)
 
 ;;; shortcuts to enlarge-shrink windows
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)

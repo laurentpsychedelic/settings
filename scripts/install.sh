@@ -25,6 +25,10 @@ then
     FILE_LNK=$(cygpath -w $HOME_DIR/.screenrc)
     FILE_TAR=$(cygpath -w $SETTINGS_DIR/.screenrc)
     junction -s "$FILE_LNK" "$FILE_TAR"
+    #HARD LINK TO .STARTXWINRC
+    FILE_LNK=$(cygpath -w $HOME_DIR/.screenrc)
+    FILE_TAR=$(cygpath -w $SETTINGS_DIR/scripts/.screenrc)
+    junction -s "$FILE_LNK" "$FILE_TAR"
 
     #SET SHELL ENV TO BASH.EXE
     profile=$(cat /etc/profile)

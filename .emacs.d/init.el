@@ -646,8 +646,8 @@
 (add-to-list 'load-path "~/.emacs/solarized-emacs/")
 (require 'solarized)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/solarized-emacs/")
-(load-theme 'solarized-dark)
-; (load-theme 'misterioso)
+; (load-theme 'solarized-dark)
+(load-theme 'misterioso)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; highlight-indentation ;;

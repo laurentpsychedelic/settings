@@ -7,6 +7,8 @@
   '(
    ))
 
+(define-abbrev-table 'bibtex-mode-abbrev-table '())
+
 (define-abbrev-table 'c++-mode-abbrev-table
   '(
     ("#e" "#endif /* */" my-abbrev-hook 0)
@@ -63,6 +65,8 @@
 " my-abbrev-hook 0)
    ))
 
+(define-abbrev-table 'calendar-mode-abbrev-table '())
+
 (define-abbrev-table 'change-log-mode-abbrev-table '())
 
 (define-abbrev-table 'comint-mode-abbrev-table '())
@@ -82,6 +86,10 @@
 (define-abbrev-table 'conf-windows-mode-abbrev-table '())
 
 (define-abbrev-table 'conf-xdefaults-mode-abbrev-table '())
+
+(define-abbrev-table 'diary-fancy-display-mode-abbrev-table '())
+
+(define-abbrev-table 'diary-mode-abbrev-table '())
 
 (define-abbrev-table 'diff-mode-abbrev-table '())
 
@@ -152,6 +160,7 @@
     ("dipskay" "display" nil 1)
     ("directorry" "directory" nil 1)
     ("dirve" "drive" nil 1)
+    ("documentatin" "documentation" nil 1)
     ("docus" "focus" nil 1)
     ("dound" "found" nil 1)
     ("eamcs" "emacs" nil 1)
@@ -211,6 +220,7 @@
     ("histroy" "history" nil 1)
     ("hoem" "HOME" nil 1)
     ("hsell" "shell" nil 1)
+    ("hte" "the" nil 1)
     ("idel" "idle" nil 1)
     ("imiport" "import" nil 1)
     ("impiort" "import" nil 1)
@@ -232,6 +242,7 @@
     ("jfrmae" "JFrame" nil 1)
     ("jpnale" "jPanel" nil 1)
     ("langauge" "language" nil 3)
+    ("langauges" "languages" nil 1)
     ("langfuages" "LANGUAGES" nil 1)
     ("ledt" "LEFT" nil 1)
     ("lese" "else" nil 1)
@@ -240,13 +251,14 @@
     ("llc" "linked_list_copy" nil 3)
     ("locastion" "location" nil 3)
     ("maht" "Math" nil 1)
-    ("main" "Main" nil 82)
+    ("main" "Main" nil 85)
     ("manger" "manager" nil 1)
     ("masrgin" "margin" nil 1)
     ("matcehr" "matcher" nil 1)
     ("meacs" "emacs" nil 1)
     ("measruement" "measurement" nil 1)
     ("measurement" "Measurement" nil 12)
+    ("measurment" "measurement" nil 1)
     ("memoru" "memory" nil 1)
     ("mesages" "messages" nil 1)
     ("mide" "mode" nil 1)
@@ -284,6 +296,7 @@
     ("plugions" "PLUGINS" nil 1)
     ("pluguin" "plugin" nil 1)
     ("pluigin" "plugin" nil 1)
+    ("pluse" "pulse" nil 1)
     ("poijnts" "POINTS" nil 1)
     ("polariation" "Polarization" nil 1)
     ("pram" "param" nil 2)
@@ -334,6 +347,7 @@
     ("scipting" "Scripting" nil 1)
     ("sdtatic" "static" nil 1)
     ("sdtokes" "strokes" nil 1)
+    ("serched" "searched" nil 1)
     ("servere" "server" nil 1)
     ("sewt" "set" nil 1)
     ("sfn" "svn" nil 1)
@@ -380,12 +394,15 @@
     ("ture" "true" nil 2)
     ("unalbe" "unable" nil 2)
     ("unti" "unit" nil 2)
+    ("usedwhen" "used when" nil 1)
     ("vopid" "void" nil 1)
     ("vpid" "void" nil 1)
     ("vreak" "break" nil 1)
     ("wat" "awt" nil 3)
+    ("waveenght" "wavelength" nil 1)
     ("winodwsi" "Windows" nil 1)
     ("wpamain" "WPAMain" nil 11)
+    ("wpavelength" "wavelength" nil 1)
     ("wundow" "window" nil 1)
     ("x30scannomral" "X30ScanNormal" nil 1)
     ("xdebug" "Xdebug -Xrunjdwp:transport=dt_shmem,address=javadebug,server=y,suspend=n" nil 1)
@@ -424,7 +441,7 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 9)
+" my-abbrev-hook 11)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
@@ -433,12 +450,12 @@
 " my-abbrev-hook 4)
     ("if" "if () {
 }
-" my-abbrev-hook 35)
+" my-abbrev-hook 40)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 2)
     ("print" "System.out.print()" my-abbrev-hook 1)
-    ("println" "System.out.println()" my-abbrev-hook 24)
+    ("println" "System.out.println()" my-abbrev-hook 25)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -497,6 +514,8 @@
 (define-abbrev-table 'occur-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'occur-mode-abbrev-table '())
+
+(define-abbrev-table 'org-mode-abbrev-table '())
 
 (define-abbrev-table 'outline-mode-abbrev-table '())
 

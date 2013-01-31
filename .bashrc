@@ -166,8 +166,12 @@ else
         svn diff "${@}" | colordiff | less -R
     }
     #function to startup chromium-browser
-    chrome () {
-        chromium-browser "${@}" 2> /dev/null &
+    function chrome () {
+        chromium-browser "${@}" > /dev/null 2>&1 &
+    }
+    #function to start dropbox client manually
+    function dropboxclient () {
+        ~/.dropbox-dist/dropboxd "${@}" > /dev/null 2>&1 &
     }
 fi
 

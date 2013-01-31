@@ -253,8 +253,10 @@
     ("maht" "Math" nil 1)
     ("main" "Main" nil 85)
     ("manger" "manager" nil 1)
+    ("marerials" "materials" nil 1)
     ("masrgin" "margin" nil 1)
     ("matcehr" "matcher" nil 1)
+    ("mateirals" "materials" nil 1)
     ("meacs" "emacs" nil 1)
     ("measruement" "measurement" nil 1)
     ("measurement" "Measurement" nil 12)
@@ -453,9 +455,9 @@
 " my-abbrev-hook 40)
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 2)
+}" my-abbrev-hook 3)
     ("print" "System.out.print()" my-abbrev-hook 1)
-    ("println" "System.out.println()" my-abbrev-hook 25)
+    ("println" "System.out.println()" my-abbrev-hook 28)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

@@ -26,8 +26,8 @@ then
     FILE_TAR=$(cygpath -w $SETTINGS_DIR/.screenrc)
     junction -s "$FILE_LNK" "$FILE_TAR"
     #HARD LINK TO .STARTXWINRC
-    FILE_LNK=$(cygpath -w $HOME_DIR/.screenrc)
-    FILE_TAR=$(cygpath -w $SETTINGS_DIR/scripts/.screenrc)
+    FILE_LNK=$(cygpath -w $HOME_DIR/.startxwinrc)
+    FILE_TAR=$(cygpath -w $SETTINGS_DIR/scripts/.startxwinrc)
     junction -s "$FILE_LNK" "$FILE_TAR"
 
     #SET SHELL ENV TO BASH.EXE

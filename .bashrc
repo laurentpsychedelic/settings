@@ -179,6 +179,11 @@ else
     }
 fi
 
+#function to install GVM package manager
+function install_gvm() {
+    curl -s get.gvmtool.net | bash
+}
+
 #git settings
 alias g="git"
 git config --global alias.ci commit

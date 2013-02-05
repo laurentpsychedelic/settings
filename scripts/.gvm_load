@@ -1,2 +1,2 @@
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "$(readlink -f ~/.gvm/bin/gvm-init.sh)" && -z $(which gvm-init.sh | grep '/gvm-init.sh') ]] && source "$(readlink -f ~/.gvm/bin/gvm-init.sh)"
+[[ -s "$(readlink -f ~/.gvm/bin/gvm-init.sh)" && -z $(which gvm-init.sh 2> /dev/null | grep '/gvm-init.sh') ]] && source "$(readlink -f ~/.gvm/bin/gvm-init.sh)"

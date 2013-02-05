@@ -72,6 +72,9 @@
 (setq org-directory "~/Dropbox/dev/org/")
 (setq org-agenda-files (list org-directory))
 (add-hook 'org-agenda-mode-hook '(lambda () (hl-line-mode 1)))
+(if (string-equal system-type "gnu/linux")
+    (setq browse-url-browser-function 'browse-url-chromium)
+  (setq browse-url-browser-function 'browse-url-default-windows-browser))
 
 ;;;;;;;;;;;;;;;
 ;; yasnippet ;;

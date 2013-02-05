@@ -155,6 +155,16 @@ then
     git config --global core.pager "nkf -s | more"
     git config --global i18n.commitencoding "SHIFT_JIS"
 
+    #add chocolatey to path
+    export PATH=/cygdrive/c/Chocolatey/bin:$PATH
+    #wrapper functions to chocolatey bat scripts
+    function chocolatey() {
+        chocolatey.bat "${@}"
+    }
+    function cinst() {
+        cinst.bat "${@}"
+    }
+
     #XWin Tk setting
     export DISPLAY=:0.0
     startxwin > /dev/null 2>&1 &

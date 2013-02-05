@@ -169,6 +169,10 @@ else
     function chrome () {
         chromium-browser "${@}" > /dev/null 2>&1 &
     }
+    #function to install dropbox client
+    function install_dropbox() {
+        cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -
+    }
     #function to start dropbox client manually
     function dropboxclient () {
         ~/.dropbox-dist/dropboxd "${@}" > /dev/null 2>&1 &

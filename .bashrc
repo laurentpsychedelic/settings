@@ -211,8 +211,6 @@ export SVN_EDITOR=emacsclient
 export EDITOR=emacsclient
 export VISUAL=emacsclient
 
-export PATH=~/.emacs.d/groovy-1.8.6/bin:$PATH
-export PATH=~/.emacs.d/groovyserv/win32/bin:$PATH
 export PATH=~/settings/bin:$PATH
 
 #CD path: added software development folder dev

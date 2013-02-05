@@ -165,6 +165,9 @@ then
         cinst.bat "${@}"
     }
 
+    #add sysinternals tools to the path (sysinternals packages installed with chocolatey)
+    export PATH=/cygdrive/c/sysinternals:$PATH
+
     #XWin Tk setting
     export DISPLAY=:0.0
     startxwin > /dev/null 2>&1 &

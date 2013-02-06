@@ -155,6 +155,10 @@ then
     git config --global core.pager "nkf -s | more"
     git config --global i18n.commitencoding "SHIFT_JIS"
 
+    #install chocolatey
+    function install_chocolatey () {
+        powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('http://chocolatey.org/install.ps1'))" && export PATH=$PATH:$systemdrive\chocolatey\bin
+    }
     #add chocolatey to path
     export PATH=/cygdrive/c/Chocolatey/bin:$PATH
     #wrapper functions to chocolatey bat scripts

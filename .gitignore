@@ -13,3 +13,5 @@ scripts/[.]*
 #emacs history
 .emacs.d/history
 report.txt
+#powershell send mail utility (attendance book)
+powershell/scripts/.attendance_book_email_info

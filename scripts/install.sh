@@ -21,6 +21,26 @@ then
     FILE_LNK=$(cygpath -w $HOME_DIR/.emacs.d)
     FILE_TAR=$(cygpath -w $SETTINGS_DIR/.emacs.d)
     junction -s "$FILE_LNK" "$FILE_TAR"
+
+    # POWERSHELL
+    #HARD LINK TO POWERSHELL PROFILE
+    powershell_profile=$(cygpath -u $(powershell -ExecutionPolicy unrestricted -Command "echo \$profile" | tr -d '[\r\n]')) # CR are added to the output!!
+    # echo "profile: \"$powershell_profile\"" | cat -A
+    if [ -e "$powershell_profile" -o -h "$powershell_profile" ] 
+    then
+        mv -v "$(cygpath -u $powershell_profile)" "$(cygpath -u $powershell_profile)_old"
+    else
+        mkdir -p $(dirname $powershell_profile)
+    fi
+    FILE_LNK=$(cygpath -w $powershell_profile)
+    FILE_TAR=$(cygpath -w $SETTINGS_DIR/powershell/profile.ps1)
+    fsutil hardlink create $FILE_LNK $FILE_TAR
+
+    #LINK TO POWERSHELL SCRIPTS
+    FILE_LNK=$(cygpath -w "$(dirname $powershell_profile)/scripts")
+    FILE_TAR=$(cygpath -w $SETTINGS_DIR/powershell/scripts)
+    junction -s "$FILE_LNK" "$FILE_TAR"
+
     #HARD LINK TO .SCREENRC
     FILE_LNK=$(cygpath -w $HOME_DIR/.screenrc)
     FILE_TAR=$(cygpath -w $SETTINGS_DIR/.screenrc)

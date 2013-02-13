@@ -220,6 +220,11 @@
 (autoload 'powershell-mode "powershell-mode" "A editing mode for Microsoft PowerShell." t)
 (add-to-list 'auto-mode-alist '("\\.ps1\\'" . powershell-mode)) ; PowerShell script
 
+;; C# mode
+(autoload 'csharp-mode "csharp-mode" "Major mode for editing C# code." t)
+(setq auto-mode-alist
+      (append '(("\\.cs$" . csharp-mode)) auto-mode-alist))
+
 ;; c++ mode (for upcase CPP file extension)
 (add-to-list 'auto-mode-alist '("\\.CPP\\'" . c++-mode)) ; C++
 

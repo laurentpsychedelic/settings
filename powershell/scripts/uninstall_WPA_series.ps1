@@ -1,5 +1,34 @@
 param([switch]$cleanup, [switch]$keysonly, [switch]$keep_settings, [string]$soft_type)
 
+if (!$soft_type) {
+    echo @"
+
+#####################
+# UNINSTALL UTILITY #
+#####################
+
+SYNOPSIS:
+    uninstall_WPA_series.ps1 -soft_type <type>  [ -cleanup ] [ -keep_settings ] [ -keysonly ]
+
+OPTIONS:
+
+    -soft_type <type>
+            Software to be uninstalled
+
+    -cleanup
+            Deleted everything, including registry keys and user settings
+
+    -keep_settings
+            Keep user settings (even if -cleanup was specified)
+
+    -keysonly
+            Only registry keys should be deleted
+
+"@
+
+    exit
+}
+
 $soft = $soft_type -replace "(-View)", ""
 echo @"
 

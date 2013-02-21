@@ -87,9 +87,7 @@
 
 (define-abbrev-table 'conf-xdefaults-mode-abbrev-table '())
 
-(define-abbrev-table 'csharp-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'csharp-mode-abbrev-table '())
 
 (define-abbrev-table 'diary-fancy-display-mode-abbrev-table '())
 
@@ -263,7 +261,7 @@
     ("llc" "linked_list_copy" nil 3)
     ("locastion" "location" nil 3)
     ("maht" "Math" nil 1)
-    ("main" "Main" nil 85)
+    ("main" "Main" nil 86)
     ("manger" "manager" nil 1)
     ("marerials" "materials" nil 1)
     ("masrgin" "margin" nil 1)
@@ -301,6 +299,7 @@
     ("pareent" "parent" nil 1)
     ("pasth" "path" nil 1)
     ("patcehd" "patched" nil 1)
+    ("patrh" "path" nil 1)
     ("pattenr" "pattern" nil 1)
     ("pesilon" "epsilon" nil 1)
     ("pirntln" "println" nil 1)
@@ -372,6 +371,7 @@
     ("soze" "size" nil 1)
     ("sozeof" "sizeof" nil 1)
     ("spash" "splash" nil 1)
+    ("splir" "split" nil 1)
     ("stagecontopl" "StageControl" nil 1)
     ("stagecontrl" "StageControl" nil 1)
     ("staitc" "static" nil 2)
@@ -458,7 +458,7 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
@@ -467,12 +467,12 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 2)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 0)
+    ("println" "System.out.println()" my-abbrev-hook 2)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

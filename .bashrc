@@ -169,6 +169,9 @@ then
         cinst.bat "${@}"
     }
 
+    #source keychain shell script to enable registered keys
+    source ~/.keychain/*-sh
+
     #add sysinternals tools to the path (sysinternals packages installed with chocolatey)
     export PATH=/cygdrive/c/sysinternals:$PATH
 

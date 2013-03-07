@@ -413,6 +413,7 @@
     ("unalbe" "unable" nil 2)
     ("unti" "unit" nil 2)
     ("usedwhen" "used when" nil 1)
+    ("usrs" "users" nil 1)
     ("vopid" "void" nil 1)
     ("vpid" "void" nil 1)
     ("vreak" "break" nil 1)

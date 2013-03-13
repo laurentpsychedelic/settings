@@ -364,6 +364,14 @@ function git_filter_branch_author() {
     fi
 }
 
+#function to generate an ISO image of all directories at the current location
+function generate_ISO_images() {
+    for dir in `find . -maxdepth 1 -type d`
+    do
+        genisoimage -o "${dir}.iso" -J -r -l "${dir}"
+    done
+}
+
 #custom prompt with time
 #left param: 0:normal 1:bright/bold 2:dark 4:underlines
 #right param: 32:green 33:brown 34:red etc...

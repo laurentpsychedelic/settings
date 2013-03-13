@@ -336,6 +336,34 @@ function git_update_all() {
     ~/settings/scripts/update_all.sh $@
 }
 
+#function to get a list of all the different author in the current git branch
+function git_get_authors() {
+    git log | grep Author | sort | uniq
+}
+
+#function to filter git branch to change commits' author name and email
+function git_filter_branch_author() {
+    if [ $# -ne 3 ]
+    then
+        echo "Arguments:"
+        echo "\$1 old name"
+        echo "\$2 new name"
+        echo "\$3 new email"
+    else
+        old_name=$1
+        new_name=$2
+        new_email=$3
+        git filter-branch -f --commit-filter 'if [ "$GIT_AUTHOR_NAME" = "'"$old_name"'" ];
+            then
+                GIT_AUTHOR_NAME="'"$new_name"'";
+                GIT_AUTHOR_EMAIL="'"$new_email"'";
+                git commit-tree "$@";
+            else
+                git commit-tree "$@";
+            fi' -- --all
+    fi
+}
+
 #custom prompt with time
 #left param: 0:normal 1:bright/bold 2:dark 4:underlines
 #right param: 32:green 33:brown 34:red etc...

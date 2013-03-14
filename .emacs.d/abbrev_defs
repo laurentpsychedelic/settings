@@ -276,6 +276,7 @@
     ("mesages" "messages" nil 1)
     ("mide" "mode" nil 1)
     ("mnew" "new" nil 1)
+    ("modifioed" "modified" nil 1)
     ("nasme" "name" nil 1)
     ("native" "native" nil 2)
     ("nbame" "name" nil 1)

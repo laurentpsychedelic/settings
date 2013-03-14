@@ -368,7 +368,7 @@ function git_filter_branch_author() {
 function generate_ISO_images() {
     for dir in `find . -mindepth 1 -maxdepth 1 -type d`
     do
-        genisoimage -o "${dir}.iso" -J -r -l "${dir}"
+        genisoimage -o "${dir}.iso" -J -joliet-long -r -l "${dir}"
     done
 }
 

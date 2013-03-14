@@ -366,7 +366,7 @@ function git_filter_branch_author() {
 
 #function to generate an ISO image of all directories at the current location
 function generate_ISO_images() {
-    for dir in `find . -maxdepth 1 -type d`
+    for dir in `find . -mindepth 1 -maxdepth 1 -type d`
     do
         genisoimage -o "${dir}.iso" -J -r -l "${dir}"
     done

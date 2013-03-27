@@ -111,6 +111,7 @@
     ("abstart" "abstract" nil 1)
     ("ahrd" "hard" nil 1)
     ("algirithm" "algorithm" nil 1)
+    ("alurent" "laurent" nil 1)
     ("antr" "and" nil 1)
     ("apped" "append" nil 1)
     ("aprameters" "parameters" nil 1)
@@ -156,6 +157,7 @@
     ("contant" "constant" nil 1)
     ("coreection" "correction" nil 1)
     ("correctr" "correct" nil 1)
+    ("creaet" "create" nil 1)
     ("ctach" "catch" nil 7)
     ("cysstrt" "cygstart" nil 1)
     ("dara" "DATA" nil 1)
@@ -215,6 +217,7 @@
     ("found" "found" nil 4)
     ("fpirntf" "fprintf" nil 1)
     ("fraem" "frame" nil 1)
+    ("fraemwork" "framework" nil 1)
     ("frmae" "frame" nil 1)
     ("froeach" "foreach" nil 1)
     ("fromat" "Format" nil 1)
@@ -473,9 +476,9 @@
 " my-abbrev-hook 3)
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 0)
+}" my-abbrev-hook 1)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 3)
+    ("println" "System.out.println()" my-abbrev-hook 4)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

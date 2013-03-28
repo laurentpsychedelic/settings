@@ -31,7 +31,7 @@
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
-    ("printf" "printf(\"\")" my-abbrev-hook 1)
+    ("printf" "printf(\"\")" my-abbrev-hook 0)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -156,7 +156,6 @@
     ("constasnt" "constant" nil 1)
     ("contant" "constant" nil 1)
     ("coreection" "correction" nil 1)
-    ("corrdinates" "coordinates" nil 1)
     ("correctr" "correct" nil 1)
     ("creaet" "create" nil 1)
     ("ctach" "catch" nil 7)
@@ -230,7 +229,6 @@
     ("getstirng" "getString" nil 1)
     ("grpahics" "Graphics" nil 2)
     ("hava" "java" nil 1)
-    ("heihght" "height" nil 1)
     ("histroy" "history" nil 1)
     ("hoem" "HOME" nil 1)
     ("hsell" "shell" nil 1)
@@ -276,7 +274,7 @@
     ("mateirals" "materials" nil 1)
     ("meacs" "emacs" nil 1)
     ("measruement" "measurement" nil 1)
-    ("measurement" "Measurement" nil 17)
+    ("measurement" "Measurement" nil 12)
     ("measurment" "measurement" nil 1)
     ("memoru" "memory" nil 1)
     ("mesages" "messages" nil 1)
@@ -309,7 +307,6 @@
     ("patrh" "path" nil 1)
     ("pattenr" "pattern" nil 1)
     ("pesilon" "epsilon" nil 1)
-    ("photoinc" "photonic" nil 1)
     ("pirntln" "println" nil 1)
     ("pl8ugins" "plugins" nil 1)
     ("plubi" "public" nil 1)
@@ -357,7 +354,6 @@
     ("returbn" "return" nil 1)
     ("returh" "return" nil 1)
     ("returnt" "return" nil 1)
-    ("reurn" "return" nil 1)
     ("reuslt" "result" nil 2)
     ("reutn" "return" nil 1)
     ("reutrn" "return" nil 12)
@@ -375,6 +371,7 @@
     ("sewt" "set" nil 1)
     ("sfn" "svn" nil 1)
     ("signame" "sigma" nil 1)
+    ("slef" "self" nil 1)
     ("snmipper" "snippet" nil 1)
     ("sotred" "stored" nil 1)
     ("soze" "size" nil 1)

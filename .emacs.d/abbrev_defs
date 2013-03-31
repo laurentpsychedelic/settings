@@ -116,11 +116,13 @@
     ("apped" "append" nil 1)
     ("aprameters" "parameters" nil 1)
     ("araial" "Arial" nil 1)
+    ("asbtract" "abstract" nil 1)
     ("aseert" "assert" nil 1)
     ("atatic" "static" nil 1)
     ("atuo" "AUTO" nil 1)
     ("auot" "auto" nil 1)
     ("autio" "AUTO" nil 1)
+    ("aythor" "author" nil 1)
     ("backgound" "background" nil 1)
     ("beenn" "been" nil 1)
     ("befire" "before" nil 1)
@@ -222,6 +224,7 @@
     ("froeach" "foreach" nil 1)
     ("fromat" "Format" nil 1)
     ("frsame" "Frame" nil 1)
+    ("fsxtory" "factory" nil 1)
     ("functiosn" "functions" nil 1)
     ("gertenv" "getenv" nil 1)
     ("getmeassge" "getMessage" nil 1)
@@ -324,7 +327,7 @@
     ("privtae" "private" nil 3)
     ("protexted" "protected" nil 1)
     ("protexted " "protected" nil 0)
-    ("publci" "public" nil 11)
+    ("publci" "public" nil 13)
     ("publuic" "public" nil 1)
     ("pulbic" "public" nil 1)
     ("pulic" "public" nil 2)
@@ -389,7 +392,8 @@
     ("stats" "status" nil 3)
     ("statua" "status" nil 1)
     ("steing" "string" nil 1)
-    ("stirng" "string" nil 2)
+    ("sting" "string" nil 1)
+    ("stirng" "string" nil 3)
     ("stirngs" "strings" nil 1)
     ("strign" "string" nil 2)
     ("stringbuolder" "StringBuilder" nil 1)
@@ -406,6 +410,7 @@
     ("tiral" "trial" nil 1)
     ("titel" "title" nil 1)
     ("tiutle" "title" nil 1)
+    ("totle" "title" nil 1)
     ("tpye" "type" nil 1)
     ("trasneint" "transient" nil 1)
     ("trasnforms" "Transforms" nil 1)
@@ -422,6 +427,7 @@
     ("vopid" "void" nil 1)
     ("vpid" "void" nil 1)
     ("vreak" "break" nil 1)
+    ("vuilder" "builder" nil 1)
     ("wat" "awt" nil 3)
     ("waveenght" "wavelength" nil 1)
     ("winodwsi" "Windows" nil 1)
@@ -471,13 +477,13 @@
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 2)
     ("if" "if () {
 }
 " my-abbrev-hook 3)
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 1)
+}" my-abbrev-hook 2)
     ("print" "System.out.print()" my-abbrev-hook 0)
     ("println" "System.out.println()" my-abbrev-hook 4)
     ("while" "while () {

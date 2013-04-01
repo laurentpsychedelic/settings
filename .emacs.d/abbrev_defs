@@ -310,6 +310,7 @@
     ("patrh" "path" nil 1)
     ("pattenr" "pattern" nil 1)
     ("pesilon" "epsilon" nil 1)
+    ("pgae" "page" nil 1)
     ("pirntln" "println" nil 1)
     ("pl8ugins" "plugins" nil 1)
     ("plubi" "public" nil 1)

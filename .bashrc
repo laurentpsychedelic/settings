@@ -389,6 +389,19 @@ function generate_ISO_images() {
     done
 }
 
+#function to backup a folder as tar.gz file to a given location
+function backup_folder() {
+    if [ $# -ne 2 ]
+    then
+        echo "Arguments:"
+        echo "\$1 location of the folder to be backed up"
+        echo "\$2 location of the storage in which the backup file will be stored"
+    else
+        #echo "${2}/$(basename $1)_$(date '+%Y%m%d').tar.gz" "$1"
+        tar czvf "${2}/$(basename $1)_$(date '+%Y%m%d').tar.gz" "$1"
+    fi
+}
+
 #custom prompt with time
 #left param: 0:normal 1:bright/bold 2:dark 4:underlines
 #right param: 32:green 33:brown 34:red etc...

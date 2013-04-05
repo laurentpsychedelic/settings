@@ -406,6 +406,8 @@
     ("systemdirve" "systemdrive" nil 1)
     ("taregt" "target" nil 1)
     ("temmpbuf" "tempbuf" nil 1)
+    ("temolate" "template" nil 1)
+    ("templte" "template" nil 1)
     ("thjen" "then" nil 1)
     ("thois" "this" nil 1)
     ("thorw" "throw" nil 3)

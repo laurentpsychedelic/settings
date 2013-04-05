@@ -369,11 +369,23 @@ function git_filter_branch_author() {
     fi
 }
 
+#function to generate the ISO image based on the contents of a given folder
+function generate_ISO_image() {
+    if [ $# -ne 2 ]
+    then
+        echo "Arguments:"
+        echo "\$1 ISO file name"
+        echo "\$2 folder to be ISOified"
+    else
+        genisoimage -o "$1" -J -joliet-long -r -l "$2"
+    fi
+}
+
 #function to generate an ISO image of all directories at the current location
 function generate_ISO_images() {
     for dir in `find . -mindepth 1 -maxdepth 1 -type d`
     do
-        genisoimage -o "${dir}.iso" -J -joliet-long -r -l "${dir}"
+        generate_ISO_image "${dir}.iso" "${dir}"
     done
 }
 

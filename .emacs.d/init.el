@@ -1,5 +1,6 @@
 ;; -*- coding: utf-8 -*-
-
+;;debug on error
+(setq debug-on-error t)
 ;;exception handling
 (defmacro safe-wrap (fn &rest clean-up)
   `(unwind-protect

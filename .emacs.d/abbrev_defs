@@ -18,20 +18,20 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 2)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("if" "if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 10)
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
-    ("printf" "printf(\"\")" my-abbrev-hook 0)
+    ("printf" "printf(\"\")" my-abbrev-hook 1)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -103,7 +103,21 @@
 
 (define-abbrev-table 'fundamental-mode-abbrev-table '())
 
+(define-abbrev-table 'gdb-breakpoints-mode-abbrev-table '())
+
+(define-abbrev-table 'gdb-disassembly-mode-abbrev-table '())
+
+(define-abbrev-table 'gdb-frames-mode-abbrev-table '())
+
+(define-abbrev-table 'gdb-locals-mode-abbrev-table '())
+
+(define-abbrev-table 'gdb-memory-mode-abbrev-table '())
+
+(define-abbrev-table 'gdb-registers-mode-abbrev-table '())
+
 (define-abbrev-table 'gdb-script-mode-abbrev-table '())
+
+(define-abbrev-table 'gdb-threads-mode-abbrev-table '())
 
 (define-abbrev-table 'global-abbrev-table
   '(
@@ -178,6 +192,7 @@
     ("ekse" "else" nil 1)
     ("enablle" "enable" nil 1)
     ("enam" "enum" nil 1)
+    ("enbdif" "endif" nil 1)
     ("enw" "new" nil 1)
     ("eppend" "append" nil 4)
     ("esle" "else" nil 1)
@@ -215,7 +230,7 @@
     ("fomratter" "Formatter" nil 1)
     ("fomt" "Font" nil 1)
     ("forground" "foreground" nil 1)
-    ("format" "Format" nil 1)
+    ("format" "Format" nil 2)
     ("found" "found" nil 4)
     ("fpirntf" "fprintf" nil 1)
     ("fraem" "frame" nil 1)
@@ -352,7 +367,7 @@
     ("rerturn" "RETURN" nil 1)
     ("resolutoin" "resolution" nil 1)
     ("resukt" "result" nil 2)
-    ("retrun" "return" nil 5)
+    ("retrun" "return" nil 6)
     ("retrurn" "return" nil 1)
     ("retsult" "result" nil 1)
     ("retun" "return" nil 2)
@@ -360,7 +375,7 @@
     ("returbn" "return" nil 1)
     ("returh" "return" nil 1)
     ("returnt" "return" nil 1)
-    ("reuslt" "result" nil 2)
+    ("reuslt" "result" nil 1)
     ("reutn" "return" nil 1)
     ("reutrn" "return" nil 12)
     ("rpeaint" "repaint" nil 1)
@@ -410,7 +425,7 @@
     ("templte" "template" nil 1)
     ("thjen" "then" nil 1)
     ("thois" "this" nil 1)
-    ("thorw" "throw" nil 3)
+    ("thorw" "throw" nil 2)
     ("thorws" "throws" nil 1)
     ("tiral" "trial" nil 1)
     ("titel" "title" nil 1)
@@ -499,6 +514,8 @@
 (define-abbrev-table 'jython-mode-abbrev-table '())
 
 (define-abbrev-table 'latex-mode-abbrev-table '())
+
+(define-abbrev-table 'ld-script-mode-abbrev-table '())
 
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 

@@ -124,9 +124,27 @@
 ;;(set-face-attribute 'default nil :cursor-type "box")
 (set-face-attribute 'default nil :height 100)
 ;; set font to "Ubunto Mono"
+(setq fontsize 11)
+(defun setfont (size)
+  "Set font size"
 (if (string-equal system-type "gnu/linux")
-    (safe-wrap (set-face-attribute 'default nil :font "Ubuntu Mono") (message "Unable to set font!")) ; GNU/Linux [Ubuntu]
-  (safe-wrap (set-face-attribute 'default nil :font "Ubuntu Mono-10:spacing=m:antialias=natural") (message "Unable to set font!"))) ; Windows
+    (safe-wrap (set-face-attribute 'default nil :font (format "Mono-%d" size) (message "Unable to set font!"))) ; GNU/Linux [Ubuntu]
+  (safe-wrap (set-face-attribute 'default nil :font (format "Ubuntu Mono-%d:spacing=m:antialias=natural" size)) (message "Unable to set font!")))) ; Windows
+(setfont fontsize)
+(defun font-size-modify (&optional dec)
+  "modify font size; if DEC is t,
+    decrease font size, otherwise increase it in 1-steps"
+  (let* ((font-size-or-nil fontsize) ; nil before setting
+          (oldsize (if font-size-or-nil font-size-or-nil 11))
+          (newsize (if dec (- oldsize 1) (+ oldsize 1))))
+    (when (and (>= newsize 1) (<= newsize 100))
+      (setq fontsize newsize)
+      (setfont newsize))))
+
+ ;; C-> will increase font size
+ ;; C-< will decrease font size
+(global-set-key (kbd "C->") '(lambda()(interactive)(font-size-modify)))
+(global-set-key (kbd "C-<") '(lambda()(interactive)(font-size-modify t)))
 
 ;;;;;;;;;;;;;;;;;;;;;;
 ;; set transparency ;;

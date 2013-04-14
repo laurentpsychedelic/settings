@@ -675,6 +675,18 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/solarized-emacs/")
 ; (load-theme 'solarized-dark)
 (load-theme 'misterioso)
+; (load-theme 'tango)
+
+(defun change-theme (theme)
+  "Change visual theme"
+  (interactive "sTheme name: ")
+  (load-theme (intern theme))
+  (set-face-background 'highlight-indentation-current-column-face (get-lighter-color (cdr (assoc 'background-color (frame-parameters))) -0.03))
+  (set-face-background 'highlight-indentation-face (get-lighter-color (cdr (assoc 'background-color (frame-parameters))) 0.03))
+  (set-face-background 'vline-fface (get-lighter-color (cdr (assoc 'background-color (frame-parameters))) -0.03))
+  (setq vline-face 'vline-fface)
+  (set-face-background 'hl-line (get-lighter-color (cdr (assoc 'background-color (frame-parameters))) -0.3)))
+; (change-theme "solarized-dark")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; highlight-indentation ;;
@@ -714,9 +726,9 @@
 ;;;;;;;;;;;;
 ;; hl-line;;
 ;;;;;;;;;;;;
-(global-hl-line-mode 1)
-;;(setq hl-line-face 'underline)
-(set-face-background 'hl-line (get-lighter-color (cdr (assoc 'background-color (frame-parameters))) -0.03))
+(global-hl-line-mode nil)
+;(setq hl-line-face 'underline)
+(set-face-background 'hl-line (get-lighter-color (cdr (assoc 'background-color (frame-parameters))) -0.3))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; java documentation ;;

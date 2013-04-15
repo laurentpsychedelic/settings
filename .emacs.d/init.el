@@ -164,7 +164,9 @@
           (newsize (if dec (- oldsize 1) (+ oldsize 1))))
     (when (and (>= newsize 1) (<= newsize 100))
       (setq fontsize newsize)
-      (setfont newsize))))
+      (setfont newsize)
+      (restore-frame)
+      (maximize-frame))))
 
  ;; C-> will increase font size
  ;; C-< will decrease font size

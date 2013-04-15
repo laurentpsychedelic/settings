@@ -22,20 +22,45 @@
 ;; start with maximized window on Windows
 ;(w32-send-sys-command 61488)
 (defun w32-maximize-frame ()
-  "Maximize the current frame"
+  "Maximize the current frame (windows only)"
   (interactive)
   (w32-send-sys-command 61488))
+(defun w32-restore-frame ()
+  "Restore a minimized/maximized frame (windows only)"
+  (interactive)
+  (w32-send-sys-command 61728))
  
 (defun x11-maximize-frame ()
-  "Maximize the current frame (to full screen)"
+  "Maximize the current frame (to full screen) X11 version"
   (interactive)
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
 
-(if (string-equal system-type "gnu/linux")
-    (add-hook 'window-setup-hook 'x11-maximize-frame) ; GNU/Linux [Ubuntu]
-  (add-hook 'window-setup-hook 'w32-maximize-frame t)) ; Windows
+(defun maximize-frame ()
+  "Maximize current frame"
+  (interactive)
+  (if (string-equal system-type "gnu/linux")
+      (x11-maximize-frame)
+    (w32-maximize-frame)))
 
+(defun restore-frame ()
+  "Restore a minimized/maximized frame (X11 not supported yet"
+  (interactive)
+  (if (string-equal system-type "gnu/linux")
+      (message "Unable to use restore function on X11 yet...")
+    (w32-restore-frame)))
+
+(defun add-maximize-window-hook ()
+  "Mazimize current window"
+  (interactive)
+  (if (string-equal system-type "gnu/linux")
+    (add-hook 'window-setup-hook 'x11-maximize-frame) ; GNU/Linux [Ubuntu]
+  (add-hook 'window-setup-hook 'w32-maximize-frame t))) ; Windows
+
+(add-maximize-window-hook)
+; (maximize-frame)
+; (restore-frame)
+;; see http://emacsblog.org/2007/02/22/maximize-on-startup-part-2/
 
 ;;;;;;;;;;;;;;;;;;
 ;; myantcompile ;;

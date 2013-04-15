@@ -44,7 +44,7 @@
     (w32-maximize-frame)))
 
 (defun restore-frame ()
-  "Restore a minimized/maximized frame (X11 not supported yet"
+  "Restore a minimized/maximized frame (X11 not supported yet)"
   (interactive)
   (if (string-equal system-type "gnu/linux")
       (message "Unable to use restore function on X11 yet...")

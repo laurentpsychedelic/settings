@@ -217,8 +217,10 @@
   (let (directory filename command buff)
     (setq filename (buffer-file-name))
     (setq command (get-jdb-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
-    (setq directory (concat (file-name-directory filename) "../.."))
+    (setq directory (concat (file-name-directory filename) (get-build-file-relative-location)))
     (setq buff (find-file-other-window directory))
+    ;; (message "Command: %s" command)
+    ;; (message "Dir: %s" directory)
     (with-current-buffer buff
         (jdb command))))
 

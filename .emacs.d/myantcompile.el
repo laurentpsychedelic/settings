@@ -63,10 +63,22 @@
               (make-list index "..")
               "/")
              "/build.xml"))
-      (progn (if (file-exists-p build-file-path)
-                 (progn (setq level index)
-                        (setq index 10)))
-             (setq index (1+ index))))
+      (if (file-exists-p build-file-path)
+                 (progn ; (message "build.xml file found!") 
+                        (setq level index)
+                        (setq index 10))
+        (progn (setq build-file-path
+                     (concat
+                      (mapconcat
+                       'identity
+                       (make-list index "..")
+                       "/")
+                      "/src"))
+               (if (file-exists-p build-file-path)
+                   (progn ; (message "src directory found!") 
+                          (setq level index)
+                          (setq index 10))
+                 (setq index (1+ index))))))
     (setq build-file-path (mapconcat 'identity (make-list level "..") "/"))))
 
 (defun get-ant-basic-command-element (text)
@@ -219,8 +231,8 @@
     (setq command (get-jdb-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
     (setq directory (concat (file-name-directory filename) (get-build-file-relative-location)))
     (setq buff (find-file-other-window directory))
-    ;; (message "Command: %s" command)
-    ;; (message "Dir: %s" directory)
+     (message "Command: %s" command)
+     (message "Dir: %s" directory)
     (with-current-buffer buff
         (jdb command))))
 

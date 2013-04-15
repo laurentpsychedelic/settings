@@ -1,10 +1,16 @@
 # -*- mode: snippet -*-
 # name: newclass
 # key: newclass
-# type: snippet
+# type: command
 # --
-package ${1:`(file-name-nondirectory (directory-file-name (file-name-directory (file-name-sans-extension (buffer-file-name)))))`};
-
-public class ${2:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} {
-    $0
-}
+(let ((package-info nil)
+      (package-path (file-name-nondirectory (directory-file-name (file-name-directory (file-name-sans-extension (buffer-file-name)))))) ; default package path = folder name
+      (class-name (file-name-nondirectory (file-name-sans-extension (buffer-file-name)))) ; default class name = file name
+      (yas-good-grace nil))
+  (setq package-info (get-java-package-info text))
+  (setq package-path (nth 1 package-info)))
+  (yas-expand-snippet
+   (concat "package ${1:" package-path "};\n\n"
+           "public class ${2:" class-name "} {\n"
+           "    $0\n"
+           "\n}")))

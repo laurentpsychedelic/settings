@@ -283,6 +283,7 @@
     ("linkedlsit" "LinkedList" nil 3)
     ("llc" "linked_list_copy" nil 3)
     ("locastion" "location" nil 3)
+    ("lqast" "last" nil 1)
     ("maht" "Math" nil 1)
     ("main" "Main" nil 90)
     ("mainfrmae" "mainframe" nil 1)
@@ -505,9 +506,9 @@
 " my-abbrev-hook 3)
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 2)
+}" my-abbrev-hook 3)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 4)
+    ("println" "System.out.println()" my-abbrev-hook 5)
     ("while" "while () {
 }
 " my-abbrev-hook 0)

@@ -20,6 +20,7 @@ $smtpPort = [int]$contents[3] # 587 / 465
 $date = $date -replace "/",""
 $remote_filename = $contents[5] # attachement (remote)
 $filename = $contents[6] # attachement (local copy)
+$filename = $filename -replace "mm",$month
 cp $remote_filename $filename
 $remote_sign = $contents[7] # sign (remote)
 $sign = $contents[8] # sign (local copy)
@@ -42,7 +43,7 @@ $msg.From = $emailFrom
 $msg.To.Add($emailTo)
 $msg.Bcc.Add($emailBcc)
 $msg.Subject = $subject
-$body = "川嶋さん、`r`n`r`n私の" + $month + "月分の出勤表です。`r`n宜しくお願い致します。`r`n`r`n（ファーブル）`r`n`r`n`r`n（PS：このメッセージはPowerShellスクリプトによって自動的に生成しています）`r`n`r`n"
+$body = "千葉さん、`r`n`r`n私の" + $month + "月分の出勤表です。`r`n宜しくお願い致します。`r`n`r`n（ファーブル）`r`n`r`n`r`n（PS：このメッセージはPowerShellスクリプトによって自動的に生成しています）`r`n`r`n"
 $msg.Body = $body + $sign
 $msg.Attachments.Add($att)
 

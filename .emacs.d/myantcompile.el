@@ -52,70 +52,45 @@
         (list class-name nil)))))
 
 (defun get-build-file-relative-location ()
-  ""
-  (let (build-file-path index package-path)
+  "Find relative path to build file by scanning upstream folders"
+  (let (relative-path index package-path)
     (setq index 0)
     (while (< index 10)
       ; (setq package-path (directory-file-name (concat (mapconcat 'identity (make-list index "..") "/"))))
-      (setq build-file-path
-            (concat
-             (mapconcat
+      (setq relative-path (mapconcat
               'identity
               (make-list index "..")
-              "/")
-             "/build.xml"))
-      (if (file-exists-p build-file-path)
-                 (progn ; (message "build.xml file found!") 
+              "/"))
+      (if (or (file-exists-p (concat relative-path "/build.xml"))
+              (file-exists-p (concat relative-path "/Makefile"))
+              (file-exists-p (concat relative-path "/src")))
+                 (progn ; (message "build file (or src folder) found!") 
                         (setq level index)
                         (setq index 10))
-        (progn (setq build-file-path
-                     (concat
-                      (mapconcat
-                       'identity
-                       (make-list index "..")
-                       "/")
-                      "/src"))
-               (if (file-exists-p build-file-path)
-                   (progn ; (message "src directory found!") 
-                          (setq level index)
-                          (setq index 10))
-                   (setq index (1+ index))))))
+        (setq index (1+ index))))
     (setq build-file-path (mapconcat 'identity (make-list level "..") "/"))))
 
 (defun get-package-fqn-from-dir-tree ()
-  ""
-  (interactive) ; !!
-  (let ((package-path "") (package-fqn "") (index 0) (build-file-path ""))
+  "Get Java package fully-qualified name from directory tree (guess)"
+  (let ((package-path "") (package-fqn "") (index 0) (relative-path ""))
     (while (< index 10)
-      (setq build-file-path
-            (concat
-             (mapconcat
+      (setq relative-path (mapconcat
               'identity
               (make-list index "..")
-              "/")
-             "/build.xml"))
-      (if (file-exists-p build-file-path)
-                 (progn ; (message "build.xml file found!") 
+              "/"))
+      (if (or (file-exists-p (concat relative-path "/build.xml")) 
+              (file-exists-p (concat relative-path "/Makefile")) 
+              (file-exists-p (concat relative-path "/src")))
+          (progn ; (message "build file (or src folder) found!") 
                         (message "package-path: %s" package-path) ; !!
                         (setq level index)
                         (setq index 10))
-        (progn (setq build-file-path
-                     (concat
-                      (mapconcat
-                       'identity
-                       (make-list index "..")
-                       "/")
-                      "/src"))
-               (if (file-exists-p build-file-path)
-                   (progn ; (message "src directory found!") 
-                          (setq level index)
-                          (setq index 10))
-                 (progn
-                   (if (> index 0) (setq package-path (concat (nth 1 (reverse (split-string (file-name-directory (file-truename (concat buffer-file-name (mapconcat
+        (progn
+          (if (> index 0) (setq package-path (concat (nth 1 (reverse (split-string (file-name-directory (file-truename (concat buffer-file-name (mapconcat
                                                                                                                                                           'identity
                                                                                                                                                           (make-list index "..")
                                                                                                                                                           "/")))) "/"))) (if (> index 1) "/" "") package-path)))
-                   (setq index (1+ index)))))))
+                   (setq index (1+ index)))))
     (setq package-fqn (mapconcat 'identity (split-string package-path "/") "."))
     ; (message "FQN: %s" package-fqn)
     (setq package-path package-fqn)))

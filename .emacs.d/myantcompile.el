@@ -250,5 +250,11 @@
     (with-current-buffer buff
         (jdb command))))
 
+(defun make-basic ()
+  "Set make basic compilation command into compilation buffer"
+  (interactive)
+  (setq compile-command (concat "cd " (get-build-file-relative-location) " && make -k"))
+  (call-interactively 'compile compile-command))
+
 (provide 'myantcompile)
 ;;; myantcompile.el ends here

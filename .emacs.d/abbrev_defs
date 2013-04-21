@@ -152,6 +152,7 @@
     ("castch" "catch" nil 1)
     ("cehckout" "checkout" nil 1)
     ("chich" "which" nil 1)
+    ("childern" "children" nil 1)
     ("chweck" "check" nil 1)
     ("ciontents" "contents" nil 1)
     ("circvle" "Circle" nil 1)
@@ -215,6 +216,7 @@
     ("fielpath" "filepath" nil 1)
     ("fiels" "files" nil 1)
     ("fikes" "files" nil 1)
+    ("filder" "folder" nil 1)
     ("filehandlker" "FileHandler" nil 1)
     ("filepth" "filepath" nil 1)
     ("filer" "filter" nil 1)
@@ -413,10 +415,10 @@
     ("statua" "status" nil 1)
     ("steing" "string" nil 1)
     ("sting" "string" nil 1)
-    ("stirng" "string" nil 3)
+    ("stirng" "string" nil 6)
     ("stirngs" "strings" nil 1)
     ("storgae" "storage" nil 1)
-    ("strign" "string" nil 2)
+    ("strign" "string" nil 3)
     ("stringbuolder" "StringBuilder" nil 1)
     ("strint" "string" nil 1)
     ("striong" "String" nil 1)
@@ -439,7 +441,7 @@
     ("trasnforms" "Transforms" nil 1)
     ("trasnpose" "transpose" nil 1)
     ("treu" "true" nil 1)
-    ("trhows" "throws" nil 1)
+    ("trhows" "throws" nil 2)
     ("truye" "true" nil 1)
     ("trye" "true" nil 1)
     ("ture" "true" nil 2)
@@ -500,18 +502,18 @@
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 2)
+" my-abbrev-hook 3)
     ("if" "if () {
 }
 " my-abbrev-hook 3)
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 3)
-    ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 5)
+}" my-abbrev-hook 4)
+    ("print" "System.out.print()" my-abbrev-hook 2)
+    ("println" "System.out.println()" my-abbrev-hook 6)
     ("while" "while () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
    ))
 
 (define-abbrev-table 'jython-mode-abbrev-table '())

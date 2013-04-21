@@ -82,7 +82,7 @@
               (file-exists-p (concat relative-path "/Makefile")) 
               (file-exists-p (concat relative-path "/src")))
           (progn ; (message "build file (or src folder) found!") 
-                        (message "package-path: %s" package-path) ; !!
+                        ; (message "package-path: %s" package-path)
                         (setq level index)
                         (setq index 10))
         (progn
@@ -245,10 +245,38 @@
     (setq command (get-jdb-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
     (setq directory (concat (file-name-directory filename) (get-build-file-relative-location)))
     (setq buff (find-file-other-window directory))
-     (message "Command: %s" command)
-     (message "Dir: %s" directory)
+     ; (message "Command: %s" command)
+     ; (message "Dir: %s" directory)
     (with-current-buffer buff
         (jdb command))))
+
+(defun javac-this ()
+  "Compile current file with javac"
+  (interactive)
+  (let (class-name relative-path class-fqn class-path compile-command)
+    (setq class-name (file-name-sans-extension (file-name-nondirectory (buffer-file-name))))
+    (setq relative-path (get-build-file-relative-location))
+    (setq class-fqn (concat (get-package-fqn-from-dir-tree) "." class-name))
+    (setq class-path (mapconcat 'identity (split-string class-fqn "\\.") "/"))
+    ; (message "class-name: %s" class-name)
+    ; (message "class-fqn: %s" class-fqn)
+    ; (message "class-path: %s" class-path)
+    ; (message "relative-path: %s" relative-path)
+    (setq compile-command (concat "cd " relative-path " && javac src/" class-path ".java"))
+    (call-interactively 'compile compile-command)))
+
+(defun java-this ()
+  "Run current file class file"
+  (interactive)
+  (let (class-name relative-path class-fqn compile-command)
+    (setq class-name (file-name-sans-extension (file-name-nondirectory (buffer-file-name))))
+    (setq relative-path (get-build-file-relative-location))
+    (setq class-fqn (concat (get-package-fqn-from-dir-tree) "." class-name))
+    ; (message "class-name: %s" class-name)
+    ; (message "class-fqn: %s" class-fqn)
+    ; (message "relative-path: %s" relative-path)
+    (setq compile-command (concat "cd " relative-path " && java -classpath src " class-fqn))
+    (call-interactively 'compile compile-command)))
 
 (defun make-basic (&optional subcommand)
   "Set make basic compilation command into compilation buffer"
@@ -266,6 +294,11 @@
 (define-key myantcompile-specific-map (kbd "a r") 'ant-run)
 (define-key myantcompile-specific-map (kbd "a t") 'ant-test)
 (define-key myantcompile-specific-map (kbd "a d") 'jdb-run)
+;; java(c)
+(define-key myantcompile-specific-map (kbd "j b") 'javac-this)
+(define-key myantcompile-specific-map (kbd "j c") 'javac-this)
+(define-key myantcompile-specific-map (kbd "j j") 'java-this)
+(define-key myantcompile-specific-map (kbd "j r") 'java-this)
 ;; make
 (define-key myantcompile-specific-map (kbd "m r") (lambda () (interactive) (make-basic "run")))
 (define-key myantcompile-specific-map (kbd "m b") (lambda () (interactive) (make-basic "rebuild")))

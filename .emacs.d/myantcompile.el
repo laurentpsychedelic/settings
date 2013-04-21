@@ -250,11 +250,28 @@
     (with-current-buffer buff
         (jdb command))))
 
-(defun make-basic ()
+(defun make-basic (&optional subcommand)
   "Set make basic compilation command into compilation buffer"
-  (interactive)
-  (setq compile-command (concat "cd " (get-build-file-relative-location) " && make -k"))
+  (interactive "sSubcommand: ")
+  (setq compile-command (concat "cd " (get-build-file-relative-location) " && make -k " subcommand))
   (call-interactively 'compile compile-command))
+
+;; Key bindings
+(define-prefix-command 'myantcompile-specific-map)
+(global-set-key (kbd "C-b") 'myantcompile-specific-map)
+;; ant
+(define-key myantcompile-specific-map (kbd "a c") 'ant-clean)
+(define-key myantcompile-specific-map (kbd "a b") 'ant-compile)
+(define-key myantcompile-specific-map (kbd "a j") 'ant-jar)
+(define-key myantcompile-specific-map (kbd "a r") 'ant-run)
+(define-key myantcompile-specific-map (kbd "a t") 'ant-test)
+(define-key myantcompile-specific-map (kbd "a d") 'jdb-run)
+;; make
+(define-key myantcompile-specific-map (kbd "m r") (lambda () (interactive) (make-basic "run")))
+(define-key myantcompile-specific-map (kbd "m b") (lambda () (interactive) (make-basic "rebuild")))
+(define-key myantcompile-specific-map (kbd "m c") (lambda () (interactive) (make-basic "clean")))
+(define-key myantcompile-specific-map (kbd "m t") (lambda () (interactive) (make-basic "test")))
+; (make-basic )
 
 (provide 'myantcompile)
 ;;; myantcompile.el ends here

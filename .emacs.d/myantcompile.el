@@ -278,6 +278,11 @@
     (setq compile-command (concat "cd " relative-path " && java -classpath src " class-fqn))
     (call-interactively 'compile compile-command)))
 
+(defun insert-current-package-fqn-at-point ()
+  "Insert current file package FQN at point"
+  (interactive)
+  (insert (get-package-fqn-from-dir-tree)))
+
 (defun make-basic (&optional subcommand)
   "Set make basic compilation command into compilation buffer"
   (interactive "sSubcommand: ")
@@ -299,12 +304,13 @@
 (define-key myantcompile-specific-map (kbd "j c") 'javac-this)
 (define-key myantcompile-specific-map (kbd "j j") 'java-this)
 (define-key myantcompile-specific-map (kbd "j r") 'java-this)
+;; add package fqn at current location (for example for an import)
+(define-key myantcompile-specific-map (kbd "j i") 'insert-current-package-fqn-at-point)
 ;; make
 (define-key myantcompile-specific-map (kbd "m r") (lambda () (interactive) (make-basic "run")))
 (define-key myantcompile-specific-map (kbd "m b") (lambda () (interactive) (make-basic "rebuild")))
 (define-key myantcompile-specific-map (kbd "m c") (lambda () (interactive) (make-basic "clean")))
 (define-key myantcompile-specific-map (kbd "m t") (lambda () (interactive) (make-basic "test")))
-; (make-basic )
 
 (provide 'myantcompile)
 ;;; myantcompile.el ends here

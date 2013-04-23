@@ -18,20 +18,20 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("else" "else {
 }
-" my-abbrev-hook 2)
+" my-abbrev-hook 0)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 10)
+" my-abbrev-hook 0)
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
-    ("printf" "printf(\"\")" my-abbrev-hook 1)
+    ("printf" "printf(\"\")" my-abbrev-hook 0)
     ("while" "while () {
 }
 " my-abbrev-hook 0)
@@ -98,6 +98,8 @@
 (define-abbrev-table 'direx:direx-mode-abbrev-table '())
 
 (define-abbrev-table 'doctex-mode-abbrev-table '())
+
+(define-abbrev-table 'emacs-lisp-byte-code-mode-abbrev-table '())
 
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
 
@@ -207,6 +209,7 @@
     ("executalbe" "executable" nil 1)
     ("exsception" "Exception" nil 1)
     ("exsits" "exists" nil 1)
+    ("extedns" "extends" nil 1)
     ("exti" "exit" nil 1)
     ("exvcept" "except" nil 1)
     ("faieldg" "Failed" nil 1)
@@ -348,7 +351,7 @@
     ("privtae" "private" nil 3)
     ("protexted" "protected" nil 1)
     ("protexted " "protected" nil 0)
-    ("publci" "public" nil 13)
+    ("publci" "public" nil 14)
     ("publuic" "public" nil 1)
     ("pulbic" "public" nil 1)
     ("pulic" "public" nil 2)
@@ -497,21 +500,21 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 2)
+" my-abbrev-hook 0)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 3)
+" my-abbrev-hook 1)
     ("if" "if () {
 }
-" my-abbrev-hook 3)
+" my-abbrev-hook 0)
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 4)
-    ("print" "System.out.print()" my-abbrev-hook 2)
-    ("println" "System.out.println()" my-abbrev-hook 7)
+}" my-abbrev-hook 0)
+    ("print" "System.out.print()" my-abbrev-hook 0)
+    ("println" "System.out.println()" my-abbrev-hook 0)
     ("while" "while () {
 }
 " my-abbrev-hook 1)
@@ -611,6 +614,8 @@
 
 (define-abbrev-table 'special-mode-abbrev-table '())
 
+(define-abbrev-table 'tabulated-list-mode-abbrev-table '())
+
 (define-abbrev-table 'tex-mode-abbrev-table '())
 
 (define-abbrev-table 'tex-shell-abbrev-table '())
@@ -624,6 +629,8 @@
 (define-abbrev-table 'vc-bzr-log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-dir-mode-abbrev-table '())
+
+(define-abbrev-table 'vc-git-log-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
 

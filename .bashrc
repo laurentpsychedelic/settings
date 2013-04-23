@@ -311,6 +311,17 @@ function clean_flymake_files() {
 function clean_class_files() {
     clean_files_regexp $1 \*class
 }
+#clean junk files
+function clean_junk_files() {
+    file="."
+    if [ $# -gt 1 ]
+    then
+        file=$1
+    fi
+    clean_backup_files $file
+    clean_flymake_files $file
+    clean_class_files $file
+}
 #clean files matching given regular expression
 function clean_files_regexp() {
     find $1 -name $2 | xargs rm -vf

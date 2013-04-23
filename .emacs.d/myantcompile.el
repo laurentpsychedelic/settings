@@ -262,7 +262,7 @@
     ; (message "class-fqn: %s" class-fqn)
     ; (message "class-path: %s" class-path)
     ; (message "relative-path: %s" relative-path)
-    (setq compile-command (concat "cd " relative-path " && javac src/" class-path ".java"))
+    (setq compile-command (concat "cd " relative-path " && javac -classpath src src/" class-path ".java"))
     (call-interactively 'compile compile-command)))
 
 (defun java-this ()

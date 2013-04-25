@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: field
+# key: field
+# type: command
+# --
+(let ((yas-good-grace t))
+     (yas-expand-snippet
+       (concat "${1:private} ${2:Type} ${3:name};")))

@@ -357,6 +357,12 @@ function git_get_authors() {
     git log | grep Author | sort | uniq
 }
 
+#function to commit Emacs abbrevs changes automatically
+function git_commit_Emacs_abbrevs() {
+    git add ~/settings/.emacs.d/abbrev_defs
+    git ci -m "Updated Emacs abbrevs."
+}
+
 #function to filter git branch to change commits' author name and email
 function git_filter_branch_author() {
     if [ $# -ne 3 ]

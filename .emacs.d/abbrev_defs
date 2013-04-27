@@ -194,6 +194,7 @@
     ("echp" "echo" nil 1)
     ("ecxists" "exists" nil 1)
     ("ekse" "else" nil 1)
+    ("ellispe" "ellipse" nil 1)
     ("enablle" "enable" nil 1)
     ("enam" "enum" nil 1)
     ("enbdif" "endif" nil 1)

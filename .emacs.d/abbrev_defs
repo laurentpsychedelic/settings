@@ -174,6 +174,7 @@
     ("comst" "const" nil 1)
     ("condt" "const" nil 1)
     ("constasnt" "constant" nil 1)
+    ("consturctor" "constructor" nil 1)
     ("contant" "constant" nil 1)
     ("contructor" "constructor" nil 1)
     ("coreection" "correction" nil 1)
@@ -184,6 +185,7 @@
     ("dara" "DATA" nil 1)
     ("defore" "before" nil 1)
     ("deicsion" "decision" nil 2)
+    ("dield" "field" nil 1)
     ("dimensuion" "Dimension" nil 1)
     ("dipskay" "display" nil 1)
     ("directorry" "directory" nil 1)
@@ -204,7 +206,7 @@
     ("esle" "else" nil 1)
     ("excepiton" "Exception" nil 1)
     ("exceptino" "Exception" nil 3)
-    ("exception" "exception" nil 2)
+    ("exception" "exception" nil 4)
     ("exceptionhander" "ExceptionHandler" nil 1)
     ("excpetion" "Exception" nil 4)
     ("excpetions" "Exception" nil 1)
@@ -272,6 +274,7 @@
     ("inffo" "info" nil 1)
     ("infromation" "information" nil 1)
     ("inlcude" "include" nil 1)
+    ("inly" "only" nil 1)
     ("inport" "import" nil 1)
     ("inr" "int" nil 1)
     ("instane" "instance" nil 1)
@@ -303,7 +306,7 @@
     ("mateirals" "materials" nil 1)
     ("meacs" "emacs" nil 1)
     ("measruement" "measurement" nil 1)
-    ("measurement" "measurement" nil 2)
+    ("measurement" "measurement" nil 10)
     ("measurment" "measurement" nil 1)
     ("memoru" "memory" nil 1)
     ("mesages" "messages" nil 1)
@@ -335,7 +338,7 @@
     ("pasth" "path" nil 1)
     ("patcehd" "patched" nil 1)
     ("patrh" "path" nil 1)
-    ("pattenr" "pattern" nil 1)
+    ("pattenr" "pattern" nil 2)
     ("pesilon" "epsilon" nil 1)
     ("pgae" "page" nil 1)
     ("pirntln" "println" nil 1)
@@ -352,7 +355,7 @@
     ("prama" "param" nil 1)
     ("privaet" "private" nil 2)
     ("privsate" "private" nil 1)
-    ("privtae" "private" nil 3)
+    ("privtae" "private" nil 4)
     ("proteced" "protected" nil 1)
     ("protexted" "protected" nil 1)
     ("protexted " "protected" nil 0)
@@ -512,14 +515,14 @@
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 5)
+" my-abbrev-hook 7)
     ("if" "if () {
 }
-" my-abbrev-hook 9)
+" my-abbrev-hook 11)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 2)
-    ("print" "System.out.print()" my-abbrev-hook 0)
+    ("print" "System.out.print()" my-abbrev-hook 1)
     ("println" "System.out.println()" my-abbrev-hook 3)
     ("while" "while () {
 }

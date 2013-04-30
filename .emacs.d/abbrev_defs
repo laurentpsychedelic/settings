@@ -303,7 +303,7 @@
     ("mateirals" "materials" nil 1)
     ("meacs" "emacs" nil 1)
     ("measruement" "measurement" nil 1)
-    ("measurement" "Measurement" nil 12)
+    ("measurement" "measurement" nil 2)
     ("measurment" "measurement" nil 1)
     ("memoru" "memory" nil 1)
     ("mesages" "messages" nil 1)
@@ -512,15 +512,15 @@
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 4)
+" my-abbrev-hook 5)
     ("if" "if () {
 }
-" my-abbrev-hook 8)
+" my-abbrev-hook 9)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 2)
     ("print" "System.out.print()" my-abbrev-hook 0)
-    ("println" "System.out.println()" my-abbrev-hook 2)
+    ("println" "System.out.println()" my-abbrev-hook 3)
     ("while" "while () {
 }
 " my-abbrev-hook 1)

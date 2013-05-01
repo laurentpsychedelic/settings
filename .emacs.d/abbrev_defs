@@ -18,7 +18,7 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("else" "else {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
@@ -27,7 +27,7 @@
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
@@ -178,6 +178,7 @@
     ("contant" "constant" nil 1)
     ("contructor" "constructor" nil 1)
     ("coreection" "correction" nil 1)
+    ("correciton" "correction" nil 1)
     ("correctr" "correct" nil 1)
     ("creaet" "create" nil 1)
     ("ctach" "catch" nil 7)

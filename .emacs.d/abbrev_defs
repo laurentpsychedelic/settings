@@ -52,7 +52,7 @@
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("if" "if () {
 }
 " my-abbrev-hook 0)
@@ -408,6 +408,7 @@
     ("sewt" "set" nil 1)
     ("sfn" "svn" nil 1)
     ("signame" "sigma" nil 1)
+    ("singel" "single" nil 2)
     ("slef" "self" nil 1)
     ("snmipper" "snippet" nil 1)
     ("sotred" "stored" nil 1)

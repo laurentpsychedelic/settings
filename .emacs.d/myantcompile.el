@@ -286,7 +286,7 @@
 (defun make-basic (&optional subcommand)
   "Set make basic compilation command into compilation buffer"
   (interactive "sSubcommand: ")
-  (setq compile-command (concat "cd " (get-build-file-relative-location) " && make -k " subcommand))
+  (setq compile-command (concat "pwd && cd " (get-build-file-relative-location) " && make -k " subcommand))
   (call-interactively 'compile compile-command))
 
 ;; Key bindings

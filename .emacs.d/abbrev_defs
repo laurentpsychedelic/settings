@@ -452,6 +452,7 @@
     ("trasneint" "transient" nil 1)
     ("trasnforms" "Transforms" nil 1)
     ("trasnpose" "transpose" nil 1)
+    ("trasnversal" "transversal" nil 1)
     ("treu" "true" nil 1)
     ("trhows" "throws" nil 2)
     ("trobule" "trouble" nil 1)

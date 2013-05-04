@@ -124,7 +124,7 @@
 (define-abbrev-table 'global-abbrev-table
   '(
     ("$soft_tpye" "type" nil 1)
-    ("absrtact" "abstract" nil 1)
+    ("absrtact" "abstract" nil 2)
     ("abstart" "abstract" nil 1)
     ("ahrd" "hard" nil 1)
     ("algirithm" "algorithm" nil 1)
@@ -463,6 +463,7 @@
     ("ture" "true" nil 2)
     ("unalbe" "unable" nil 2)
     ("unti" "unit" nil 2)
+    ("uopdate" "update" nil 1)
     ("usedwhen" "used when" nil 1)
     ("usrs" "users" nil 1)
     ("vopid" "void" nil 1)
@@ -526,7 +527,7 @@
 
 }" my-abbrev-hook 2)
     ("print" "System.out.print()" my-abbrev-hook 1)
-    ("println" "System.out.println()" my-abbrev-hook 3)
+    ("println" "System.out.println()" my-abbrev-hook 4)
     ("while" "while () {
 }
 " my-abbrev-hook 1)

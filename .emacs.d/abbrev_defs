@@ -18,16 +18,16 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("else" "else {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 5)
     ("elseif" "else if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("for" "for (;;) {
 }
 " my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 2)
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
@@ -52,7 +52,7 @@
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 0)
     ("if" "if () {
 }
 " my-abbrev-hook 0)
@@ -178,7 +178,6 @@
     ("contant" "constant" nil 1)
     ("contructor" "constructor" nil 1)
     ("coreection" "correction" nil 1)
-    ("correciton" "correction" nil 1)
     ("correctr" "correct" nil 1)
     ("creaet" "create" nil 1)
     ("ctach" "catch" nil 7)
@@ -207,7 +206,7 @@
     ("esle" "else" nil 1)
     ("excepiton" "Exception" nil 1)
     ("exceptino" "Exception" nil 3)
-    ("exception" "exception" nil 4)
+    ("exception" "exception" nil 5)
     ("exceptionhander" "ExceptionHandler" nil 1)
     ("excpetion" "Exception" nil 4)
     ("excpetions" "Exception" nil 1)
@@ -279,6 +278,7 @@
     ("inport" "import" nil 1)
     ("inr" "int" nil 1)
     ("instane" "instance" nil 1)
+    ("intensoty" "intensity" nil 1)
     ("iregistry" "rtegistry" nil 0)
     ("isswitch" "iswitch" nil 1)
     ("itmeem" "item" nil 1)
@@ -298,7 +298,7 @@
     ("locastion" "location" nil 3)
     ("lqast" "last" nil 1)
     ("maht" "Math" nil 1)
-    ("main" "Main" nil 98)
+    ("main" "Main" nil 99)
     ("mainfrmae" "mainframe" nil 1)
     ("manger" "manager" nil 1)
     ("marerials" "materials" nil 1)
@@ -307,7 +307,7 @@
     ("mateirals" "materials" nil 1)
     ("meacs" "emacs" nil 1)
     ("measruement" "measurement" nil 1)
-    ("measurement" "measurement" nil 10)
+    ("measurement" "measurement" nil 19)
     ("measurment" "measurement" nil 1)
     ("memoru" "memory" nil 1)
     ("mesages" "messages" nil 1)
@@ -394,7 +394,7 @@
     ("returnt" "return" nil 1)
     ("reuslt" "result" nil 1)
     ("reutn" "return" nil 1)
-    ("reutrn" "return" nil 14)
+    ("reutrn" "return" nil 16)
     ("rpeaint" "repaint" nil 1)
     ("rtegistry" "registry" nil 1)
     ("rturn" "return" nil 1)
@@ -409,7 +409,6 @@
     ("sewt" "set" nil 1)
     ("sfn" "svn" nil 1)
     ("signame" "sigma" nil 1)
-    ("singel" "single" nil 2)
     ("slef" "self" nil 1)
     ("snmipper" "snippet" nil 1)
     ("sotred" "stored" nil 1)
@@ -454,7 +453,6 @@
     ("trasneint" "transient" nil 1)
     ("trasnforms" "Transforms" nil 1)
     ("trasnpose" "transpose" nil 1)
-    ("trasnversal" "transversal" nil 1)
     ("treu" "true" nil 1)
     ("trhows" "throws" nil 2)
     ("trobule" "trouble" nil 1)
@@ -522,7 +520,7 @@
 " my-abbrev-hook 7)
     ("if" "if () {
 }
-" my-abbrev-hook 11)
+" my-abbrev-hook 13)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 2)

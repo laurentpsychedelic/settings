@@ -311,6 +311,7 @@
     ("measruement" "measurement" nil 1)
     ("measurement" "measurement" nil 10)
     ("measurment" "measurement" nil 1)
+    ("memnto" "memento" nil 1)
     ("memoru" "memory" nil 1)
     ("mesages" "messages" nil 1)
     ("mide" "mode" nil 1)
@@ -517,7 +518,7 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 5)
+" my-abbrev-hook 6)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
@@ -526,7 +527,7 @@
 " my-abbrev-hook 8)
     ("if" "if () {
 }
-" my-abbrev-hook 12)
+" my-abbrev-hook 13)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 3)

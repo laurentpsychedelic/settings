@@ -82,7 +82,7 @@ then
     if [ -e "$USERPROFILE/Dropbox" ]
     then
         FILE_LNK=$(cygpath -m ~/Dropbox)
-        FILE_TAR=$(cygpath -m $USERPROFILE/Dropbox)
+        FILE_TAR=$(cygpath -m /cygdrive/t/Dropbox)
         junction -s "$FILE_LNK" "$FILE_TAR"
     fi
 

@@ -420,6 +420,11 @@ function backup_folder() {
     fi
 }
 
+# function to call Dropbox CLI
+function dropbox() {
+    python ~/settings/scripts/dropbox.py $@
+} 
+
 #custom prompt with time
 #left param: 0:normal 1:bright/bold 2:dark 4:underlines
 #right param: 32:green 33:brown 34:red etc...

@@ -1,0 +1,258 @@
+#!/bin/bash
+## -*- encoding: utf-8 -*- vim:tabstop=8:shiftwidth=2
+##
+## ＿人人人人人人＿
+## ＞　突然の死　＜ ジェネレーター (Echo "sudden death" message)
+## ￣Y^Y^Y^Y^Y^Y￣
+## Copyright (C) 2013 SATOH Fumiyasu @ OSS Technology Corp., Japan
+##               <https://github.com/fumiyas/home-commands/blob/master/echo-sd>
+##               <https://twitter.com/satoh_fumiyasu>
+##               <http://www.OSSTech.co.jp/>
+##
+## License: GNU General Public License version 3
+##
+## Requirements: bash 4.0+, ksh93+ or zsh 4.3+
+##
+## How to install:
+##
+##   $ mkdir -p $HOME/bin
+##   $ cd $HOME/bin
+##   $ wget -q https://raw.github.com/fumiyas/home-commands/master/echo-sd
+##   $ chmod +x echo-sd
+##   $ export PATH="$HOME/bin:$PATH"
+##   $ alias echo=echo-sd
+##   $ alias banner=echo-sd
+##
+## Examples:
+##
+##   $ echo-sd
+##    ＿人人人人人人＿
+##   ＞　突然の死　＜
+##   ￣Y^Y^Y^Y^Y^Y￣
+##   $ echo-sd ぬるぽっ！!
+##   ＿人人人人人人人人＿
+##   ＞　ぬるぽっ！！　＜
+##   ￣Y^Y^Y^Y^Y^YY^^Y￣
+##   $ echo-sd -v ガッ！
+##   ＿人人人＿
+##   ＞　　　＜
+##   ＞　ガ　＜
+##   ＞　ッ　＜
+##   ＞　！　＜
+##   ＞　　　＜
+##   ￣Y^Y^Y￣
+##
+## TODO:
+##
+##   * 縦書きモードでの複数行のセリフ対応
+##
+## Inspired by:
+##
+##   * 突然の死ジェネレータ - powered by starwing.net, created by @karno.
+##     http://starwing.net/suddenly_death.html
+##   * 突然の死ジェネレータ - 純粋関数空間
+##     http://tanakh.jp/tools/sudden.html
+##
+
+set -u
+
+typeset SD_lang_orig SD_lang
+typeset -A SD_v_map
+
+function _SD_init {
+  if [[ -n ${ZSH_NAME-} ]]; then
+    setopt KSH_GLOB
+    setopt KSH_ARRAYS
+  fi
+
+  typeset lang_ja lang
+
+  SD_lang_orig="${LANG-}"
+  if [[ ${SD_lang_orig#*.} != @(UTF-8|utf-8|UTF8|utf8) ]]; then
+    if type SD_locale >/dev/null 2>&1; then
+      while read -r SD_locale; do
+	if [[ ${SD_locale#*.} == @(UTF-8|utf-8|UTF8|utf8) ]]; then
+	  if [[ ${SD_locale%.*} == ja_JP ]]; then
+	    lang_ja="$SD_locale"
+	  else
+	    lang="$SD_locale"
+	  fi
+	fi
+      done < <(locale -a)
+    fi
+  fi
+  SD_lang="${lang_ja-${lang-ja_JP.UTF-8}}"
+
+  if [[ -n ${ZSH_NAME-} ]]; then
+    SD_v_map=()
+  else
+    SD_v_map=
+  fi
+  SD_v_map[。]='   。 '
+  SD_v_map[、]='   、 '
+  SD_v_map[ー]='  ｜  '
+  SD_v_map[…]='  ︙  '
+  SD_v_map[‥]='  ︰  '
+  SD_v_map[「]='    ┐'
+  SD_v_map[」]='└    '
+  SD_v_map[｢]='   ┐ '
+  SD_v_map[｣]='└    '
+  SD_v_map[-]='  |   '
+  SD_v_map[ｰ]='  |   '
+  SD_v_map[,]="   '  "
+  SD_v_map[､]='   `  '
+}
+
+function _SD_fill_string_by_char {
+  typeset str char
+  str="$1"; shift
+  char="$1"; shift
+
+  str="${str//[ -~｡-ﾟ¢£¥¦¬¯]/$char}"
+  str="${str//[! ]/$char$char}"
+
+  echo "$str"
+}
+
+function _SD_pad_space {
+  printf "%${1}s" ''
+}
+
+function _SD_string_width {
+  typeset str
+  str=$(_SD_fill_string_by_char "$1" ' ')
+
+  echo "${#str}"
+}
+
+function _SD_echo_with_padding
+{
+  typeset str width
+  str="$1"; shift
+  width="$1"; shift
+
+  echo "${str}$(_SD_pad_space "$((width-$(_SD_string_width "${1-$str}")))")"
+}
+
+function SD_echo_horizontal {
+  export LANG="$SD_lang"
+
+  typeset script width width_tmp
+  width=0
+  for script in ${1+"$@"}; do
+    width_tmp=$(_SD_string_width "$script")
+    if [[ $width_tmp -gt $width ]]; then
+      width="$width_tmp"
+    fi
+  done
+
+  typeset template header footer
+  template=$(_SD_pad_space "$width")
+  header="＿人${template//  /人}人＿"
+  footer="￣Y^${template//  /Y^}Y￣"
+
+  echo "${header/ /}"
+  typeset line
+  for script in ${1+"$@"}; do
+    line="＞　$(_SD_echo_with_padding "${script}" "$width")　＜"
+    echo "${line//  /　}"
+  done
+  echo "${footer/ /}"
+
+  export LANG="$SD_lang_orig"
+}
+
+function SD_echo_vertical {
+  export LANG="$SD_lang"
+  typeset script script_n trailer trailer2 letter letter_width next
+  typeset line line_n pad_n
+  typeset -a lines
+
+  letter_width=6
+
+  script_n=0
+  for script in ${1+"$@"}; do
+    line_n=0
+    trailer="$script"
+
+    while [[ -n $script ]]; do
+      trailer="${trailer#?}"
+      letter="${script%$trailer}"
+      script="${script#?}"
+      if [[ -n ${SD_v_map[$letter]-} ]]; then
+	line="${SD_v_map[$letter]}"
+      else
+	trailer2="${trailer#?}"
+	next="${script%$trailer2}"
+	if [[ $next == @(ﾞ|ﾟ) ]] || [[ $letter$next == @([\?!][\?!]) ]]; then
+	  line="  $letter$next "
+	  trailer="$trailer2"
+	  script="${script#?}"
+	else
+	  line="  ${letter}  "
+	fi
+      fi
+
+      if [[ -z ${lines[$line_n]-} ]]; then
+	lines[$line_n]="$(_SD_pad_space $((script_n * $letter_width)))"
+      fi
+      lines[$line_n]="$(_SD_echo_with_padding "${line}" $letter_width)${lines[$line_n]}"
+      let line_n+=1
+    done
+
+    while [[ $line_n -lt ${#lines[@]} ]]; do
+      lines[$line_n]="$(_SD_pad_space $letter_width)${lines[$line_n]}"
+      let line_n+=1
+    done
+
+    let script_n+=1
+  done
+
+  typeset template header footer
+  template=$(_SD_pad_space $(((script_n - 1) * $letter_width)))
+  header="＿人${template//  /人}人＿"
+  footer="￣Y^${template//  /Y^}Y￣"
+
+  echo "${header/ /}"
+  for line in "${lines[@]}"; do
+    echo "＞${line//  /　}＜"
+  done
+  echo "${footer/ /}"
+
+  export LANG="$SD_lang_orig"
+}
+
+function SD_echo_main
+{
+  typeset vertical=
+
+  if [[ ${1-} = -h ]]; then
+    echo "Usage: echo-sd [-v] [script]"
+    exit 0
+  fi
+
+  if [[ ${1-} = -v ]]; then
+    vertical="set"
+    shift
+  fi
+
+  if [[ $# -eq 0 ]]; then
+    set -- '突然の死'
+  fi
+
+  if [[ -z ${vertical-} ]]; then
+    SD_echo_horizontal ${1+"$@"}
+  else
+    SD_echo_vertical ${1+"$@"}
+  fi
+}
+
+_SD_init
+
+if [[ ${zsh_eval_context-toplevel} == toplevel ]] && [[ ${0##*/} == echo-sd ]]; then
+  SD_echo_main "$@"
+  exit $?
+fi
+
+return 0
+

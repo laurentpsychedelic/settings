@@ -175,6 +175,11 @@ then
     #add sysinternals tools to the path (sysinternals packages installed with chocolatey)
     export PATH=/cygdrive/c/sysinternals:$PATH
 
+    # Function to 突然死
+    function banner() {
+        echo-sd "$@" | nkf
+    }
+
     #XWin Tk setting
     export DISPLAY=:0.0
     startxwin > /dev/null 2>&1 &
@@ -197,6 +202,8 @@ else
     function dropboxclient () {
         ~/.dropbox-dist/dropboxd "${@}" > /dev/null 2>&1 &
     }
+    #alias to 突然死
+    alias banner=echo-sd
 fi
 
 #function to install GVM package manager
@@ -443,6 +450,9 @@ alias rw='java -classpath dev/Miscellaneous-codes lpsy.other.diet.ReportWeight'
 
 # Added by autojump install.sh
 # source /etc/profile.d/autojump.bash
+
+# Scripts folder in path
+PATH=$PATH:~/settings/scripts
 
 #Load GVM
 if [[ -s "$(readlink -f ~/settings/scripts/.gvm_load)" ]]

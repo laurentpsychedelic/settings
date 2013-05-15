@@ -125,7 +125,7 @@
   '(
     ("$soft_tpye" "type" nil 1)
     ("absrtact" "abstract" nil 2)
-    ("abstart" "abstract" nil 1)
+    ("abstart" "abstract" nil 2)
     ("ahrd" "hard" nil 1)
     ("algirithm" "algorithm" nil 1)
     ("alurent" "laurent" nil 1)
@@ -265,6 +265,7 @@
     ("hoem" "HOME" nil 1)
     ("hsell" "shell" nil 1)
     ("hte" "the" nil 1)
+    ("huor" "hour" nil 1)
     ("iamin" "imain" nil 1)
     ("idel" "idle" nil 1)
     ("imiport" "import" nil 1)
@@ -433,7 +434,7 @@
     ("statua" "status" nil 1)
     ("steing" "string" nil 1)
     ("sting" "string" nil 1)
-    ("stirng" "string" nil 7)
+    ("stirng" "string" nil 8)
     ("stirngs" "strings" nil 1)
     ("storgae" "storage" nil 1)
     ("strign" "string" nil 5)
@@ -527,15 +528,15 @@
 " my-abbrev-hook 8)
     ("if" "if () {
 }
-" my-abbrev-hook 13)
+" my-abbrev-hook 16)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 3)
     ("print" "System.out.print()" my-abbrev-hook 2)
-    ("println" "System.out.println()" my-abbrev-hook 8)
+    ("println" "System.out.println()" my-abbrev-hook 9)
     ("while" "while () {
 }
-" my-abbrev-hook 2)
+" my-abbrev-hook 3)
    ))
 
 (define-abbrev-table 'jython-mode-abbrev-table '())

@@ -18,16 +18,16 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("else" "else {
 }
-" my-abbrev-hook 2)
+" my-abbrev-hook 1)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 0)
     ("if" "if () {
 }
-" my-abbrev-hook 6)
+" my-abbrev-hook 1)
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
@@ -139,6 +139,7 @@
     ("atuo" "AUTO" nil 1)
     ("auot" "auto" nil 1)
     ("autio" "AUTO" nil 1)
+    ("axample" "example" nil 1)
     ("aythor" "author" nil 1)
     ("backgound" "background" nil 1)
     ("beenn" "been" nil 1)
@@ -310,7 +311,7 @@
     ("mateirals" "materials" nil 1)
     ("meacs" "emacs" nil 1)
     ("measruement" "measurement" nil 1)
-    ("measurement" "measurement" nil 14)
+    ("measurement" "measurement" nil 10)
     ("measurment" "measurement" nil 1)
     ("memnto" "memento" nil 1)
     ("memoru" "memory" nil 1)
@@ -369,7 +370,7 @@
     ("pulbic" "public" nil 1)
     ("pulic" "public" nil 2)
     ("putr" "put" nil 1)
-    ("puyblic" "public" nil 1)
+    ("puyblic" "public" nil 2)
     ("qucik" "QUICK" nil 1)
     ("qwhich" "which" nil 1)
     ("rafractove" "refractive" nil 1)
@@ -467,12 +468,11 @@
     ("truye" "true" nil 1)
     ("trye" "true" nil 1)
     ("ture" "true" nil 2)
-    ("unalbe" "unable" nil 3)
+    ("unalbe" "unable" nil 2)
     ("unti" "unit" nil 2)
     ("uopdate" "update" nil 1)
     ("usedwhen" "used when" nil 1)
     ("usrs" "users" nil 1)
-    ("varialb" "variable" nil 1)
     ("vopid" "void" nil 1)
     ("vpid" "void" nil 1)
     ("vreak" "break" nil 1)
@@ -534,7 +534,7 @@
 
 }" my-abbrev-hook 3)
     ("print" "System.out.print()" my-abbrev-hook 2)
-    ("println" "System.out.println()" my-abbrev-hook 9)
+    ("println" "System.out.println()" my-abbrev-hook 11)
     ("while" "while () {
 }
 " my-abbrev-hook 3)

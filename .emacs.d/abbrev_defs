@@ -146,6 +146,7 @@
     ("befire" "before" nil 1)
     ("bollean" "boolean" nil 1)
     ("boolran" "boolean" nil 1)
+    ("bould" "bound" nil 1)
     ("bracnhes" "branches" nil 1)
     ("bufer" "buffer" nil 1)
     ("cakculation" "Calculation" nil 1)

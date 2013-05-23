@@ -406,6 +406,7 @@
     ("rtegistry" "registry" nil 1)
     ("rturn" "return" nil 1)
     ("rwo" "row" nil 1)
+    ("sared" "shared" nil 1)
     ("sattic" "static" nil 1)
     ("savinf" "saving" nil 1)
     ("scipting" "Scripting" nil 1)
@@ -521,7 +522,7 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 6)
+" my-abbrev-hook 7)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
@@ -530,12 +531,12 @@
 " my-abbrev-hook 8)
     ("if" "if () {
 }
-" my-abbrev-hook 16)
+" my-abbrev-hook 17)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 3)
     ("print" "System.out.print()" my-abbrev-hook 2)
-    ("println" "System.out.println()" my-abbrev-hook 11)
+    ("println" "System.out.println()" my-abbrev-hook 13)
     ("while" "while () {
 }
 " my-abbrev-hook 3)

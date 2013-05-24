@@ -103,6 +103,9 @@ alias la='ls -a'                              # all but . and ..
 alias lal='ls -al'
 alias l='ls -CF'                              #
 
+# Alias to cyg-get script
+alias apt-cyg='bash ~/settings/bin/apt-cyg'
+
 # Emacs
 alias 'emacsc'='emacs --no-window-system'
 

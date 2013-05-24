@@ -13,6 +13,7 @@
 	cf = config
 	lg = log
 	track = "!f() { ([ $# -eq 2 ] && ( echo \"Setting tracking for branch \" $1 \" -> \" $2;git branch --set-upstream $1 $2; ) || ( git for-each-ref --format=\"local: %(refname:short) <--sync--> remote: %(upstream:short)\" refs/heads && echo --Remotes && git remote -v)); }; f"
+	cancel = !git commit -a -m 'Temporary commit for cancel' && git reset --hard HEAD~
 [color]
 	ui = true
 [user]

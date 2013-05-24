@@ -17,6 +17,10 @@ then
     FILE_LNK=$(cygpath -w $HOME_DIR/.bashrc)
     FILE_TAR=$(cygpath -w $SETTINGS_DIR/.bashrc)
     junction -s "$FILE_LNK" "$FILE_TAR"
+    #HARD LINK TO .GITCONFIG
+    FILE_LNK=$(cygpath -w $HOME_DIR/.gitconfig)
+    FILE_TAR=$(cygpath -w $SETTINGS_DIR/.gitconfig)
+    junction -s "$FILE_LNK" "$FILE_TAR"
     #HARD LINK TO .EMACS.D
     FILE_LNK=$(cygpath -w $HOME_DIR/.emacs.d)
     FILE_TAR=$(cygpath -w $SETTINGS_DIR/.emacs.d)
@@ -95,6 +99,14 @@ else
     #SOFT LINK TO .BASHRC
     FILE_LNK=$HOME_DIR/.bashrc
     FILE_TAR=$SETTINGS_DIR/.bashrc
+    if [ -e "$FILE_LNK" ]; then
+	mv -vf $FILE_LNK ${FILE_LNK}_old
+    fi
+    ln -s $FILE_TAR $FILE_LNK
+
+    #SOFT LINK TO .GITCONFIG
+    FILE_LNK=$HOME_DIR/.gitconfig
+    FILE_TAR=$SETTINGS_DIR/.gitconfig
     if [ -e "$FILE_LNK" ]; then
 	mv -vf $FILE_LNK ${FILE_LNK}_old
     fi

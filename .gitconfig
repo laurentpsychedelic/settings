@@ -1,0 +1,26 @@
+[core]
+	pager = nkf -s | more
+	editor = emacsclient
+	whitespace = trailing-space,space-before-tab
+	autocrlf = input
+[alias]
+	ci = commit
+	co = checkout
+	br = branch
+	rs = reset
+	stat = status
+	st = status
+	cf = config
+	lg = log
+	track = "!f() { ([ $# -eq 2 ] && ( echo \"Setting tracking for branch \" $1 \" -> \" $2;git branch --set-upstream $1 $2; ) || ( git for-each-ref --format=\"local: %(refname:short) <--sync--> remote: %(upstream:short)\" refs/heads && echo --Remotes && git remote -v)); }; f"
+[color]
+	ui = true
+[user]
+	name = Laurent FABRE
+	email = laurent_psychedelic@hotmail.com
+[i18n]
+	commitencoding = SHIFT_JIS
+[date]
+	timezone = Japan/Tokyo
+[log]
+	date = local

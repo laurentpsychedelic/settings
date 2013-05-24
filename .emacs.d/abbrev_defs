@@ -360,13 +360,15 @@
     ("polariation" "polarization" nil 1)
     ("pram" "param" nil 2)
     ("prama" "param" nil 1)
+    ("printnl" "println" nil 1)
     ("privaet" "private" nil 2)
     ("privsate" "private" nil 1)
     ("privtae" "private" nil 5)
+    ("prointer" "printer" nil 1)
     ("proteced" "protected" nil 1)
     ("protexted" "protected" nil 1)
     ("protexted " "protected" nil 0)
-    ("publci" "public" nil 15)
+    ("publci" "public" nil 16)
     ("publuic" "public" nil 1)
     ("pulbic" "public" nil 1)
     ("pulic" "public" nil 2)
@@ -387,7 +389,7 @@
     ("repalce" "replace" nil 1)
     ("replaement" "replacement" nil 1)
     ("repsitory" "repository" nil 1)
-    ("rerturn" "RETURN" nil 1)
+    ("rerturn" "RETURN" nil 2)
     ("resolutoin" "resolution" nil 1)
     ("resukt" "result" nil 2)
     ("retrun" "return" nil 6)
@@ -436,7 +438,7 @@
     ("stats" "status" nil 3)
     ("statua" "status" nil 1)
     ("steing" "string" nil 1)
-    ("sting" "string" nil 1)
+    ("sting" "string" nil 2)
     ("stirng" "string" nil 8)
     ("stirngs" "strings" nil 1)
     ("storgae" "storage" nil 1)
@@ -531,12 +533,12 @@
 " my-abbrev-hook 8)
     ("if" "if () {
 }
-" my-abbrev-hook 17)
+" my-abbrev-hook 19)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 3)
-    ("print" "System.out.print()" my-abbrev-hook 2)
-    ("println" "System.out.println()" my-abbrev-hook 13)
+    ("print" "System.out.print()" my-abbrev-hook 6)
+    ("println" "System.out.println()" my-abbrev-hook 17)
     ("while" "while () {
 }
 " my-abbrev-hook 3)

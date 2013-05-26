@@ -18,16 +18,16 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("else" "else {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 2)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("if" "if () {
 }
-" my-abbrev-hook 1)
+" my-abbrev-hook 11)
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
@@ -375,6 +375,7 @@
     ("pulic" "public" nil 2)
     ("putr" "put" nil 1)
     ("puyblic" "public" nil 2)
+    ("pxiels" "pixels" nil 1)
     ("qucik" "QUICK" nil 1)
     ("qwhich" "which" nil 1)
     ("rafractove" "refractive" nil 1)

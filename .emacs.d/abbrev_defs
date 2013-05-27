@@ -225,6 +225,7 @@
     ("falot" "float" nil 1)
     ("falswe" "false" nil 1)
     ("fgunction" "function" nil 1)
+    ("fiedl" "field" nil 1)
     ("fiel" "file" nil 1)
     ("fielpath" "filepath" nil 1)
     ("fiels" "files" nil 1)
@@ -272,6 +273,7 @@
     ("idel" "idle" nil 1)
     ("imiport" "import" nil 1)
     ("impiort" "import" nil 1)
+    ("implemens" "implements" nil 1)
     ("impoirt" "import" nil 1)
     ("improt" "import" nil 3)
     ("inclde" "include" nil 1)
@@ -444,7 +446,7 @@
     ("statua" "status" nil 1)
     ("steing" "string" nil 1)
     ("sting" "string" nil 2)
-    ("stirng" "string" nil 8)
+    ("stirng" "string" nil 9)
     ("stirngs" "strings" nil 1)
     ("storgae" "storage" nil 1)
     ("strign" "string" nil 5)
@@ -541,7 +543,7 @@
 " my-abbrev-hook 19)
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 3)
+}" my-abbrev-hook 4)
     ("print" "System.out.print()" my-abbrev-hook 6)
     ("println" "System.out.println()" my-abbrev-hook 17)
     ("while" "while () {

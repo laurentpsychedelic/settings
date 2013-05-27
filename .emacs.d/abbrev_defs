@@ -18,7 +18,7 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("else" "else {
 }
-" my-abbrev-hook 2)
+" my-abbrev-hook 4)
     ("elseif" "else if () {
 }
 " my-abbrev-hook 0)
@@ -27,14 +27,14 @@
 " my-abbrev-hook 1)
     ("if" "if () {
 }
-" my-abbrev-hook 11)
+" my-abbrev-hook 17)
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
     ("printf" "printf(\"\")" my-abbrev-hook 0)
     ("while" "while () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
    ))
 
 (define-abbrev-table 'c-mode-abbrev-table
@@ -283,8 +283,9 @@
     ("inlcude" "include" nil 1)
     ("inly" "only" nil 1)
     ("inport" "import" nil 1)
-    ("inr" "int" nil 1)
+    ("inr" "int" nil 2)
     ("instane" "instance" nil 1)
+    ("intvectro" "intVector" nil 1)
     ("iregistry" "rtegistry" nil 0)
     ("isswitch" "iswitch" nil 1)
     ("itmeem" "item" nil 1)
@@ -350,6 +351,7 @@
     ("pattenr" "pattern" nil 2)
     ("pesilon" "epsilon" nil 1)
     ("pgae" "page" nil 1)
+    ("piels" "pixels" nil 1)
     ("pirntln" "println" nil 1)
     ("pl8ugins" "plugins" nil 1)
     ("plubi" "public" nil 1)

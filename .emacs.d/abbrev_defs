@@ -135,6 +135,7 @@
     ("araial" "Arial" nil 1)
     ("asbtract" "abstract" nil 1)
     ("aseert" "assert" nil 1)
+    ("astablished" "established" nil 1)
     ("atatic" "static" nil 1)
     ("atuo" "AUTO" nil 1)
     ("auot" "auto" nil 1)
@@ -179,7 +180,7 @@
     ("constasnt" "constant" nil 1)
     ("consturctor" "constructor" nil 1)
     ("contant" "constant" nil 1)
-    ("contructor" "constructor" nil 1)
+    ("contructor" "constructor" nil 2)
     ("coreection" "correction" nil 1)
     ("correciton" "correction" nil 1)
     ("correctr" "correct" nil 1)
@@ -192,6 +193,7 @@
     ("dield" "field" nil 1)
     ("dimensuion" "Dimension" nil 1)
     ("dipskay" "display" nil 1)
+    ("directino" "direction" nil 1)
     ("directorry" "directory" nil 1)
     ("dirve" "drive" nil 1)
     ("documentatin" "documentation" nil 1)
@@ -214,6 +216,7 @@
     ("exceptionhander" "ExceptionHandler" nil 1)
     ("excpetion" "Exception" nil 4)
     ("excpetions" "Exception" nil 1)
+    ("exectue" "execute" nil 1)
     ("exectution" "execution" nil 1)
     ("executalbe" "executable" nil 1)
     ("exsception" "Exception" nil 1)
@@ -225,7 +228,7 @@
     ("falot" "float" nil 1)
     ("falswe" "false" nil 1)
     ("fgunction" "function" nil 1)
-    ("fiedl" "field" nil 1)
+    ("fiedl" "field" nil 3)
     ("fiel" "file" nil 1)
     ("fielpath" "filepath" nil 1)
     ("fiels" "files" nil 1)
@@ -251,6 +254,7 @@
     ("fpirntf" "fprintf" nil 1)
     ("fraem" "frame" nil 1)
     ("fraemwork" "framework" nil 1)
+    ("frequenec" "frequence" nil 1)
     ("frmae" "frame" nil 1)
     ("froeach" "foreach" nil 1)
     ("fromat" "Format" nil 1)
@@ -275,6 +279,7 @@
     ("impiort" "import" nil 1)
     ("implemens" "implements" nil 1)
     ("impoirt" "import" nil 1)
+    ("impot" "import" nil 1)
     ("improt" "import" nil 3)
     ("inclde" "include" nil 1)
     ("incldue" "include" nil 1)
@@ -315,8 +320,8 @@
     ("matcehr" "matcher" nil 1)
     ("mateirals" "materials" nil 1)
     ("meacs" "emacs" nil 1)
-    ("measruement" "measurement" nil 1)
-    ("measurement" "measurement" nil 10)
+    ("measruement" "measurement" nil 2)
+    ("measurement" "measurement" nil 25)
     ("measurment" "measurement" nil 1)
     ("memnto" "memento" nil 1)
     ("memoru" "memory" nil 1)
@@ -329,6 +334,7 @@
     ("nbame" "name" nil 1)
     ("newlione" "newline" nil 1)
     ("nll" "null" nil 2)
+    ("nohting" "nothing" nil 1)
     ("noremal" "normal" nil 1)
     ("npot" "not" nil 1)
     ("nre" "new" nil 3)
@@ -374,7 +380,7 @@
     ("proteced" "protected" nil 1)
     ("protexted" "protected" nil 1)
     ("protexted " "protected" nil 0)
-    ("publci" "public" nil 16)
+    ("publci" "public" nil 17)
     ("publuic" "public" nil 1)
     ("pulbic" "public" nil 1)
     ("pulic" "public" nil 2)
@@ -537,10 +543,10 @@
 " my-abbrev-hook 0)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 8)
+" my-abbrev-hook 10)
     ("if" "if () {
 }
-" my-abbrev-hook 19)
+" my-abbrev-hook 24)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 4)
@@ -548,7 +554,7 @@
     ("println" "System.out.println()" my-abbrev-hook 17)
     ("while" "while () {
 }
-" my-abbrev-hook 3)
+" my-abbrev-hook 4)
    ))
 
 (define-abbrev-table 'jython-mode-abbrev-table '())

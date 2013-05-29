@@ -183,6 +183,15 @@ then
         echo-sd "$@" | nkf
     }
 
+    # Function to start keychain tool
+    function start_keychain() {
+        for file in $(ls ~/.ssh | awk '/id_rsa.*/ { if (!/.*pub$/) print $1 }')
+        do
+            keychain ~/.ssh/$file
+        done
+        source ~/.keychain/*-sh
+    }
+
     #XWin Tk setting
     export DISPLAY=:0.0
     startxwin > /dev/null 2>&1 &

@@ -126,6 +126,7 @@
     ("$soft_tpye" "type" nil 1)
     ("absrtact" "abstract" nil 2)
     ("abstart" "abstract" nil 2)
+    ("addmosuse" "addMouse" nil 1)
     ("ahrd" "hard" nil 1)
     ("algirithm" "algorithm" nil 1)
     ("alurent" "laurent" nil 1)

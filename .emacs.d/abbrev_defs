@@ -129,6 +129,7 @@
     ("ahrd" "hard" nil 1)
     ("algirithm" "algorithm" nil 1)
     ("alurent" "laurent" nil 1)
+    ("anaysis" "analysis" nil 1)
     ("antr" "and" nil 1)
     ("apped" "append" nil 1)
     ("aprameters" "parameters" nil 1)
@@ -199,11 +200,13 @@
     ("directorry" "directory" nil 1)
     ("dirve" "drive" nil 1)
     ("documentatin" "documentation" nil 1)
-    ("docus" "focus" nil 1)
+    ("docus" "focus" nil 2)
     ("dound" "found" nil 1)
+    ("dpne" "done" nil 1)
     ("eamcs" "emacs" nil 1)
     ("echp" "echo" nil 1)
     ("ecxists" "exists" nil 1)
+    ("ehile" "while" nil 1)
     ("ekse" "else" nil 1)
     ("ellispe" "ellipse" nil 1)
     ("enablle" "enable" nil 1)
@@ -263,6 +266,7 @@
     ("fromat" "Format" nil 1)
     ("frsame" "Frame" nil 1)
     ("fsxtory" "factory" nil 1)
+    ("fucntion" "function" nil 1)
     ("functiosn" "functions" nil 1)
     ("geenrate" "generate" nil 1)
     ("gertenv" "getenv" nil 1)
@@ -283,7 +287,7 @@
     ("implemens" "implements" nil 1)
     ("impoirt" "import" nil 1)
     ("impot" "import" nil 1)
-    ("improt" "import" nil 7)
+    ("improt" "import" nil 8)
     ("inclde" "include" nil 1)
     ("incldue" "include" nil 1)
     ("indetn" "indent" nil 1)
@@ -327,7 +331,7 @@
     ("measruement" "measurement" nil 2)
     ("measuremenr" "measurement" nil 1)
     ("measuremenr\": " "measurement" nil 0)
-    ("measurement" "measurement" nil 31)
+    ("measurement" "measurement" nil 42)
     ("measurment" "measurement" nil 1)
     ("memnto" "memento" nil 1)
     ("memoru" "memory" nil 1)
@@ -335,6 +339,7 @@
     ("mide" "mode" nil 1)
     ("mnew" "new" nil 1)
     ("mothing" "nothing" nil 1)
+    ("mreasuremrt" "measurement" nil 1)
     ("nasme" "name" nil 1)
     ("nath" "math" nil 1)
     ("native" "native" nil 2)
@@ -389,6 +394,7 @@
     ("protexted" "protected" nil 1)
     ("protexted " "protected" nil 0)
     ("publci" "public" nil 17)
+    ("publiuc" "public" nil 1)
     ("publuic" "public" nil 1)
     ("pulbic" "public" nil 1)
     ("pulic" "public" nil 2)
@@ -413,6 +419,7 @@
     ("rerturn" "RETURN" nil 2)
     ("resolutoin" "resolution" nil 1)
     ("resukt" "result" nil 2)
+    ("resutl" "result" nil 1)
     ("retrun" "return" nil 6)
     ("retrurn" "return" nil 1)
     ("retsult" "result" nil 1)
@@ -423,7 +430,8 @@
     ("returnt" "return" nil 1)
     ("reuslt" "result" nil 1)
     ("reutn" "return" nil 1)
-    ("reutrn" "return" nil 16)
+    ("reutnr" "return" nil 1)
+    ("reutrn" "return" nil 17)
     ("rndom" "random" nil 1)
     ("rpeaint" "repaint" nil 1)
     ("rtegistry" "registry" nil 1)
@@ -468,6 +476,7 @@
     ("stringbuolder" "StringBuilder" nil 1)
     ("strint" "string" nil 1)
     ("striong" "String" nil 1)
+    ("stroe" "store" nil 1)
     ("sttic" "static" nil 1)
     ("systemdirve" "systemdrive" nil 1)
     ("tage" "stage" nil 1)
@@ -478,7 +487,7 @@
     ("thjen" "then" nil 1)
     ("thois" "this" nil 1)
     ("thorw" "throw" nil 3)
-    ("thorws" "throws" nil 1)
+    ("thorws" "throws" nil 2)
     ("thrad" "thread" nil 1)
     ("tiral" "trial" nil 1)
     ("titel" "title" nil 1)
@@ -547,16 +556,16 @@
   '(
     ("else" "else {
 }
-" my-abbrev-hook 8)
+" my-abbrev-hook 9)
     ("elseif" "else if () {
 }
-" my-abbrev-hook 0)
+" my-abbrev-hook 1)
     ("for" "for (;;) {
 }
-" my-abbrev-hook 16)
+" my-abbrev-hook 18)
     ("if" "if () {
 }
-" my-abbrev-hook 26)
+" my-abbrev-hook 34)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 4)
@@ -564,7 +573,7 @@
     ("println" "System.out.println()" my-abbrev-hook 17)
     ("while" "while () {
 }
-" my-abbrev-hook 5)
+" my-abbrev-hook 6)
    ))
 
 (define-abbrev-table 'jython-mode-abbrev-table '())

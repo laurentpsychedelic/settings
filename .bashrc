@@ -172,6 +172,19 @@ then
         cinst.bat "${@}"
     }
 
+    #function to zip a folder
+    function zip_folder() {
+        if [ $# -ne 1 ]
+        then
+            echo "Arguments:"
+            echo "\$1 folder to zip"
+        else
+            folder=$1
+            zipfilename=$(basename $folder).zip
+            7z a -tzip "$zipfilename" "$folder"
+        fi
+    }
+
     #source keychain shell script to enable registered keys
     source ~/.keychain/*-sh
 

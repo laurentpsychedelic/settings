@@ -283,16 +283,27 @@
     (setq compile-command (concat "cd " relative-path " && java -classpath src " class-fqn))
     (call-interactively 'compile compile-command)))
 
-(defun insert-current-package-fqn-at-point ()
+(defun insert-current-package-fqn-import-at-point ()
   "Insert current file package FQN at point"
   (interactive)
-  (insert (get-package-fqn-from-dir-tree)))
+  (insert (concat "import " (get-package-fqn-from-dir-tree))))
 
 (defun make-basic (&optional subcommand)
   "Set make basic compilation command into compilation buffer"
   (interactive "sSubcommand: ")
   (setq compile-command (concat "pwd && cd " (get-build-file-relative-location) " && make -k " subcommand))
   (call-interactively 'compile compile-command))
+
+(defun insert-standard-class-import-at-point ()
+  "Insert import for a standard library class at point"
+  (interactive)
+  (insert (concat
+           "import "
+           (mapconcat
+             'identity
+             (split-string (car (split-string (get-class-fqn) "[.]")) "/")
+             ".")
+           ";")))
 
 ;; Key bindings
 (define-prefix-command 'myantcompile-specific-map)
@@ -310,7 +321,8 @@
 (define-key myantcompile-specific-map (kbd "j j") 'java-this)
 (define-key myantcompile-specific-map (kbd "j r") 'java-this)
 ;; add package fqn at current location (for example for an import)
-(define-key myantcompile-specific-map (kbd "j i") 'insert-current-package-fqn-at-point)
+(define-key myantcompile-specific-map (kbd "j i") 'insert-current-package-fqn-import-at-point)
+(define-key myantcompile-specific-map (kbd "j s i") 'insert-standard-class-import-at-point)
 ;; make
 (define-key myantcompile-specific-map (kbd "m r") (lambda () (interactive) (make-basic "run")))
 (define-key myantcompile-specific-map (kbd "m b") (lambda () (interactive) (make-basic "rebuild")))

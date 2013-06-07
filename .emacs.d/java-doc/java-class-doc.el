@@ -194,6 +194,22 @@ in a slash.")
           (browse-url (format "%s/%s" java-class-doc-base-url path)
           (message (format "%s%s" java-class-doc-base-url path)))))))
 
+(defun get-class-fqn ()
+  "Get class fqn from Java documentation."
+  (interactive)
+  ;; If cache is empty, first try to load from file
+  (if (not java-class-doc-cache)
+      (java-class-doc-read-cache-from-file))
+  ;; Still empty? Eeek!
+  (if (not java-class-doc-cache)
+      (error "Generate the java-class-doc-cache by calling `java-class-doc-generate-cache'")
+    (let ((class (completing-read "Class: " java-class-doc-cache nil t))
+          path)
+      (setq path (cdr (assoc class java-class-doc-cache)))
+      (message "Class: %s, Path: %s" class path)
+      (format "%s" path))))
+
+
 (provide 'java-class-doc)
 
 (provide 'java-class-doc)

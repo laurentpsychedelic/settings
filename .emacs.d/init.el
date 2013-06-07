@@ -973,21 +973,14 @@ collect `(define-abbrev ,table
         ("#ifn"  "#ifndef")
         ("#e"    "#endif /* */" "C-3 C-b")
         ("#ifd"  "#ifdef")
-        ("imain" "int main(int ac, char **av[]) {\n\n}" "C-p TAB")
-        ("printf"    "printf(\"\")" "C-2 C-b"))))
+        ("imain" "int main(int ac, char **av[]) {\n\n}" "C-p TAB"))))
 ;;; java mode
 (eval-after-load "cc-mode"
   '(declare-abbrevs (java-mode-abbrev-table)
-       (("imain" "public static void main(String[] args) {\n\n}" "C-p TAB C-h")
-        ("println"   "System.out.println()" "C-b")
-        ("print"   "System.out.print()" "C-b"))))
+       (("imain" "public static void main(String[] args) {\n\n}" "C-p TAB C-h"))))
 (eval-after-load "cc-mode"
   '(declare-abbrevs (groovy-mode-abbrev-table)
-       (("imain" "public static void main(String[] args) {\n\n}" "C-p TAB C-h")
-        ("if"    "if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
-        ("else"  "else {\n}\n"  "C-M-b C-M-q C-M-d RET")
-        ("elseif" "else if () {\n}\n" "C-M-b C-M-q C-- C-M-d")
-        ("while" "while () {\n}\n" "C-M-b C-M-q C-- C-M-d"))))
+       (("imain" "public static void main(String[] args) {\n\n}" "C-p TAB C-h"))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

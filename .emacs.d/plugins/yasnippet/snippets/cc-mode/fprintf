@@ -1,0 +1,4 @@
+# name: fprintf(file, format, ...)
+# key: fprintf
+# --
+fprintf(${1:file}, "${2:format}", ${3:...});$0

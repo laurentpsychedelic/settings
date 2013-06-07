@@ -19,7 +19,6 @@
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
-    ("printf" "printf(\"\")" my-abbrev-hook 0)
    ))
 
 (define-abbrev-table 'c-mode-abbrev-table
@@ -32,7 +31,6 @@
     ("imain" "int main(int ac, char **av[]) {
 
 }" my-abbrev-hook 0)
-    ("printf" "printf(\"\")" my-abbrev-hook 0)
    ))
 
 (define-abbrev-table 'calendar-mode-abbrev-table '())
@@ -521,21 +519,9 @@
 
 (define-abbrev-table 'groovy-mode-abbrev-table
   '(
-    ("else" "else {
-}
-" my-abbrev-hook 0)
-    ("elseif" "else if () {
-}
-" my-abbrev-hook 0)
-    ("if" "if () {
-}
-" my-abbrev-hook 0)
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 0)
-    ("while" "while () {
-}
-" my-abbrev-hook 0)
    ))
 
 (define-abbrev-table 'gud-mode-abbrev-table '())
@@ -553,8 +539,6 @@
     ("imain" "public static void main(String[] args) {
 
 }" my-abbrev-hook 5)
-    ("print" "System.out.print()" my-abbrev-hook 6)
-    ("println" "System.out.println()" my-abbrev-hook 20)
    ))
 
 (define-abbrev-table 'jython-mode-abbrev-table '())

@@ -1,0 +1,4 @@
+# name: puts("")
+# key: puts
+# --
+puts("${1:Message}");$0

@@ -53,7 +53,7 @@
 
 (defun get-build-file-relative-location ()
   "Find relative path to build file by scanning upstream folders"
-  (let (relative-path index package-path)
+  (let (relative-path index package-path build-file-path)
     (setq index 0)
     (if (or (file-exists-p "./build.xml")
             (file-exists-p "./Makefile")
@@ -288,6 +288,40 @@
   (interactive)
   (insert (concat "import " (get-package-fqn-from-dir-tree))))
 
+(defun insert-import-if-not-present ()
+  "Insert import if not already present"
+  (interactive)
+  (let (import new-text npt cpt inc)
+    (setq import (read-string "Import name: "))
+    (insert-import-if-not-present-impl import)))
+
+(defun insert-import-of-class-at-point-if-not-present ()
+  "Insert an import for the class at point if not already present"
+  (interactive)
+  (let ((import (thing-at-point 'word)))
+    (insert-import-if-not-present-impl import)))
+
+(defun insert-import-if-not-present-impl (import)
+  "Insert import if not already present"
+  (interactive)
+  (let (new-text npt cpt inc)
+    (setq new-text (concat "\nimport " (get-package-fqn-from-dir-tree) ".?;")) ; default
+    (if (string-match "[.]" import)
+        (setq new-text (concat "\nimport " import ";")) ; import is a fully qualified name
+      (progn
+        (if (not (string= "nil" (get-class-fqn-impl import)))
+            (setq new-text (concat "\nimport " (get-class-fqn-impl import) ";"))))); import is a standard runtime class import
+    (message (format "New text: %s" new-text))
+    (if (not (string-match (regexp-quote new-text) (buffer-string)))
+        (progn
+          (setq npt (string-match "import" (buffer-string)))
+          (setq cpt (point))
+          (goto-char npt)
+          (setq inc (length new-text))
+          (insert new-text)
+          (goto-char (+ cpt inc))))))
+
+
 (defun make-basic (&optional subcommand)
   "Set make basic compilation command into compilation buffer"
   (interactive "sSubcommand: ")
@@ -323,6 +357,8 @@
 ;; add package fqn at current location (for example for an import)
 (define-key myantcompile-specific-map (kbd "j i") 'insert-current-package-fqn-import-at-point)
 (define-key myantcompile-specific-map (kbd "j s i") 'insert-standard-class-import-at-point)
+(define-key myantcompile-specific-map (kbd "i") 'insert-import-of-class-at-point-if-not-present)
+(define-key myantcompile-specific-map (kbd "a i") 'insert-import-if-not-present)
 ;; make
 (define-key myantcompile-specific-map (kbd "m r") (lambda () (interactive) (make-basic "run")))
 (define-key myantcompile-specific-map (kbd "m b") (lambda () (interactive) (make-basic "rebuild")))

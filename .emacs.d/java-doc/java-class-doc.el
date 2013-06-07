@@ -203,12 +203,24 @@ in a slash.")
   ;; Still empty? Eeek!
   (if (not java-class-doc-cache)
       (error "Generate the java-class-doc-cache by calling `java-class-doc-generate-cache'")
-    (let ((class (completing-read "Class: " java-class-doc-cache nil t))
-          path)
-      (setq path (cdr (assoc class java-class-doc-cache)))
-      (message "Class: %s, Path: %s" class path)
-      (format "%s" path))))
+    (let ((class (completing-read "Class: " java-class-doc-cache nil t)))
+      (get-class-fqn-impl class))))
 
+(defun get-class-fqn-impl (class)
+  ""
+  (interactive)
+  (if (not java-class-doc-cache)
+      (java-class-doc-read-cache-from-file))
+  ;; Still empty? Eeek!
+  (if (not java-class-doc-cache)
+      (error "Generate the java-class-doc-cache by calling `java-class-doc-generate-cache'")
+    (let (path)
+      (setq path (cdr (assoc class java-class-doc-cache)))
+      ; (message "Class: %s, Path: %s" class path)
+      (concat (mapconcat
+               'identity
+               (split-string (car (split-string (format "%s" path) "[.]")) "/")
+               ".")))))
 
 (provide 'java-class-doc)
 

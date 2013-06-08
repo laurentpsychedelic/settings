@@ -301,6 +301,15 @@
   (let ((import (thing-at-point 'word)))
     (insert-import-if-not-present-impl import)))
 
+;; (defun test-show-menu-and-get-selected-element ()
+;;   "Test function for show-menu-and-get-selected-element"
+;;   (interactive)
+;;   (message (format "Selected element: [ %s ]" (show-menu-and-get-selected-element '("First" "Second" "Last")))))
+
+(defun show-menu-and-get-selected-element (list)
+  "Show a menu of items and get the element choosen by the user"
+  (nth (dropdown-list list) list))
+
 (defun insert-import-if-not-present-impl (import)
   "Insert import if not already present"
   (interactive)

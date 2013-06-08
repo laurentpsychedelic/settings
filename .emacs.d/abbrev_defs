@@ -206,6 +206,7 @@
     ("exsits" "exists" nil 1)
     ("extedns" "extends" nil 1)
     ("exti" "exit" nil 1)
+    ("extrnsion" "extension" nil 1)
     ("exvcept" "except" nil 1)
     ("faieldg" "Failed" nil 1)
     ("falot" "float" nil 1)

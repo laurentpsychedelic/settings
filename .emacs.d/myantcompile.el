@@ -302,12 +302,22 @@
     (insert-import-if-not-present-impl import)))
 
 
-;; (defun test-find-all-files-in-dir ()
-;;   ""
-;;   (interactive)
-;;   (let ((files ()))
-;;     (setq files (find-all-files-in-dir "~/dev/design_patterns" "Factory" "java"))
-;;     (mapc (lambda (ele) (message (format "Ele-> %s" ele))) files)))
+(defun get-all-classes-matching-word (word)
+  "Get all classes matching the name specified by word"
+  (let ((files ()) (buildfileloc (get-build-file-relative-location)) (basedir "") (classes ()))
+    (setq basedir (expand-file-name buildfileloc))
+    (setq files (find-all-files-in-dir buildfileloc word "java"))
+    (setq classes (mapcar (lambda (ele) (replace-regexp-in-string "[.]java" "" (replace-regexp-in-string "/" "." (replace-regexp-in-string (concat (regexp-quote basedir) "\\(/?src/\\)?") "" ele)))) files))
+    (setq classes (flatten (cons (get-standard-class-fqn word) classes)))
+    ;(message (format "classes>> %s" classes))
+    classes))
+
+(defun flatten (mylist)
+  (cond
+   ((null mylist) nil)
+   ((atom mylist) (list mylist))
+   (t
+    (append (flatten (car mylist)) (flatten (cdr mylist))))))
 
 (defun find-all-files-in-dir (directory filename extension)
   "Find all files with given name and extension in given directory"
@@ -323,6 +333,7 @@
 ;;; Copyright: daniel m german
 ;;; License:   Same as Emacs
 ;;;
+;;; !! From http://turingmachine.org/bl/2013-05-29-recursively-listing-directories-in-elisp.html
 (defun directory-files-recursive (directory match maxdepth ignore)
   "List files in DIRECTORY and in its sub-directories. 
    Return files that match the regular expression MATCH but ignore     
@@ -379,12 +390,16 @@
   "Insert import if not already present"
   (interactive)
   (let (new-text npt cpt inc)
+    (message (format "import: %s" import))
     (setq new-text (concat "\nimport " (get-package-fqn-from-dir-tree) ".?;")) ; default
-    (if (string-match "[.]" import)
+    (if (string-match "[a-zA-Z]+\\([.][a-zA-Z]+\\)+" import)
         (setq new-text (concat "\nimport " import ";")) ; import is a fully qualified name
       (progn
-        (if (not (string= "nil" (get-class-fqn-impl import)))
-            (setq new-text (concat "\nimport " (get-class-fqn-impl import) ";"))))); import is a standard runtime class import
+        (setq new-text (show-menu-and-get-selected-element (get-all-classes-matching-word import)))
+        (if new-text
+            (setq new-text (format "\nimport %s;" new-text))
+          (setq new-text ""))
+        ))
     (message (format "New text: %s" new-text))
     (if (not (string-match (regexp-quote new-text) (buffer-string)))
         (progn
@@ -412,6 +427,16 @@
              (split-string (car (split-string (get-class-fqn) "[.]")) "/")
              ".")
            ";")))
+
+(defun get-standard-class-fqn (word)
+  "Return a list of standard classes fqn's matching word"
+  (let ((class "") (classes nil))
+    (setq class (get-class-fqn-impl word))
+    (if (and class (not (string= "nil" class)))
+        (setq classes (cons class '()))
+      (setq class nil))
+    ;(message (format "class: %s; classes: %s" class classes))
+    classes))
 
 ;; Key bindings
 (define-prefix-command 'myantcompile-specific-map)

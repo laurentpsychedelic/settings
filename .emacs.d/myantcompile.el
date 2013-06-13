@@ -53,7 +53,7 @@
 
 (defun get-build-file-relative-location ()
   "Find relative path to build file by scanning upstream folders"
-  (let (relative-path index package-path build-file-path)
+  (let (relative-path index package-path build-file-path level)
     (setq index 0)
     (if (or (file-exists-p "./build.xml")
             (file-exists-p "./Makefile")
@@ -88,7 +88,7 @@
               (file-exists-p (concat relative-path "/src")))
           (progn ; (message "build file (or src folder) found!") 
             ; (message "package-path: %s" package-path)
-            (setq level index)
+            ;(setq level index)
             (setq index 10))
         (progn
           (if (> index 0) (setq package-path (concat (nth 1 (reverse (split-string (file-name-directory (file-truename (concat buffer-file-name (mapconcat
@@ -400,7 +400,7 @@
             (setq new-text (format "\nimport %s;" new-text))
           (setq new-text ""))
         ))
-    (message (format "New text: %s" new-text))
+    ;(message (format "New text: %s" new-text))
     (if (not (string-match (regexp-quote new-text) (buffer-string)))
         (progn
           (setq npt (string-match "import" (buffer-string)))
@@ -410,6 +410,30 @@
           (insert new-text)
           (goto-char (+ cpt inc))))))
 
+(defun reorder-imports ()
+  "Reorder imports in alphabetical order"
+  (interactive)
+  (let (imports-regex imports new-contents current-point)
+    (setq imports-regex "\\(\\(import [a-zA-Z]+\\([.][a-zA-Z]+\\)*;[[:space:]]?\\)+\\)")
+    (string-match imports-regex (buffer-string))
+    (setq imports (match-string 1 (buffer-string)))
+    (setq imports (replace-regexp-in-string "\\(\r?\n\\)+" "" imports))
+    ;(message (format "Imports: %s" imports))
+    (setq imports (split-string imports ";"))
+    (setq imports (sort imports 'string<))
+    (pop imports) ;; first element is always empty
+    ;(message (format "Imports: %s" imports))
+    (setq imports (concat (mapconcat
+                           'identity
+                           imports
+                           ";\n")
+                          ";\n"))
+    (setq new-contents (replace-regexp-in-string imports-regex imports (buffer-string)))
+    ;(message (format "Imports: %s" imports))
+    (setq current-point (point))
+    (erase-buffer)
+    (insert new-contents)
+    (goto-char current-point)))
 
 (defun make-basic (&optional subcommand)
   "Set make basic compilation command into compilation buffer"
@@ -453,11 +477,12 @@
 (define-key myantcompile-specific-map (kbd "j c") 'javac-this)
 (define-key myantcompile-specific-map (kbd "j j") 'java-this)
 (define-key myantcompile-specific-map (kbd "j r") 'java-this)
-;; add package fqn at current location (for example for an import)
+;; related to imports
 (define-key myantcompile-specific-map (kbd "j i") 'insert-current-package-fqn-import-at-point)
 (define-key myantcompile-specific-map (kbd "j s i") 'insert-standard-class-import-at-point)
 (define-key myantcompile-specific-map (kbd "i") 'insert-import-of-class-at-point-if-not-present)
 (define-key myantcompile-specific-map (kbd "a i") 'insert-import-if-not-present)
+(define-key myantcompile-specific-map (kbd "a r") 'reorder-imports)
 ;; make
 (define-key myantcompile-specific-map (kbd "m r") (lambda () (interactive) (make-basic "run")))
 (define-key myantcompile-specific-map (kbd "m b") (lambda () (interactive) (make-basic "rebuild")))

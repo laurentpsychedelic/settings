@@ -516,6 +516,7 @@
     ("watn" "want" nil 1)
     ("waveenght" "wavelength" nil 1)
     ("winodwsi" "Windows" nil 1)
+    ("wmpty" "empty" nil 1)
     ("wpamain" "WPAMain" nil 11)
     ("wpavelength" "wavelength" nil 1)
     ("wundow" "window" nil 1)

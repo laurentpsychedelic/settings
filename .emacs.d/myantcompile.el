@@ -299,7 +299,8 @@
   "Insert an import for the class at point if not already present"
   (interactive)
   (let ((import (thing-at-point 'word)))
-    (insert-import-if-not-present-impl import)))
+    (insert-import-if-not-present-impl import)
+    (reorder-imports)))
 
 
 (defun get-all-classes-matching-word (word)
@@ -413,22 +414,25 @@
 (defun reorder-imports ()
   "Reorder imports in alphabetical order"
   (interactive)
-  (let (imports-regex imports new-contents current-point)
-    (setq imports-regex "\\(\\(import [a-zA-Z]+\\([.][a-zA-Z]+\\)*;[[:space:]]?\\)+\\)")
-    (string-match imports-regex (buffer-string))
-    (setq imports (match-string 1 (buffer-string)))
+  (let (string imports-regex import-head-regex imports new-contents current-point)
+    (setq string (buffer-string))
+    (setq imports-regex "\\(\\(import \\(static \\)?[a-zA-Z][a-zA-Z0-9]*\\([.][a-zA-Z][a-zA-Z0-9]*\\)*;[[:space:]]*\r?\n\\)+\\)")
+    (setq import-head-regex "import \\(static \\)?")
+    (string-match imports-regex string)
+    (setq imports (match-string 1 string))
     (setq imports (replace-regexp-in-string "\\(\r?\n\\)+" "" imports))
     ;(message (format "Imports: %s" imports))
     (setq imports (split-string imports ";"))
-    (setq imports (sort imports 'string<))
-    (pop imports) ;; first element is always empty
+    (setq imports (sort imports (lambda (ele1 ele2)
+                                  (string-lessp (nth 1 (split-string ele1 import-head-regex)) (nth 1 (split-string ele2 import-head-regex))))))
     ;(message (format "Imports: %s" imports))
     (setq imports (concat (mapconcat
                            'identity
                            imports
                            ";\n")
                           ";\n"))
-    (setq new-contents (replace-regexp-in-string imports-regex imports (buffer-string)))
+    (setq imports (replace-regexp-in-string ";\\([[:space:]\r\n]\\)*;" ";" imports))
+    (setq new-contents (replace-regexp-in-string imports-regex imports string))
     ;(message (format "Imports: %s" imports))
     (setq current-point (point))
     (erase-buffer)
@@ -482,7 +486,7 @@
 (define-key myantcompile-specific-map (kbd "j s i") 'insert-standard-class-import-at-point)
 (define-key myantcompile-specific-map (kbd "i") 'insert-import-of-class-at-point-if-not-present)
 (define-key myantcompile-specific-map (kbd "a i") 'insert-import-if-not-present)
-(define-key myantcompile-specific-map (kbd "a r") 'reorder-imports)
+(define-key myantcompile-specific-map (kbd "r i") 'reorder-imports)
 ;; make
 (define-key myantcompile-specific-map (kbd "m r") (lambda () (interactive) (make-basic "run")))
 (define-key myantcompile-specific-map (kbd "m b") (lambda () (interactive) (make-basic "rebuild")))

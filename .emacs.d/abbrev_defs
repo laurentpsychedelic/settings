@@ -18,7 +18,7 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("imain" "int main(int ac, char **av[]) {
 
-}" my-abbrev-hook 0)
+}" my-abbrev-hook 1)
    ))
 
 (define-abbrev-table 'c-mode-abbrev-table
@@ -132,6 +132,7 @@
     ("chich" "which" nil 1)
     ("childern" "children" nil 1)
     ("chweck" "check" nil 1)
+    ("cinlude" "include" nil 1)
     ("cintroller" "controller" nil 1)
     ("ciontents" "contents" nil 1)
     ("circvle" "Circle" nil 1)
@@ -153,7 +154,6 @@
     ("condt" "const" nil 1)
     ("consctructor" "constructor" nil 1)
     ("constasnt" "constant" nil 1)
-    ("constrcutor" "constructor" nil 1)
     ("construcotr" "constructor" nil 1)
     ("construfctor" "constructor" nil 1)
     ("consturctor" "constructor" nil 1)
@@ -329,13 +329,13 @@
     ("matcehr" "matcher" nil 1)
     ("mateirals" "materials" nil 1)
     ("meacs" "emacs" nil 1)
-    ("measruement" "measurement" nil 2)
-    ("measrument" "measurement" nil 1)
+    ("measruement" "measurement" nil 3)
     ("measuremement" "measurement" nil 1)
     ("measuremenr" "measurement" nil 1)
     ("measuremenr\": " "measurement" nil 0)
-    ("measurement" "measurement" nil 80)
-    ("measurment" "measurement" nil 1)
+    ("measurement" "measurement" nil 89)
+    ("measuremtni" "measurement" nil 1)
+    ("measurment" "measurement" nil 3)
     ("memnto" "memento" nil 1)
     ("memoru" "memory" nil 1)
     ("mesages" "messages" nil 1)

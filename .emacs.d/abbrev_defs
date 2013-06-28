@@ -507,6 +507,7 @@
     ("thorw" "throw" nil 4)
     ("thorws" "throws" nil 4)
     ("thrad" "thread" nil 1)
+    ("thrpwable" "throwable" nil 1)
     ("tiral" "trial" nil 1)
     ("titel" "title" nil 1)
     ("tiutle" "title" nil 1)

@@ -287,7 +287,7 @@
 
 ;; Visual Basic mode
 (autoload 'visual-basic-mode "visual-basic-mode" "Visual Basic mode." t)
-(add-to-list 'auto-mode-alist '("\\.\\(frm\\|bas\\|cls\\|vb\\)$" . visual-basic-mode))
+(add-to-list 'auto-mode-alist '("\\.\\(frm\\|bas\\|cls\\|vb\\|vbs\\)$" . visual-basic-mode))
 
 ;; bat-mode
 (setq auto-mode-alist

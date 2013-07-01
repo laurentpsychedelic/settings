@@ -18,7 +18,7 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("imain" "int main(int ac, char **av[]) {
 
-}" my-abbrev-hook 0)
+}" my-abbrev-hook 1)
    ))
 
 (define-abbrev-table 'c-mode-abbrev-table
@@ -134,6 +134,7 @@
     ("chich" "which" nil 1)
     ("childern" "children" nil 1)
     ("chweck" "check" nil 1)
+    ("cinlude" "include" nil 1)
     ("cintroller" "controller" nil 1)
     ("ciontents" "contents" nil 1)
     ("circvle" "Circle" nil 1)
@@ -516,6 +517,7 @@
     ("thorws" "throws" nil 4)
     ("thrad" "thread" nil 1)
     ("thropugh" "through" nil 1)
+    ("thrpwable" "throwable" nil 1)
     ("tiral" "trial" nil 1)
     ("titel" "title" nil 1)
     ("tiutle" "title" nil 1)

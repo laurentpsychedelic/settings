@@ -484,6 +484,12 @@
   (setq compile-command (concat "CDPATH=. && cd " (get-build-file-relative-location) " && make -k " subcommand))
   (call-interactively 'compile compile-command))
 
+(defun vcbuild-basic (&optional subcommand)
+  "Set vcbuild compilation command into compilation buffer"
+  (interactive "sSubcommand: ")
+  (setq compile-command (concat "CDPATH=. && cd " (get-build-file-relative-location-impl-single ".*[.]vcproj") " && vcbuild /rebuild " (replace-regexp-in-string "[.][.]/" "" (get-build-file-relative-location-impl-single ".*[.]vcproj" t)) " \"" subcommand "\""))
+  (call-interactively 'compile compile-command))
+
 (defun insert-standard-class-import-at-point ()
   "Insert import for a standard library class at point"
   (interactive)
@@ -534,6 +540,10 @@
 (define-key myantcompile-specific-map (kbd "m b") (lambda () (interactive) (make-basic "rebuild")))
 (define-key myantcompile-specific-map (kbd "m c") (lambda () (interactive) (make-basic "clean")))
 (define-key myantcompile-specific-map (kbd "m t") (lambda () (interactive) (make-basic "test")))
+;; vcbuild
+(define-key myantcompile-specific-map (kbd "v r") (lambda () (interactive) (vcbuild-basic "Release|Win32")))
+(define-key myantcompile-specific-map (kbd "v t r") (lambda () (interactive) (vcbuild-basic "Release Test|Win32")))
+(define-key myantcompile-specific-map (kbd "v d") (lambda () (interactive) (vcbuild-basic "Debug|Win32")))
 
 (provide 'myantcompile)
 ;;; myantcompile.el ends here

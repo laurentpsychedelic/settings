@@ -55,27 +55,34 @@
 
 (defun get-build-file-relative-location ()
   "Find relative path to build file by scanning upstream folders"
-  (let (relative-path index package-path build-file-path level)
-    (setq index 0)
-    (if (or (file-exists-p "./build.xml")
-            (file-exists-p "./Makefile")
-            (file-exists-p "./src"))
-        (setq build-file-path "./")
-      (progn
-        (while (< index 10)
-          ; (setq package-path (directory-file-name (concat (mapconcat 'identity (make-list index "..") "/"))))
-          (setq relative-path (mapconcat
-                               'identity
-                               (make-list index "..")
-                               "/"))
-          (if (or (file-exists-p (concat relative-path "/build.xml"))
-                  (file-exists-p (concat relative-path "/Makefile"))
-                  (file-exists-p (concat relative-path "/src")))
-              (progn ; (message "build file (or src folder) found!") 
-                (setq level index)
-                (setq index 10))
-            (setq index (1+ index))))
-        (setq build-file-path (mapconcat 'identity (make-list level "..") "/"))))))
+  (interactive)
+  (let ((relative-path nil) (build-file-name-regexps (list "build[.]xml" "Makefile" "src" ".*[.]vcproj")))
+    (setq relative-path (get-build-file-relative-location-impl build-file-name-regexps))))
+
+(defun get-build-file-relative-location-impl (build-file-name-regexps)
+  "Find relative path to build file, whose name is match a regexp in the list provided"
+  (interactive)
+  (let ((path nil) (local-path nil))
+    (setq path (catch 'loop 
+                 (mapc (lambda (regexp)
+                         (setq local-path (get-build-file-relative-location-impl-single regexp))
+                         (when local-path (throw 'loop local-path)))
+                       build-file-name-regexps)))
+    (setq path (if (stringp path) path nil))))
+
+(defun get-build-file-relative-location-impl-single (build-file-name-regex)
+  "Find relative path to the build file whose name matches the regexp provided"
+  (let ((path "") (dir "") (files ""))
+    (setq path (catch 'loop
+      (mapc (lambda (ele) 
+              (setq dir (mapconcat (lambda (subele) (if (> subele 0) ".." ".")) (number-sequence 0 ele) "/"))
+              (setq files (directory-files dir))
+              ;(message (format "Files in %s: %s" dir files))
+              (mapc (lambda (file)
+                      (when (string-match-p build-file-name-regex file) (throw 'loop dir)))
+                    files))
+            (number-sequence 0 10))))
+    (setq path (if (stringp path) (replace-regexp-in-string "^[.]/[.][.]" ".." path) nil))))
 
 (defun get-package-fqn-from-dir-tree ()
   "Get Java package fully-qualified name from directory tree (guess)"

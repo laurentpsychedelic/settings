@@ -185,17 +185,18 @@
     (setq command (concat "pwd && cd " build-file-relative-location " && "
                           "ant -emacs jar"))))
 
-(defun get-ant-run-command (text filename-sans-extension)
+(defun get-ant-run-command (text filename-sans-extension &optional additional-options)
   "Get command for ant jar target"
-  (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command)
+  (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command jvm-options)
     (setq basic-command-elements (get-ant-basic-command-element text))
     (setq package-fqn (nth 0 basic-command-elements))
     (setq package-path (nth 1 basic-command-elements))
     (setq class-fqn (nth 2 basic-command-elements))
     (setq class-name (nth 3 basic-command-elements))
     (setq build-file-relative-location (nth 4 basic-command-elements))
+    (setq jvm-options (if additional-options (concat " " additional-options) ""))
     (setq command (concat "pwd && cd " build-file-relative-location " && "
-                          "ant -emacs run"))))
+                          "ant" jvm-options " -emacs run"))))
 
 (defun get-jdb-command (text filename-sans-extension)
   "Get command for ant jar target"
@@ -244,6 +245,13 @@
   (setq compile-command (get-ant-run-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
   (call-interactively 'compile compile-command))
 
+(defun ant-run-jdb ()
+  "Set ant run target into compilation buffer with options to set a transport socket for debugging application with jdb"
+  (interactive)
+  (let ((jvm-args (concat "-Drun.jvmargs=-agentlib:jdwp=transport=dt_socket,address=" (format "%d" (read-number "Port number: ")) ",server=y,suspend=n")))
+    (setq compile-command (get-ant-run-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name))) jvm-args))
+    (call-interactively 'compile compile-command)))
+
 (defun jdb-run ()
   "Set jdb compilation target command into compilation buffer"
   (interactive)
@@ -254,6 +262,26 @@
     (setq buff (find-file-other-window directory))
      ; (message "Command: %s" command)
      ; (message "Dir: %s" directory)
+    (with-current-buffer buff
+        (jdb command))))
+
+(defun show-pid-of-given-process ()
+  "Show a menu with the different PID's of the processes associated with the name provided as input"
+  (interactive)
+  (let (process-name pid command)
+    (setq process-name (read-string "Process name: ")) 
+    (setq command (concat "ps -e | sed 's/^[A-Z]//g' | awk '/" process-name "/{print $1}'"))
+    ; (message (format "Command: %s" command))
+    (setq pid (show-menu-and-get-selected-element (split-string (replace-regexp-in-string "\n$" "" (replace-regexp-in-string "\\(\\(\r\\)?\n\\)+" "\n" (shell-command-to-string command))) "\n")))))
+
+(defun jdb-connect ()
+  "Connect with jdb to existing instance of Java"
+  (interactive)
+  (let ((port (read-number "Port number: ")) (command "") (filename (buffer-file-name)) (directory nil) (buff nil))
+    (setq command (concat "jdb -sourcepathsrc -connect com.sun.jdi.SocketAttach:port=" (format "%d" port)))
+    (message (format "Command: %s" command))
+    (setq directory (concat (file-name-directory filename) (get-build-file-relative-location)))
+    (setq buff (find-file-other-window directory))
     (with-current-buffer buff
         (jdb command))))
 
@@ -478,8 +506,11 @@
 (define-key myantcompile-specific-map (kbd "a b") 'ant-compile)
 (define-key myantcompile-specific-map (kbd "a j") 'ant-jar)
 (define-key myantcompile-specific-map (kbd "a r") 'ant-run)
+(define-key myantcompile-specific-map (kbd "a u r s") 'ant-run-single)
+(define-key myantcompile-specific-map (kbd "a u r d") 'ant-run-jdb)
 (define-key myantcompile-specific-map (kbd "a t") 'ant-test)
 (define-key myantcompile-specific-map (kbd "a d") 'jdb-run)
+(define-key myantcompile-specific-map (kbd "a u d") 'jdb-connect)
 ;; java(c)
 (define-key myantcompile-specific-map (kbd "j b") 'javac-this)
 (define-key myantcompile-specific-map (kbd "j c") 'javac-this)

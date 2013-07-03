@@ -70,7 +70,7 @@
                        build-file-name-regexps)))
     (setq path (if (stringp path) path nil))))
 
-(defun get-build-file-relative-location-impl-single (build-file-name-regex)
+(defun get-build-file-relative-location-impl-single (build-file-name-regex &optional with-filename)
   "Find relative path to the build file whose name matches the regexp provided"
   (let ((path "") (dir "") (files ""))
     (setq path (catch 'loop
@@ -79,7 +79,7 @@
               (setq files (directory-files dir))
               ;(message (format "Files in %s: %s" dir files))
               (mapc (lambda (file)
-                      (when (string-match-p build-file-name-regex file) (throw 'loop dir)))
+                      (when (string-match-p build-file-name-regex file) (throw 'loop (if with-filename (concat dir "/" file) dir))))
                     files))
             (number-sequence 0 10))))
     (setq path (if (stringp path) (replace-regexp-in-string "^[.]/[.][.]" ".." path) nil))))

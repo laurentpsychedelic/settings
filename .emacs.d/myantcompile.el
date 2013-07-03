@@ -130,7 +130,7 @@
     (setq class-fqn (nth 2 basic-command-elements))
     (setq class-name (nth 3 basic-command-elements))
     (setq build-file-relative-location (nth 4 basic-command-elements))
-    (setq command (concat "pwd && cd " build-file-relative-location " && "
+    (setq command (concat "CDPATH=. && cd " build-file-relative-location " && "
                           "ant -emacs test-single "
                           "-Djavac.includes=" (replace-regexp-in-string "[.][.]" "*" build-file-relative-location) ".java "
                           "-Dtest.includes=" package-path "/" filename-sans-extension ".java"))))
@@ -144,7 +144,7 @@
     (setq class-fqn (nth 2 basic-command-elements))
     (setq class-name (nth 3 basic-command-elements))
     (setq build-file-relative-location (nth 4 basic-command-elements))
-    (setq command (concat "pwd && cd " build-file-relative-location " && "
+    (setq command (concat "CDPATH=. && cd " build-file-relative-location " && "
                           "ant -emacs run-single "
                           "-Djavac.includes=" (replace-regexp-in-string "[.][.]" "*" build-file-relative-location) ".java "
                           "-Drun.class=" class-fqn))))
@@ -158,7 +158,7 @@
     (setq class-fqn (nth 2 basic-command-elements))
     (setq class-name (nth 3 basic-command-elements))
     (setq build-file-relative-location (nth 4 basic-command-elements))
-    (setq command (concat "pwd && cd " build-file-relative-location " && "
+    (setq command (concat "CDPATH=. && cd " build-file-relative-location " && "
                           "ant -emacs compile"))))
 
 (defun get-ant-clean-command (text filename-sans-extension)
@@ -170,7 +170,7 @@
     (setq class-fqn (nth 2 basic-command-elements))
     (setq class-name (nth 3 basic-command-elements))
     (setq build-file-relative-location (nth 4 basic-command-elements))
-    (setq command (concat "pwd && cd " build-file-relative-location " && "
+    (setq command (concat "CDPATH=. && cd " build-file-relative-location " && "
                           "ant -emacs clean"))))
 
 (defun get-ant-jar-command (text filename-sans-extension)
@@ -182,7 +182,7 @@
     (setq class-fqn (nth 2 basic-command-elements))
     (setq class-name (nth 3 basic-command-elements))
     (setq build-file-relative-location (nth 4 basic-command-elements))
-    (setq command (concat "pwd && cd " build-file-relative-location " && "
+    (setq command (concat "CDPATH=. && cd " build-file-relative-location " && "
                           "ant -emacs jar"))))
 
 (defun get-ant-run-command (text filename-sans-extension &optional additional-options)
@@ -195,7 +195,7 @@
     (setq class-name (nth 3 basic-command-elements))
     (setq build-file-relative-location (nth 4 basic-command-elements))
     (setq jvm-options (if additional-options (concat " " additional-options) ""))
-    (setq command (concat "pwd && cd " build-file-relative-location " && "
+    (setq command (concat "CDPATH=. && cd " build-file-relative-location " && "
                           "ant" jvm-options " -emacs run"))))
 
 (defun get-jdb-command (text filename-sans-extension)
@@ -474,7 +474,7 @@
 (defun make-basic (&optional subcommand)
   "Set make basic compilation command into compilation buffer"
   (interactive "sSubcommand: ")
-  (setq compile-command (concat "pwd && cd " (get-build-file-relative-location) " && make -k " subcommand))
+  (setq compile-command (concat "CDPATH=. && cd " (get-build-file-relative-location) " && make -k " subcommand))
   (call-interactively 'compile compile-command))
 
 (defun insert-standard-class-import-at-point ()

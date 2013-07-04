@@ -540,6 +540,8 @@
     ("ture" "true" nil 2)
     ("typesenum" "typedenum" nil 2)
     ("unalbe" "unable" nil 2)
+    ("unsinged" "unsigned" nil 1)
+    ("unsingned" "unsigned" nil 1)
     ("unti" "unit" nil 2)
     ("uopdate" "update" nil 1)
     ("updtae" "update" nil 1)

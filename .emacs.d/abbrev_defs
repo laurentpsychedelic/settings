@@ -543,6 +543,7 @@
     ("ture" "true" nil 2)
     ("typesenum" "typedenum" nil 3)
     ("unalbe" "unable" nil 2)
+    ("uningned" "unsigned" nil 1)
     ("unsinged" "unsigned" nil 1)
     ("unsingned" "unsigned" nil 1)
     ("unti" "unit" nil 2)

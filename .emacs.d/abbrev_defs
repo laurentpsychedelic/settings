@@ -543,6 +543,7 @@
     ("trye" "true" nil 1)
     ("ture" "true" nil 2)
     ("typesenum" "typedenum" nil 3)
+    ("typesenumwithparser" "typedenumwithparser" nil 1)
     ("unalbe" "unable" nil 2)
     ("uningned" "unsigned" nil 1)
     ("unsinged" "unsigned" nil 1)

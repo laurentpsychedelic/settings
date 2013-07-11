@@ -243,6 +243,7 @@
     ("flepath" "filepath" nil 1)
     ("flloat" "float" nil 1)
     ("flost" "float" nil 1)
+    ("flowlaytout" "flowlayout" nil 1)
     ("foint" "font" nil 1)
     ("folat" "Float" nil 1)
     ("fomratter" "Formatter" nil 1)

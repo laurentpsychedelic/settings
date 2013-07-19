@@ -330,6 +330,7 @@
     ("locationjs" "locations" nil 1)
     ("lqast" "last" nil 1)
     ("maht" "Math" nil 1)
+    ("mahts" "maths" nil 1)
     ("main" "Main" nil 115)
     ("mainfrmae" "mainframe" nil 1)
     ("manger" "manager" nil 1)
@@ -590,7 +591,7 @@
   '(
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 0)
+}" my-abbrev-hook 1)
    ))
 
 (define-abbrev-table 'jython-mode-abbrev-table '())

@@ -156,44 +156,8 @@
                           "-Djavac.includes=" (replace-regexp-in-string "[.][.]" "*" build-file-relative-location) "." (if extension extension "java") " "
                           "-Drun.class=" class-fqn))))
 
-(defun get-ant-compile-command (text filename-sans-extension)
-  "Get command for ant compile target"
-  (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command)
-    (setq basic-command-elements (get-ant-basic-command-element text))
-    (setq package-fqn (nth 0 basic-command-elements))
-    (setq package-path (nth 1 basic-command-elements))
-    (setq class-fqn (nth 2 basic-command-elements))
-    (setq class-name (nth 3 basic-command-elements))
-    (setq build-file-relative-location (nth 4 basic-command-elements))
-    (setq command (concat "CDPATH=. && cd " build-file-relative-location " && "
-                          "ant -emacs compile"))))
-
-(defun get-ant-clean-command (text filename-sans-extension)
-  "Get command for ant clean target"
-  (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command)
-    (setq basic-command-elements (get-ant-basic-command-element text))
-    (setq package-fqn (nth 0 basic-command-elements))
-    (setq package-path (nth 1 basic-command-elements))
-    (setq class-fqn (nth 2 basic-command-elements))
-    (setq class-name (nth 3 basic-command-elements))
-    (setq build-file-relative-location (nth 4 basic-command-elements))
-    (setq command (concat "CDPATH=. && cd " build-file-relative-location " && "
-                          "ant -emacs clean"))))
-
-(defun get-ant-jar-command (text filename-sans-extension)
-  "Get command for ant jar target"
-  (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command)
-    (setq basic-command-elements (get-ant-basic-command-element text))
-    (setq package-fqn (nth 0 basic-command-elements))
-    (setq package-path (nth 1 basic-command-elements))
-    (setq class-fqn (nth 2 basic-command-elements))
-    (setq class-name (nth 3 basic-command-elements))
-    (setq build-file-relative-location (nth 4 basic-command-elements))
-    (setq command (concat "CDPATH=. && cd " build-file-relative-location " && "
-                          "ant -emacs jar"))))
-
-(defun get-ant-run-command (text filename-sans-extension &optional additional-options)
-  "Get command for ant jar target"
+(defun get-basic-compile-command (commandname subcommand text filename-sans-extension &optional additional-options)
+  "Get command for ant-like compile target"
   (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command jvm-options)
     (setq basic-command-elements (get-ant-basic-command-element text))
     (setq package-fqn (nth 0 basic-command-elements))
@@ -203,7 +167,39 @@
     (setq build-file-relative-location (nth 4 basic-command-elements))
     (setq jvm-options (if additional-options (concat " " additional-options) ""))
     (setq command (concat "CDPATH=. && cd " build-file-relative-location " && "
-                          "ant" jvm-options " -emacs run"))))
+                          commandname jvm-options " " subcommand))))
+
+(defun get-ant-compile-command (text filename-sans-extension)
+  "Get command for ant compile target"
+  (get-basic-compile-command "ant" "compile" text filename-sans-extension "-emacs"))
+
+(defun get-ant-clean-command (text filename-sans-extension)
+  "Get command for ant clean target"
+  (get-basic-compile-command "ant" "clean" text filename-sans-extension "-emacs"))
+
+(defun get-ant-jar-command (text filename-sans-extension)
+  "Get command for ant jar target"
+  (get-basic-compile-command "ant" "jar" text filename-sans-extension "-emacs"))
+
+(defun get-ant-run-command (text filename-sans-extension &optional additional-options)
+  "Get command for ant jar target"
+  (get-basic-compile-command "ant" "run" text filename-sans-extension (concat (if additional-options " " "") "-emacs")))
+
+(defun get-gradle-compile-command (text filename-sans-extension)
+  "Get command for gradle compile target"
+  (get-basic-compile-command "gradle" "build" text filename-sans-extension "--info"))
+
+(defun get-gradle-clean-command (text filename-sans-extension)
+  "Get command for gradle clean target"
+  (get-basic-compile-command "gradle" "clean" text filename-sans-extension "--info"))
+
+(defun get-gradle-jar-command (text filename-sans-extension)
+  "Get command for gradle jar target"
+  (get-basic-compile-command "gradle" "jar" text filename-sans-extension "--info"))
+
+(defun get-gradle-run-command (text filename-sans-extension &optional additional-options)
+  "Get command for gradle jar target"
+  (get-basic-compile-command "gradle" "runJar" text filename-sans-extension (concat additional-options (if additional-options " " "") "--info")))
 
 (defun get-jdb-command (text filename-sans-extension)
   "Get command for ant jar target"
@@ -225,7 +221,7 @@
 (defun ant-run-single ()
   "Set ant run-single compilation target command into compilation buffer"
   (interactive)
-  (setq compile-command (get-ant-run-single-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
+  (setq compile-command (get-ant-run-single-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name))) (file-name-extension (file-name-nondirectory (buffer-file-name)))))
   (call-interactively 'compile compile-command))
 
 (defun ant-compile ()
@@ -250,6 +246,30 @@
   "Set ant run compilation target command into compilation buffer"
   (interactive)
   (setq compile-command (get-ant-run-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
+  (call-interactively 'compile compile-command))
+
+(defun gradle-compile ()
+  "Set gradle compile compilation target command into compilation buffer"
+  (interactive)
+  (setq compile-command (get-gradle-compile-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
+  (call-interactively 'compile compile-command))
+
+(defun gradle-clean ()
+  "Set gradle clean compilation target command into compilation buffer"
+  (interactive)
+  (setq compile-command (get-gradle-clean-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
+  (call-interactively 'compile compile-command))
+
+(defun gradle-jar ()
+  "Set gradle jar compilation target command into compilation buffer"
+  (interactive)
+  (setq compile-command (get-gradle-jar-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
+  (call-interactively 'compile compile-command))
+
+(defun gradle-run ()
+  "Set gradle run compilation target command into compilation buffer"
+  (interactive)
+  (setq compile-command (get-gradle-run-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
   (call-interactively 'compile compile-command))
 
 (defun ant-run-jdb ()
@@ -514,6 +534,11 @@
 ;; Key bindings
 (define-prefix-command 'myantcompile-specific-map)
 (global-set-key (kbd "C-b") 'myantcompile-specific-map)
+;; gradle
+(define-key myantcompile-specific-map (kbd "g c") 'gradle-clean)
+(define-key myantcompile-specific-map (kbd "g b") 'gradle-compile)
+(define-key myantcompile-specific-map (kbd "g j") 'gradle-jar)
+(define-key myantcompile-specific-map (kbd "g r") 'gradle-run)
 ;; ant
 (define-key myantcompile-specific-map (kbd "a c") 'ant-clean)
 (define-key myantcompile-specific-map (kbd "a b") 'ant-compile)

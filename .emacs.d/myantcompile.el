@@ -201,6 +201,10 @@
   "Get command for gradle jar target"
   (get-basic-compile-command "gradle" "runJar" text filename-sans-extension (concat additional-options (if additional-options " " "") "--info")))
 
+(defun get-gradle-run-single-command (text filename-sans-extension &optional additional-options)
+  "Get command for gradle jar target"
+  (get-basic-compile-command "gradle" (concat "runSingle+" (nth 2 (get-ant-basic-command-element text))) text filename-sans-extension (concat additional-options (if additional-options " " "") "--info")))
+
 (defun get-jdb-command (text filename-sans-extension)
   "Get command for ant jar target"
   (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command)
@@ -270,6 +274,12 @@
   "Set gradle run compilation target command into compilation buffer"
   (interactive)
   (setq compile-command (get-gradle-run-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
+  (call-interactively 'compile compile-command))
+
+(defun gradle-run-single ()
+  "Set gradle run compilation target command into compilation buffer"
+  (interactive)
+  (setq compile-command (get-gradle-run-single-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
   (call-interactively 'compile compile-command))
 
 (defun ant-run-jdb ()
@@ -539,6 +549,7 @@
 (define-key myantcompile-specific-map (kbd "g b") 'gradle-compile)
 (define-key myantcompile-specific-map (kbd "g j") 'gradle-jar)
 (define-key myantcompile-specific-map (kbd "g r") 'gradle-run)
+(define-key myantcompile-specific-map (kbd "g u r s") 'gradle-run-single)
 ;; ant
 (define-key myantcompile-specific-map (kbd "a c") 'ant-clean)
 (define-key myantcompile-specific-map (kbd "a b") 'ant-compile)

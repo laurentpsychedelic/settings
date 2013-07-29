@@ -142,7 +142,7 @@
                           "-Djavac.includes=" (replace-regexp-in-string "[.][.]" "*" build-file-relative-location) ".java "
                           "-Dtest.includes=" package-path "/" filename-sans-extension ".java"))))
 
-(defun get-ant-run-single-command (text filename-sans-extension)
+(defun get-ant-run-single-command (text filename-sans-extension &optional extension)
   "Get command for ant run-single target"
   (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command)
     (setq basic-command-elements (get-ant-basic-command-element text))
@@ -153,7 +153,7 @@
     (setq build-file-relative-location (nth 4 basic-command-elements))
     (setq command (concat "CDPATH=. && cd " build-file-relative-location " && "
                           "ant -emacs run-single "
-                          "-Djavac.includes=" (replace-regexp-in-string "[.][.]" "*" build-file-relative-location) ".java "
+                          "-Djavac.includes=" (replace-regexp-in-string "[.][.]" "*" build-file-relative-location) "." (if extension extension "java") " "
                           "-Drun.class=" class-fqn))))
 
 (defun get-ant-compile-command (text filename-sans-extension)

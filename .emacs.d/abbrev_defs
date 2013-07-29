@@ -343,7 +343,7 @@
     ("measuremement" "measurement" nil 1)
     ("measuremenr" "measurement" nil 1)
     ("measuremenr\": " "measurement" nil 0)
-    ("measurement" "measurement" nil 95)
+    ("measurement" "measurement" nil 99)
     ("measurementlocaiton" "measurementllocation" nil 1)
     ("measurmeent" "measurement" nil 2)
     ("measurmement" "measurement" nil 1)
@@ -421,7 +421,7 @@
     ("proteced" "protected" nil 1)
     ("protexted" "protected" nil 1)
     ("protexted " "protected" nil 0)
-    ("publci" "public" nil 19)
+    ("publci" "public" nil 20)
     ("publiuc" "public" nil 1)
     ("publuic" "public" nil 1)
     ("pulbic" "public" nil 2)
@@ -487,6 +487,7 @@
     ("soze" "size" nil 1)
     ("sozeof" "sizeof" nil 1)
     ("spash" "splash" nil 1)
+    ("spcified" "specified" nil 1)
     ("splir" "split" nil 1)
     ("sqitch" "switch" nil 1)
     ("stagecontopl" "StageControl" nil 1)
@@ -590,7 +591,7 @@
   '(
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 1)
+}" my-abbrev-hook 0)
    ))
 
 (define-abbrev-table 'jython-mode-abbrev-table '())
@@ -636,6 +637,12 @@
 (define-abbrev-table 'makefile-mode-abbrev-table '())
 
 (define-abbrev-table 'message-mode-abbrev-table '())
+
+(define-abbrev-table 'meta-mode-abbrev-table '())
+
+(define-abbrev-table 'metafont-mode-abbrev-table '())
+
+(define-abbrev-table 'metapost-mode-abbrev-table '())
 
 (define-abbrev-table 'nroff-mode-abbrev-table '())
 

@@ -462,6 +462,7 @@
     ("reutn" "return" nil 1)
     ("reutnr" "return" nil 1)
     ("reutrn" "return" nil 23)
+    ("rigth" "right" nil 1)
     ("rndom" "random" nil 1)
     ("rpeaint" "repaint" nil 1)
     ("rtegistry" "registry" nil 1)

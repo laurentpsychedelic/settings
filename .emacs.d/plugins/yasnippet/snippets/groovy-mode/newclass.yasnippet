@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: newclass
+# key: newclass
+# type: command
+# --
+(let ((package-fqn (file-name-nondirectory (directory-file-name (file-name-directory (file-name-sans-extension (buffer-file-name)))))) ; default package path = folder name
+      (class-name (file-name-nondirectory (file-name-sans-extension (buffer-file-name)))) ; default class name = file name
+      (yas-good-grace nil))
+  (setq package-fqn (get-package-fqn-from-dir-tree))
+  (yas-expand-snippet
+   (concat "package ${1:" package-fqn "};\n\n"
+           "public class ${2:" class-name "} {\n"
+           "    $0\n"
+           "}")))

@@ -188,23 +188,23 @@
 
 (defun get-gradle-compile-command (text filename-sans-extension)
   "Get command for gradle compile target"
-  (get-basic-compile-command "gradle" "build" text filename-sans-extension "--info" "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8\""))
+  (get-basic-compile-command "gradle" "build" text filename-sans-extension "--info" "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8 -Duser.language=en\"" ))
 
 (defun get-gradle-clean-command (text filename-sans-extension)
   "Get command for gradle clean target"
-  (get-basic-compile-command "gradle" "clean" text filename-sans-extension "--info" "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8\""))
+  (get-basic-compile-command "gradle" "clean" text filename-sans-extension "--info" "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8 -Duser.language=en\""))
 
 (defun get-gradle-jar-command (text filename-sans-extension)
   "Get command for gradle jar target"
-  (get-basic-compile-command "gradle" "jar" text filename-sans-extension "--info" "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8\""))
+  (get-basic-compile-command "gradle" "jar" text filename-sans-extension "--info" "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8 -Duser.language=en\""))
 
 (defun get-gradle-run-command (text filename-sans-extension &optional additional-options)
   "Get command for gradle jar target"
-  (get-basic-compile-command "gradle" "runJar" text filename-sans-extension (concat additional-options (if additional-options " " "") "--info") "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8\""))
+  (get-basic-compile-command "gradle" "runJar" text filename-sans-extension (concat additional-options (if additional-options " " "") "--info") "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8 -Duser.language=en\""))
 
 (defun get-gradle-run-single-command (text filename-sans-extension &optional additional-options)
   "Get command for gradle jar target"
-  (get-basic-compile-command "gradle" (concat "runSingle+" (nth 2 (get-ant-basic-command-element text))) text filename-sans-extension (concat additional-options (if additional-options " " "") "--info")))
+  (get-basic-compile-command "gradle" (concat "runSingle+" (nth 2 (get-ant-basic-command-element text))) text filename-sans-extension (concat additional-options (if additional-options " " "") "--info") "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8 -Duser.language=en\""))
 
 (defun get-jdb-command (text filename-sans-extension)
   "Get command for ant jar target"

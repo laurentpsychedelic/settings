@@ -156,7 +156,7 @@
                           "-Djavac.includes=" (replace-regexp-in-string "[.][.]" "*" build-file-relative-location) "." (if extension extension "java") " "
                           "-Drun.class=" class-fqn))))
 
-(defun get-basic-compile-command (commandname subcommand text filename-sans-extension &optional additional-options)
+(defun get-basic-compile-command (commandname subcommand text filename-sans-extension &optional additional-options &rest rest-var)
   "Get command for ant-like compile target"
   (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command jvm-options)
     (setq basic-command-elements (get-ant-basic-command-element text))
@@ -166,7 +166,8 @@
     (setq class-name (nth 3 basic-command-elements))
     (setq build-file-relative-location (nth 4 basic-command-elements))
     (setq jvm-options (if additional-options (concat " " additional-options) ""))
-    (setq command (concat "CDPATH=. && cd " build-file-relative-location " && "
+    (message (format "rest-var: %s" rest-var))
+    (setq command (concat "CDPATH=. && " (if rest-var (concat (mapconcat 'identity rest-var " && ") " && ") "") "cd " build-file-relative-location " && "
                           commandname jvm-options " " subcommand))))
 
 (defun get-ant-compile-command (text filename-sans-extension)
@@ -187,19 +188,19 @@
 
 (defun get-gradle-compile-command (text filename-sans-extension)
   "Get command for gradle compile target"
-  (get-basic-compile-command "gradle" "build" text filename-sans-extension "--info"))
+  (get-basic-compile-command "gradle" "build" text filename-sans-extension "--info" "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8\""))
 
 (defun get-gradle-clean-command (text filename-sans-extension)
   "Get command for gradle clean target"
-  (get-basic-compile-command "gradle" "clean" text filename-sans-extension "--info"))
+  (get-basic-compile-command "gradle" "clean" text filename-sans-extension "--info" "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8\""))
 
 (defun get-gradle-jar-command (text filename-sans-extension)
   "Get command for gradle jar target"
-  (get-basic-compile-command "gradle" "jar" text filename-sans-extension "--info"))
+  (get-basic-compile-command "gradle" "jar" text filename-sans-extension "--info" "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8\""))
 
 (defun get-gradle-run-command (text filename-sans-extension &optional additional-options)
   "Get command for gradle jar target"
-  (get-basic-compile-command "gradle" "runJar" text filename-sans-extension (concat additional-options (if additional-options " " "") "--info")))
+  (get-basic-compile-command "gradle" "runJar" text filename-sans-extension (concat additional-options (if additional-options " " "") "--info") "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8\""))
 
 (defun get-gradle-run-single-command (text filename-sans-extension &optional additional-options)
   "Get command for gradle jar target"

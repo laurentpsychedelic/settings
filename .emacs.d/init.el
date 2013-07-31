@@ -876,6 +876,7 @@ by using nxml's indentation rules."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-hook 'java-mode-hook 'subword-mode)
 (add-hook 'groovy-mode-hook 'subword-mode)
+(add-hook 'c-mode-common-hook 'subword-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; parse method arguments in Java ;;

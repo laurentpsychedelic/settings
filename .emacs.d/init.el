@@ -62,11 +62,15 @@
 ; (restore-frame)
 ;; see http://emacsblog.org/2007/02/22/maximize-on-startup-part-2/
 
+(add-to-list 'load-path "~/.emacs.d/")
 ;;;;;;;;;;;;;;;;;;
 ;; myantcompile ;;
 ;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/")
 (require 'myantcompile)
+;;;;;;;;;;;;;
+;; myutils ;;
+;;;;;;;;;;;;;
+(require 'myutils)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; gradle build script linked to groovy-mode ;;

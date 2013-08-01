@@ -431,6 +431,7 @@
     ("pxiels" "pixels" nil 1)
     ("qucik" "QUICK" nil 1)
     ("qwhich" "which" nil 1)
+    ("raduis" "radius" nil 1)
     ("rafractove" "refractive" nil 1)
     ("recangle" "Rectangle" nil 1)
     ("recipy" "recopy" nil 1)

@@ -62,11 +62,15 @@
 ; (restore-frame)
 ;; see http://emacsblog.org/2007/02/22/maximize-on-startup-part-2/
 
+(add-to-list 'load-path "~/.emacs.d/")
 ;;;;;;;;;;;;;;;;;;
 ;; myantcompile ;;
 ;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/")
 (require 'myantcompile)
+;;;;;;;;;;;;;
+;; myutils ;;
+;;;;;;;;;;;;;
+(require 'myutils)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; gradle build script linked to groovy-mode ;;
@@ -876,6 +880,7 @@ by using nxml's indentation rules."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-hook 'java-mode-hook 'subword-mode)
 (add-hook 'groovy-mode-hook 'subword-mode)
+(add-hook 'c-mode-common-hook 'subword-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; parse method arguments in Java ;;

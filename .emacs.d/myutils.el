@@ -25,7 +25,8 @@
 ;;; Code:
 
 (defun expand-native-java-api-to-header-file ()
-  ""
+  "Create C header file contents corresponding to the implementation of all
+methods declared as \"native\" in current Java source file."
   (interactive)
   (let ((txt (buffer-string)) (yas-good-grace nil) (start 0) (header-text "") (api-regexp "\\([^[:space:];()]* native[^;()]*([^;()]*);\\)"))
     (while start

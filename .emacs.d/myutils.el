@@ -24,6 +24,68 @@
 
 ;;; Code:
 
+(defun expand-native-java-api-to-header-file ()
+  ""
+  (interactive)
+  (let ((txt (buffer-string)) (yas-good-grace nil) (start 0) (header-text "") (api-regexp "\\([^[:space:];()]* native[^;()]*([^;()]*);\\)"))
+    (while start
+      (if (string-match api-regexp txt start)
+          (progn
+            (setq start (nth 1 (match-data)))
+            (setq header-text (concat header-text "\n" (match-string 1 txt))))
+        (setq start nil)))
+    (setq header-text (replace-regexp-in-string "\\(\\(public\\)\\|\\(private\\)\\|\\(native\\)\\|\\(protected\\)\\|\\(synchronized\\)\\|\\(static\\)\\) " "" header-text))
+    (setq header-text (replace-regexp-in-string "\\[\\]" "*" header-text))
+    (split-window)
+    (get-buffer-create "*native api*")
+    (switch-to-buffer "*native api*")
+    (c-mode)
+    (yas-expand-snippet (concat
+"#ifndef ${1:$(upcase (replace-regexp-in-string \"[-/ ]\" \"_\" text))}_H
+#define ${1:$(upcase (replace-regexp-in-string \"[-/ ]\" \"_\" text))}_H
+
+/* ${1:$(upcase (replace-regexp-in-string \"[-/ ]\" \"_\" text))}.h
+   Declares ${1:API-NAME} API functions
+*/
+
+#ifdef _WIN32
+
+  #ifdef ${1:$(upcase (replace-regexp-in-string \"[-/ ]\" \"_\" text))}_EXPORTS
+    #define ${1:$(upcase (replace-regexp-in-string \"[-/ ]\" \"_\" text))}_API __declspec(dllexport)
+  #else
+    #define ${1:$(upcase (replace-regexp-in-string \"[-/ ]\" \"_\" text))}_API __declspec(dllimport)
+  #endif
+
+  /* Define calling convention. */
+  #define ${1:$(upcase (replace-regexp-in-string \"[-/ ]\" \"_\" text))}_CALL __cdecl
+
+#else /* _WIN32 not defined. */
+
+  /* Define with no value on non-Windows OSes. */
+  #define ${1:$(upcase (replace-regexp-in-string \"[-/ ]\" \"_\" text))}_API
+  #define ${1:$(upcase (replace-regexp-in-string \"[-/ ]\" \"_\" text))}_CALL
+
+#endif
+
+/* Make sure functions are exported with C linkage under C++ compilers. */
+#ifdef __cplusplus
+extern \"C\"
+{
+#endif
+
+    /* API type definitions */
+
+    /* API funtions declarations */
+"
+header-text "$0
+
+#ifdef __cplusplus
+} // __cplusplus defined.
+#endif
+
+#endif"))))
+
+
 (defun expand-settable-interface-from-selection (&optional interface-name)
      "Expand a settable interface (Java) given a list of variables
     ex:

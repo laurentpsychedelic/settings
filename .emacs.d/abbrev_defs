@@ -179,6 +179,7 @@
     ("defautl" "default" nil 3)
     ("defore" "before" nil 1)
     ("deicsion" "decision" nil 2)
+    ("delcared" "declared" nil 1)
     ("deomat" "format" nil 1)
     ("dield" "field" nil 2)
     ("dilaog" "dialog" nil 1)

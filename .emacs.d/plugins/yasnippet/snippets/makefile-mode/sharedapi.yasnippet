@@ -6,20 +6,20 @@
 OBJS = $1.o
 CC = ${3:g++}
 OPTIONS = "-s"
-CFLAGS = -Wall -pedantic -D $1_EXPORTS -ffunction-sections ${2:$(if (string= "" text) "" "-D __GCC_MINGW__")} \${MAKE_OPTIONS} \${OPTIONS}
+CFLAGS = -Wall -pedantic -D $1_EXPORTS ${2:$(if (string= "" text) "" "-D _MSC_VER")} -ffunction-sections ${2:$(if (string= "" text) "" "-D __GCC_MINGW__")} \${MAKE_OPTIONS} \${OPTIONS}
 LFLAGS = -shared -Wl,${2:$(if (string= "" text) "" "--subsystem,windows")} -static-libgcc -static-libstdc++ \${OPTIONS}
 INCLUDES = 
 LIBS = 
 
 default: rebuild
 
-rebuild: clean API$2
+rebuild: clean $1$2
 
 clean:
-	rm -vf \$(OBJS)
+	rm -vf *o
 	rm -vf $1${2:$(if (string= "" text) "" ".dll")}
 
-${1:SHARED_OBJECT_NAME}${2:.dll}:
+${1:SHARED_OBJECT_NAME}${2:.dll}: $1.o
 	\$(CC) -o $1$2 \$(OBJS) \$(LIBS) \$(LFLAGS) 
 
 $1.o:

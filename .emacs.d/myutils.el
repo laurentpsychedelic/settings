@@ -35,7 +35,7 @@ methods declared as \"native\" in current Java source file."
             (setq start (nth 1 (match-data)))
             (setq header-text (concat header-text "\n" (match-string 1 txt))))
         (setq start nil)))
-    (setq header-text (replace-regexp-in-string "\\(\\(public\\)\\|\\(private\\)\\|\\(native\\)\\|\\(protected\\)\\|\\(synchronized\\)\\|\\(static\\)\\) " "" header-text))
+    (setq header-text (replace-regexp-in-string "\\(\\(public\\)\\|\\(final\\)\\|\\(private\\)\\|\\(native\\)\\|\\(protected\\)\\|\\(synchronized\\)\\|\\(static\\)\\) " "" header-text))
     (setq header-text (replace-regexp-in-string "\\[\\]" "*" header-text))
     (split-window)
     (get-buffer-create "*native api*")

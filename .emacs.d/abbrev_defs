@@ -127,11 +127,16 @@
     ("bufer" "buffer" nil 1)
     ("cakculation" "Calculation" nil 1)
     ("calcualte" "calculate" nil 1)
+    ("calcualtion" "calculation" nil 1)
+    ("calcuation" "calculation" nil 1)
+    ("calculution" "calculation" nil 1)
     ("calss" "class" nil 1)
+    ("caluclation" "calculation" nil 1)
     ("calue" "value" nil 1)
     ("camerasfrmae" "cameraframe" nil 1)
     ("casncelled" "cancelled" nil 1)
     ("castch" "catch" nil 1)
+    ("cauclation" "calculation" nil 1)
     ("cehckout" "checkout" nil 1)
     ("chich" "which" nil 1)
     ("childern" "children" nil 1)
@@ -586,7 +591,7 @@
   '(
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 0)
+}" my-abbrev-hook 1)
    ))
 
 (define-abbrev-table 'gud-mode-abbrev-table '())

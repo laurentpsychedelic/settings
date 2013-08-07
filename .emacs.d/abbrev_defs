@@ -111,6 +111,7 @@
     ("astablished" "established" nil 1)
     ("astring" "string" nil 1)
     ("atatic" "static" nil 1)
+    ("atrget" "target" nil 1)
     ("atuo" "AUTO" nil 1)
     ("auot" "auto" nil 1)
     ("autio" "AUTO" nil 1)

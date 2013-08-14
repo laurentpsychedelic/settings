@@ -172,6 +172,11 @@ then
         cinst.bat "${@}"
     }
 
+    #install git-flow
+    function install_git-flow() {
+        wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
+    }
+
     #function to zip a folder
     function zip_folder() {
         if [ $# -ne 1 ]
@@ -218,6 +223,10 @@ else
     #function to startup chromium-browser
     function chrome () {
         chromium-browser "${@}" > /dev/null 2>&1 &
+    }
+    #install git-flow
+    function install_git-flow() {
+        apt-get install git-flow
     }
     #function to install dropbox client
     function install_dropbox() {

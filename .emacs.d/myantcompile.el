@@ -56,7 +56,7 @@
 (defun get-build-file-relative-location ()
   "Find relative path to build file by scanning upstream folders"
   (interactive)
-  (let ((relative-path nil) (build-file-name-regexps (list "build[.]xml" "Makefile" "src" ".*[.]vcproj")))
+  (let ((relative-path nil) (build-file-name-regexps (list "build[.]\\(\\(xml\\)\\|\\(gradle\\)\\)" "Makefile" "src" ".*[.]vcproj")))
     (setq relative-path (get-build-file-relative-location-impl build-file-name-regexps))))
 
 (defun get-build-file-relative-location-impl (build-file-name-regexps)

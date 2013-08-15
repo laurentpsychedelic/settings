@@ -629,6 +629,11 @@
 (global-set-key (kbd "<C-S-f7>")  'fold-dwim-show-all)
 ;; (put 'org-mode 'fold-dwim-outline-style 'nested)
 
+;;;;;;;;;;;;;;;;;;
+;; etags-select ;;
+;;;;;;;;;;;;;;;;;;
+(global-set-key (kbd "M-.") 'etags-select-find-tag)
+
 ;;;;;;;;;;;
 ;; gtags ;;
 ;;;;;;;;;;;

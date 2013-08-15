@@ -6,7 +6,7 @@
 OBJS = $1.o
 CC = ${3:g++}
 OPTIONS = "-s"
-CFLAGS = -Wall -pedantic -D $1_EXPORTS ${2:$(if (string= "" text) "" "-D _MSC_VER")} -ffunction-sections ${2:$(if (string= "" text) "" "-D __GCC_MINGW__")} \${MAKE_OPTIONS} \${OPTIONS}
+CFLAGS = -Wall -pedantic -D ${1:$(upcase text)}_EXPORTS ${2:$(if (string= "" text) "" "-D _MSC_VER")} -ffunction-sections ${2:$(if (string= "" text) "" "-D __GCC_MINGW__")} \${MAKE_OPTIONS} \${OPTIONS}
 LFLAGS = -shared -Wl,${2:$(if (string= "" text) "" "--subsystem,windows")} -static-libgcc -static-libstdc++ \${OPTIONS}
 INCLUDES = 
 LIBS = 

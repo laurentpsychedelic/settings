@@ -175,6 +175,7 @@
     ("contaienr" "container" nil 1)
     ("contaner" "container" nil 1)
     ("contant" "constant" nil 1)
+    ("contraint" "constraint" nil 1)
     ("contructor" "constructor" nil 2)
     ("contsiner" "container" nil 1)
     ("coreection" "correction" nil 1)
@@ -306,7 +307,7 @@
     ("impoirt" "import" nil 1)
     ("imporrt" "import" nil 2)
     ("impot" "import" nil 1)
-    ("improt" "import" nil 12)
+    ("improt" "import" nil 13)
     ("inclde" "include" nil 1)
     ("incldue" "include" nil 1)
     ("indetn" "indent" nil 1)
@@ -542,6 +543,7 @@
     ("striong" "String" nil 1)
     ("stroe" "store" nil 1)
     ("sttic" "static" nil 1)
+    ("suiper" "super" nil 1)
     ("syatic" "static" nil 1)
     ("systemdirve" "systemdrive" nil 1)
     ("tage" "stage" nil 1)
@@ -604,7 +606,7 @@
   '(
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 1)
+}" my-abbrev-hook 0)
    ))
 
 (define-abbrev-table 'gud-mode-abbrev-table '())

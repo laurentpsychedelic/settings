@@ -465,15 +465,16 @@
 (defun insert-import-if-not-present-impl (import)
   "Insert import if not already present"
   (interactive)
-  (let (new-text npt cpt inc)
-    (message (format "import: %s" import))
-    (setq new-text (concat "\nimport " (get-package-fqn-from-dir-tree) ".?;")) ; default
+  (let (new-text npt cpt inc endl)
+    (setq endl (if (string= "groovy" (file-name-extension (file-name-nondirectory (buffer-file-name)))) "" ";"))
+    ;(message (format "import: %s" import))
+    (setq new-text (concat "\nimport " (get-package-fqn-from-dir-tree) ".?" endl)) ; default
     (if (string-match "[a-zA-Z]+\\([.][a-zA-Z]+\\)+" import)
-        (setq new-text (concat "\nimport " import ";")) ; import is a fully qualified name
+        (setq new-text (concat "\nimport " import endl)) ; import is a fully qualified name
       (progn
         (setq new-text (show-menu-and-get-selected-element (get-all-classes-matching-word import)))
         (if new-text
-            (setq new-text (format "\nimport %s;" new-text))
+            (setq new-text (format (concat "\nimport %s" endl) new-text))
           (setq new-text ""))
         ))
     ;(message (format "New text: %s" new-text))

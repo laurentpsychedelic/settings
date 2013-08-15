@@ -131,6 +131,7 @@
 ;; below code uses already registered snippet for auto-insert 
 ;; add auto-insert snippet when it is already registered
 (define-auto-insert "\\.java$" (lambda () (insert "newclass")(yas/expand)))
+(define-auto-insert "\\.groovy$" (lambda () (insert "newclass")(yas/expand)))
 (define-auto-insert "\\Test.java" (lambda () (insert "newtestclass-java")(yas/expand)))
 (define-auto-insert "\\Test.groovy" (lambda () (insert "newtestclass-groovy")(yas/expand)))
 

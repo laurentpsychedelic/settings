@@ -350,9 +350,18 @@
     (call-interactively 'compile compile-command)))
 
 (defun insert-current-package-fqn-import-at-point ()
-  "Insert current file package FQN at point"
+  "Insert current file package FQN import at point"
   (interactive)
-  (insert (concat "import " (get-package-fqn-from-dir-tree))))
+  (insert-current-package-fqn-at-point "import"))
+
+(defun insert-current-package-fqn-package-at-point ()
+  "Insert current file package FQN package at point"
+  (interactive)
+  (insert-current-package-fqn-at-point "package"))
+
+(defun insert-current-package-fqn-at-point (&optional prefix)
+  "Insert current file package FQN at point"
+  (insert (concat (if prefix (concat prefix " ") "") (get-package-fqn-from-dir-tree))))
 
 (defun insert-import-if-not-present ()
   "Insert import if not already present"
@@ -566,6 +575,7 @@
 (define-key myantcompile-specific-map (kbd "j r") 'java-this)
 ;; related to imports
 (define-key myantcompile-specific-map (kbd "j i") 'insert-current-package-fqn-import-at-point)
+(define-key myantcompile-specific-map (kbd "p i") 'insert-current-package-fqn-package-at-point)
 (define-key myantcompile-specific-map (kbd "j s i") 'insert-standard-class-import-at-point)
 (define-key myantcompile-specific-map (kbd "i") 'insert-import-of-class-at-point-if-not-present)
 (define-key myantcompile-specific-map (kbd "a i") 'insert-import-if-not-present)

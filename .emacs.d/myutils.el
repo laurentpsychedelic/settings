@@ -24,16 +24,50 @@
 
 ;;; Code:
 
+(defun convert-api-header-to-jna-binding ()
+  "Create a JNA binding interface bound to the API definitions in current buffer"
+  (interactive)
+  (let ((yas-good-grace nil)
+        (text (buffer-string))
+        (native-apis "") 
+        (bindings-text "") 
+        (regexp-apis "\\(extern \"C\"{[[:space:]\r\n]*\\(#endif\\)?[[:space:]\r\n]\\)\\([^}]*\\)[[:space:]\r\n]*\\(#ifdef[^}]*\\)}")
+        (regexp-types "\\(\\([(,]\\)[[:space:]]*\\([a-zA-Z_][a-zA-Z_0-9]*[[:space:]]+\\)+[*]?\\([a-zA-Z_][a-zA-Z_0-9]*[[:space:]]*\\)\\(\\[[[:space:]]*\\]\\)?\\)"))
+    (string-match regexp-apis text)
+    (setq native-apis (match-string 3 text))
+    (setq native-apis (replace-regexp-in-string regexp-types "\\2 def \\4" native-apis t))
+    (setq native-apis (replace-regexp-in-string "[[:space:]]*([[:space:]]+" "(" native-apis))
+    (setq native-apis (replace-regexp-in-string "[[:space:]]*,[[:space:]]*" ", " native-apis))
+    (setq native-apis (replace-regexp-in-string "[[:space:]]*[a-zA-Z_][a-zA-Z_0-9]*API[[:space:]]*" " " native-apis))
+    (setq native-apis (replace-regexp-in-string ";" "" native-apis))
+   (setq native-apis (replace-regexp-in-string "[\r\n]+" "\n" native-apis))
+    (get-buffer-create "*JNA bindings*")
+    (switch-to-buffer "*JNA bindings*")
+    (groovy-mode)
+    (yas-expand-snippet (concat "import com.sun.jna.*
+
+def binding = Native.loadLibrary(\"${1:$(downcase (replace-regexp-in-string \"[-/[:space:]]+\" \"_\" text))}\", ${1:$(mapconcat 'capitalize (split-string text \"[-/[:space:]]+\") \"\")}JNABinding)
+
+/**
+ * JNA interface to ${1:API name} native library
+ */
+interface ${1:$(mapconcat 'capitalize (split-string text \"[-/[:space:]]+\") \"\")}JNABindings extends Library {
+" native-apis "}
+"))))
+
+
+
+
 (defun expand-native-java-api-to-header-file ()
   "Create C header file contents corresponding to the implementation of all
 methods declared as \"native\" in current Java source file."
   (interactive)
-  (let ((txt (buffer-string)) (yas-good-grace nil) (start 0) (header-text "") (api-regexp "\\([^[:space:];()]* native[^;()]*([^;()]*);\\)"))
+  (let ((text (buffer-string)) (yas-good-grace nil) (start 0) (header-text "") (api-regexp "\\([^[:space:];()]* native[^;()]*([^;()]*);\\)"))
     (while start
-      (if (string-match api-regexp txt start)
+      (if (string-match api-regexp text start)
           (progn
             (setq start (nth 1 (match-data)))
-            (setq header-text (concat header-text "\n" (match-string 1 txt))))
+            (setq header-text (concat header-text "\n" (match-string 1 text))))
         (setq start nil)))
     (setq header-text (replace-regexp-in-string "\\(\\(public\\)\\|\\(final\\)\\|\\(private\\)\\|\\(native\\)\\|\\(protected\\)\\|\\(synchronized\\)\\|\\(static\\)\\) " "" header-text))
     (setq header-text (replace-regexp-in-string "\\[\\]" "*" header-text))

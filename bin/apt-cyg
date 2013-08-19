@@ -1,23 +1,26 @@
-
 #!/bin/bash
 
 # apt-cyg: install tool for cygwin similar to debian apt-get
-# 
+#
 # Copyright (C) 2005-9, Stephen Jungels
-# 
+# Copyright (C) 2013, rcmdnk
+#
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
 # as published by the Free Software Foundation; either version 2
 # of the License, or (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # (http://www.fsf.org/licensing/licenses/gpl.html)
 
 # this script requires some packages
+
+# ChangeLog
+# - 2013/08/12: Update for directory changes of Cygwin mirror sites
 
 WGET=`which wget 2> /dev/null`
 BZIP2=`which bzip2 2> /dev/null`
@@ -42,7 +45,8 @@ function usage()
   echo "  \"apt-cyg describe <patterns>\" to describe packages matching patterns"
   echo "  \"apt-cyg packageof <commands or files>\" to locate parent packages"
   echo "Options:"
-  echo "  --mirror, -m <url> : set mirror"
+  echo "  --mirror, -m <url> : set mirror (Put x86/x86_64 at the end"
+  echo "                       if you want to specify architecture)"
   echo "  --cache, -c <dir>  : set cache"
   echo "  --file, -f <file>  : read package names from file"
   echo "  --noupdate, -u     : don't update setup.ini from mirror"
@@ -64,45 +68,57 @@ function version()
 function findworkspace()
 {
   # default working directory and mirror
-  
+
   mirror=ftp://mirror.mcs.anl.gov/pub/cygwin
+  arch=x86_64
+  if [ "`uname -m`" = "i686" ];then
+    arch=x86
+  fi
   cache=/setup
-  
+
   # work wherever setup worked last, if possible
-  
+
   if test -e /etc/setup/last-cache
   then
     tmp="`head -1 /etc/setup/last-cache`"
     cache="`cygpath -au "$tmp"`"
   fi
-  
+
+  if test -e /etc/setup/last-arch
+  then
+    archtmp="`head -1 /etc/setup/last-arch`"
+    if [ "$archtmp" != "" ];then
+      arch=$archtmp
+    fi
+  fi
+
   if test -e /etc/setup/last-mirror
   then
     mirror="`head -1 /etc/setup/last-mirror`"
   fi
   mirrordir="`echo "$mirror" | sed -e "s/:/%3a/g" -e "s:/:%2f:g"`"
-  
+
   echo Working directory is $cache
-  echo Mirror is $mirror
+  echo Mirror is $mirror, Architecture is $arch
   mkdir -p "$cache/$mirrordir"
   cd "$cache/$mirrordir"
 }
 
 
-function getsetup() 
+function getsetup()
 {
   if test "$noscripts" == "0" -a "$noupdate" == "0"
   then
     touch setup.ini
     mv setup.ini setup.ini-save
-    wget -N $mirror/x86_64/setup.bz2
+    wget -N $mirror/$arch/setup.bz2
     if test -e setup.bz2 && test $? -eq 0
     then
       bunzip2 setup.bz2
       mv setup setup.ini
       echo Updated setup.ini
     else
-      wget -N $mirror/x86_64/setup.ini
+      wget -N $mirror/$arch/setup.ini
       if test -e setup.ini && test $? -eq 0
       then
         echo Updated setup.ini
@@ -140,7 +156,15 @@ do
   case "$1" in
 
     --mirror|-m)
-      echo "$2" > /etc/setup/last-mirror
+      arch=`basename $2`
+      if [[ ! "$arch" =~ x86 ]];then
+        echo "$2" > /etc/setup/last-mirror
+        echo "" > /etc/setup/last-arch
+      else
+        mirror=`dirname $2`
+        echo "$mirror" > /etc/setup/last-mirror
+        echo "$arch" > /etc/setup/last-arch
+      fi
       shift ; shift
     ;;
 
@@ -314,8 +338,8 @@ case "$command" in
     mkdir -p "release/$pkg"
     cat setup.ini | awk > "release/$pkg/desc" -v package="$pkg" \
       'BEGIN{RS="\n\n@ "; FS="\n"} {if ($1 == package) {desc = $0; px++}} \
-       END {if (px == 1 && desc != "") print desc; else print "Package not found"}' 
-    
+       END {if (px == 1 && desc != "") print desc; else print "Package not found"}'
+
     desc=`cat "release/$pkg/desc"`
     if test "-$desc-" = "-Package not found-"
     then
@@ -328,7 +352,7 @@ case "$command" in
     # download and unpack the bz2 file
 
     # pick the latest version, which comes first
-    install=`cat "release/$pkg/desc" | awk '/^install: / { print $2; exit }'` 
+    install=`cat "release/$pkg/desc" | awk '/^install: / { print $2; exit }'`
 
     if test "-$install-" = "--"
     then
@@ -339,36 +363,36 @@ case "$command" in
     file=`basename $install`
     cd "release/$pkg"
     wget -nc $mirror/$install
-    
+
     # check the md5
-    digest=`cat "desc" | awk '/^install: / { print $4; exit }'` 
+    digest=`cat "desc" | awk '/^install: / { print $4; exit }'`
     digactual=`md5sum $file | awk '{print $1}'`
     if ! test $digest = $digactual
     then
       echo MD5 sum did not match, exiting
       exit 1
     fi
-    
+
     echo "Unpacking..."
     cat $file | bunzip2 | tar > "/etc/setup/$pkg.lst" xvf - -C /
     gzip -f "/etc/setup/$pkg.lst"
     cd ../..
-    
-    
+
+
     # update the package database
-    
+
     cat /etc/setup/installed.db | awk > /tmp/awk.$$ -v pkg="$pkg" -v bz=$file \
       '{if (ins != 1 && pkg < $1) {print pkg " " bz " 0"; ins=1}; print $0} \
        END{if (ins != 1) print pkg " " bz " 0"}'
     mv /etc/setup/installed.db /etc/setup/installed.db-save
     mv /tmp/awk.$$ /etc/setup/installed.db
-    
-    
+
+
     # recursively install required packages
-    
+
     echo > /tmp/awk.$$ '/^requires: / {s=gensub("(requires: )?([^ ]+) ?", "\\2 ", "g", $0); print s}'
     requires=`cat "release/$pkg/desc" | awk -f /tmp/awk.$$`
-    
+
     warn=0
     if ! test "-$requires-" = "--"
     then
@@ -390,9 +414,9 @@ case "$command" in
     then
       echo "Warning: some required packages did not install, continuing"
     fi
-    
+
     # run all postinstall scripts
-    
+
     pis=`ls /etc/postinstall/*.sh 2>/dev/null | wc -l`
     if test $pis -gt 0 && ! test $noscripts -eq 1
     then
@@ -403,7 +427,7 @@ case "$command" in
         mv $script $script.done
       done
     fi
-    
+
     echo Package $pkg installed
 
     done

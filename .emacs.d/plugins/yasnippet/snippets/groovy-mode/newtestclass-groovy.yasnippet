@@ -3,13 +3,13 @@
 # key: newtestclass-groovy
 # type: snippet
 # --
-package ${1:`(file-name-nondirectory (directory-file-name (file-name-directory (file-name-sans-extension (buffer-file-name)))))`};
+package ${1:`(file-name-nondirectory (directory-file-name (file-name-directory (file-name-sans-extension (buffer-file-name)))))`}
 
 import groovy.util.GroovyTestCase
 import org.junit.Test
 
 class Groovy${2:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} extends GroovyTestCase {
-  final boolean __DEBUG__ = false;
+  final boolean __DEBUG__ = false
 
   void test$0() {
 

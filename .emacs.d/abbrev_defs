@@ -322,6 +322,7 @@
     ("inport" "import" nil 1)
     ("inr" "int" nil 2)
     ("instane" "instance" nil 1)
+    ("intenral" "internal" nil 1)
     ("interactove" "interactive" nil 1)
     ("intvectro" "intVector" nil 1)
     ("ir" "or" nil 2)

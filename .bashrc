@@ -404,6 +404,11 @@ function git_commit_Emacs_abbrevs() {
     git ci -m "Updated Emacs abbrevs."
 }
 
+#function to get and register svn ignores in repository local ignores (in .git dir)
+function git_svn_register_ignores() {
+    git svn show-ignore > .git/info/exclude
+}
+
 #function to filter git branch to change commits' author name and email
 function git_filter_branch_author() {
     if [ $# -ne 3 ]

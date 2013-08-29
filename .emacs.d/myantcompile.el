@@ -577,6 +577,7 @@
 ;; related to imports
 (define-key myantcompile-specific-map (kbd "j i") 'insert-current-package-fqn-import-at-point)
 (define-key myantcompile-specific-map (kbd "p i") 'insert-current-package-fqn-package-at-point)
+(define-key myantcompile-specific-map (kbd "j p") 'insert-current-package-fqn-package-at-point)
 (define-key myantcompile-specific-map (kbd "j s i") 'insert-standard-class-import-at-point)
 (define-key myantcompile-specific-map (kbd "i") 'insert-import-of-class-at-point-if-not-present)
 (define-key myantcompile-specific-map (kbd "a i") 'insert-import-if-not-present)

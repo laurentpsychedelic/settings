@@ -470,21 +470,30 @@
     ;(message (format "import: %s" import))
     (setq new-text (concat "\nimport " (get-package-fqn-from-dir-tree) ".?" endl)) ; default
     (if (string-match "[a-zA-Z]+\\([.][a-zA-Z]+\\)+" import)
-        (setq new-text (concat "\nimport " import endl)) ; import is a fully qualified name
+        (setq new-text (concat "import " import endl)) ; import is a fully qualified name
       (progn
         (setq new-text (show-menu-and-get-selected-element (get-all-classes-matching-word import)))
         (if new-text
-            (setq new-text (format (concat "\nimport %s" endl) new-text))
+            (setq new-text (format (concat "import %s" endl) new-text))
           (setq new-text ""))
         ))
     ;(message (format "New text: %s" new-text))
     (if (not (string-match (regexp-quote new-text) (buffer-string)))
         (progn
-          (setq npt (string-match "import" (buffer-string)))
+          (setq new-text (replace-regexp-in-string "\\(\r?\n\\)*" "" new-text))
           (setq cpt (point))
-          (goto-char npt)
           (setq inc (length new-text))
-          (insert new-text)
+          (if (not (string-match "import" (buffer-string))); <- not yet any import
+              (progn
+                (setq npt (string-match "\\(package[[:space:]]*[^\r\n]*\\)" (buffer-string)))
+                (goto-char npt)
+                (forward-word)
+                (end-of-line)
+                (insert "\n"))
+            (progn
+              (setq npt (string-match "import" (buffer-string)))
+              (goto-char npt)))
+          (insert (concat "\n" new-text))
           (goto-char (+ cpt inc))))))
 
 (defun reorder-imports ()
@@ -510,6 +519,7 @@
                            endl)
                           endl))
     (setq imports (replace-regexp-in-string ";\\([[:space:]\r\n]\\)*;" ";" imports))
+    (setq imports (replace-regexp-in-string "\\(\r?\n\\)+" "\n" imports))
     ;(message (format "Imports: %s" imports))
     (setq imports (replace-regexp-in-string "^[\r\n]?[;]\\([[:space:]\r\n]\\)*import" "import" imports))
     (setq new-contents (replace-regexp-in-string imports-regex (concat imports "\n") string))

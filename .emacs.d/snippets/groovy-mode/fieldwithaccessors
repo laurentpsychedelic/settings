@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: fieldwithaccessors
+# key: fieldwithaccessors
+# type: command
+# --
+(let ((yas-good-grace t))
+     (yas-expand-snippet
+       (concat "${1:private} ${2:Type} ${3:name};\n"
+       "${4:public} $2 get${3:$(capitalize text)}() {\n\t"
+       "\treturn this.$3;\n"
+       "}\n"
+       "$4 void set${3:$(capitalize text)}($2 $3) {\n\t"
+       "this.$3 = $3;\n"
+       "}\n")))

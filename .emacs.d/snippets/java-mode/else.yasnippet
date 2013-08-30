@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: else
+# key: else
+# type: command
+# --
+(let ((region nil) (text nil) (yas-good-grace nil))
+     (setq region (get-selection-or-unit 'block))
+     (setq text (buffer-substring (point) (elt region 2)))
+     (delete-region (point) (elt region 2))
+     (yas-expand-snippet
+       (concat "else {\n"
+               text
+               "$0\n}"))
+     (setq region (get-selection-or-unit 'block))
+     (indent-region (elt region 1) (elt region 2)))

@@ -1,0 +1,25 @@
+# -*- mode: snippet -*-
+# name: javadoc
+# key: /**
+# type: command
+# --
+(let ((yas-good-grace nil) (args nil) (text nil) (region nil) (throws nil) (return-clause nil))
+  (setq region (get-selection-or-unit 'block))
+  (setq text (buffer-substring (point) (elt region 2)))
+  (setq args (get-java-method-arguments text))
+  (setq throws (get-java-method-throws text))
+  (setq return-clause (get-if-javadoc-has-return-clause text))
+  (if return-clause
+      (setq return-clause (format "\n * @return ${%d: }" (+ (length args) (length throws) 2))))
+  (yas-expand-snippet (concat "/**\n"
+                              " * ${1: }"
+                              (mapconcat (lambda (num)
+                                                (format "\n * @param %s ${%d: }" (nth num args) (+ num 2)))
+                                         (number-sequence 0 (1- (length args)) nil)
+                                         "")
+                              (mapconcat (lambda (num)
+                                                (format "\n * @throws %s ${%d: }" (nth num throws) (+ (+ num (length args)) 2)))
+                                         (number-sequence 0 (1- (length throws)) nil)
+                                         "")
+                              return-clause
+                              "\n */\n\t")))

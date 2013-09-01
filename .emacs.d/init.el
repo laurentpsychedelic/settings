@@ -516,7 +516,7 @@
 ;;;;;;;;;;;;;;;;;;;;;
 
 (safe-wrap (progn
-             (add-to-list 'load-path "~/.emacs.d/twittering-mode")
+             (add-to-list 'load-path "~/.emacs.d/plugins/twittering-mode")
              (require 'twittering-mode)
              ;(setq twittering-status-format
              ; "%C{%Y/%m/%d %H:%M:%S} %s > %T // from %f%L%r%R")

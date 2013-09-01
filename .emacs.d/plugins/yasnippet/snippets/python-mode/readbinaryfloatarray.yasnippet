@@ -1,7 +1,0 @@
-# name: readbinaryfloatarray
-# key: readbinaryfloatarray
-# --
-import struct
-
-${1:n} = ${2:W * H}
-data = struct.unpack('f'*$1, open(${3:filename}, 'rb').read(4*$1))

@@ -1,4 +1,0 @@
-# name: printf(format, ...)
-# key: printf
-# --
-printf("${1:format}", ${2:...});$0

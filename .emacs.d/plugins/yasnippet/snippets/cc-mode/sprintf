@@ -1,4 +1,0 @@
-# name: sprintf(buffer, format, ...)
-# key: sprintf
-# --
-sprintf(${1:buffer}, "${2:format}", ${3:...});$0

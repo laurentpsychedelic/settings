@@ -1,4 +1,0 @@
-# name: snprintf(buffer, n_char, format, ...)
-# key: snprintf
-# --
-snprintf(${1:buffer}, ${2:n_char}, "${3:format}", ${4:...});$0

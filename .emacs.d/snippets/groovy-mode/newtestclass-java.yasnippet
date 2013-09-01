@@ -9,7 +9,7 @@ import groovy.util.GroovyTestSuite;
 import junit.framework.TestSuite;
 
 public class ${2:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`} {
-    private static final String TEST_ROOT = "test/${1:$(replace-regexp-in-string "[.]" "/" text)}/";
+    private static final String TEST_ROOT = "test/${1:$(replace-regexp-in-string "[.]" "/" yas-text)}/";
     public static TestSuite suite() throws Exception {
          TestSuite suite = new TestSuite();
          GroovyTestSuite gsuite = new GroovyTestSuite();

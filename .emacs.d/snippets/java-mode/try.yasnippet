@@ -10,7 +10,7 @@
      (yas-expand-snippet
        (concat "try {\n"
                text
-               "\n} catch (${1:Exception} ${1:$(downcase (camel-case-get-initials text))}) { ${2:/* CODE */} }\n"
+               "\n} catch (${1:Exception} ${1:$(downcase (camel-case-get-initials yas-text))}) { ${2:/* CODE */} }\n"
                "$0"))
      (setq region (get-selection-or-unit 'block))
      (indent-region (elt region 1) (elt region 2)))

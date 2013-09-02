@@ -1,0 +1,6 @@
+[submodule ".emacs.d/plugins/yasnippet"]
+	path = .emacs.d/plugins/yasnippet
+	url = https://github.com/capitaomorte/yasnippet
+[submodule ".emacs.d/plugins/twittering-mode"]
+	path = .emacs.d/plugins/twittering-mode
+	url = https://github.com/hayamiz/twittering-mode

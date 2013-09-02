@@ -1,0 +1,25 @@
+# -*- mode: snippet -*-
+# name: typedenum
+# key: typedenum
+# type: command
+# --
+(let ((yas-good-grace nil)
+      (count (read-number "Number of elements: ")))
+  (setq count2 (* 2 (1+ count)))
+  (yas-expand-snippet
+   (concat "public enum ${1:name} {\n"
+           "\t"
+           (mapconcat
+            (lambda (num)
+              (format "${%d:ele%d}(${%d:val%d})" (* 2 num) num (1+ (* 2 num)) num))
+            (number-sequence 1 count nil)
+            ", ")
+           ";\n"
+           (format "\tprivate $%d __${%d:$(downcase yas-text)}Type;\n" count2 count2)
+           (format "\tpublic $%d ${%d:$(downcase yas-text)}Type() {\n" count2 count2)
+           (format "\t\treturn __${%d:$(downcase yas-text)}Type;\n" count2)
+           "\t}\n"
+           (format "\t$1(${%d:type} _${%d:$(downcase yas-text)}Type) {\n" count2 count2)
+           (format "\t\t __${%d:$(downcase yas-text)}Type = _${%d:$(downcase yas-text)}Type;\n" count2 count2)
+           "\t}\n"
+           "}\n")))

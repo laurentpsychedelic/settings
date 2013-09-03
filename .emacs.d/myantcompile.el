@@ -24,6 +24,8 @@
 
 ;;; Code:
 
+(require 'dropdown-list)
+
 (defun get-java-package-info (text)
   "Return package info (Fully-Qualified-Name and path (with \"/\")"
   (with-temp-buffer

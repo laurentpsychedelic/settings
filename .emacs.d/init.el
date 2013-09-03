@@ -64,6 +64,17 @@
 
 (add-to-list 'load-path "~/.emacs.d/")
 ;;;;;;;;;;;;;;;;;;
+;; auto-install ;;
+;;;;;;;;;;;;;;;;;;
+(defun load-auto-install-library ()
+  (add-to-list 'load-path "~/.emacs.d/auto-install/")
+  (require 'auto-install)
+  (auto-install-update-emacswiki-package-name t)
+  (auto-install-compatibility-setup)
+  (setq ediff-window-setup-function 'ediff-setup-windows-plain))
+(safe-wrap (load-auto-install-library) (message "Unable to load auto-install!"))
+
+;;;;;;;;;;;;;;;;;;
 ;; myantcompile ;;
 ;;;;;;;;;;;;;;;;;;
 (require 'myantcompile)
@@ -76,17 +87,6 @@
 ;; gradle build script linked to groovy-mode ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode)) ; gradle build script
-
-;;;;;;;;;;;;;;;;;;
-;; auto-install ;;
-;;;;;;;;;;;;;;;;;;
-(defun load-auto-install-library ()
-  (add-to-list 'load-path "~/.emacs.d/auto-install/")
-  (require 'auto-install)
-  (auto-install-update-emacswiki-package-name t)
-  (auto-install-compatibility-setup)
-  (setq ediff-window-setup-function 'ediff-setup-windows-plain))
-(safe-wrap (load-auto-install-library) (message "Unable to load auto-install!"))
 
 ;;;;;;;;;;;;;;
 ;; org-mode ;;

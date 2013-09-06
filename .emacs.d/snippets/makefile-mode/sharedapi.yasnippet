@@ -6,8 +6,8 @@
 OBJS = $1.o
 CC = ${3:g++}
 OPTIONS = "-s"
-CFLAGS = -Wall -pedantic -D ${1:$(upcase text)}_EXPORTS${2:$(if (string= ".dll" (downcase text)) "-D _MSC_VER" "")} ${2:$(if (string= ".dll" (downcase text)) "-D __GCC_MINGW__" "")} \${MAKE_OPTIONS} \${OPTIONS}
-LFLAGS = -shared${2:$(if (string= ".dll" (downcase text)) "-Wl,--subsystem,windows -static-libgcc -static-libstdc++" "")} \${OPTIONS}
+CFLAGS = -Wall -pedantic -D ${1:$(upcase yas-text)}_EXPORTS${2:$(if (string= ".dll" (downcase yas-text)) " -D _MSC_VER" "")} ${2:$(if (string= ".dll" (downcase yas-text)) "-D __GCC_MINGW__" "")} \${MAKE_OPTIONS} \${OPTIONS}
+LFLAGS = -shared${2:$(if (string= ".dll" (downcase yas-text)) " -Wl,--subsystem,windows -static-libgcc -static-libstdc++" "")} \${OPTIONS}
 INCLUDES = 
 LIBS = 
 
@@ -23,4 +23,4 @@ ${1:SHARED_OBJECT_NAME}${2:.dll}: $1.o
 	\$(CC) -o $1$2 \$(OBJS) \$(LIBS) \$(LFLAGS) 
 
 $1.o:
-	\$(CC) -c -o $1.o $1.${3:$(if (string= "g++" (downcase text)) "cpp" "c")} \$(CFLAGS) \$(INCLUDES)
+	\$(CC) -c -o $1.o $1.${3:$(if (string= "g++" (downcase yas-text)) "cpp" "c")} \$(CFLAGS) \$(INCLUDES)

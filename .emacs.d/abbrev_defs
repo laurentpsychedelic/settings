@@ -404,6 +404,7 @@
     ("native" "native" nil 10)
     ("nbame" "name" nil 1)
     ("newlione" "newline" nil 1)
+    ("ninary" "binary" nil 1)
     ("niothing" "nothing" nil 1)
     ("nithing" "nothing" nil 1)
     ("nll" "null" nil 2)

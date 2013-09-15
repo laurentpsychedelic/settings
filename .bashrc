@@ -371,10 +371,6 @@ function clean_files_regexp() {
 function git_svn_update() {
     git svn rebase && git svn fetch --all
 }
-#function to hard reset Git repository to HEAD
-function git_hard_reset() {
-    git reset --hard HEAD
-}
 #function for git diff -w --cached (difference between HEAD and index
 function git_diff_w_cached() {
     git diff -w --cached $@

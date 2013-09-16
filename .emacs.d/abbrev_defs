@@ -336,6 +336,7 @@
     ("instane" "instance" nil 1)
     ("intenral" "internal" nil 1)
     ("interactove" "interactive" nil 1)
+    ("interruted" "interrupted" nil 1)
     ("intvectro" "intVector" nil 1)
     ("ir" "or" nil 2)
     ("iregistry" "rtegistry" nil 0)

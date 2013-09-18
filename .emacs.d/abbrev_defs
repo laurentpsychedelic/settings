@@ -191,6 +191,8 @@
     ("correciton" "correction" nil 1)
     ("correctr" "correct" nil 1)
     ("creaet" "create" nil 1)
+    ("credentail" "credential" nil 1)
+    ("credentails" "credentials" nil 1)
     ("ctach" "catch" nil 7)
     ("curetn" "current" nil 1)
     ("cysstrt" "cygstart" nil 1)
@@ -754,7 +756,9 @@
 
 (define-abbrev-table 'ps-run-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-abbrev-table '())
+(define-abbrev-table 'python-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'scilab-mode-abbrev-table '())
 

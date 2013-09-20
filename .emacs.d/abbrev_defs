@@ -581,12 +581,14 @@
     ("stirngs" "strings" nil 1)
     ("storgae" "storage" nil 1)
     ("strair" "stair" nil 1)
+    ("strcut" "struct" nil 1)
     ("strign" "string" nil 7)
     ("stringbuolder" "StringBuilder" nil 1)
     ("strint" "string" nil 1)
     ("striong" "String" nil 1)
     ("stroe" "store" nil 1)
     ("sttic" "static" nil 1)
+    ("suggection" "suggestion" nil 1)
     ("suiper" "super" nil 1)
     ("syatic" "static" nil 1)
     ("synchromized" "synchronized" nil 1)
@@ -756,9 +758,7 @@
 
 (define-abbrev-table 'ps-run-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'python-mode-abbrev-table '())
 
 (define-abbrev-table 'scilab-mode-abbrev-table '())
 

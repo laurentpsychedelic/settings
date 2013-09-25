@@ -346,6 +346,7 @@
     ("interactove" "interactive" nil 1)
     ("interger" "integer" nil 1)
     ("interruted" "interrupted" nil 1)
+    ("inti" "init" nil 1)
     ("intvectro" "intVector" nil 1)
     ("ir" "or" nil 2)
     ("iregistry" "rtegistry" nil 0)
@@ -759,7 +760,9 @@
 
 (define-abbrev-table 'ps-run-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-abbrev-table '())
+(define-abbrev-table 'python-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'scilab-mode-abbrev-table '())
 

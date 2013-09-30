@@ -254,6 +254,7 @@
     ("faieldg" "Failed" nil 1)
     ("falot" "float" nil 2)
     ("falswe" "false" nil 1)
+    ("fasle" "false" nil 1)
     ("fgunction" "function" nil 1)
     ("fianl" "final" nil 1)
     ("fiedl" "field" nil 4)
@@ -760,9 +761,7 @@
 
 (define-abbrev-table 'ps-run-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'python-mode-abbrev-table '())
 
 (define-abbrev-table 'scilab-mode-abbrev-table '())
 

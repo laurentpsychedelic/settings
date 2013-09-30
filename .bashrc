@@ -428,6 +428,12 @@ function git_filter_branch_author() {
     fi
 }
 
+#function to show a view of current repo (alternative to normal git-log)\
+function glog() {
+    git log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
+}
+
+
 #function to generate the ISO image based on the contents of a given folder
 function generate_ISO_image() {
     if [ $# -ne 2 ]

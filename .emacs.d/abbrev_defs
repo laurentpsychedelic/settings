@@ -170,6 +170,7 @@
     ("compoennt" "component" nil 2)
     ("comst" "const" nil 1)
     ("condt" "const" nil 1)
+    ("confif" "config" nil 1)
     ("confog" "config" nil 1)
     ("coninuous" "continuous" nil 3)
     ("consctructor" "constructor" nil 1)

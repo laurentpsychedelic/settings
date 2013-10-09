@@ -15,11 +15,11 @@
             (number-sequence 1 count nil)
             ", ")
            ";\n"
-           (format "\tprivate $%d __${%d:$(downcase yas-text)}Type;\n" count2 count2)
+           (format "\tprivate $%d ${%d:$(downcase yas-text)}Type;\n" count2 count2)
            (format "\tpublic $%d ${%d:$(downcase yas-text)}Type() {\n" count2 count2)
-           (format "\t\treturn __${%d:$(downcase yas-text)}Type;\n" count2)
+           (format "\t\treturn this.${%d:$(downcase yas-text)}Type;\n" count2)
            "\t}\n"
-           (format "\t$1(${%d:type} _${%d:$(downcase yas-text)}Type) {\n" count2 count2)
-           (format "\t\t __${%d:$(downcase yas-text)}Type = _${%d:$(downcase yas-text)}Type;\n" count2 count2)
+           (format "\t$1(${%d:type} ${%d:$(downcase yas-text)}Type) {\n" count2 count2)
+           (format "\t\t this.${%d:$(downcase yas-text)}Type = ${%d:$(downcase yas-text)}Type;\n" count2 count2)
            "\t}\n"
            "}\n")))

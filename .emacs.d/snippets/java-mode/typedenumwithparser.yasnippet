@@ -15,20 +15,20 @@
             (number-sequence 1 count nil)
             ", ")
            ";\n"
-           (format "\tprivate $%d __${%d:$(downcase yas-text)}Type;\n" count2 count2)
+           (format "\tprivate $%d ${%d:$(downcase yas-text)}Type;\n" count2 count2)
            (format "\tpublic $%d ${%d:$(downcase yas-text)}Type() {\n" count2 count2)
-           (format "\t\treturn __${%d:$(downcase yas-text)}Type;\n" count2)
+           (format "\t\treturn this.${%d:$(downcase yas-text)}Type;\n" count2)
            "\t}\n"
-           (format "\tpublic static $1 parse${%d:$(capitalize yas-text)}($%d _${%d:$(downcase yas-text)}Type) {\n\t\t" count2 count2 count2)
-           (format "if ( _${%d:$(downcase yas-text)}Type${%d: == }$%d${%d: }) {\n\t\treturn $%d;\n\t} else " count2 (+ 1 count2) (1+ (* 2 1)) (+ 2 count2) (* 2 1))
+           (format "\tpublic static $1 parse${%d:$(capitalize yas-text)}($%d ${%d:$(downcase yas-text)}Type) {\n\t\t" count2 count2 count2)
+           (format "if ( ${%d:$(downcase yas-text)}Type${%d: == }$%d${%d: }) {\n\t\treturn $%d;\n\t} else " count2 (+ 1 count2) (1+ (* 2 1)) (+ 2 count2) (* 2 1))
            (mapconcat
             (lambda (num)
-              (format "if ( _${%d:$(downcase yas-text)}Type$%d$%d$%d) {\n\t\treturn $%d;\n\t}" count2 (+ 1 count2) (1+ (* 2 num)) (+ 2 count2) (* 2 num)))
+              (format "if ( ${%d:$(downcase yas-text)}Type$%d$%d$%d) {\n\t\treturn $%d;\n\t}" count2 (+ 1 count2) (1+ (* 2 num)) (+ 2 count2) (* 2 num)))
             (number-sequence 2 count nil)
             " else ")
            (format " else {\n\t\treturn $%d;\n\t}" (* 2 1))
            "\n\t}\n"
-           (format "\t$1(${%d:type} _${%d:$(downcase yas-text)}Type) {\n" count2 count2)
-           (format "\t\t __${%d:$(downcase yas-text)}Type = _${%d:$(downcase yas-text)}Type;\n" count2 count2)
+           (format "\t$1(${%d:type} ${%d:$(downcase yas-text)}Type) {\n" count2 count2)
+           (format "\t\t this.${%d:$(downcase yas-text)}Type = ${%d:$(downcase yas-text)}Type;\n" count2 count2)
            "\t}\n"
            "}\n")))

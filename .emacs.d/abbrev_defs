@@ -342,6 +342,7 @@
     ("inffo" "info" nil 1)
     ("infromation" "information" nil 1)
     ("inlcude" "include" nil 1)
+    ("inlude" "include" nil 1)
     ("inly" "only" nil 1)
     ("inport" "import" nil 1)
     ("inr" "int" nil 2)

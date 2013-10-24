@@ -262,6 +262,7 @@ git config --global user.name "Laurent FABRE"
 git config --global log.date local
 git config --global core.whitespace trailing-space,space-before-tab
 git config --global core.autocrlf input
+git config --global push.default upstream
 
 export REP=https://192.168.20.36/svn
 export REP_WPA=${REP}/PA_WPA-View_100

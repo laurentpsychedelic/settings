@@ -25,3 +25,5 @@
 	timezone = Japan/Tokyo
 [log]
 	date = local
+[push]
+	default = upstream

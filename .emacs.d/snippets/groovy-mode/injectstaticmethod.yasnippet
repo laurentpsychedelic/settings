@@ -1,12 +1,12 @@
 # -*- mode: snippet -*-
-# name: injectmethod
-# key: injectmethod
+# name: injectstaticmethod
+# key: injectstaticmethod
 # type: command
 # --
 (let ((yas-good-grace nil)
       (count (read-number "Number of elements: ")))
   (yas-expand-snippet
-   (concat "${1:TheClass}.metaClass.${2:theMethod} = { "
+   (concat "${1:TheClass}.metaClass.'static'.${2:theStaticMethod} = { "
            (if (> count 0)
              (concat (mapconcat
                 (lambda (num)

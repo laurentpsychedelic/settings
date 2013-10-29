@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: injectmethod
+# key: injectmethod
+# type: command
+# --
+(let ((yas-good-grace nil)
+      (count (read-number "Number of elements: ")))
+  (yas-expand-snippet
+   (concat "${1:TheClass}.metaClass.${2:theMethod} = { "
+           (mapconcat
+            (lambda (num)
+              (format "${%d:arg%d}" (+ num 2) num))
+            (number-sequence 1 count nil)
+            ", ")
+           " ->\n"
+           (format "\t${%d:/* Processing */}" (+ 3 count))
+           "\n}\n")))

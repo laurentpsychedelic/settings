@@ -477,6 +477,7 @@
     ("pint" "print" nil 1)
     ("pirntln" "println" nil 1)
     ("pl8ugins" "plugins" nil 1)
+    ("pligin" "plugin" nil 1)
     ("plubi" "public" nil 1)
     ("plublic" "public" nil 1)
     ("plugions" "PLUGINS" nil 1)

@@ -514,6 +514,7 @@
     ("qwhich" "which" nil 1)
     ("raduis" "radius" nil 1)
     ("rafractove" "refractive" nil 1)
+    ("raidan" "radian" nil 2)
     ("recalcualtion" "recalculation" nil 1)
     ("recangle" "Rectangle" nil 1)
     ("recipy" "recopy" nil 1)
@@ -548,7 +549,7 @@
     ("reuslt" "result" nil 1)
     ("reutn" "return" nil 2)
     ("reutnr" "return" nil 1)
-    ("reutrn" "return" nil 37)
+    ("reutrn" "return" nil 38)
     ("rigght" "right" nil 1)
     ("rigth" "right" nil 1)
     ("rndom" "random" nil 1)
@@ -616,6 +617,7 @@
     ("syatic" "static" nil 1)
     ("synchromized" "synchronized" nil 1)
     ("systemdirve" "systemdrive" nil 1)
+    ("tadian" "radian" nil 1)
     ("tage" "stage" nil 1)
     ("taregt" "target" nil 1)
     ("targer" "target" nil 1)
@@ -785,7 +787,9 @@
 
 (define-abbrev-table 'ps-run-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-abbrev-table '())
+(define-abbrev-table 'python-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'scilab-mode-abbrev-table '())
 

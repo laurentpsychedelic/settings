@@ -241,6 +241,7 @@
     ("epislon" "epsilon" nil 1)
     ("eppend" "append" nil 4)
     ("esle" "else" nil 1)
+    ("espilon" "epsilon" nil 1)
     ("excepiton" "Exception" nil 1)
     ("exceptino" "Exception" nil 3)
     ("exception" "exception" nil 31)
@@ -325,7 +326,7 @@
     ("histroy" "history" nil 1)
     ("hoem" "HOME" nil 1)
     ("hsell" "shell" nil 1)
-    ("hte" "the" nil 2)
+    ("hte" "the" nil 3)
     ("huor" "hour" nil 1)
     ("iamin" "imain" nil 1)
     ("idel" "idle" nil 1)
@@ -402,7 +403,7 @@
     ("measurememnt" "measurement" nil 2)
     ("measuremenr" "measurement" nil 1)
     ("measuremenr\": " "measurement" nil 0)
-    ("measurement" "measurement" nil 141)
+    ("measurement" "measurement" nil 142)
     ("measurementlocaiton" "measurementllocation" nil 1)
     ("measuremnt" "measurement" nil 1)
     ("measurmeent" "measurement" nil 4)
@@ -547,6 +548,7 @@
     ("returnign" "returning" nil 1)
     ("returnt" "return" nil 1)
     ("reult" "result" nil 1)
+    ("reults" "results" nil 1)
     ("reuslt" "result" nil 1)
     ("reutn" "return" nil 2)
     ("reutnr" "return" nil 1)
@@ -788,9 +790,7 @@
 
 (define-abbrev-table 'ps-run-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'python-mode-abbrev-table '())
 
 (define-abbrev-table 'scilab-mode-abbrev-table '())
 

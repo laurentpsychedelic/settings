@@ -285,6 +285,7 @@
     ("flase" "false" nil 2)
     ("flepath" "filepath" nil 1)
     ("flloat" "float" nil 1)
+    ("fload" "float" nil 1)
     ("flost" "float" nil 1)
     ("foint" "font" nil 3)
     ("folat" "Float" nil 1)

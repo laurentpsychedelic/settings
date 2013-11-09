@@ -331,6 +331,7 @@
     ("hte" "the" nil 3)
     ("huor" "hour" nil 1)
     ("iamin" "imain" nil 1)
+    ("iclude" "include" nil 1)
     ("idel" "idle" nil 1)
     ("ierate" "iterate" nil 1)
     ("imiport" "import" nil 1)

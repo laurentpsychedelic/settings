@@ -1,5 +1,5 @@
 [core]
-	pager = nkf -u | less
+	pager = nkf -s | more
 	editor = emacsclient
 	whitespace = trailing-space,space-before-tab
 	autocrlf = input

@@ -155,7 +155,8 @@ then
     }
 
     #git settings (Windows)
-    git config --global core.pager "nkf -s | more"
+    git config --global core.pager "nkf | less"
+    export LESSCHARSET=dos # configure less to use DOS charset
     git config --global i18n.commitencoding "SHIFT_JIS"
 
     #install chocolatey
@@ -215,7 +216,7 @@ then
     startxwin > /dev/null 2>&1 &
 else
     #git settings (Linux)
-    git config --global core.pager "nkf -u | less"
+    git config --global core.pager "nkf | less"
     #a colorized version of SVN diff (requires colordiff command)
     function svndiff () {
         svn diff "${@}" | colordiff | less -R

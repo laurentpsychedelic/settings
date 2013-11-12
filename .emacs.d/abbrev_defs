@@ -155,6 +155,7 @@
     ("cintroller" "controller" nil 1)
     ("ciontents" "contents" nil 1)
     ("circvle" "Circle" nil 1)
+    ("cirsor" "cursor" nil 1)
     ("cjeck" "check" nil 1)
     ("classpaht" "classpth" nil 1)
     ("classpth" "classpath" nil 1)
@@ -192,6 +193,7 @@
     ("contraint" "constraint" nil 1)
     ("contructor" "constructor" nil 2)
     ("contsiner" "container" nil 1)
+    ("convrete" "concrete" nil 1)
     ("coorect" "correct" nil 1)
     ("coreection" "correction" nil 1)
     ("correciton" "correction" nil 1)
@@ -244,9 +246,9 @@
     ("espilon" "epsilon" nil 1)
     ("excepiton" "Exception" nil 1)
     ("exceptino" "Exception" nil 3)
-    ("exception" "exception" nil 31)
+    ("exception" "exception" nil 32)
     ("exceptionhander" "ExceptionHandler" nil 1)
-    ("excpetion" "Exception" nil 4)
+    ("excpetion" "exception" nil 1)
     ("excpetions" "Exception" nil 2)
     ("exectue" "execute" nil 1)
     ("exectution" "execution" nil 1)
@@ -406,7 +408,7 @@
     ("measurememnt" "measurement" nil 2)
     ("measuremenr" "measurement" nil 1)
     ("measuremenr\": " "measurement" nil 0)
-    ("measurement" "measurement" nil 142)
+    ("measurement" "measurement" nil 146)
     ("measurementlocaiton" "measurementllocation" nil 1)
     ("measuremnt" "measurement" nil 1)
     ("measurmeent" "measurement" nil 4)
@@ -478,6 +480,7 @@
     ("pbulic" "public" nil 1)
     ("pesilon" "epsilon" nil 1)
     ("pgae" "page" nil 1)
+    ("phoyn" "phony" nil 1)
     ("piels" "pixels" nil 1)
     ("pint" "print" nil 1)
     ("pirntln" "println" nil 1)
@@ -515,6 +518,7 @@
     ("putr" "put" nil 1)
     ("puyblic" "public" nil 2)
     ("pxiels" "pixels" nil 1)
+    ("qord" "word" nil 1)
     ("qucik" "QUICK" nil 1)
     ("qwhich" "which" nil 1)
     ("raduis" "radius" nil 1)
@@ -536,6 +540,7 @@
     ("repalce" "replace" nil 1)
     ("replaement" "replacement" nil 1)
     ("repsitory" "repository" nil 1)
+    ("reqord" "reword" nil 1)
     ("rerturn" "RETURN" nil 2)
     ("resolutoin" "resolution" nil 1)
     ("resukt" "result" nil 2)
@@ -555,7 +560,7 @@
     ("reuslt" "result" nil 1)
     ("reutn" "return" nil 2)
     ("reutnr" "return" nil 1)
-    ("reutrn" "return" nil 38)
+    ("reutrn" "return" nil 39)
     ("rigght" "right" nil 1)
     ("rigth" "right" nil 1)
     ("rndom" "random" nil 1)
@@ -633,7 +638,7 @@
     ("thjen" "then" nil 1)
     ("thois" "this" nil 1)
     ("thorw" "throw" nil 5)
-    ("thorws" "throws" nil 5)
+    ("thorws" "throws" nil 6)
     ("thrad" "thread" nil 1)
     ("thropugh" "through" nil 1)
     ("thrpw" "throw" nil 3)
@@ -644,6 +649,7 @@
     ("tiutle" "title" nil 1)
     ("totle" "title" nil 1)
     ("tpye" "type" nil 1)
+    ("tranform" "transform" nil 1)
     ("trasneint" "transient" nil 1)
     ("trasnforms" "Transforms" nil 1)
     ("trasnpose" "transpose" nil 1)
@@ -704,6 +710,8 @@
 (define-abbrev-table 'idl-mode-abbrev-table '())
 
 (define-abbrev-table 'inferior-python-mode-abbrev-table '())
+
+(define-abbrev-table 'inferior-tcl-mode-abbrev-table '())
 
 (define-abbrev-table 'java-mode-abbrev-table
   '(
@@ -813,6 +821,8 @@
 (define-abbrev-table 'special-mode-abbrev-table '())
 
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
+
+(define-abbrev-table 'tcl-mode-abbrev-table '())
 
 (define-abbrev-table 'tex-mode-abbrev-table '())
 

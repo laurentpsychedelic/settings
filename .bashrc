@@ -436,6 +436,11 @@ function glog() {
     git log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
 }
 
+#function to preview markdown files located in current folder
+function preview_markdown() {
+    #require Python grip package: sudo pip install grip
+    grip
+}
 
 #function to generate the ISO image based on the contents of a given folder
 function generate_ISO_image() {

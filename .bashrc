@@ -256,6 +256,8 @@ git config --global alias.stat status
 git config --global alias.st status
 git config --global alias.cf config
 git config --global alias.lg log
+git config --global alias.rb rebase
+git config --global alias.cp cherry-pick
 git config --global core.editor emacsclient
 git config --global color.ui true
 git config --global alias.track '!f() { ([ $# -eq 2 ] && ( echo "Setting tracking for branch " $1 " -> " $2;git branch --set-upstream $1 $2; ) || ( git for-each-ref --format="local: %(refname:short) <--sync--> remote: %(upstream:short)" refs/heads && echo --Remotes && git remote -v)); }; f'

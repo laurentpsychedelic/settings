@@ -347,15 +347,33 @@ function clean_svn_folder() {
 }
 #clean ~ backup files
 function clean_backup_files() {
-    clean_files_regexp $1 \*~
+    if [ $# -gt 1 ]
+    then
+        place=$1
+    else
+        place=.
+    fi
+    clean_files_regexp $place \*~
 }
 #clean flymake temporary files
 function clean_flymake_files() {
-    clean_files_regexp $1 \*flymake\*
+    if [ $# -gt 1 ]
+    then
+        place=$1
+    else
+        place=.
+    fi
+    clean_files_regexp $place \*flymake\*
 }
 #clean class files
 function clean_class_files() {
-    clean_files_regexp $1 \*class
+    if [ $# -gt 1 ]
+    then
+        place=$1
+    else
+        place=.
+    fi
+    clean_files_regexp $place \*class
 }
 #clean junk files
 function clean_junk_files() {

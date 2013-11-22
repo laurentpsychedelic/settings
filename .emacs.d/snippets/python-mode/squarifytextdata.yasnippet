@@ -1,0 +1,23 @@
+# name: squarifytextdata
+# key: squarifytextdata
+# --
+import sys
+
+def squarifyData(filename, W, H):
+    with open(filename, 'r') as fin, open(filename + '.squared', 'w') as fout:
+        for i in range(0, H):
+            for j in range(0, W):
+                fout.write(str(float(fin.readline())) + ('\t' if j < W-1 else '\n'))
+
+if __name__ == '__main__':
+    if len(sys.argv) < 4:
+        print( """Not enough argument!
+        $1:    filename of the data file to squarify
+        $2:    width
+        $3:    height
+
+[width*height] image data (text) recorded a one value each line wil be converted to squared file, height* lines of width* values.
+""")
+    else:
+        squarifyData(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]))
+$0

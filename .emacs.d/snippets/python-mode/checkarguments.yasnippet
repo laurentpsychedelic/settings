@@ -1,0 +1,6 @@
+# name: checkarguments
+# key: checkarguments
+# --
+import sys
+if len(sys.argv) < ${1:$(+ (string-to-number yas-text) 1)}:
+    print('Not enough arguments! Must specify at least ${1:1} argument${1:$(if (> (string-to-number yas-text) 1) "s" "")}')

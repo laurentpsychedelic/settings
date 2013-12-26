@@ -7,8 +7,8 @@ then
     exit
 fi
 
-root_dir=$1
-echo "Update all repositories in < $1 >"
+root_dir=$(readlink -f $1)
+echo "Update all repositories in < $root_dir >"
 
 # Find all .git repositories in <home>/dev directory
 for dir in $(find $root_dir -maxdepth 6 -type d -name .git)

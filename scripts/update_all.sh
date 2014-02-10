@@ -2,12 +2,12 @@
 
 if [ -z $1 ]
 then
-    echo "Wrong number of arguments!"
-    echo "You must provide the location in which repositories are to be found..."
-    exit
+    place=.
+else
+    place=$1
 fi
 
-root_dir=$(readlink -f $1)
+root_dir=$(readlink -f $place)
 echo "Update all repositories in < $root_dir >"
 
 # Find all .git repositories in <home>/dev directory

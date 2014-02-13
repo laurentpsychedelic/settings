@@ -145,6 +145,7 @@
     ("cathc" "catch" nil 1)
     ("cauclation" "calculation" nil 1)
     ("cehckout" "checkout" nil 1)
+    ("certiificate" "certificate" nil 1)
     ("chich" "which" nil 1)
     ("childern" "children" nil 1)
     ("chweck" "check" nil 1)
@@ -374,6 +375,8 @@
     ("lnik" "link" nil 1)
     ("locastion" "location" nil 3)
     ("locationjs" "locations" nil 1)
+    ("locatoin" "location" nil 1)
+    ("locstion" "location" nil 1)
     ("lqast" "last" nil 1)
     ("maht" "Math" nil 1)
     ("mahts" "maths" nil 1)
@@ -446,7 +449,7 @@
     ("over6ride" "Override" nil 1)
     ("owenr" "owner" nil 1)
     ("pacakage" "package" nil 1)
-    ("pacakge" "package" nil 1)
+    ("pacakge" "package" nil 2)
     ("pach" "patch" nil 1)
     ("papram" "param" nil 1)
     ("pareent" "parent" nil 1)
@@ -608,7 +611,7 @@
     ("thorws" "throws" nil 4)
     ("thrad" "thread" nil 1)
     ("thropugh" "through" nil 1)
-    ("thrpw" "throw" nil 1)
+    ("thrpw" "throw" nil 2)
     ("thrpwable" "throwable" nil 1)
     ("tiral" "trial" nil 2)
     ("titel" "title" nil 1)
@@ -680,7 +683,7 @@
   '(
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 0)
+}" my-abbrev-hook 1)
    ))
 
 (define-abbrev-table 'jython-mode-abbrev-table '())

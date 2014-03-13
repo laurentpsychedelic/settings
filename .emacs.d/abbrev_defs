@@ -410,6 +410,7 @@
     ("mnew" "new" nil 1)
     ("modaloty" "modality" nil 1)
     ("modiality" "modality" nil 1)
+    ("moduke" "module" nil 1)
     ("moduole" "module" nil 1)
     ("mothing" "nothing" nil 1)
     ("mreasuremrt" "measurement" nil 1)

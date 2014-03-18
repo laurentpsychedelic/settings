@@ -31,3 +31,7 @@
 	default = upstream
 [merge]
 	tool = kdiff3
+[branch]
+	autosetuprebase = always
+[branch "master"]
+	rebase = true

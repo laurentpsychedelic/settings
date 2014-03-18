@@ -267,6 +267,8 @@ git config --global core.whitespace trailing-space,space-before-tab
 git config --global core.autocrlf input
 git config --global push.default upstream
 git config --global merge.tool "kdiff3"
+git config --global branch.autosetuprebase always
+git config --global branch.master.rebase true
 
 export REP=https://192.168.20.36/svn
 export REP_WPA=${REP}/PA_WPA-View_100

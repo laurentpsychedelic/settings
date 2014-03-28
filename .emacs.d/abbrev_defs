@@ -622,6 +622,7 @@
     ("systemdirve" "systemdrive" nil 1)
     ("tage" "stage" nil 1)
     ("taregt" "target" nil 1)
+    ("targert" "target" nil 1)
     ("tehn" "then" nil 1)
     ("temmpbuf" "tempbuf" nil 1)
     ("temolate" "template" nil 1)

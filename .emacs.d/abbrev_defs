@@ -291,6 +291,7 @@
     ("folat" "Float" nil 1)
     ("fomratter" "Formatter" nil 1)
     ("fomt" "Font" nil 1)
+    ("fonal" "final" nil 1)
     ("foramt" "format" nil 1)
     ("forground" "foreground" nil 1)
     ("found" "found" nil 7)

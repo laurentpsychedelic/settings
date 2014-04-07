@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: default
+# key: default
+# type: snippet
+# --
+vpath %.c        src
+vpath %.cpp      src
+vpath test_%.cpp test
+vpath %.h        include
+
+CC  = gcc
+CPP = g++
+OPTIONS = -s
+CFLAGS = -Wall -pedantic \$(MAKE_OPTIONS) \$(OPTIONS)
+LFLAGS = \$(OPTIONS)

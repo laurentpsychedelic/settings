@@ -3,6 +3,7 @@
 	editor = emacsclient
 	whitespace = trailing-space,space-before-tab
 	autocrlf = input
+	quotepath = off
 [alias]
 	ci = commit
 	co = checkout

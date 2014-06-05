@@ -385,6 +385,7 @@
     ("langyuage" "language" nil 1)
     ("lanmda" "lambda" nil 1)
     ("ledt" "LEFT" nil 1)
+    ("legnth" "length" nil 1)
     ("lese" "else" nil 1)
     ("ligtht" "light" nil 1)
     ("linekd" "Linked" nil 1)

@@ -546,6 +546,14 @@
   (setq compile-command (concat "CDPATH=. && cd " (get-build-file-relative-location-impl-single ".*[.]vcproj") " && vcbuild /rebuild " (replace-regexp-in-string "[.][.]/" "" (get-build-file-relative-location-impl-single ".*[.]vcproj" t)) " \"" subcommand "\""))
   (call-interactively 'compile compile-command))
 
+(setq myantcompile-msbuild "MSBuild.exe")
+(defun msbuild-basic (&optional subcommand)
+  "Set msbuild compilation command into compilation buffer"
+  (interactive "sSubcommand: ")
+  (setq compile-command (concat "CDPATH=. && cd " (get-build-file-relative-location-impl-single ".*[.]sln") " && " myantcompile-msbuild " " (replace-regexp-in-string "[.][.]/" "" (get-build-file-relative-location-impl-single ".*[.]sln" t)) " /t:rebuild " subcommand))
+  (call-interactively 'compile compile-command))
+
+
 (defun insert-standard-class-import-at-point ()
   "Insert import for a standard library class at point"
   (interactive)
@@ -606,8 +614,10 @@
 (define-key myantcompile-specific-map (kbd "m t") (lambda () (interactive) (make-basic "test")))
 ;; vcbuild
 (define-key myantcompile-specific-map (kbd "v r") (lambda () (interactive) (vcbuild-basic "Release|Win32")))
-(define-key myantcompile-specific-map (kbd "v t r") (lambda () (interactive) (vcbuild-basic "Release Test|Win32")))
 (define-key myantcompile-specific-map (kbd "v d") (lambda () (interactive) (vcbuild-basic "Debug|Win32")))
+;; msbuild
+(define-key myantcompile-specific-map (kbd "m r") (lambda () (interactive) (msbuild-basic "/p:Configuration=Release /p:Platform=Win32")))
+(define-key myantcompile-specific-map (kbd "m d") (lambda () (interactive) (msbuild-basic "/p:Configuration=Debug /p:Platform=Win32")))
 
 (provide 'myantcompile)
 ;;; myantcompile.el ends here

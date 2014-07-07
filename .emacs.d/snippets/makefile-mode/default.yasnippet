@@ -8,8 +8,16 @@ vpath %.cpp      src
 vpath test_%.cpp test
 vpath %.h        include
 
-CC  = gcc
+CPP = gcc
 CPP = g++
 OPTIONS = -s
-CFLAGS = -Wall -pedantic \$(MAKE_OPTIONS) \$(OPTIONS)
-LFLAGS = \$(OPTIONS)
+INCLUDES = -I include 
+CFLAGS = -Wall -pedantic \${MAKE_OPTIONS} \${OPTIONS}
+LFLAGS = \${LIBS} \${OPTIONS}
+
+%.exe: %.o
+	\${CPP} -o $@ $^ \${LFLAGS} 
+%.dll: %.o
+	\${CPP} -o $@ $^ \${LFLAGS} 
+%.o: %.cpp
+	\${CPP} -c -o $@ $< \${CFLAGS} \${INCLUDES}

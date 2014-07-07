@@ -17,6 +17,8 @@
 	cancel = !git commit -a -m 'Temporary commit for cancel' && git reset --hard HEAD~
 	rb = rebase
 	cp = cherry-pick
+	sb = submodule
+	sm = submodule
 [color]
 	ui = true
 [user]

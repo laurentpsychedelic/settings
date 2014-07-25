@@ -416,6 +416,51 @@ function git_ls_files_m_add() {
     git ls-files -m $@ | xargs git add
 }
 
+#function to cherry-pick (git) all related commits (based on a keyword on the FIRST line of the commit message) in specified branch
+function cherry_pick_all_related_commits {
+    if [ $# -ne 2 ]
+    then
+        echo "Arguments:"
+        echo "\$1 Branch to scan for commit"
+        echo "\$1 Keyword to search in commit message (first line)"
+    else
+        BRANCH=$1
+        KEYWORD=$2
+        ACTION=git cherry-pick
+        do_all_related_commits $BRANCH $KEYWORD 'git cherry-pick'
+    fi
+}
+
+#function to cherry-pick (git) all related commits (based on a keyword on the FIRST line of the commit message) in specified branch
+function do_all_related_commits {
+    if [ $# -ne 3 ]
+    then
+        echo "Arguments:"
+        echo "\$1 Branch to scan for commit"
+        echo "\$2 Keyword to search in commit message (first line)"
+        echo "\$3 Action to do on each commit"
+    else
+        BRANCH=$1
+        KEYWORD=$2
+        ACTION=$3
+        show_all_related_commits $BRANCH $KEYWORD | xargs -P 1 $ACTION
+    fi
+}
+
+#function to show all related commits (based on a keyword on the FIRST line of the commit message) in specified branch
+function show_all_related_commits {
+    if [ $# -ne 2 ]
+    then
+        echo "Arguments:"
+        echo "\$1 Branch to scan for commit"
+        echo "\$2 Keyword to search in commit message (first line)"
+    else
+        BRANCH=$1
+        KEYWORD=$2
+        git log --oneline $BRANCH | grep $KEYWORD | awk '//{print $1}'
+    fi
+}
+
 #function to update all git repositories in a given directory
 function git_update_all() {
     ~/settings/scripts/update_all.sh $@

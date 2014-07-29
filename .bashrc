@@ -416,9 +416,18 @@ function git_ls_files_m_add() {
     git ls-files -m $@ | xargs git add
 }
 
+#function to cherry pick git commits
+function git_cherry_pick() {
+    git cherry-pick $@
+}
+#function to cherry pick git commits (force "--theirs" changes)
+function git_cherry_pick_force() {
+    git cherry-pick $@ --strategy=recursive -X theirs
+}
+
 #function to cherry-pick (git) all related commits (based on a keyword on the FIRST line of the commit message) in specified branch
 function cherry_pick_all_related_commits {
-    if [ $# -ne 2 ]
+    if [ $# -lt 2 ]
     then
         echo "Arguments:"
         echo "\$1 Branch to scan for commit"
@@ -426,14 +435,23 @@ function cherry_pick_all_related_commits {
     else
         BRANCH=$1
         KEYWORD=$2
-        ACTION=git cherry-pick
-        do_all_related_commits $BRANCH $KEYWORD 'git cherry-pick'
+        ACTION='git_cherry_pick'
+        ARGS=($@)
+        OPTIONS=(${ARGS[@]:2})
+        for option in ${OPTIONS[@]}
+        do
+            if [[ $option =~ "--force" ]]
+            then
+                ACTION='git_cherry_pick_force'
+            fi
+        done
+        do_all_related_commits $BRANCH $KEYWORD $ACTION --reverse
     fi
 }
 
 #function to cherry-pick (git) all related commits (based on a keyword on the FIRST line of the commit message) in specified branch
 function do_all_related_commits {
-    if [ $# -ne 3 ]
+    if [ $# -lt 3 ]
     then
         echo "Arguments:"
         echo "\$1 Branch to scan for commit"
@@ -443,13 +461,19 @@ function do_all_related_commits {
         BRANCH=$1
         KEYWORD=$2
         ACTION=$3
-        show_all_related_commits $BRANCH $KEYWORD | xargs -P 1 $ACTION
+        ARGS=($@)
+        OPTIONS=(${ARGS[@]:3})
+        commits=$(eval show_all_related_commits $BRANCH $KEYWORD $OPTIONS)
+        for commit in $commits
+        do
+            bash -ic "$ACTION $commit"
+        done
     fi
 }
 
 #function to show all related commits (based on a keyword on the FIRST line of the commit message) in specified branch
 function show_all_related_commits {
-    if [ $# -ne 2 ]
+    if [ $# -lt 2 ]
     then
         echo "Arguments:"
         echo "\$1 Branch to scan for commit"
@@ -457,7 +481,31 @@ function show_all_related_commits {
     else
         BRANCH=$1
         KEYWORD=$2
-        git log --oneline $BRANCH | grep $KEYWORD | awk '//{print $1}'
+        FILTER=cat
+        if [[ $# -gt 2 ]]
+        then
+            ARGS=($@)
+            OPTIONS=(${ARGS[@]:2})
+            LONG=""
+            for option in ${OPTIONS[@]}
+            do
+                if [[ $option =~ "--reverse" ]]
+                then
+                    FILTER=tac
+                fi
+                if [[ $option =~ "--long" ]]
+                then
+                    LONG=yes
+                fi
+            done
+        fi
+
+        if [ -z "$LONG" ]
+        then
+            git log --oneline --decorate $BRANCH | grep $KEYWORD | awk '//{print $1}' | $FILTER
+        else
+            git log --oneline --decorate $BRANCH | grep $KEYWORD | awk '//{print}' | $FILTER
+        fi            
     fi
 }
 

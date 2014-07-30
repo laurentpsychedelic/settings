@@ -112,6 +112,9 @@ alias 'emacsc'='emacs --no-window-system'
 # MSBuild
 alias 'msbuild'='MSBuild.exe'
 
+# Dia with toolbox integrated
+alias dia='dia --integrated'
+
 SYSTEM=`uname -o`
 # echo $SYSTEM
 if [[ $SYSTEM =~ "Cygwin" ]]

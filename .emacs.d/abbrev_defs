@@ -100,6 +100,7 @@
     ("antr" "and" nil 1)
     ("apped" "append" nil 1)
     ("aprameters" "parameters" nil 1)
+    ("atatic" "static" nil 1)
     ("atuo" "AUTO" nil 1)
     ("auot" "auto" nil 1)
     ("backgound" "background" nil 1)

@@ -55,9 +55,7 @@
 
 (define-abbrev-table 'conf-xdefaults-mode-abbrev-table '())
 
-(define-abbrev-table 'csharp-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'csharp-mode-abbrev-table '())
 
 (define-abbrev-table 'diary-fancy-display-mode-abbrev-table '())
 
@@ -204,6 +202,7 @@
     ("curent" "current" nil 1)
     ("curetn" "current" nil 1)
     ("curretn" "current" nil 3)
+    ("currnet" "current" nil 1)
     ("cysstrt" "cygstart" nil 1)
     ("dara" "DATA" nil 1)
     ("deelte" "delete" nil 1)
@@ -212,8 +211,10 @@
     ("defore" "before" nil 1)
     ("deicsion" "decision" nil 2)
     ("delcared" "declared" nil 1)
+    ("delte" "delete" nil 1)
     ("deomat" "format" nil 1)
-    ("diaplay" "display" nil 1)
+    ("dertect" "detect" nil 1)
+    ("diaplay" "display" nil 2)
     ("dield" "field" nil 2)
     ("dilaog" "dialog" nil 2)
     ("dile" "file" nil 1)
@@ -268,6 +269,8 @@
     ("exvcept" "except" nil 1)
     ("facotr" "factor" nil 1)
     ("faieldg" "Failed" nil 1)
+    ("falg" "flag" nil 1)
+    ("falgs" "flags" nil 4)
     ("falot" "float" nil 2)
     ("falswe" "false" nil 1)
     ("fasel" "false" nil 1)
@@ -297,6 +300,7 @@
     ("fitlker" "filters" nil 1)
     ("fiueld" "field" nil 1)
     ("flase" "false" nil 2)
+    ("flasg" "flag" nil 1)
     ("flepath" "filepath" nil 1)
     ("flloat" "float" nil 1)
     ("flost" "float" nil 1)
@@ -384,6 +388,7 @@
     ("jcheckbow" "jCheckBox" nil 1)
     ("jfrmae" "JFrame" nil 1)
     ("jpnale" "jPanel" nil 1)
+    ("knwo" "know" nil 1)
     ("langage" "language" nil 2)
     ("langauge" "language" nil 1)
     ("langauges" "languages" nil 1)
@@ -645,6 +650,7 @@
     ("synchromized" "synchronized" nil 1)
     ("systemdirve" "systemdrive" nil 1)
     ("tage" "stage" nil 1)
+    ("tagret" "target" nil 1)
     ("taregt" "target" nil 1)
     ("targert" "target" nil 1)
     ("tehn" "then" nil 1)
@@ -676,7 +682,7 @@
     ("trobule" "trouble" nil 1)
     ("truye" "true" nil 1)
     ("trye" "true" nil 1)
-    ("ture" "true" nil 2)
+    ("ture" "true" nil 3)
     ("typesenum" "typedenum" nil 5)
     ("typr" "type" nil 1)
     ("ubintsal" "uninstall" nil 1)
@@ -817,7 +823,9 @@
 
 (define-abbrev-table 'ps-run-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-abbrev-table '())
+(define-abbrev-table 'python-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'scilab-mode-abbrev-table '())
 

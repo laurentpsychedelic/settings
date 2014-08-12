@@ -780,6 +780,16 @@
 ;(setq hl-line-face 'underline)
 (set-face-background 'hl-line (get-lighter-color (cdr (assoc 'background-color (frame-parameters))) -0.3))
 
+;;;;;;;;;;;
+;; align ;;
+;;;;;;;;;;;
+(global-set-key (kbd "C-M-a") 'align)
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; Numbered backups ;;
+;;;;;;;;;;;;;;;;;;;;;;
+(setq version-control t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; java documentation ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;

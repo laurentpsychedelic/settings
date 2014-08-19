@@ -258,6 +258,7 @@ alias gf="git flow"
 alias glog="git log --oneline --decorate"
 git config --global alias.ci commit
 git config --global alias.co checkout
+git config --global alias.cd checkout 
 git config --global alias.br branch
 git config --global alias.rs reset
 git config --global alias.stat status

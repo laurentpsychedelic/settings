@@ -19,6 +19,7 @@
 	cp = cherry-pick
 	sb = submodule
 	sm = submodule
+	cd = checkout
 [color]
 	ui = true
 [user]

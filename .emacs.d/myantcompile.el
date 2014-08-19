@@ -171,20 +171,21 @@
     (setq command (concat "CDPATH=. && " (if rest-var (concat (mapconcat 'identity rest-var " && ") " && ") "") "cd " build-file-relative-location " && "
                           commandname jvm-options " " subcommand))))
 
-(defun get-ant-compile-command (text filename-sans-extension)
+(defun get-ant-compile-command (text filename-sans-extension &optional additional-options)
   "Get command for ant compile target"
-  (get-basic-compile-command "ant" "compile" text filename-sans-extension "-emacs"))
+  (get-basic-compile-command "ant" "compile" text filename-sans-extension (concat (if additional-options (concat additional-options " ") "") "-emacs")))
 
-(defun get-ant-clean-command (text filename-sans-extension)
+(defun get-ant-clean-command (text filename-sans-extension &optional additional-options)
   "Get command for ant clean target"
-  (get-basic-compile-command "ant" "clean" text filename-sans-extension "-emacs"))
+  (get-basic-compile-command "ant" "clean" text filename-sans-extension (concat (if additional-options (concat additional-options " ") "") "-emacs")))
 
-(defun get-ant-jar-command (text filename-sans-extension)
+(defun get-ant-jar-command (text filename-sans-extension &optional additional-options)
   "Get command for ant jar target"
-  (get-basic-compile-command "ant" "jar" text filename-sans-extension "-emacs"))
+  (get-basic-compile-command "ant" "jar" text filename-sans-extension (concat (if additional-options (concat additional-options " ") "") "-emacs")))
 
 (defun get-ant-run-command (text filename-sans-extension &optional additional-options)
-  "Get command for ant jar target"  (get-basic-compile-command "ant" "run" text filename-sans-extension (concat (if additional-options (concat additional-options " ") "") "-emacs")))
+  "Get command for ant jar target" 
+  (get-basic-compile-command "ant" "run" text filename-sans-extension (concat (if additional-options (concat additional-options " ") "") "-emacs")))
 
 (defun get-gradle-compile-command (text filename-sans-extension)
   "Get command for gradle compile target"

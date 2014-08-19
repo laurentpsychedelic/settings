@@ -158,6 +158,12 @@
                           "-Djavac.includes=" (replace-regexp-in-string "[.][.]" "*" build-file-relative-location) "." (if extension extension "java") " "
                           "-Drun.class=" class-fqn))))
 
+(defun get-file-contents (filepath)
+  "Get file contents as a string"
+  (with-temp-buffer
+    (insert-file-contents filepath)
+    (buffer-string)))
+
 (defun get-basic-compile-command (commandname subcommand text filename-sans-extension &optional additional-options &rest rest-var)
   "Get command for ant-like compile target"
   (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command jvm-options)
@@ -168,6 +174,8 @@
     (setq class-name (nth 3 basic-command-elements))
     (setq build-file-relative-location (nth 4 basic-command-elements))
     (setq jvm-options (if additional-options (concat " " additional-options) ""))
+    (if (file-exists-p (concat build-file-relative-location "/.antoptions")) 
+        (setq jvm-options (concat jvm-options " " (get-file-contents (concat build-file-relative-location "/.antoptions")))))
     (setq command (concat "CDPATH=. && " (if rest-var (concat (mapconcat 'identity rest-var " && ") " && ") "") "cd " build-file-relative-location " && "
                           commandname jvm-options " " subcommand))))
 
@@ -318,7 +326,7 @@
   (interactive)
   (let ((port (read-number "Port number: ")) (command "") (filename (buffer-file-name)) (directory nil) (buff nil))
     (setq command (concat "jdb -sourcepathsrc -connect com.sun.jdi.SocketAttach:port=" (format "%d" port)))
-    (message (format "Command: %s" command))
+    ;(message (format "Command: %s" command))
     (setq directory (concat (file-name-directory filename) (get-build-file-relative-location)))
     (setq buff (find-file-other-window directory))
     (with-current-buffer buff

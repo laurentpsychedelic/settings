@@ -16,9 +16,9 @@
     ("#ifd" "#ifdef" nil 0)
     ("#ifn" "#ifndef" nil 0)
     ("#s" "#include <>" my-abbrev-hook 0)
-    ("imain" "int main(int ac, char **av[]) {
+    ("imain" "int main(int argc, char *argv[]) {
 
-}" my-abbrev-hook 0)
+}" my-abbrev-hook 1)
    ))
 
 (define-abbrev-table 'c-mode-abbrev-table
@@ -28,7 +28,7 @@
     ("#ifd" "#ifdef" nil 0)
     ("#ifn" "#ifndef" nil 0)
     ("#s" "#include <>" my-abbrev-hook 0)
-    ("imain" "int main(int ac, char **av[]) {
+    ("imain" "int main(int argc, char *argv[]) {
 
 }" my-abbrev-hook 0)
    ))
@@ -317,7 +317,7 @@
     ("fraemwork" "framework" nil 1)
     ("frequenec" "frequence" nil 1)
     ("friedn" "friend" nil 1)
-    ("frmae" "frame" nil 1)
+    ("frmae" "frame" nil 2)
     ("froeach" "foreach" nil 1)
     ("fromat" "format" nil 1)
     ("frsame" "Frame" nil 1)

@@ -1007,7 +1007,7 @@ collect `(define-abbrev ,table
         ("#ifn"  "#ifndef")
         ("#e"    "#endif /* */" "C-3 C-b")
         ("#ifd"  "#ifdef")
-        ("imain" "int main(int ac, char **av[]) {\n\n}" "C-p TAB"))))
+        ("imain" "int main(int argc, char *argv[]) {\n\n}" "C-p TAB"))))
 ;;; java mode
 (eval-after-load "cc-mode"
   '(declare-abbrevs (java-mode-abbrev-table)

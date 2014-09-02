@@ -347,9 +347,17 @@ function change_svn_commit_author () {
 #highlight patterns in output (like grep but
 #keeping showing the rest of the output
 function highlight () {
-    pattern=$1; shift; file=$1
-    grep -E --color=always "$pattern|$" $file
+    pattern=$1 
+    if [ $# -gt 1 ]
+    then
+        shift; file=${@:1}
+        grep -E --color=always "$pattern|$" "$file"
+    else
+        grep -E --color=always "$pattern|$"
+    fi
 }
+alias hgrep=highlight
+
 #function to get the list of files in a given state (SVN)
 function get_svn_special_state_files() {
     expr=$(echo -n '/^'"$2"'/{print $2}')

@@ -364,9 +364,26 @@ function get_svn_special_state_files() {
     svn stat $1 | awk "$expr" | tr "\\" "/" 2> /dev/null
 }
 #function to cleanup .svn folders of a SVN working copy
-function clean_svn_folder() {
-    clean_files_regexp $1 \.svn
+function clean_svn_folders() {
+    if [ $# -gt 1 ]
+    then
+        place=$1
+    else
+        place=.
+    fi
+    clean_folders_regexp $place \.svn
 }
+#function to cleanup .git folders of a Git repository
+function clean_git_folders() {
+    if [ $# -gt 1 ]
+    then
+        place=$1
+    else
+        place=.
+    fi
+    clean_folders_regexp $place \.git
+}
+
 #clean ~ backup files
 function clean_backup_files() {
     if [ $# -gt 1 ]
@@ -411,6 +428,10 @@ function clean_junk_files() {
 #clean files matching given regular expression
 function clean_files_regexp() {
     find $1 -name $2 | xargs rm -vf
+}
+#clean folders matching given regular expression
+function clean_folders_regexp() {
+    find $1 -name $2 | xargs rm -rvf
 }
 #function to get changes from SVN in Git repositories (through git-svn)
 function git_svn_update() {

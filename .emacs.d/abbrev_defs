@@ -492,6 +492,7 @@
     ("pacakage" "package" nil 1)
     ("pacakge" "package" nil 2)
     ("pach" "patch" nil 1)
+    ("palce" "place" nil 1)
     ("papram" "param" nil 1)
     ("pareent" "parent" nil 1)
     ("parnet" "parent" nil 1)
@@ -833,7 +834,9 @@
 
 (define-abbrev-table 'ps-run-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-abbrev-table '())
+(define-abbrev-table 'python-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'scilab-mode-abbrev-table '())
 

@@ -540,24 +540,6 @@
 (setq-default c-basic-offset 4)
 (setq indent-tabs-mode nil)
 (setq-default indent-tabs-mode nil)
-(defun c-java-mode-untabify ()
-  (save-excursion
-      (goto-char (point-min))
-      (while (re-search-forward "[ \t]+$" nil t)
-        (delete-region (match-beginning 0) (match-end 0)))
-      (goto-char (point-min))
-      (if (search-forward "\t" nil t)
-          (untabify (1- (point)) (point-max))))
-    nil)
-
-(add-hook 'java-mode-hook 
-	  '(lambda ()
-	     (make-local-variable 'write-contents-hooks)
-	     (add-hook 'write-contents-hooks 'c-java-mode-untabify)))
-(add-hook 'c-mode-common-hook 
-	  '(lambda ()
-	     (make-local-variable 'write-contents-hooks)
-    	     (add-hook 'write-contents-hooks 'c-java-mode-untabify)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; set time zone to GMT-0009 ;;
@@ -1036,3 +1018,11 @@ collect `(define-abbrev ,table
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;;;;;;;;;;;;;;;;;;;;
+;; uncrustify-mode ;;
+;;;;;;;;;;;;;;;;;;;;;
+(require 'uncrustify-mode)
+(eval-after-load "cc-mode"
+  '(setq uncrustify-config-path "~/settings/bin/phl-indent.cfg"))
+

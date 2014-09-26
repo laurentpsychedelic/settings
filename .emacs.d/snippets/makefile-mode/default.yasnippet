@@ -17,9 +17,9 @@ LFLAGS = ${5:-shared }${6:-Wl,--subsystem,windows }${7:-static-libgcc -static-li
 ${9:
 PHONY: check_parameters
 check_init_parameters:
-ifneq ($(UNICODE),)
-	$(eval CFLAGS=${CFLAGS} -D_UNICODE -DUNICODE)
-	$(eval LFLAGS=-municode ${LFLAGS})
+ifneq (\$(UNICODE),)
+	\$(eval CFLAGS=\${CFLAGS} -D_UNICODE -DUNICODE)
+	\$(eval LFLAGS=-municode \${LFLAGS})
 endif
 -include check_init_parameters}
 

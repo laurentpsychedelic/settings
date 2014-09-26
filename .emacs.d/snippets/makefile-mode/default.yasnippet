@@ -4,8 +4,8 @@
 # type: snippet
 # --
 vpath %.c        src
-vpath %.cpp      src
-vpath test_%.cpp test
+vpath %.cpp      src${8:
+vpath test_%.cpp test}
 vpath %.h        include
 
 CC = gcc
@@ -13,11 +13,27 @@ CPP = g++
 OPTIONS = -s
 INCLUDES = -I include 
 CFLAGS = -Wall -pedantic \${MAKE_OPTIONS} \${OPTIONS}
-LFLAGS = \${LIBS} \${OPTIONS}
+LFLAGS = ${5:-shared }${6:-Wl,--subsystem,windows }${7:-static-libgcc -static-libstdc++ }\${LIBS} \${OPTIONS}
+${9:
+PHONY: check_parameters
+check_init_parameters:
+ifneq ($(UNICODE),)
+	$(eval CFLAGS=${CFLAGS} -D_UNICODE -DUNICODE)
+	$(eval LFLAGS=-municode ${LFLAGS})
+endif
+-include check_init_parameters}
 
-%.exe: %.o
+default: rebuild
+rebuild: clean build
+clean:
+	rm -vf *.o $3$4
+
+build: $3$4
+${3:Main}${4:.exe}: $3.o
+
+${1:%.exe: %.o
 	\${CPP} -o $@ $^ \${LFLAGS} 
-%.dll: %.o
-	\${CPP} -o $@ $^ \${LFLAGS} 
-%.o: %.cpp
+}${2:%.dll: %.o
+	\${CPP} -o $@ $^ \${LFLAGS}
+}%.o: %.cpp
 	\${CPP} -c -o $@ $< \${CFLAGS} \${INCLUDES}

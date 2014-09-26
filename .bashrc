@@ -439,7 +439,7 @@ function git_svn_update() {
 }
 #function for git diff -w --cached (difference between HEAD and index
 function git_diff_w_cached() {
-    git diff -w --cached $@
+    git diff -w -M --cached $@
 }
 #function to get all changed files list (Git)
 function git_ls_files_m() {

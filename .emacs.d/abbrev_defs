@@ -430,11 +430,12 @@
     ("measurememnt" "measurement" nil 1)
     ("measuremenr" "measurement" nil 1)
     ("measuremenr\": " "measurement" nil 0)
-    ("measurement" "measurement" nil 134)
+    ("measurement" "measurement" nil 147)
     ("measurementlocaiton" "measurementllocation" nil 1)
     ("measuremnt" "measurement" nil 1)
     ("measurmeent" "measurement" nil 3)
     ("measurmement" "measurement" nil 1)
+    ("measurmenet" "measurement" nil 1)
     ("measurment" "measurement" nil 1)
     ("memnto" "memento" nil 1)
     ("memoru" "memory" nil 1)
@@ -649,11 +650,11 @@
     ("storgae" "storage" nil 1)
     ("strair" "stair" nil 1)
     ("strign" "string" nil 10)
-    ("string" "String" nil 4)
+    ("string" "String" nil 16)
     ("stringbuolder" "StringBuilder" nil 1)
     ("strint" "string" nil 1)
     ("striong" "String" nil 1)
-    ("stroe" "store" nil 1)
+    ("stroe" "store" nil 2)
     ("sttic" "static" nil 2)
     ("suiper" "super" nil 1)
     ("syatic" "static" nil 1)
@@ -698,7 +699,7 @@
     ("typr" "type" nil 1)
     ("ubintsal" "uninstall" nil 1)
     ("unalbe" "unable" nil 2)
-    ("unsinged" "unsigned" nil 1)
+    ("unsinged" "unsigned" nil 2)
     ("unsingned" "unsigned" nil 1)
     ("unti" "unit" nil 2)
     ("uodate" "update" nil 1)
@@ -835,9 +836,7 @@
 
 (define-abbrev-table 'ps-run-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'python-mode-abbrev-table '())
 
 (define-abbrev-table 'scilab-mode-abbrev-table '())
 

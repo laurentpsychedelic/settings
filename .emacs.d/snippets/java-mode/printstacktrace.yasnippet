@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: printstacktrace
+# key: printstacktrace
+# type: snippet
+# --
+        try { throw new RuntimeException("** DEBUG Stack Trace **"); } catch (RuntimeException rte) { final java.io.Writer result = new java.io.StringWriter(); final java.io.PrintWriter printWriter = new java.io.PrintWriter(result); rte.printStackTrace(printWriter); String [] stack = result.toString().split("\\r?\\n"); int ___i = 0; for (String ___stackEle : stack) { if (___i++ == 0) { System.out.println(rte.getMessage()); continue; } System.out.println(___stackEle); if (___i++ > 4) { System.out.println("    ..."); break; } } }
+$0

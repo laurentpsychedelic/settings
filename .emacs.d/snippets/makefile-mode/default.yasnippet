@@ -13,9 +13,13 @@ CPP = g++
 OPTIONS = -s
 INCLUDES = -I include 
 CFLAGS = -Wall -pedantic \${MAKE_OPTIONS} \${OPTIONS}
+LIBS = 
 LFLAGS = ${5:-shared }${6:-Wl,--subsystem,windows }${7:-static-libgcc -static-libstdc++ }\${LIBS} \${OPTIONS}
+
+default: rebuild
+
 ${9:
-PHONY: check_parameters
+PHONY: check_init_parameters
 check_init_parameters:
 ifneq (\$(UNICODE),)
 	\$(eval CFLAGS=\${CFLAGS} -D_UNICODE -DUNICODE)
@@ -23,7 +27,6 @@ ifneq (\$(UNICODE),)
 endif
 -include check_init_parameters}
 
-default: rebuild
 rebuild: clean build
 clean:
 	rm -vf *.o $3$4

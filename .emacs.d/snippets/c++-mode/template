@@ -2,3 +2,4 @@
 # key: template
 # --
 template <typename ${T}>
+$0

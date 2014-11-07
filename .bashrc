@@ -208,15 +208,6 @@ then
         echo-sd "$@" | nkf
     }
 
-    # Function to start keychain tool
-    function start_keychain() {
-        for file in $(ls ~/.ssh | awk '/id_rsa.*/ { if (!/.*pub$/) print $1 }')
-        do
-            keychain ~/.ssh/$file
-        done
-        source ~/.keychain/*-sh
-    }
-
     #XWin Tk setting
     export DISPLAY=:0.0
     startxwin > /dev/null 2>&1 &
@@ -246,6 +237,16 @@ else
     #alias to 突然死
     alias banner=echo-sd
 fi
+
+# Function to start keychain tool
+function start_keychain() {
+    for file in $(ls ~/.ssh | awk '/id_rsa.*/ { if (!/.*pub$/) print $1 }')
+    do
+        keychain ~/.ssh/$file
+    done
+    source ~/.keychain/*-sh
+}
+
 
 #function to install GVM package manager
 function install_gvm() {

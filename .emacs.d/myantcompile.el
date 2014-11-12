@@ -211,6 +211,10 @@
   "Get command for gradle jar target"
   (get-basic-compile-command "gradle" "jar" text filename-sans-extension "--info" "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8 -Duser.language=en\""))
 
+(defun get-gradle-test-command (text filename-sans-extension)
+  "Get command for gradle jar target"
+  (get-basic-compile-command "gradle" "test" text filename-sans-extension "--info" "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8 -Duser.language=en\""))
+
 (defun get-gradle-run-command (text filename-sans-extension &optional additional-options)
   "Get command for gradle jar target"
   (get-basic-compile-command "gradle" "runJar" text filename-sans-extension (concat additional-options (if additional-options (concat additional-options " ") "") "--info") "export JAVA_TOOL_OPTIONS=\"-Dfile.encoding=UTF-8 -Duser.language=en\""))
@@ -288,6 +292,12 @@
   "Set gradle run compilation target command into compilation buffer"
   (interactive)
   (setq compile-command (get-gradle-run-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
+  (call-interactively 'compile compile-command))
+
+(defun gradle-test ()
+  "Set gradle test compilation target command into compilation buffer"
+  (interactive)
+  (setq compile-command (get-gradle-test-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
   (call-interactively 'compile compile-command))
 
 (defun gradle-run-single ()
@@ -596,6 +606,7 @@
 (define-key myantcompile-specific-map (kbd "g b") 'gradle-compile)
 (define-key myantcompile-specific-map (kbd "g j") 'gradle-jar)
 (define-key myantcompile-specific-map (kbd "g r") 'gradle-run)
+(define-key myantcompile-specific-map (kbd "g t") 'gradle-test)
 (define-key myantcompile-specific-map (kbd "g u r s") 'gradle-run-single)
 ;; ant
 (define-key myantcompile-specific-map (kbd "a c") 'ant-clean)

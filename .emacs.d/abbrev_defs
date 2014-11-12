@@ -18,7 +18,7 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("imain" "int main(int argc, char *argv[]) {
 
-}" my-abbrev-hook 1)
+}" my-abbrev-hook 0)
    ))
 
 (define-abbrev-table 'c-mode-abbrev-table
@@ -192,6 +192,7 @@
     ("contructor" "constructor" nil 2)
     ("contsiner" "container" nil 1)
     ("conttoller" "controller" nil 1)
+    ("coont" "const" nil 1)
     ("coorect" "correct" nil 1)
     ("coreection" "correction" nil 1)
     ("correciton" "correction" nil 2)
@@ -328,6 +329,8 @@
     ("funcition" "function" nil 1)
     ("funciton" "function" nil 1)
     ("functiosn" "functions" nil 1)
+    ("funtcion" "function" nil 1)
+    ("funtcions" "functions" nil 1)
     ("geenrate" "generate" nil 1)
     ("gertenv" "getenv" nil 1)
     ("getmeassge" "getMessage" nil 1)

@@ -300,6 +300,7 @@
     ("fitler" "filter" nil 1)
     ("fitlker" "filters" nil 1)
     ("fiueld" "field" nil 1)
+    ("flaot" "float" nil 1)
     ("flase" "false" nil 2)
     ("flasg" "flag" nil 1)
     ("flepath" "filepath" nil 1)

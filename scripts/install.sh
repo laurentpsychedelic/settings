@@ -146,6 +146,10 @@ set completion-ignore-case on
 ' >> ~/.inputrc
 fi
 
+if [ -e "$SETTINGS_DIR/scripts/git-extras/Makefile" ]
+then
+    make -C $SETTINGS_DIR/scripts/git-extras install
+fi
 
 source ~/.bashrc
 source /etc/profile

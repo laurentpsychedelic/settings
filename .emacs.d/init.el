@@ -916,7 +916,7 @@ by using nxml's indentation rules."
   (let (result throws)
     (setq case-fold-search nil)
     (when (string-match "[^(]*([^()].*" (nth 0 (split-string text "[\r\n]"))) ;; verify if it is function
-      (when (string-match "([^()]*)[[:space:]]*throws[[:space:]]*\\([^{]*[^[:space:]]\\)[[:space:]]*{" text) ;; get the list of throw cluases after keyword "throws"
+      (when (string-match "([^()]*)[[:space:]]*throws[[:space:]]*\\([^{;]*[^[:space:]]\\)[[:space:]]*[{;]" text) ;; get the list of throw clauses after keyword "throws"
         (setq result (match-string 1 text))
         (setq throws (split-string result "[[:space:]\r\n\t]*,[[:space:]\r\n\t]*")))) ;; split with ","
     throws))
@@ -925,7 +925,7 @@ by using nxml's indentation rules."
   "This function if the Javadoc string of a Java method has a return clause (return type is non-void)"
   (let ((result nil))
     (setq case-fold-search nil)
-    (when (string-match "[^(]*([^()].*" (nth 0 (split-string text "[\r\n]"))) ;; verify if it is function)
+    (when (string-match "[^(]*([^)]*).*" (nth 0 (split-string text "[\r\n]"))) ;; verify if it is function)
       (if (string-match ".*void.*" (nth 0 (split-string text "[\r\n]")))
           (setq result nil)
         (setq result t)))

@@ -593,6 +593,24 @@ function glog() {
     git log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
 }
 
+#list email setings in current repository and all submodules
+function list_email_settings() {
+    echo "*** <top-level> ***"; git config --local -l | grep 'user.email'
+    for sb in `g sb | awk '//{print $2}'`; do echo "*** $sb ***"; git config --local -l | grep 'user.email'; done
+}
+
+#list email setings in current repository and all submodules
+function set_email_settings() {
+    if [ $# -ne 1 ]
+    then
+        echo "Arguments:"
+        echo "\$1 Email address to set"
+    else
+        echo "*** <top-level> ***"; git config --local user.email $1
+        for sb in `g sb | awk '//{print $2}'`; do echo "*** $sb ***"; git config --local user.email $1; done
+    fi
+}
+
 #function to preview markdown files located in current folder
 function preview_markdown() {
     #require Python grip package: sudo pip install grip

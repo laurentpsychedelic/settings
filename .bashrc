@@ -128,6 +128,7 @@ then
     then
         ln -s "$PROGRAMFILES" ~/pf 
     fi
+    alias launch=cygstart
     #viewers
     alias 'ME-View-Viewer-jar'='java -jar "$(cygpath -m ~/pf/ME-View/bin/ME_VIEW_VIEWER.jar)"'
     alias 'ME-View-Viewer'='~/pf/ME-View/ME_VIEW_VIEWER.exe'
@@ -212,6 +213,7 @@ then
     export DISPLAY=:0.0
     startxwin > /dev/null 2>&1 &
 else
+    alias launch=gnome-open
     #git settings (Linux)
     git config --global core.pager "nkf | less"
     #a colorized version of SVN diff (requires colordiff command)

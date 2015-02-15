@@ -259,6 +259,7 @@ function install_gvm() {
 alias g="git"
 alias gf="git flow"
 alias glog="git log --oneline --decorate"
+alias gpull="git pull --recurse-submodules"
 git config --global alias.ci commit
 git config --global alias.co checkout
 git config --global alias.cd checkout 

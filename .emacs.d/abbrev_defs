@@ -57,6 +57,8 @@
 
 (define-abbrev-table 'csharp-mode-abbrev-table '())
 
+(define-abbrev-table 'css-mode-abbrev-table '())
+
 (define-abbrev-table 'diary-fancy-display-mode-abbrev-table '())
 
 (define-abbrev-table 'diary-mode-abbrev-table '())
@@ -173,7 +175,7 @@
     ("comaprator" "Comparator" nil 1)
     ("comapring" "Comparing" nil 1)
     ("comlpete" "complete" nil 1)
-    ("commnet" "comment" nil 1)
+    ("commnet" "comment" nil 2)
     ("complte" "complete" nil 1)
     ("compoennt" "component" nil 2)
     ("comst" "const" nil 1)
@@ -323,7 +325,7 @@
     ("found" "found" nil 8)
     ("fpirntf" "fprintf" nil 1)
     ("fpritnf" "fprintf" nil 2)
-    ("fraem" "frame" nil 1)
+    ("fraem" "frame" nil 2)
     ("fraemwork" "framework" nil 1)
     ("frequenec" "frequence" nil 1)
     ("friedn" "friend" nil 1)
@@ -339,6 +341,7 @@
     ("funtcion" "function" nil 1)
     ("funtcions" "functions" nil 1)
     ("geenrate" "generate" nil 1)
+    ("gert" "get" nil 1)
     ("gertenv" "getenv" nil 1)
     ("getmeassge" "getMessage" nil 1)
     ("getmetry" "Geometry" nil 1)
@@ -443,7 +446,7 @@
     ("measurememnt" "measurement" nil 1)
     ("measuremenr" "measurement" nil 1)
     ("measuremenr\": " "measurement" nil 0)
-    ("measurement" "measurement" nil 153)
+    ("measurement" "measurement" nil 154)
     ("measurementlocaiton" "measurementllocation" nil 1)
     ("measuremnt" "measurement" nil 1)
     ("measurmeent" "measurement" nil 3)
@@ -603,7 +606,7 @@
     ("reuslt" "result" nil 1)
     ("reutn" "return" nil 3)
     ("reutnr" "return" nil 2)
-    ("reutrn" "return" nil 43)
+    ("reutrn" "return" nil 44)
     ("rigght" "right" nil 1)
     ("rigth" "right" nil 1)
     ("rnage" "range" nil 1)
@@ -660,14 +663,14 @@
     ("stictching" "stitching" nil 1)
     ("sting" "string" nil 2)
     ("stirg" "String" nil 1)
-    ("stirng" "string" nil 29)
+    ("stirng" "string" nil 30)
     ("stirngbuffer" "stringbuffer" nil 2)
     ("stirngbuilder" "stringbuilder" nil 1)
     ("stirngs" "strings" nil 2)
     ("storgae" "storage" nil 1)
     ("strair" "stair" nil 1)
     ("strign" "string" nil 10)
-    ("string" "String" nil 22)
+    ("string" "String" nil 46)
     ("stringbuolder" "StringBuilder" nil 1)
     ("strint" "string" nil 1)
     ("striong" "String" nil 1)
@@ -770,7 +773,7 @@
   '(
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 0)
+}" my-abbrev-hook 1)
    ))
 
 (define-abbrev-table 'jython-mode-abbrev-table '())

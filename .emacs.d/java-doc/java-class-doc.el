@@ -41,7 +41,7 @@
 ;;  - This is the most important step and what needs manual work.  Get
 ;;    the `allclasses-noframe.html' file, either from a local
 ;;    installation of the Java API documentation or from the internet
-;;    (http://docs.oracle.com/javase/6/docs/api/allclasses-noframe.html)
+;;    (https://docs.oracle.com/javase/8/docs/api/allclasses-noframe.html)
 ;;
 ;;  - Evaluate this file (M-x eval-buffer RET)
 ;;
@@ -97,7 +97,7 @@ specific Java class is documented.")
 
 If you do not have the Java documentation locally, save the web
 page
-http://docs.oracle.com/javase/6/docs/api/allclasses-noframe.html
+https://docs.oracle.com/javase/8/docs/api/allclasses-noframe.html
 to a local file and use that file when answering the
 prompt.
 
@@ -153,11 +153,11 @@ After the scan is complete, you probably want to call
             (car (read-from-string
                   (buffer-substring (point-min) (point-max))))))))
 
-(defvar java-class-doc-base-url "http://docs.oracle.com/javase/6/docs/api"
+(defvar java-class-doc-base-url "https://docs.oracle.com/javase/8/docs/api"
   "Base URL for looking up Java documentation.
 Can be a local file or a web page.  For a local file, use
 file:///c:\\java\\docs\\api.  Directly from oracle.com, use
-http://docs.oracle.com/javase/6/docs/api.  The path should not end
+https://docs.oracle.com/javase/8/docs/api.  The path should not end
 in a slash.")
 
 (defvar java-class-doc-offline nil)

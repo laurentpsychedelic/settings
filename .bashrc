@@ -606,7 +606,7 @@ function glog() {
 function git_list_user_settings() {
     echo "*** <global> ***" && git config --global -l | grep -e 'user.name' -e 'user.email'
     echo "*** <top-level> ***"; git config --local -l | grep -e 'user.name' -e 'user.email'
-    for sb in `g sb | awk '//{print $2}'`; do echo "*** $sb ***"; git config -l | grep -e 'user.name' -e 'user.email'; done
+    for sb in `g sb | awk '//{print $2}'`; do echo "*** $sb ***"; git config --local -l | grep -e 'user.name' -e 'user.email'; done
 }
 
 #list email setings in current repository and all submodules

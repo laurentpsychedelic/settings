@@ -628,6 +628,11 @@ function git_set_email_settings() {
     fi
 }
 
+# function to check make result (Java project)
+function make_check() {
+    make rebuild && echo '!!!!!!!! <OK> !!!!!!!!' && ls -al dist/*.jar && ls -al plugins/*.jar
+}
+
 #function to preview markdown files located in current folder
 function preview_markdown() {
     #require Python grip package: sudo pip install grip

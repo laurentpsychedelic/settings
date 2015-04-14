@@ -633,6 +633,16 @@ function make_check() {
     make rebuild $@ && echo '!!!!!!!! <OK> !!!!!!!!' && ls -al dist/*.jar && if [[ -d plugins ]]; then ls -al plugins/*.jar; fi
 }
 
+#function to show multiple files side by side
+function cat2() {
+    pr -m -t $@
+}
+
+#function to two files differences side by side
+function diff2() {
+    sdiff $@ | sed -r 's/[<>|]//;s/(\t){3}//'
+}
+
 #function to preview markdown files located in current folder
 function preview_markdown() {
     #require Python grip package: sudo pip install grip

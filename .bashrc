@@ -630,7 +630,7 @@ function git_set_email_settings() {
 
 # function to check make result (Java project)
 function make_check() {
-    make rebuild && echo '!!!!!!!! <OK> !!!!!!!!' && ls -al dist/*.jar && if [[ -d plugins ]]; then ls -al plugins/*.jar; fi
+    make rebuild $@ && echo '!!!!!!!! <OK> !!!!!!!!' && ls -al dist/*.jar && if [[ -d plugins ]]; then ls -al plugins/*.jar; fi
 }
 
 #function to preview markdown files located in current folder

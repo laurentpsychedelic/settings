@@ -13,6 +13,8 @@
          retval)
      ,@clean-up))
 
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;; tool bar/scroll bar off
@@ -58,11 +60,10 @@
   (add-hook 'window-setup-hook 'w32-maximize-frame t))) ; Windows
 
 (add-maximize-window-hook)
-; (maximize-frame)
+(maximize-frame)
 ; (restore-frame)
 ;; see http://emacsblog.org/2007/02/22/maximize-on-startup-part-2/
 
-(add-to-list 'load-path "~/.emacs.d/")
 ;;;;;;;;;;;;;;;;;;
 ;; auto-install ;;
 ;;;;;;;;;;;;;;;;;;
@@ -267,9 +268,6 @@
 ;; show a yank menu
 (global-set-key "\C-cy" '(lambda ()
                            (interactive) (popup-menu 'yank-menu)))
-
-;; Add dir to load path
-(add-to-list 'load-path "~/.emacs.d/")
 
 ;; powershell-mode
 (autoload 'powershell-mode "powershell-mode" "A editing mode for Microsoft PowerShell." t)
@@ -844,10 +842,10 @@
 ;;;;;;;;;;;
 ;; magit ;;
 ;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/magit-1.2.0/")
-(require 'magit)
-(require 'magit-svn)
-(global-set-key (kbd "C-x v q") 'magit-status)
+;(add-to-list 'load-path "~/.emacs.d/magit-1.2.0/")
+;(require 'magit)
+;(require 'magit-svn)
+;(global-set-key (kbd "C-x v q") 'magit-status)
 
 ;; automatically make script files executable
 (add-hook 'after-save-hook

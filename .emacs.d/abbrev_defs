@@ -585,6 +585,7 @@
     ("reelase" "release" nil 1)
     ("referece" "reference" nil 1)
     ("reguion" "Region" nil 1)
+    ("reicpe" "recipe" nil 1)
     ("remoe" "remove" nil 1)
     ("remopve" "remove" nil 1)
     ("repalce" "replace" nil 1)

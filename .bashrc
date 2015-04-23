@@ -635,12 +635,16 @@ function make_check() {
 
 #function to show multiple files side by side
 function cat2() {
-    pr -m -t $@
+    pr -m -t "$@"
+}
+
+function less2() {
+    cat2 "$@" | less
 }
 
 #function to two files differences side by side
 function diff2() {
-    sdiff $@ | sed -r 's/[<>|]//;s/(\t){3}//'
+    sdiff "$@" | sed -r 's/[<>|]//;s/(\t){3}//' | less
 }
 
 #function to preview markdown files located in current folder

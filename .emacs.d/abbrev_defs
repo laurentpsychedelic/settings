@@ -3,6 +3,8 @@
 
 (define-abbrev-table 'Custom-mode-abbrev-table '())
 
+(define-abbrev-table 'Info-edit-mode-abbrev-table '())
+
 (define-abbrev-table 'awk-mode-abbrev-table
   '(
    ))
@@ -59,6 +61,8 @@
 
 (define-abbrev-table 'css-mode-abbrev-table '())
 
+(define-abbrev-table 'debugger-mode-abbrev-table '())
+
 (define-abbrev-table 'diary-fancy-display-mode-abbrev-table '())
 
 (define-abbrev-table 'diary-mode-abbrev-table '())
@@ -69,9 +73,17 @@
 
 (define-abbrev-table 'doctex-mode-abbrev-table '())
 
+(define-abbrev-table 'edit-abbrevs-mode-abbrev-table '())
+
 (define-abbrev-table 'emacs-lisp-byte-code-mode-abbrev-table '())
 
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
+
+(define-abbrev-table 'epa-info-mode-abbrev-table '())
+
+(define-abbrev-table 'epa-key-list-mode-abbrev-table '())
+
+(define-abbrev-table 'epa-key-mode-abbrev-table '())
 
 (define-abbrev-table 'finder-mode-abbrev-table '())
 
@@ -217,6 +229,7 @@
     ("defautl" "default" nil 4)
     ("defore" "before" nil 1)
     ("deicsion" "decision" nil 2)
+    ("deifne" "define" nil 1)
     ("delcared" "declared" nil 1)
     ("delte" "delete" nil 1)
     ("deomat" "format" nil 1)
@@ -471,7 +484,7 @@
     ("nanme" "name" nil 2)
     ("nasme" "name" nil 1)
     ("nath" "math" nil 1)
-    ("native" "native" nil 15)
+    ("native" "native" nil 16)
     ("nbame" "name" nil 1)
     ("newlione" "newline" nil 1)
     ("ninary" "binary" nil 1)
@@ -826,6 +839,8 @@
 
 (define-abbrev-table 'message-mode-abbrev-table '())
 
+(define-abbrev-table 'messages-buffer-mode-abbrev-table '())
+
 (define-abbrev-table 'meta-mode-abbrev-table '())
 
 (define-abbrev-table 'metafont-mode-abbrev-table '())
@@ -891,6 +906,8 @@
 (define-abbrev-table 'text-mode-abbrev-table '())
 
 (define-abbrev-table 'twittering-edit-mode-abbrev-table '())
+
+(define-abbrev-table 'url-cookie-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-annotate-mode-abbrev-table '())
 

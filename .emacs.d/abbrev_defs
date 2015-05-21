@@ -20,7 +20,7 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("imain" "int main(int argc, char *argv[]) {
 
-}" my-abbrev-hook 0)
+}" my-abbrev-hook 1)
    ))
 
 (define-abbrev-table 'c-mode-abbrev-table
@@ -274,7 +274,7 @@
     ("esle" "else" nil 1)
     ("excepiton" "exception" nil 1)
     ("exceptino" "exception" nil 3)
-    ("exception" "exception" nil 37)
+    ("exception" "exception" nil 40)
     ("exceptionhander" "ExceptionHandler" nil 1)
     ("excetpnio" "exception" nil 1)
     ("excpetion" "exception" nil 4)
@@ -284,7 +284,7 @@
     ("executalbe" "executable" nil 1)
     ("exsception" "exception" nil 1)
     ("exsits" "exists" nil 1)
-    ("extedns" "extends" nil 2)
+    ("extedns" "extends" nil 3)
     ("exti" "exit" nil 1)
     ("extnesion" "extension" nil 1)
     ("extrnsion" "extension" nil 1)
@@ -316,6 +316,7 @@
     ("filer" "filter" nil 1)
     ("fileter" "filter" nil 1)
     ("fillfiedls" "fillFields" nil 1)
+    ("fimal" "final" nil 1)
     ("finanl" "final" nil 1)
     ("finl" "final" nil 1)
     ("fireground" "foreground" nil 1)
@@ -572,7 +573,7 @@
     ("protexted " "protected" nil 0)
     ("prtin" "print" nil 1)
     ("pubic" "public" nil 1)
-    ("publci" "public" nil 21)
+    ("publci" "public" nil 22)
     ("publiuc" "public" nil 1)
     ("publix" "public" nil 2)
     ("publuic" "public" nil 2)
@@ -617,7 +618,7 @@
     ("retun" "return" nil 4)
     ("retunr" "return" nil 5)
     ("returbn" "return" nil 1)
-    ("returh" "return" nil 1)
+    ("returh" "return" nil 2)
     ("returnign" "returning" nil 1)
     ("returnt" "return" nil 1)
     ("reult" "result" nil 1)
@@ -689,7 +690,7 @@
     ("storgae" "storage" nil 1)
     ("strair" "stair" nil 1)
     ("strign" "string" nil 10)
-    ("string" "String" nil 52)
+    ("string" "String" nil 59)
     ("stringbuolder" "StringBuilder" nil 1)
     ("strint" "string" nil 1)
     ("striong" "String" nil 1)
@@ -763,7 +764,7 @@
     ("wirte" "write" nil 1)
     ("wiundow" "window" nil 1)
     ("wmpty" "empty" nil 1)
-    ("wpamain" "WPAMain" nil 20)
+    ("wpamain" "WPAMain" nil 21)
     ("wpavelength" "wavelength" nil 1)
     ("wundow" "window" nil 1)
     ("x30scannomral" "X30ScanNormal" nil 1)
@@ -792,7 +793,7 @@
   '(
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 1)
+}" my-abbrev-hook 2)
    ))
 
 (define-abbrev-table 'jython-mode-abbrev-table '())

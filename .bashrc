@@ -692,6 +692,52 @@ function dropbox() {
     python ~/settings/scripts/dropbox.py $@
 } 
 
+# function to store and reorder pictures in given location, with the folder structure %YEAR/%MONTH/%DAY 
+function store_and_reorder_pictures() {
+    if [ $# -ne 2 ]
+    then
+        echo "Arguments:"
+        echo "\$1 location of the folder to find pictures"
+        echo "\$2 location of the storage in which the files will be stored and reordered"
+    else
+        in_location=$1
+        out_location=$2
+
+        SAVEIFS=$IFS
+        IFS=`echo -en "\n\b"` ; files=`find "${in_location}" -type f -iname \*.jpg -o -iname \*.mov` ; IFS=$SAVEIFS
+        for file in $files
+        do
+            echo "File: \"${file}\""
+            date=unknown
+            [[ ! "${file}" =~ m|Mo|Ov|V$ ]] && date=`identify -verbose "${file}" | grep -m 1 -i 'DateTimeDigitized' | awk '//{print $2}'`
+            #if [ -z ${date} ]
+            #then
+            #    date=`identify -verbose "${file}" | grep -m 1 -i 'date:create' | awk '//{print $2}' | awk -F T '//{print $1}' | sed -e 's/-/:/g'`
+            #fi
+            out_folder=
+            [[ "${date}" == "" ]] && date=unknown
+            if [ -z ${date} ]
+            then
+                date=unknown
+            fi
+            if [ "${date}" != "unknown"  ]
+            then
+                year=`echo $date | awk -F ':' '//{print $1}'`
+                month=`echo $date | awk -F ':' '//{print $2}'`
+                day=`echo $date | awk -F ':' '//{print $3}'`
+                date=${year}/${month}/${day}
+                # echo "    -> Date: ${year}/${month}/${day}"
+            fi
+            out_folder=${out_location}/${date}
+            if [ ! -d ${out_folder} ]
+            then
+                mkdir -p "${out_folder}"
+            fi
+            rsync -azvr "${file}" "${out_folder}/"
+        done
+    fi
+}
+
 #custom prompt with time
 #left param: 0:normal 1:bright/bold 2:dark 4:underlines
 #right param: 32:green 33:brown 34:red etc...

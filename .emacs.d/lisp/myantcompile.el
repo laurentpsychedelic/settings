@@ -632,7 +632,7 @@
 (define-key myantcompile-specific-map (kbd "a i") 'insert-import-if-not-present)
 (define-key myantcompile-specific-map (kbd "r i") 'reorder-imports)
 ;; make
-(define-key myantcompile-specific-map (kbd "m r") (lambda () (interactive) (make-basic "run")))
+(define-key myantcompile-specific-map (kbd "m e") (lambda () (interactive) (make-basic "run")))
 (define-key myantcompile-specific-map (kbd "m b") (lambda () (interactive) (make-basic "rebuild")))
 (define-key myantcompile-specific-map (kbd "m c") (lambda () (interactive) (make-basic "clean")))
 (define-key myantcompile-specific-map (kbd "m t") (lambda () (interactive) (make-basic "test")))

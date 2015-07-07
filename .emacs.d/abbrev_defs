@@ -434,6 +434,7 @@
     ("legnth" "length" nil 1)
     ("lese" "else" nil 1)
     ("ligtht" "light" nil 1)
+    ("limti" "limit" nil 1)
     ("linekd" "Linked" nil 1)
     ("linkedlsit" "LinkedList" nil 3)
     ("lisr" "list" nil 1)

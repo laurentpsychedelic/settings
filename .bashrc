@@ -306,6 +306,42 @@ alias ...="cd ../.."
 alias ....="cd ../../.." 
 alias .....="cd ../../../.." 
 alias ......="cd ../../../../.."
+
+background='#494949'
+function set_background() {
+    if [ $# -ne 1 ]
+    then
+        echo "Arguments:"
+        echo "\$1 color  (#HEX)"
+    else
+        bg="$1"
+        echo -ne '\e]11;'$bg'\a'
+    fi
+}
+function find_up() {
+    if [ $# -lt 1 ]
+    then
+        echo "Arguments:"
+        echo "\$1 path"
+        echo "\$2.. arguments for the find command"
+    else
+        path="$1"
+        shift 1
+        while [[ "$path" != "/" ]];
+        do
+            find "$path"  -maxdepth 1 -mindepth 1 "$@"
+            # Note: if you want to ignore symlinks, use "$(realpath -s $path/..)"
+            path="$(readlink -f $path/..)"
+        done
+    fi
+}
+#change directory and look for change background script
+function cd() {
+    command cd $@
+    bgnd=`find_up . -name .bgnd`
+    #echo "bgnd=$bgnd"
+    if [ -z "$bgnd" ]; then set_background ${background}; else set_background `cat "${bgnd}"`; fi
+}
 #mkdir+cd command
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 #set svn ignores 

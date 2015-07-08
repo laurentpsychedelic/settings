@@ -222,6 +222,7 @@
     ("curetn" "current" nil 1)
     ("curretn" "current" nil 3)
     ("currnet" "current" nil 1)
+    ("cygwni" "cygwin" nil 1)
     ("cysstrt" "cygstart" nil 1)
     ("dara" "DATA" nil 1)
     ("deelte" "delete" nil 1)

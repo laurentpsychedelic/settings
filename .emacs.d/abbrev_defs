@@ -627,6 +627,7 @@
     ("returh" "return" nil 2)
     ("returnign" "returning" nil 1)
     ("returnt" "return" nil 1)
+    ("retutrn" "return" nil 1)
     ("reult" "result" nil 1)
     ("reuslt" "result" nil 1)
     ("reutn" "return" nil 3)

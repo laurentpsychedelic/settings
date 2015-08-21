@@ -20,7 +20,7 @@ LFLAGS = ${5:-shared }${6:-Wl,--subsystem,windows }${7:-static-libgcc -static-li
 default: rebuild
 
 ${9:
-PHONY: check_init_parameters
+.PHONY: check_init_parameters
 check_init_parameters:
 ifneq (\$(UNICODE),)
 	\$(eval CFLAGS=\${CFLAGS} -D_UNICODE -DUNICODE)

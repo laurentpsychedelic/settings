@@ -331,7 +331,7 @@ function find_up() {
         do
             find "$path"  -maxdepth 1 -mindepth 1 "$@"
             # Note: if you want to ignore symlinks, use "$(realpath -s $path/..)"
-            path="$(readlink -f $path/..)"
+            path=$(readlink -f "$path/..")
         done
     fi
 }

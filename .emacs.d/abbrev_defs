@@ -436,6 +436,7 @@
     ("ledt" "LEFT" nil 1)
     ("legnth" "length" nil 1)
     ("lese" "else" nil 1)
+    ("lfalgs" "LFLAGS" nil 1)
     ("ligtht" "light" nil 1)
     ("limti" "limit" nil 1)
     ("linekd" "Linked" nil 1)

@@ -338,7 +338,7 @@ function find_up() {
 #change directory and look for change background script
 function cd() {
     command cd "$@"
-    bgnd=`find_up . -name .bgnd`
+    bgnd=`find_up . -name .bgnd | head -1`
     #echo "bgnd=$bgnd"
     if [ -z "$bgnd" ]; then set_background ${background}; else set_background `cat "${bgnd}"`; fi
 }

@@ -161,6 +161,7 @@ then
         svn diff "${@}" | colordiff | nkf -s | more
     }
 
+    alias git=`which git` # Hack for Cygwin ::fork:: problem with long PATH
     #git settings (Windows)
     git config --global core.pager "nkf | less"
     export LESSCHARSET=dos # configure less to use DOS charset

@@ -474,6 +474,10 @@ function clean_files_regexp() {
 function clean_folders_regexp() {
     find "$1" -name "$2" | xargs rm -rvf
 }
+#generate GTAGS
+function generate_gtags() {
+    find . -type f -regex '.*\(java$\|h$\|hpp$\|cpp$\|HPP$\|hpp$\)' -print0 | xargs -0 etags
+}
 #function to get changes from SVN in Git repositories (through git-svn)
 function git_svn_update() {
     git svn rebase && git svn fetch --all

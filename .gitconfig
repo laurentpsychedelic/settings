@@ -4,6 +4,7 @@
 	whitespace = trailing-space,space-before-tab
 	autocrlf = input
 	quotepath = off
+	fileMode = false
 [alias]
 	ci = commit
 	co = checkout

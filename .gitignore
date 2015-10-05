@@ -1,19 +1,18 @@
-#temporary files
+# Temporary files
 *~
-#auto-save files
+# Auto-save files
 .saves-*
-#git ignore file
-log
-#Emacs server information
+# Emacs server information
 server
-#comphist file
+# comphist file
 ac-comphist.dat
-#. files in script folder
-scripts/[.]*
-#emacs history
+# . files
+.*
+# Emacs history
 .emacs.d/history
-report.txt
-#powershell send mail utility (attendance book)
+.emacs.d/places
+.emacs.d/recentf
+# Powershell send mail utility (attendance book)
 powershell/scripts/.attendance_book_email_info
-#background file
+# Background color file
 .bgnd

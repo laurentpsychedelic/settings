@@ -265,6 +265,7 @@
     ("dsiplay" "display" nil 1)
     ("eamcs" "emacs" nil 1)
     ("echp" "echo" nil 1)
+    ("ecoh" "echo" nil 1)
     ("ecxists" "exists" nil 1)
     ("ehile" "while" nil 1)
     ("eith" "with" nil 1)

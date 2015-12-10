@@ -161,6 +161,8 @@ then
         svn diff "${@}" | colordiff | nkf -s | more
     }
 
+    alias emacs='PATH=/c/cygwin/bin:$PATH emacs' # Fix for fork on Cygwin64 with 32bit Emacs
+
     alias git=`which git` # Hack for Cygwin ::fork:: problem with long PATH
     #git settings (Windows)
     git config --global core.pager "nkf | less"

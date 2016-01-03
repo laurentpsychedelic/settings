@@ -126,7 +126,7 @@ then
     }
     if [[ ! -e ~/pf ]]
     then
-        ln -s "$PROGRAMFILES" ~/pf 
+        ln -s "$PROGRAMFILES" ~/pf
     fi
     alias launch=cygstart
     #viewers
@@ -265,7 +265,7 @@ alias glog="git log --oneline --decorate"
 alias gpull="git pull --recurse-submodules"
 git config --global alias.ci commit
 git config --global alias.co checkout
-git config --global alias.cd checkout 
+git config --global alias.cd checkout
 git config --global alias.br branch
 git config --global alias.rs reset
 git config --global alias.stat status
@@ -305,10 +305,10 @@ export PATH=~/settings/bin:$PATH
 export CDPATH=.:~:~/dev
 #Toggle last 2 current directories
 # cd -
-#Aliases for parent directoriesalias ..="cd .." 
-alias ...="cd ../.." 
-alias ....="cd ../../.." 
-alias .....="cd ../../../.." 
+#Aliases for parent directoriesalias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
 background='#494949'
@@ -348,7 +348,7 @@ function cd() {
 }
 #mkdir+cd command
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
-#set svn ignores 
+#set svn ignores
 function svn_add_ignore() {
     if [ $# -ne 2 ]
     then
@@ -372,11 +372,11 @@ function change_svn_commit_log_message () {
         echo "\$3 new commit message"
     else
         #echo "svn propset -r$1 --revprop svn:log \"$3\" $2"
-        svn propset -r$1 --revprop svn:log "$3" $2 
+        svn propset -r$1 --revprop svn:log "$3" $2
     fi
 }
 #change SVN commit author
-function change_svn_commit_author () { 
+function change_svn_commit_author () {
     if [ $# -ne 3 ]
     then
         echo "Arguments:"
@@ -385,13 +385,13 @@ function change_svn_commit_author () {
         echo "\$3 new commit message"
     else
         #echo "svn propset -r$1 --revprop svn:log \"$3\" $2"
-        svn propset -r$1 --revprop svn:author "$3" $2 
+        svn propset -r$1 --revprop svn:author "$3" $2
     fi
 }
 #highlight patterns in output (like grep but
 #keeping showing the rest of the output
 function highlight () {
-    pattern=$1 
+    pattern=$1
     if [ $# -gt 1 ]
     then
         shift; file=${@:1}
@@ -587,7 +587,7 @@ function show_all_related_commits {
             git log --oneline --decorate $BRANCH | grep $KEYWORD | awk '//{print $1}' | $FILTER
         else
             git log --oneline --decorate $BRANCH | grep $KEYWORD | awk '//{print}' | $FILTER
-        fi            
+        fi
     fi
 }
 
@@ -734,7 +734,7 @@ function backup_folder() {
 # function to call Dropbox CLI
 function dropbox() {
     python ~/settings/scripts/dropbox.py $@
-} 
+}
 
 # function to store and reorder pictures in given location, with the folder structure %YEAR/%MONTH/%DAY
 function store_and_reorder_pictures() {

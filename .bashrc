@@ -736,7 +736,7 @@ function dropbox() {
     python ~/settings/scripts/dropbox.py $@
 } 
 
-# function to store and reorder pictures in given location, with the folder structure %YEAR/%MONTH/%DAY 
+# function to store and reorder pictures in given location, with the folder structure %YEAR/%MONTH/%DAY
 function store_and_reorder_pictures() {
     if [ $# -ne 2 ]
     then
@@ -744,40 +744,69 @@ function store_and_reorder_pictures() {
         echo "\$1 location of the folder to find pictures"
         echo "\$2 location of the storage in which the files will be stored and reordered"
     else
+        store_and_reorder_items $1 $2 '-iname \*.jpg -o -iname \*.png'
+    fi
+}
+
+# function to store and reorder movies in given location, with the folder structure %YEAR/%MONTH/%DAY
+function store_and_reorder_movies() {
+    if [ $# -ne 2 ]
+    then
+        echo "Arguments:"
+        echo "\$1 location of the folder to find movies"
+        echo "\$2 location of the storage in which the files will be stored and reordered"
+    else
+        store_and_reorder_items $1 $2 '-iname \*.mov'
+    fi
+}
+
+# function to store and reorder pictures and movies in given location, with the folder structure %YEAR/%MONTH/%DAY
+function store_and_reorder_pictures_and_movies() {
+    if [ $# -ne 2 ]
+    then
+        echo "Arguments:"
+        echo "\$1 location of the folder to find pictures and movies"
+        echo "\$2 location of the storage in which the files will be stored and reordered"
+    else
+        store_and_reorder_items $1 $2 '-iname \*.jpg -o -iname \*.png -o -iname \*.mov'
+    fi
+}
+
+function store_and_reorder_items() {
+    if [ $# -ne 3 ]
+    then
+        echo "Arguments:"
+        echo "\$1 location of the folder to find pictures"
+        echo "\$2 location of the storage in which the files will be stored and reordered"
+        echo "\$3 regexp identifying items"
+    else
         in_location=$1
         out_location=$2
+        regexp=$3
+
+        find_command=`echo find "${in_location}" -type f "${regexp}"`
+        # echo find_command:{${find_command}}
 
         SAVEIFS=$IFS
-        IFS=`echo -en "\n\b"` ; files=`find "${in_location}" -type f -iname \*.jpg -o -iname \*.mov` ; IFS=$SAVEIFS
+        IFS=`echo -en "\n\b"` ; files=`eval ${find_command}` ; IFS=$SAVEIFS
         for file in $files
         do
             echo "File: \"${file}\""
-            date=unknown
-            [[ ! "${file}" =~ m|Mo|Ov|V$ ]] && date=`identify -verbose "${file}" | grep -m 1 -i 'DateTimeDigitized' | awk '//{print $2}'`
-            #if [ -z ${date} ]
-            #then
-            #    date=`identify -verbose "${file}" | grep -m 1 -i 'date:create' | awk '//{print $2}' | awk -F T '//{print $1}' | sed -e 's/-/:/g'`
-            #fi
-            out_folder=
+            date=`exiftool -s3 -CreateDate "${file}" | awk '//{print $1}' | tr ':' '/'`
             [[ "${date}" == "" ]] && date=unknown
             if [ -z ${date} ]
             then
                 date=unknown
             fi
-            if [ "${date}" != "unknown"  ]
-            then
-                year=`echo $date | awk -F ':' '//{print $1}'`
-                month=`echo $date | awk -F ':' '//{print $2}'`
-                day=`echo $date | awk -F ':' '//{print $3}'`
-                date=${year}/${month}/${day}
-                # echo "    -> Date: ${year}/${month}/${day}"
-            fi
             out_folder=${out_location}/${date}
             if [ ! -d ${out_folder} ]
             then
+                # echo mkdir -p "${out_folder}"
                 mkdir -p "${out_folder}"
             fi
+            # echo rsync -azvr "${file}" "${out_folder}/"
             rsync -azvr "${file}" "${out_folder}/"
+            # echo
         done
     fi
 }

@@ -773,42 +773,49 @@ function store_and_reorder_pictures_and_movies() {
 }
 
 function store_and_reorder_items() {
+    if [ ! `which exiftool` ]
+    then
+        echo 'ExifTool not found! Please install...'
+        return 2
+    fi
+
     if [ $# -ne 3 ]
     then
         echo "Arguments:"
         echo "\$1 location of the folder to find pictures"
         echo "\$2 location of the storage in which the files will be stored and reordered"
         echo "\$3 regexp identifying items"
-    else
-        in_location=$1
-        out_location=$2
-        regexp=$3
-
-        find_command=`echo find "${in_location}" -type f "${regexp}"`
-        # echo find_command:{${find_command}}
-
-        SAVEIFS=$IFS
-        IFS=`echo -en "\n\b"` ; files=`eval ${find_command}` ; IFS=$SAVEIFS
-        for file in $files
-        do
-            echo "File: \"${file}\""
-            date=`exiftool -s3 -CreateDate "${file}" | awk '//{print $1}' | tr ':' '/'`
-            [[ "${date}" == "" ]] && date=unknown
-            if [ -z ${date} ]
-            then
-                date=unknown
-            fi
-            out_folder=${out_location}/${date}
-            if [ ! -d ${out_folder} ]
-            then
-                # echo mkdir -p "${out_folder}"
-                mkdir -p "${out_folder}"
-            fi
-            # echo rsync -azvr "${file}" "${out_folder}/"
-            rsync -azvr "${file}" "${out_folder}/"
-            # echo
-        done
+        return 1
     fi
+
+    in_location=$1
+    out_location=$2
+    regexp=$3
+
+    find_command=`echo find "${in_location}" -type f "${regexp}"`
+    # echo find_command:{${find_command}}
+
+    SAVEIFS=$IFS
+    IFS=`echo -en "\n\b"` ; files=`eval ${find_command}` ; IFS=$SAVEIFS
+    for file in $files
+    do
+        echo "File: \"${file}\""
+        date=`exiftool -s3 -CreateDate "${file}" | awk '//{print $1}' | tr ':' '/'`
+        [[ "${date}" == "" ]] && date=unknown
+        if [ -z ${date} ]
+        then
+            date=unknown
+        fi
+        out_folder=${out_location}/${date}
+        if [ ! -d ${out_folder} ]
+        then
+            # echo mkdir -p "${out_folder}"
+            mkdir -p "${out_folder}"
+        fi
+        # echo rsync -azvr "${file}" "${out_folder}/"
+        rsync -azvr "${file}" "${out_folder}/"
+        # echo
+    done
 }
 
 #custom prompt with time

@@ -395,9 +395,9 @@ function highlight () {
     if [ $# -gt 1 ]
     then
         shift; file=${@:1}
-        grep -E --color=always "$pattern|$" "$file"
+        grep -a -E --color=always "$pattern|$" "$file"
     else
-        grep -E --color=always "$pattern|$"
+        grep -a -E --color=always "$pattern|$"
     fi
 }
 alias hgrep=highlight

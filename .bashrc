@@ -119,6 +119,8 @@ SYSTEM=`uname -o`
 # echo $SYSTEM
 if [[ $SYSTEM =~ "Cygwin" ]]
 then
+    export PATH=/c/MinGW/32/mingw32/bin:$PATH
+
     export CYGWIN=nodosfilewarning
     #kill process on Windows using Powershell
     function kill_win32() {

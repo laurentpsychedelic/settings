@@ -131,33 +131,11 @@ then
         ln -s "$PROGRAMFILES" ~/pf
     fi
     alias launch=cygstart
-    #viewers
-    alias 'ME-View-Viewer-jar'='java -jar "$(cygpath -m ~/pf/ME-View/bin/ME_VIEW_VIEWER.jar)"'
-    alias 'ME-View-Viewer'='~/pf/ME-View/ME_VIEW_VIEWER.exe'
-    alias 'WPA-View-Viewer-jar'='java -jar "$(cygpath -m ~/pf/WPA-View/bin/WPA_VIEW_VIEWER.jar)"'
-    alias 'WPA-View-Viewer'='~/pf/WPA-View/WPA_VIEW_VIEWER.exe'
-    alias 'PA-View-Viewer-jar'='java -Xmx1024m -jar "$(cygpath -m ~/pf/PA-View/bin/PA_VIEW_VIEWER.jar)"'
-    alias 'PA-View-Viewer'='~/pf/PA-View/PA_VIEW_VIEWER.exe'
-    #inline
-    alias 'ME-View-jar'='java -jar "$(cygpath -m ~/pf/ME/bin/ME_VIEW.jar)"'
-    alias 'ME-View'='~/pf/ME/ME_VIEW.exe'
-    alias 'WPA-View-jar'='java -jar "$(cygpath -m ~/pf/WPA/bin/WPA_VIEW.jar)"'
-    alias 'WPA-View'='~/pf/WPA/WPA_VIEW.exe'
-    alias 'PA-View-jar'='java -Xmx1024m -jar "$(cygpath -m ~/pf/PA/bin/PA_VIEW.jar)"'
-    alias 'PA-View'='~/pf/PA/PA_VIEW.exe'
 
-    #alias 'findbugs'='java -Dfile.encoding=UTF-8 -jar d:/PA-WPA-View/UTILITIES/findbugs-1.3.9/lib/findbugs.jar'
-    alias netbeans='netbeans.exe'
-    #alias 'netbeans'='~/pf/NetBeans\ 7.1.2/bin/netbeans.exe'
-    #alias 'ollydbg'='/cygdrive/c/odbg110/OLLYDBG.EXE'
-    #alias 'VC2008'='~/pf/Microsoft\ Visual\ Studio\ 9.0/Common7/IDE/devenv.exe'
-    #alias 'msbuild'='msbuild.exe /t:Rebuild /p:Configuration=Release'
-    alias 'terminal'='/cygdrive/c/cygwin/bin/mintty.exe -i /Cygwin-Terminal.ico - &' #'cygstart /cygdrive/c/cygwin/Cygwin.bat'
-    #alias scilab='"/cygdrive/c/Program Files/scilab-5.2.1/bin/WScilex.exe"'
     alias gem='gem.bat'
     alias rails='rails.bat'
     alias rake='rake.bat'
-    #alias svn='"/cygdrive/c/Program Files/CollabNet/Subversion Client/svn.exe"'
+
     #a colorized version of SVN diff (requires colordiff command)
     function svndiff () {
         svn diff "${@}" | colordiff | nkf -s | more
@@ -291,11 +269,6 @@ git config --global merge.tool "kdiff3"
 git config --global branch.autosetuprebase always
 git config --global branch.master.rebase true
 git config --global core.fileMode false
-
-export REP=https://192.168.20.36/svn
-export REP_WPA=${REP}/PA_WPA-View_100
-export REP_ME=${REP}/ME-View_210
-export REP_LIBS=${REP}/COMMON_LIBS
 
 export SVN_EDITOR=emacsclient
 export EDITOR=emacsclient

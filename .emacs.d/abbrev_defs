@@ -20,7 +20,7 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("imain" "int main(int argc, char *argv[]) {
 
-}" my-abbrev-hook 4)
+}" my-abbrev-hook 0)
    ))
 
 (define-abbrev-table 'c-mode-abbrev-table
@@ -611,6 +611,7 @@
     ("pxiels" "pixels" nil 1)
     ("qucik" "QUICK" nil 1)
     ("qwhich" "which" nil 1)
+    ("ractangle" "Rectangle" nil 1)
     ("raduis" "radius" nil 1)
     ("rafractove" "refractive" nil 1)
     ("ratardation" "retardation" nil 1)
@@ -834,7 +835,7 @@
   '(
     ("imain" "public static void main(String[] args) {
 
-}" my-abbrev-hook 2)
+}" my-abbrev-hook 0)
    ))
 
 (define-abbrev-table 'jython-mode-abbrev-table '())

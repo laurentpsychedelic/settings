@@ -715,7 +715,6 @@
     ("statis" "static" nil 1)
     ("statix" "static" nil 2)
     ("statoc" "static" nil 1)
-    ("stats" "status" nil 3)
     ("statua" "status" nil 1)
     ("steing" "string" nil 1)
     ("stictching" "stitching" nil 1)

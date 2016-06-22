@@ -3,5 +3,5 @@
 # key: wait
 # type: snippet
 # --
-Sleep(${1:1000} /* $1ms */);
+Sleep(${1:1000} /* ${1:$(if (< (string-to-number yas-text) 1000.0) (concat yas-text "ms") (concat (number-to-string (/ (string-to-number yas-text) 1000.0)) "s"))} */);
 $0

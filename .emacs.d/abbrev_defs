@@ -337,6 +337,7 @@
     ("fillfiedls" "fillFields" nil 1)
     ("fimal" "final" nil 3)
     ("finanl" "final" nil 1)
+    ("finaql" "final" nil 1)
     ("finl" "final" nil 2)
     ("finla" "final" nil 1)
     ("fireground" "foreground" nil 1)

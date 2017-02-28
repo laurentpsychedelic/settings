@@ -705,6 +705,7 @@
     ("singel" "single" nil 3)
     ("singletin" "singleton" nil 1)
     ("slef" "self" nil 1)
+    ("slep" "sleep" nil 1)
     ("smae" "same" nil 1)
     ("snmipper" "snippet" nil 1)
     ("sotred" "stored" nil 1)

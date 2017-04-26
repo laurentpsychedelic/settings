@@ -75,6 +75,8 @@
 
 (define-abbrev-table 'doctex-mode-abbrev-table '())
 
+(define-abbrev-table 'dsssl-mode-abbrev-table '())
+
 (define-abbrev-table 'edit-abbrevs-mode-abbrev-table '())
 
 (define-abbrev-table 'emacs-lisp-byte-code-mode-abbrev-table '())
@@ -151,7 +153,7 @@
     ("bould" "bound" nil 1)
     ("bracnhes" "branches" nil 1)
     ("bufer" "buffer" nil 1)
-    ("cahr" "char" nil 1)
+    ("cahr" "char" nil 2)
     ("cahrs" "chars" nil 1)
     ("cakculation" "Calculation" nil 1)
     ("calcualte" "calculate" nil 1)
@@ -365,7 +367,7 @@
     ("fonal" "final" nil 1)
     ("foramt" "format" nil 1)
     ("forground" "foreground" nil 1)
-    ("found" "found" nil 13)
+    ("found" "found" nil 14)
     ("fpirntf" "fprintf" nil 1)
     ("fpritnf" "fprintf" nil 2)
     ("fraem" "frame" nil 1)
@@ -501,7 +503,7 @@
     ("measurememnt" "measurement" nil 1)
     ("measuremenr" "measurement" nil 1)
     ("measuremenr\": " "measurement" nil 0)
-    ("measurement" "measurement" nil 208)
+    ("measurement" "measurement" nil 209)
     ("measurementlocaiton" "measurementllocation" nil 1)
     ("measuremnt" "measurement" nil 2)
     ("measurmeent" "measurement" nil 3)
@@ -638,6 +640,7 @@
     ("reatrdation" "retardation" nil 1)
     ("recangle" "Rectangle" nil 1)
     ("recipy" "recopy" nil 1)
+    ("recoring" "RECORDING" nil 1)
     ("rectangualr" "rectangular" nil 1)
     ("recvipe" "recipe" nil 2)
     ("redct" "rect" nil 1)
@@ -805,6 +808,7 @@
     ("typr" "type" nil 2)
     ("ubintsal" "uninstall" nil 1)
     ("unalbe" "unable" nil 2)
+    ("unsgined" "unsigned" nil 1)
     ("unsigend" "unsigned" nil 1)
     ("unsigined" "unsigned" nil 1)
     ("unsinged" "unsigned" nil 2)
@@ -951,6 +955,8 @@
 (define-abbrev-table 'ps-run-mode-abbrev-table '())
 
 (define-abbrev-table 'python-mode-abbrev-table '())
+
+(define-abbrev-table 'scheme-mode-abbrev-table '())
 
 (define-abbrev-table 'scilab-mode-abbrev-table '())
 

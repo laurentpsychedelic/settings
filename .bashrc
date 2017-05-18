@@ -243,6 +243,14 @@ alias g="git"
 alias gf="git flow"
 alias glog="git log --oneline --decorate"
 alias gpull="git pull --recurse-submodules"
+alias gf="git fetch --all"
+alias gp="git push"
+alias gst="git status"
+alias gsth="git status -- ."
+alias gs="git show"
+alias gd="git diff"
+alias ga="git add"
+alias gprune="git remote prune origin"
 git config --global alias.ci commit
 git config --global alias.co checkout
 git config --global alias.cd checkout

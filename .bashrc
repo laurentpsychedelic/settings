@@ -823,6 +823,18 @@ alias rw='java -classpath dev/Miscellaneous-codes lpsy.other.diet.ReportWeight'
 # Scripts folder in path
 PATH=$PATH:~/settings/scripts
 
+function hexdump_floats() {
+    if [ $# -ne 2 ]
+    then
+        echo "Arguments:"
+        echo "\$1 Number of floats to read"
+        echo "\$2 File path"
+    else
+        nFloats=$1
+        hexdump -n $((nFloats * 4)) -v -e '1/4 "%f\n"' "$2"
+    fi
+}
+
 #Load GVM
 if [[ -s "$(readlink -f ~/settings/scripts/.gvm_load)" ]]
 then

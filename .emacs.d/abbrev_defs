@@ -718,6 +718,7 @@
     ("sdtatic" "static" nil 1)
     ("sdtokes" "strokes" nil 1)
     ("sequcner" "sequencer" nil 1)
+    ("sequecner" "sequencer" nil 1)
     ("serail" "serial" nil 2)
     ("serched" "searched" nil 1)
     ("servere" "server" nil 1)
@@ -1012,6 +1013,8 @@
 (define-abbrev-table 'vc-git-log-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
+
+(define-abbrev-table 'vc-hg-log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-svn-log-view-mode-abbrev-table '())
 

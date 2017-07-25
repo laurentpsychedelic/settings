@@ -20,7 +20,7 @@
     ("#s" "#include <>" my-abbrev-hook 0)
     ("imain" "int main(int argc, char *argv[]) {
 
-}" my-abbrev-hook 0)
+}" my-abbrev-hook 1)
    ))
 
 (define-abbrev-table 'c-mode-abbrev-table
@@ -201,8 +201,10 @@
     ("colroing" "coloring" nil 1)
     ("comaprator" "Comparator" nil 1)
     ("comapring" "Comparing" nil 1)
+    ("comile" "compile" nil 1)
     ("comlpete" "complete" nil 1)
     ("commnet" "comment" nil 2)
+    ("comoile" "Compile" nil 1)
     ("complte" "complete" nil 1)
     ("compoennt" "component" nil 2)
     ("comst" "const" nil 1)
@@ -747,6 +749,7 @@
     ("stagecontrl" "StageControl" nil 1)
     ("staic" "static" nil 9)
     ("staitc" "static" nil 2)
+    ("stakc" "stack" nil 1)
     ("staris" "stairs" nil 1)
     ("stastic" "static" nil 1)
     ("stastistic" "statistic" nil 1)

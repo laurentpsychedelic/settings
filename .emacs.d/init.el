@@ -157,7 +157,7 @@
 ;;(set-face-attribute 'default nil :cursor-type "box")
 (set-face-attribute 'default nil :height 100)
 ;; set font to "Ubunto Mono"
-(setq fontsize 11)
+(setq fontsize 14)
 (defun setfont (size)
   "Set font size"
 (if (string-equal system-type "gnu/linux")

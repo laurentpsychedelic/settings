@@ -21,6 +21,8 @@
 	sb = submodule
 	sm = submodule
 	cd = checkout
+	sh = show
+	d = diff
 [color]
 	ui = true
 [user]

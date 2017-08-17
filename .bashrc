@@ -241,6 +241,8 @@ function install_gvm() {
 #git settings
 alias g="git"
 alias gf="git flow"
+alias gci="git commit"
+alias gco="git checkout"
 alias glog="git log --oneline --decorate"
 alias gl="git log --oneline --decorate"
 alias gpull="git pull --recurse-submodules"
@@ -256,6 +258,7 @@ alias gd="git diff"
 alias gdh="git diff -- ."
 alias gdc="git diff -M --cached"
 alias gdwc="git diff -w -M --cached"
+alias gcp="git cherry-pick"
 alias ga="git add"
 alias gprune="git remote prune origin"
 git config --global alias.ci commit
@@ -265,6 +268,8 @@ git config --global alias.br branch
 git config --global alias.rs reset
 git config --global alias.stat status
 git config --global alias.st status
+git config --global alias.sh show
+git config --global alias.d diff
 git config --global alias.cf config
 git config --global alias.lg log
 git config --global alias.rb rebase

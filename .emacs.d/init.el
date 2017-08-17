@@ -176,10 +176,12 @@
       (restore-frame)
       (maximize-frame))))
 
- ;; C-> will increase font size
- ;; C-< will decrease font size
+ ;; C-> or C-+ will increase font size
+ ;; C-< or C-- will decrease font size
 (global-set-key (kbd "C->") '(lambda () (interactive) (font-size-modify nil)))
 (global-set-key (kbd "C-<") '(lambda () (interactive) (font-size-modify t)))
+(global-set-key (kbd "C-+") '(lambda () (interactive) (font-size-modify nil)))
+(global-set-key (kbd "C--") '(lambda () (interactive) (font-size-modify t)))
 
 (global-set-key (kbd "C-M-k") (kbd "C-u 0 C-k"))
 

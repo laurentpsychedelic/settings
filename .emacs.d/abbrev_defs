@@ -351,6 +351,7 @@
     ("fileter" "filter" nil 1)
     ("fillfiedls" "fillFields" nil 1)
     ("fimal" "final" nil 3)
+    ("fimnal" "final" nil 1)
     ("finanl" "final" nil 1)
     ("finaql" "final" nil 1)
     ("finl" "final" nil 3)

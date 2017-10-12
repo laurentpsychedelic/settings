@@ -138,23 +138,25 @@
 
 (defun get-ant-test-single-command (text filename-sans-extension)
   "Get command for ant test-single target"
-  (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command jvm-options)
+  (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command jvm-options env-options)
     (setq basic-command-elements (get-ant-basic-command-element text))
     (setq package-fqn (nth 0 basic-command-elements))
     (setq package-path (nth 1 basic-command-elements))
     (setq class-fqn (nth 2 basic-command-elements))
     (setq class-name (nth 3 basic-command-elements))
     (setq build-file-relative-location (nth 4 basic-command-elements))
-    (if (file-exists-p (concat build-file-relative-location "/.antoptions")) 
+    (if (file-exists-p (concat build-file-relative-location "/.antoptions"))
         (setq jvm-options (concat jvm-options " " (get-file-contents (concat build-file-relative-location "/.antoptions")))))
-    (setq command (concat "CDPATH=. && cd " build-file-relative-location " && "
+    (if (file-exists-p (concat build-file-relative-location "/.envoptions"))
+        (setq env-options (concat env-options " " (get-file-contents (concat build-file-relative-location "/.envoptions")))))
+    (setq command (concat "CDPATH=. && " env-options " cd " build-file-relative-location " && "
                           "ant" jvm-options " -emacs test-single "
                           "-Djavac.includes=" (replace-regexp-in-string "[.][.]" "*" build-file-relative-location) ".java "
                           "-Dtest.includes=" package-path "/" filename-sans-extension ".java"))))
 
 (defun get-ant-run-single-command (text filename-sans-extension &optional extension)
   "Get command for ant run-single target"
-  (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command jvm-options)
+  (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command jvm-options env-options)
     (setq basic-command-elements (get-ant-basic-command-element text))
     (setq package-fqn (nth 0 basic-command-elements))
     (setq package-path (nth 1 basic-command-elements))
@@ -163,14 +165,16 @@
     (setq build-file-relative-location (nth 4 basic-command-elements))
     (if (file-exists-p (concat build-file-relative-location "/.antoptions")) 
         (setq jvm-options (concat jvm-options " " (get-file-contents (concat build-file-relative-location "/.antoptions")))))
-    (setq command (concat "CDPATH=. && cd " build-file-relative-location " && "
+    (if (file-exists-p (concat build-file-relative-location "/.envoptions"))
+        (setq env-options (concat env-options " " (get-file-contents (concat build-file-relative-location "/.envoptions")))))
+    (setq command (concat "CDPATH=. && " env-options " cd " build-file-relative-location " && "
                           "ant" jvm-options " -emacs run-single "
                           "-Djavac.includes=" (replace-regexp-in-string "[.][.]" "*" build-file-relative-location) "." (if extension extension "java") " "
                           "-Drun.class=" class-fqn))))
 
 (defun get-basic-compile-command (commandname subcommand text filename-sans-extension &optional additional-options &rest rest-var)
   "Get command for ant-like compile target"
-  (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command jvm-options)
+  (let (basic-command-elements package-fqn package-path class-name class-fqn build-file-relative-location command jvm-options env-options)
     (setq basic-command-elements (get-ant-basic-command-element text))
     (setq package-fqn (nth 0 basic-command-elements))
     (setq package-path (nth 1 basic-command-elements))
@@ -180,7 +184,9 @@
     (setq jvm-options (if additional-options (concat " " additional-options) ""))
     (if (file-exists-p (concat build-file-relative-location "/.antoptions")) 
         (setq jvm-options (concat jvm-options " " (get-file-contents (concat build-file-relative-location "/.antoptions")))))
-    (setq command (concat "CDPATH=. && " (if rest-var (concat (mapconcat 'identity rest-var " && ") " && ") "") "cd " build-file-relative-location " && "
+    (if (file-exists-p (concat build-file-relative-location "/.envoptions"))
+        (setq env-options (concat env-options " " (get-file-contents (concat build-file-relative-location "/.envoptions")))))
+    (setq command (concat "CDPATH=. && " env-options " " (if rest-var (concat (mapconcat 'identity rest-var " && ") " && ") "") "cd " build-file-relative-location " && "
                           commandname jvm-options " " subcommand))))
 
 (defun get-ant-compile-command (text filename-sans-extension &optional additional-options)

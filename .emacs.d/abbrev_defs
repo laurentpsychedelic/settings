@@ -211,6 +211,7 @@
     ("comst" "const" nil 1)
     ("condt" "const" nil 2)
     ("conext" "context" nil 1)
+    ("conect" "connect" nil 1)
     ("confog" "config" nil 1)
     ("coninuous" "continuous" nil 3)
     ("consctructor" "constructor" nil 1)
@@ -306,12 +307,14 @@
     ("esle" "else" nil 1)
     ("etern" "extern" nil 1)
     ("excepiton" "exception" nil 1)
+    ("except" "execpt" nil 0)
     ("exceptino" "exception" nil 3)
     ("exception" "exception" nil 59)
     ("exceptionhander" "ExceptionHandler" nil 1)
     ("excetpnio" "exception" nil 1)
     ("excpetion" "exception" nil 4)
     ("excpetions" "exception" nil 2)
+    ("execpt" "except" nil 1)
     ("exectue" "execute" nil 1)
     ("exectution" "execution" nil 1)
     ("executalbe" "executable" nil 1)
@@ -693,6 +696,7 @@
     ("retrun" "return" nil 4)
     ("retrurn" "return" nil 1)
     ("retsult" "result" nil 1)
+    ("retuern" "return" nil 1)
     ("retun" "return" nil 4)
     ("retunr" "return" nil 6)
     ("returbn" "return" nil 1)
@@ -706,7 +710,7 @@
     ("reuslt" "result" nil 1)
     ("reutn" "return" nil 3)
     ("reutnr" "return" nil 2)
-    ("reutrn" "return" nil 46)
+    ("reutrn" "return" nil 1)
     ("rigght" "right" nil 1)
     ("rigth" "right" nil 1)
     ("rnage" "range" nil 1)
@@ -988,6 +992,10 @@
 (define-abbrev-table 'ps-run-mode-abbrev-table '())
 
 (define-abbrev-table 'python-mode-abbrev-table '())
+
+(define-abbrev-table 'python-mode-skeleton-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'scheme-mode-abbrev-table '())
 

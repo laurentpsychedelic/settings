@@ -533,7 +533,7 @@
   (let (string imports-regex import-head-regex imports new-contents current-point endl)
     (setq endl (if (string= "groovy" (file-name-extension (file-name-nondirectory (buffer-file-name)))) "\n" ";\n"))
     (setq string (buffer-string))
-    (setq imports-regex "\\(package[[:space:]]*[^\r\n]*\\)[;]?\\([[:space:]]*\r?\n[[:space:]]*\\)*\\(\\(import \\(static \\)?[a-zA-Z][a-zA-Z0-9]*\\([.][a-zA-Z][a-zA-Z0-9]*\\)*\\([.][*]\\)?[[:space:]]*\\(as[[:space:]]+[a-zA-Z][a-zA-Z0-9]*\\)?[[:space:]]*;?[[:space:]]*\\(\r?\n\\)+\\)+\\)")
+    (setq imports-regex "\\(package[[:space:]]*[^\r\n]*\\)[;]?\\([[:space:]]*\r?\n[[:space:]]*\\)*\\(\\(import \\(static \\)?[a-zA-Z_][a-zA-Z0-9_]*\\([.][a-zA-Z_][a-zA-Z0-9_]*\\)*\\([.][*]\\)?[[:space:]]*\\(as[[:space:]]+[a-zA-Z_][a-zA-Z0-9_]*\\)?[[:space:]]*;?[[:space:]]*\\(\r?\n\\)+\\)+\\)")
     (setq import-head-regex "import \\(static \\)?")
     (string-match imports-regex string)
     (setq imports (match-string 3 string))

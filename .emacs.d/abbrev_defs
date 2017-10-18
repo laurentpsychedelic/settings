@@ -335,6 +335,7 @@
     ("fasel" "false" nil 1)
     ("fasle" "false" nil 1)
     ("favtor" "factor" nil 1)
+    ("fdinal" "final" nil 1)
     ("fgalse" "false" nil 1)
     ("fgunction" "function" nil 1)
     ("fial" "final" nil 4)

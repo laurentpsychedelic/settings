@@ -210,8 +210,8 @@
     ("compoennt" "component" nil 2)
     ("comst" "const" nil 1)
     ("condt" "const" nil 2)
-    ("conext" "context" nil 1)
     ("conect" "connect" nil 1)
+    ("conext" "context" nil 1)
     ("confog" "config" nil 1)
     ("coninuous" "continuous" nil 3)
     ("consctructor" "constructor" nil 1)
@@ -309,7 +309,7 @@
     ("excepiton" "exception" nil 1)
     ("except" "execpt" nil 0)
     ("exceptino" "exception" nil 3)
-    ("exception" "exception" nil 59)
+    ("exception" "exception" nil 61)
     ("exceptionhander" "ExceptionHandler" nil 1)
     ("excetpnio" "exception" nil 1)
     ("excpetion" "exception" nil 4)
@@ -388,7 +388,7 @@
     ("found" "found" nil 14)
     ("fpirntf" "fprintf" nil 1)
     ("fpritnf" "fprintf" nil 2)
-    ("fraem" "frame" nil 1)
+    ("fraem" "frame" nil 2)
     ("fraemwork" "framework" nil 1)
     ("frequenec" "frequence" nil 1)
     ("friedn" "friend" nil 1)
@@ -523,7 +523,7 @@
     ("measurememnt" "measurement" nil 1)
     ("measuremenr" "measurement" nil 1)
     ("measuremenr\": " "measurement" nil 0)
-    ("measurement" "measurement" nil 229)
+    ("measurement" "measurement" nil 230)
     ("measurementlocaiton" "measurementllocation" nil 1)
     ("measuremnt" "measurement" nil 2)
     ("measurmeent" "measurement" nil 3)
@@ -574,6 +574,7 @@
     ("nullpointerexcpetion" "NullPointerException" nil 1)
     ("nyll" "null" nil 1)
     ("oaram" "param" nil 1)
+    ("oath" "path" nil 1)
     ("ocntinue" "continue" nil 1)
     ("ofr" "for" nil 1)
     ("oject" "object" nil 1)
@@ -711,7 +712,7 @@
     ("reuslt" "result" nil 1)
     ("reutn" "return" nil 3)
     ("reutnr" "return" nil 2)
-    ("reutrn" "return" nil 1)
+    ("reutrn" "return" nil 2)
     ("rigght" "right" nil 1)
     ("rigth" "right" nil 1)
     ("rnage" "range" nil 1)
@@ -994,9 +995,7 @@
 
 (define-abbrev-table 'python-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-skeleton-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'python-mode-skeleton-abbrev-table '())
 
 (define-abbrev-table 'scheme-mode-abbrev-table '())
 

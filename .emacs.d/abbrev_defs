@@ -5,6 +5,8 @@
 
 (define-abbrev-table 'Info-edit-mode-abbrev-table '())
 
+(define-abbrev-table 'antlr-mode-abbrev-table '())
+
 (define-abbrev-table 'awk-mode-abbrev-table
   '(
    ))
@@ -469,6 +471,7 @@
     ("itertor" "iterator" nil 1)
     ("itmeem" "item" nil 1)
     ("itn" "int" nil 1)
+    ("itwm" "item" nil 1)
     ("iumport" "import" nil 2)
     ("javacx" "javax" nil 1)
     ("javaw" "javax" nil 1)

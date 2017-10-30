@@ -305,6 +305,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
+alias cd-="cd -"
 
 background='#494949'
 function set_background() {

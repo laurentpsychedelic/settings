@@ -424,6 +424,7 @@
  * " "obtain" nil 0)
     ("hava" "java" nil 1)
     ("heigth" "height" nil 1)
+    ("heoght" "height" nil 1)
     ("histroy" "history" nil 1)
     ("hoem" "HOME" nil 1)
     ("hsell" "shell" nil 1)

@@ -736,6 +736,7 @@
     ("sared" "shared" nil 1)
     ("sasfe" "SAFE" nil 1)
     ("sateg" "stage" nil 1)
+    ("satring" "String" nil 1)
     ("satrt" "start" nil 1)
     ("sattic" "static" nil 1)
     ("savinf" "saving" nil 1)

@@ -23,6 +23,7 @@
 	cd = checkout
 	sh = show
 	d = diff
+	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
 [color]
 	ui = true
 [user]

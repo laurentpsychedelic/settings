@@ -276,6 +276,7 @@ git config --global alias.rb rebase
 git config --global alias.cp cherry-pick
 git config --global alias.sb submodule
 git config --global alias.sm submodule
+git config --global alias.graph "log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short"
 git config --global core.editor emacsclient
 git config --global color.ui true
 git config --global alias.track '!f() { ([ $# -eq 2 ] && ( echo "Setting tracking for branch " $1 " -> " $2;git branch --set-upstream $1 $2; ) || ( git for-each-ref --format="local: %(refname:short) <--sync--> remote: %(upstream:short)" refs/heads && echo --Remotes && git remote -v)); }; f'

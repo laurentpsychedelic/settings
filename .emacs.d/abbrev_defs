@@ -677,6 +677,7 @@
     ("ractangle" "Rectangle" nil 1)
     ("raduis" "radius" nil 1)
     ("rafractove" "refractive" nil 1)
+    ("rangr" "range" nil 1)
     ("ratardation" "retardation" nil 1)
     ("reatrdation" "retardation" nil 1)
     ("recangle" "Rectangle" nil 1)

@@ -261,6 +261,8 @@ alias gdwc="git diff -w -M --cached"
 alias gcp="git cherry-pick"
 alias ga="git add"
 alias gprune="git remote prune origin"
+alias gsm="git submodule"
+alias gsb="git submodule"
 git config --global alias.ci commit
 git config --global alias.co checkout
 git config --global alias.cd checkout

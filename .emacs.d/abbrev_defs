@@ -315,7 +315,7 @@
     ("excepiton" "exception" nil 1)
     ("except" "execpt" nil 0)
     ("exceptino" "exception" nil 3)
-    ("exception" "exception" nil 70)
+    ("exception" "exception" nil 72)
     ("exceptionhander" "ExceptionHandler" nil 1)
     ("excetpnio" "exception" nil 1)
     ("excpetion" "exception" nil 4)
@@ -472,6 +472,7 @@
     ("inport" "import" nil 1)
     ("inr" "int" nil 3)
     ("instane" "instance" nil 1)
+    ("integrer" "Integer" nil 1)
     ("intenral" "internal" nil 1)
     ("interactove" "interactive" nil 1)
     ("interger" "integer" nil 1)
@@ -679,7 +680,7 @@
     ("pulbic" "public" nil 3)
     ("pulic" "public" nil 2)
     ("putr" "put" nil 1)
-    ("puyblic" "public" nil 4)
+    ("puyblic" "public" nil 5)
     ("pxiels" "pixels" nil 1)
     ("qucik" "QUICK" nil 1)
     ("qwhich" "which" nil 1)
@@ -1025,7 +1026,9 @@
 
 (define-abbrev-table 'python-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-skeleton-abbrev-table '())
+(define-abbrev-table 'python-mode-skeleton-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'scheme-mode-abbrev-table '())
 

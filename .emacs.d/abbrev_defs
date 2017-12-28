@@ -298,6 +298,7 @@
     ("ehile" "while" nil 1)
     ("eith" "with" nil 1)
     ("ekse" "else" nil 1)
+    ("elfi" "elif" nil 1)
     ("ellispe" "ellipse" nil 1)
     ("elngh" "length" nil 1)
     ("enabel" "enable" nil 1)
@@ -430,6 +431,7 @@
     ("gprahics" "graphics" nil 1)
     ("grahpcis" "graphics" nil 1)
     ("grahpics" "graphics" nil 1)
+    ("grpah" "Graph" nil 1)
     ("grpahics" "Graphics" nil 3)
     ("hashmap;
 
@@ -675,6 +677,7 @@
     ("protexted" "protected" nil 1)
     ("protexted " "protected" nil 0)
     ("prtin" "print" nil 1)
+    ("prunt" "print" nil 1)
     ("pruvate" "private" nil 1)
     ("pubic" "public" nil 1)
     ("publci" "public" nil 24)
@@ -740,7 +743,7 @@
     ("reuslt" "result" nil 1)
     ("reutn" "return" nil 3)
     ("reutnr" "return" nil 2)
-    ("reutrn" "return" nil 3)
+    ("reutrn" "return" nil 1)
     ("revcipe" "recipe" nil 1)
     ("rigght" "right" nil 1)
     ("rigth" "right" nil 1)
@@ -1031,11 +1034,11 @@
 
 (define-abbrev-table 'ps-run-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-abbrev-table '())
-
-(define-abbrev-table 'python-mode-skeleton-abbrev-table
+(define-abbrev-table 'python-mode-abbrev-table
   '(
    ))
+
+(define-abbrev-table 'python-mode-skeleton-abbrev-table '())
 
 (define-abbrev-table 'scheme-mode-abbrev-table '())
 

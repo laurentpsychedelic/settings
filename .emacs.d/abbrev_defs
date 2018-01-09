@@ -760,6 +760,7 @@
     ("sared" "shared" nil 1)
     ("sasfe" "SAFE" nil 1)
     ("sateg" "stage" nil 1)
+    ("satic" "static" nil 1)
     ("satring" "String" nil 1)
     ("satrt" "start" nil 1)
     ("sattic" "static" nil 1)
@@ -1034,9 +1035,7 @@
 
 (define-abbrev-table 'ps-run-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'python-mode-abbrev-table '())
 
 (define-abbrev-table 'python-mode-skeleton-abbrev-table '())
 

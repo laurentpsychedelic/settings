@@ -6,8 +6,8 @@ $shell.BufferSize.Height=9999
 $shell.WindowSize.Width=$max_size.Width
 $shell.WindowSize.Height=$max_size.Height
 # Background
-$shell.BackgroundColor = "White"
-$shell.ForegroundColor = "Black"
+#$shell.BackgroundColor = "White"
+#$shell.ForegroundColor = "Black"
 #Refresh
 Clear-Host
 # Path

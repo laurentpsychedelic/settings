@@ -123,6 +123,7 @@
     ("ahrd" "hard" nil 1)
     ("algirithm" "algorithm" nil 1)
     ("alos" "Also" nil 1)
+    ("alse" "else" nil 1)
     ("alurent" "laurent" nil 1)
     ("anaysis" "analysis" nil 1)
     ("antr" "and" nil 1)
@@ -1037,7 +1038,9 @@
 
 (define-abbrev-table 'python-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-skeleton-abbrev-table '())
+(define-abbrev-table 'python-mode-skeleton-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'scheme-mode-abbrev-table '())
 

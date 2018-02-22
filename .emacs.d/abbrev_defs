@@ -156,6 +156,7 @@
     ("boject" "object" nil 1)
     ("bollean" "boolean" nil 3)
     ("booean" "boolean" nil 2)
+    ("boolead" "boolean" nil 1)
     ("booleran" "boolean" nil 1)
     ("boolran" "boolean" nil 1)
     ("bould" "bound" nil 1)
@@ -1038,9 +1039,7 @@
 
 (define-abbrev-table 'python-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-skeleton-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'python-mode-skeleton-abbrev-table '())
 
 (define-abbrev-table 'scheme-mode-abbrev-table '())
 

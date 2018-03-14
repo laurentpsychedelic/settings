@@ -126,6 +126,16 @@ then
     function kill_win32() {
         powershell "kill -processname $1"
     }
+    function junctionw() {
+        if [ $# -ne 2 ]
+        then
+            echo "Arguments:"
+            echo "\$1 link"
+            echo "\$2 target"
+        else
+            junction "`cygpath -w $1`" "`cygpath -w $2`"
+        fi
+    }
     if [[ ! -e ~/pf ]]
     then
         ln -s "$PROGRAMFILES" ~/pf

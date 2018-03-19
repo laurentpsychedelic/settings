@@ -319,7 +319,7 @@
     ("excepiton" "exception" nil 1)
     ("except" "execpt" nil 0)
     ("exceptino" "exception" nil 3)
-    ("exception" "exception" nil 73)
+    ("exception" "exception" nil 75)
     ("exceptionhander" "ExceptionHandler" nil 1)
     ("excetpnio" "exception" nil 1)
     ("excpetion" "exception" nil 4)
@@ -486,6 +486,7 @@
     ("interger" "integer" nil 1)
     ("inti" "init" nil 1)
     ("intvectro" "intVector" nil 1)
+    ("invloke" "invoke" nil 1)
     ("ir" "or" nil 2)
     ("iregistry" "rtegistry" nil 0)
     ("isswitch" "iswitch" nil 1)
@@ -914,6 +915,7 @@
     ("warining" "warning" nil 1)
     ("wat" "awt" nil 3)
     ("watn" "want" nil 1)
+    ("waut" "Wait" nil 1)
     ("waveenght" "wavelength" nil 1)
     ("webmcam" "Webcam" nil 1)
     ("winodwsi" "Windows" nil 1)
@@ -1040,7 +1042,9 @@
 
 (define-abbrev-table 'python-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-skeleton-abbrev-table '())
+(define-abbrev-table 'python-mode-skeleton-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'scheme-mode-abbrev-table '())
 

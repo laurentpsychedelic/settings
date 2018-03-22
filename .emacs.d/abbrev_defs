@@ -319,7 +319,7 @@
     ("excepiton" "exception" nil 1)
     ("except" "execpt" nil 0)
     ("exceptino" "exception" nil 3)
-    ("exception" "exception" nil 75)
+    ("exception" "exception" nil 76)
     ("exceptionhander" "ExceptionHandler" nil 1)
     ("excetpnio" "exception" nil 1)
     ("excpetion" "exception" nil 4)
@@ -375,7 +375,7 @@
     ("finanl" "final" nil 1)
     ("finaql" "final" nil 1)
     ("finel" "final" nil 1)
-    ("finl" "final" nil 6)
+    ("finl" "final" nil 7)
     ("finla" "final" nil 1)
     ("finnaly" "finally" nil 1)
     ("fireground" "foreground" nil 1)
@@ -729,7 +729,7 @@
     ("resulkt" "result" nil 1)
     ("resutl" "result" nil 5)
     ("retrul" "return" nil 1)
-    ("retrun" "return" nil 5)
+    ("retrun" "return" nil 6)
     ("retrurn" "return" nil 1)
     ("retsult" "result" nil 1)
     ("retuern" "return" nil 1)
@@ -763,6 +763,7 @@
     ("sared" "shared" nil 1)
     ("sasfe" "SAFE" nil 1)
     ("sateg" "stage" nil 1)
+    ("satge" "stage" nil 1)
     ("satic" "static" nil 1)
     ("satring" "String" nil 1)
     ("satrt" "start" nil 1)
@@ -772,12 +773,13 @@
     ("sclae" "scale" nil 1)
     ("sdtatic" "static" nil 1)
     ("sdtokes" "strokes" nil 1)
+    ("semd" "send" nil 1)
     ("sequcner" "sequencer" nil 1)
     ("sequecner" "sequencer" nil 1)
     ("serail" "serial" nil 2)
     ("serched" "searched" nil 1)
     ("servere" "server" nil 1)
-    ("setp" "step" nil 1)
+    ("setp" "step" nil 2)
     ("sewt" "set" nil 1)
     ("sfn" "svn" nil 10)
     ("shiw" "SHOW" nil 1)
@@ -1042,9 +1044,7 @@
 
 (define-abbrev-table 'python-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-skeleton-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'python-mode-skeleton-abbrev-table '())
 
 (define-abbrev-table 'scheme-mode-abbrev-table '())
 

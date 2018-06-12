@@ -394,6 +394,7 @@
     ("floast" "float" nil 2)
     ("flost" "float" nil 1)
     ("flot" "float" nil 2)
+    ("flpat" "float" nil 1)
     ("fnal" "final" nil 1)
     ("foat" "float" nil 3)
     ("foint" "font" nil 3)

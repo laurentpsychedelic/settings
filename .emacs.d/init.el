@@ -113,6 +113,9 @@
 (require 'cl-lib)
 (require 'cl)
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+(setq yas-snippet-dirs '("~/emacs.d/plugins/yasnippet/snippets"))
+(setq yas-snippet-dirs (append yas-snippet-dirs
+                               '("~/.emacs.d/snippets")))
 (require 'yasnippet)
 (yas-global-mode 1)
 

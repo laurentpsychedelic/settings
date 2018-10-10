@@ -237,7 +237,7 @@ fi
 function start_keychain() {
     for file in $(ls ~/.ssh | awk '/id_rsa.*/ { if (!/.*pub$/) print $1 }')
     do
-        keychain ~/.ssh/$file
+        keychain --agents ssh ~/.ssh/$file
     done
     source ~/.keychain/*-sh
 }

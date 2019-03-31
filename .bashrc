@@ -862,6 +862,24 @@ function hexdump_floats() {
     fi
 }
 
+function extract_movie_iframes() {
+    if [ $# -lt 1 ]
+    then
+        echo "Arguments:"
+        echo "\$1 Path to target movie"
+    else
+        target=$1
+        thumb=$(basename $target)
+        dest=$2
+        if [ -z $dest ]
+        then
+            dest=./
+        fi
+        dest=${dest%/}
+        echo ffmpeg -skip_frame nokey -i $target -vsync 0 -r 30 -f image2 ${dest}/${thumb}-%02d.jpeg
+    fi
+}
+
 #Load GVM
 if [[ -s "$(readlink -f ~/settings/scripts/.gvm_load)" ]]
 then

@@ -622,6 +622,7 @@
 (define-key myantcompile-specific-map (kbd "a u r s") 'ant-run-single)
 (define-key myantcompile-specific-map (kbd "a u r d") 'ant-run-jdb)
 (define-key myantcompile-specific-map (kbd "a t") 'ant-test)
+(define-key myantcompile-specific-map (kbd "a u t s") 'ant-test-single)
 (define-key myantcompile-specific-map (kbd "a d") 'jdb-run)
 (define-key myantcompile-specific-map (kbd "a u d") 'jdb-connect)
 ;; java(c)

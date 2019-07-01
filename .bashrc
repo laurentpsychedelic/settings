@@ -120,6 +120,7 @@ SYSTEM=`uname -o`
 if [[ $SYSTEM =~ "Cygwin" ]]
 then
     export PATH=/usr/sbin:/sbin:$PATH
+    export JAVA_HOME=./java/jdk64
 
     export CYGWIN=nodosfilewarning
     #kill process on Windows using Powershell

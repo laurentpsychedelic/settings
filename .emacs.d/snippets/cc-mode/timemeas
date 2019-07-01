@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
 # name: timemeas
 # --
+#include <ctime>
 clock_t __t = clock();
 
 $0

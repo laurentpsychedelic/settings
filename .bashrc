@@ -103,6 +103,8 @@ alias la='ls -a'                              # all but . and ..
 alias lal='ls -al'
 alias l='ls -CF'                              #
 
+alias xagrs='xargs'
+
 # Alias to cyg-get script
 alias apt-cyg='bash ~/settings/bin/apt-cyg'
 

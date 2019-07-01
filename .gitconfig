@@ -2,7 +2,7 @@
 	pager = nkf | less
 	editor = emacsclient
 	whitespace = trailing-space,space-before-tab
-	autocrlf = input
+	autocrlf = false
 	quotepath = off
 	fileMode = false
 [alias]

@@ -299,7 +299,7 @@ git config --global alias.track '!f() { ([ $# -eq 2 ] && ( echo "Setting trackin
 git config --global user.name "Laurent FABRE"
 git config --global log.date local
 git config --global core.whitespace trailing-space,space-before-tab
-git config --global core.autocrlf input
+git config --global core.autocrlf false
 git config --global core.quotepath off
 git config --global push.default upstream
 git config --global merge.tool "kdiff3"

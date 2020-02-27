@@ -202,8 +202,12 @@
   (get-basic-compile-command "ant" "jar" text filename-sans-extension (concat (if additional-options (concat additional-options " ") "") "-emacs")))
 
 (defun get-ant-run-command (text filename-sans-extension &optional additional-options)
-  "Get command for ant jar target" 
+  "Get command for ant run target" 
   (get-basic-compile-command "ant" "run" text filename-sans-extension (concat (if additional-options (concat additional-options " ") "") "-emacs")))
+
+(defun get-ant-test-command (text filename-sans-extension &optional additional-options)
+  "Get command for ant test target" 
+  (get-basic-compile-command "ant" "test" text filename-sans-extension (concat (if additional-options (concat additional-options " ") "") "-emacs")))
 
 (defun get-gradle-compile-command (text filename-sans-extension)
   "Get command for gradle compile target"
@@ -268,6 +272,12 @@
   "Set ant jar compilation target command into compilation buffer"
   (interactive)
   (setq compile-command (get-ant-jar-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
+  (call-interactively 'compile compile-command))
+
+(defun ant-test ()
+  "Set ant test compilation target command into compilation buffer"
+  (interactive)
+  (setq compile-command (get-ant-test-command (buffer-string) (file-name-sans-extension (file-name-nondirectory (buffer-file-name)))))
   (call-interactively 'compile compile-command))
 
 (defun ant-run ()

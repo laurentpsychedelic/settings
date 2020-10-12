@@ -258,6 +258,9 @@ alias gci="git commit"
 alias gco="git checkout"
 alias glog="git log --oneline --decorate"
 alias gl="git log --oneline --decorate"
+for i in {1..100}; do
+    alias gl${i}="git log -${i} --oneline --decorate"
+done
 alias gpull="git pull --recurse-submodules"
 alias gf="git fetch --all"
 alias gp="git push"

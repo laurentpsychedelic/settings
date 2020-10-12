@@ -310,6 +310,7 @@ git config --global branch.autosetuprebase always
 git config --global branch.master.rebase true
 git config --global core.fileMode false
 
+export ALTERNATE_EDITOR=nano
 export SVN_EDITOR=emacsclient
 export EDITOR=emacsclient
 export VISUAL=emacsclient

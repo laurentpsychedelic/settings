@@ -18,6 +18,23 @@ function get_all_commits() {
         printf "\n"
     fi
 }
+function get_all_commits_local_branch() {
+    since=$1
+    until=$2
+    authors=()
+    mapfile -t authors < <(git log --remotes --branches='*' --pretty=format:'%an' $pj | sort | uniq)
+    if [ ! ${#authors[@]} -eq 0 ]; then
+        #for author in "${authors[@]}"; do
+        #    printf "$author,"
+        #done
+        #printf "\n"
+        for author in "${authors[@]}"; do
+            n=`git log --oneline --since=$since --until=$until --author="""$author""" | wc -l`;
+            printf "$n,"
+        done
+        printf "\n"
+    fi
+}
 function get_all_authors() {
     authors=()
     mapfile -t authors < <(git log --remotes --branches='*' --pretty=format:'%an' $pj | sort | uniq)

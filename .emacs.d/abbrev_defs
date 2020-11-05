@@ -635,6 +635,7 @@
     ("ocntinue" "continue" nil 1)
     ("ofr" "for" nil 1)
     ("oject" "object" nil 1)
+    ("onst" "const" nil 1)
     ("opaue" "opaque" nil 1)
     ("opbtain" "obtain" nil 1)
     ("operstor" "OPERATOR" nil 1)

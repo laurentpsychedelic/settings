@@ -898,6 +898,8 @@ function extract_movie_iframes() {
     fi
 }
 
+alias eixt=exit
+
 #Load GVM
 if [[ -s "$(readlink -f ~/settings/scripts/.gvm_load)" ]]
 then

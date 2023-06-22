@@ -868,6 +868,17 @@ function hexdump_floats() {
         hexdump -n $((nFloats * 4)) -v -e '1/4 "%f\n"' "$2"
     fi
 }
+function hexdump_doubles() {
+    if [ $# -ne 2 ]
+    then
+        echo "Arguments:"
+        echo "\$1 Number of doubles to read"
+        echo "\$2 File path"
+    else
+        nDoubles=$1
+        hexdump -n $((nDoubles * 8)) -v -e '1/8 "%f\n"' "$2"
+    fi
+}
 
 function extract_movie_iframes() {
     if [ $# -lt 1 ]

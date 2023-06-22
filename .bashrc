@@ -409,13 +409,7 @@ function change_svn_commit_author () {
 #keeping showing the rest of the output
 function highlight () {
     pattern=$1
-    if [ $# -gt 1 ]
-    then
-        shift; file=${@:1}
-        grep -a -E --color=always "$pattern|$" "$file"
-    else
-        grep -a -E --color=always "$pattern|$"
-    fi
+    grep -a -E --color=always "|$pattern"
 }
 alias hgrep=highlight
 
